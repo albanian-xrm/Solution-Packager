@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30002.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbanianXrm.SolutionPackager", "AlbanianXrm.SolutionPackager\AlbanianXrm.SolutionPackager.csproj", "{46E1154E-5A13-4BB8-8251-DE6E69952C6B}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "AlbanianXrm.SolutionPackager.Version", "AlbanianXrm.SolutionPackager.Version\AlbanianXrm.SolutionPackager.Version.shproj", "{C7C0FE3B-A8FC-48A4-82BF-A1EE925D2651}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		AlbanianXrm.SolutionPackager.Version\AlbanianXrm.SolutionPackager.Version.projitems*{46e1154e-5a13-4bb8-8251-de6e69952c6b}*SharedItemsImports = 4
+		AlbanianXrm.SolutionPackager.Version\AlbanianXrm.SolutionPackager.Version.projitems*{c7c0fe3b-a8fc-48a4-82bf-a1ee925d2651}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{46E1154E-5A13-4BB8-8251-DE6E69952C6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46E1154E-5A13-4BB8-8251-DE6E69952C6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46E1154E-5A13-4BB8-8251-DE6E69952C6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46E1154E-5A13-4BB8-8251-DE6E69952C6B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F3342767-F4AA-4C41-A83E-D1ED5BB06490}
+	EndGlobalSection
+EndGlobal
