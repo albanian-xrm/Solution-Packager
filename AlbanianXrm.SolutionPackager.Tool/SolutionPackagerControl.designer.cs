@@ -13,8 +13,15 @@ namespace AlbanianXrm.SolutionPackager
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SolutionPackagerControl));
             this.tabsExtractOrPack = new System.Windows.Forms.TabControl();
             this.tabExtract = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.radAllowDeletePrompt = new System.Windows.Forms.RadioButton();
+            this.radAllowDeleteYes = new System.Windows.Forms.RadioButton();
+            this.radAllowDeleteNo = new System.Windows.Forms.RadioButton();
+            this.lblAllowDelete = new System.Windows.Forms.Label();
+            this.chkAllowWrite = new System.Windows.Forms.CheckBox();
             this.grpExportSolution = new System.Windows.Forms.GroupBox();
             this.lblExportAs = new System.Windows.Forms.Label();
             this.radManaged = new System.Windows.Forms.RadioButton();
@@ -43,6 +50,8 @@ namespace AlbanianXrm.SolutionPackager
             this.localOrCrm = new System.Windows.Forms.CheckBox();
             this.tabPack = new System.Windows.Forms.TabPage();
             this.tabSettings = new System.Windows.Forms.TabPage();
+            this.cmbLanguage = new System.Windows.Forms.ComboBox();
+            this.lblLanguage = new System.Windows.Forms.Label();
             this.btnNuGetFeed = new System.Windows.Forms.Button();
             this.lblNuGetFeed = new System.Windows.Forms.Label();
             this.txtNuGetFeed = new System.Windows.Forms.RichTextBox();
@@ -54,14 +63,9 @@ namespace AlbanianXrm.SolutionPackager
             this.openZipFile = new System.Windows.Forms.OpenFileDialog();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.txtOutput = new System.Windows.Forms.RichTextBox();
-            this.chkAllowWrite = new System.Windows.Forms.CheckBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblAllowDelete = new System.Windows.Forms.Label();
-            this.radAllowDeleteNo = new System.Windows.Forms.RadioButton();
-            this.radAllowDeleteYes = new System.Windows.Forms.RadioButton();
-            this.radAllowDeletePrompt = new System.Windows.Forms.RadioButton();
             this.tabsExtractOrPack.SuspendLayout();
             this.tabExtract.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.grpExportSolution.SuspendLayout();
             this.tabSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
@@ -69,7 +73,6 @@ namespace AlbanianXrm.SolutionPackager
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabsExtractOrPack
@@ -77,13 +80,9 @@ namespace AlbanianXrm.SolutionPackager
             this.tabsExtractOrPack.Controls.Add(this.tabExtract);
             this.tabsExtractOrPack.Controls.Add(this.tabPack);
             this.tabsExtractOrPack.Controls.Add(this.tabSettings);
-            this.tabsExtractOrPack.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabsExtractOrPack.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabsExtractOrPack.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.tabsExtractOrPack, "tabsExtractOrPack");
             this.tabsExtractOrPack.Name = "tabsExtractOrPack";
             this.tabsExtractOrPack.SelectedIndex = 0;
-            this.tabsExtractOrPack.Size = new System.Drawing.Size(440, 600);
-            this.tabsExtractOrPack.TabIndex = 0;
             this.tabsExtractOrPack.Selected += new System.Windows.Forms.TabControlEventHandler(this.TabsExtractOrPack_Selected);
             // 
             // tabExtract
@@ -99,13 +98,53 @@ namespace AlbanianXrm.SolutionPackager
             this.tabExtract.Controls.Add(this.lblOutputFolder);
             this.tabExtract.Controls.Add(this.txtZipPath);
             this.tabExtract.Controls.Add(this.localOrCrm);
-            this.tabExtract.Location = new System.Drawing.Point(4, 24);
+            resources.ApplyResources(this.tabExtract, "tabExtract");
             this.tabExtract.Name = "tabExtract";
-            this.tabExtract.Padding = new System.Windows.Forms.Padding(3);
-            this.tabExtract.Size = new System.Drawing.Size(432, 572);
-            this.tabExtract.TabIndex = 0;
-            this.tabExtract.Text = "Extract";
             this.tabExtract.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.radAllowDeletePrompt);
+            this.panel1.Controls.Add(this.radAllowDeleteYes);
+            this.panel1.Controls.Add(this.radAllowDeleteNo);
+            this.panel1.Controls.Add(this.lblAllowDelete);
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Name = "panel1";
+            // 
+            // radAllowDeletePrompt
+            // 
+            resources.ApplyResources(this.radAllowDeletePrompt, "radAllowDeletePrompt");
+            this.radAllowDeletePrompt.Checked = true;
+            this.radAllowDeletePrompt.Name = "radAllowDeletePrompt";
+            this.radAllowDeletePrompt.TabStop = true;
+            this.radAllowDeletePrompt.UseVisualStyleBackColor = true;
+            // 
+            // radAllowDeleteYes
+            // 
+            resources.ApplyResources(this.radAllowDeleteYes, "radAllowDeleteYes");
+            this.radAllowDeleteYes.Name = "radAllowDeleteYes";
+            this.radAllowDeleteYes.TabStop = true;
+            this.radAllowDeleteYes.UseVisualStyleBackColor = true;
+            // 
+            // radAllowDeleteNo
+            // 
+            resources.ApplyResources(this.radAllowDeleteNo, "radAllowDeleteNo");
+            this.radAllowDeleteNo.Name = "radAllowDeleteNo";
+            this.radAllowDeleteNo.TabStop = true;
+            this.radAllowDeleteNo.UseVisualStyleBackColor = true;
+            // 
+            // lblAllowDelete
+            // 
+            resources.ApplyResources(this.lblAllowDelete, "lblAllowDelete");
+            this.lblAllowDelete.Name = "lblAllowDelete";
+            // 
+            // chkAllowWrite
+            // 
+            resources.ApplyResources(this.chkAllowWrite, "chkAllowWrite");
+            this.chkAllowWrite.Checked = true;
+            this.chkAllowWrite.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkAllowWrite.Name = "chkAllowWrite";
+            this.chkAllowWrite.UseVisualStyleBackColor = true;
             // 
             // grpExportSolution
             // 
@@ -126,366 +165,247 @@ namespace AlbanianXrm.SolutionPackager
             this.grpExportSolution.Controls.Add(this.lblOnlineSolution);
             this.grpExportSolution.Controls.Add(this.cmbCrmSolutions);
             this.grpExportSolution.Controls.Add(this.btnRefreshSolutions);
-            this.grpExportSolution.Location = new System.Drawing.Point(0, 212);
+            resources.ApplyResources(this.grpExportSolution, "grpExportSolution");
             this.grpExportSolution.Name = "grpExportSolution";
-            this.grpExportSolution.Size = new System.Drawing.Size(432, 178);
-            this.grpExportSolution.TabIndex = 11;
             this.grpExportSolution.TabStop = false;
-            this.grpExportSolution.Text = "Export Solution";
             // 
             // lblExportAs
             // 
-            this.lblExportAs.AutoSize = true;
-            this.lblExportAs.Location = new System.Drawing.Point(7, 50);
+            resources.ApplyResources(this.lblExportAs, "lblExportAs");
             this.lblExportAs.Name = "lblExportAs";
-            this.lblExportAs.Size = new System.Drawing.Size(63, 15);
-            this.lblExportAs.TabIndex = 22;
-            this.lblExportAs.Text = "Export As: ";
             // 
             // radManaged
             // 
-            this.radManaged.AutoSize = true;
-            this.radManaged.Location = new System.Drawing.Point(172, 48);
+            resources.ApplyResources(this.radManaged, "radManaged");
             this.radManaged.Name = "radManaged";
-            this.radManaged.Size = new System.Drawing.Size(75, 19);
-            this.radManaged.TabIndex = 21;
-            this.radManaged.Text = "Managed";
             this.radManaged.UseVisualStyleBackColor = true;
             // 
             // radUnmanaged
             // 
-            this.radUnmanaged.AutoSize = true;
+            resources.ApplyResources(this.radUnmanaged, "radUnmanaged");
             this.radUnmanaged.Checked = true;
-            this.radUnmanaged.Location = new System.Drawing.Point(76, 48);
             this.radUnmanaged.Name = "radUnmanaged";
-            this.radUnmanaged.Size = new System.Drawing.Size(90, 19);
-            this.radUnmanaged.TabIndex = 20;
             this.radUnmanaged.TabStop = true;
-            this.radUnmanaged.Text = "Unmanaged";
             this.radUnmanaged.UseVisualStyleBackColor = true;
             // 
             // chkExportRelationshipRoles
             // 
-            this.chkExportRelationshipRoles.AutoSize = true;
-            this.chkExportRelationshipRoles.Location = new System.Drawing.Point(10, 152);
+            resources.ApplyResources(this.chkExportRelationshipRoles, "chkExportRelationshipRoles");
             this.chkExportRelationshipRoles.Name = "chkExportRelationshipRoles";
-            this.chkExportRelationshipRoles.Size = new System.Drawing.Size(122, 19);
-            this.chkExportRelationshipRoles.TabIndex = 19;
-            this.chkExportRelationshipRoles.Text = "Relationship Roles";
             this.chkExportRelationshipRoles.UseVisualStyleBackColor = true;
             // 
             // chkExportSales
             // 
-            this.chkExportSales.AutoSize = true;
-            this.chkExportSales.Location = new System.Drawing.Point(294, 127);
+            resources.ApplyResources(this.chkExportSales, "chkExportSales");
             this.chkExportSales.Name = "chkExportSales";
-            this.chkExportSales.Size = new System.Drawing.Size(52, 19);
-            this.chkExportSales.TabIndex = 18;
-            this.chkExportSales.Text = "Sales";
             this.chkExportSales.UseVisualStyleBackColor = true;
             // 
             // chkExportOutlookSynchronization
             // 
-            this.chkExportOutlookSynchronization.AutoSize = true;
-            this.chkExportOutlookSynchronization.Location = new System.Drawing.Point(153, 152);
+            resources.ApplyResources(this.chkExportOutlookSynchronization, "chkExportOutlookSynchronization");
             this.chkExportOutlookSynchronization.Name = "chkExportOutlookSynchronization";
-            this.chkExportOutlookSynchronization.Size = new System.Drawing.Size(150, 19);
-            this.chkExportOutlookSynchronization.TabIndex = 17;
-            this.chkExportOutlookSynchronization.Text = "Outlook Syncronization";
             this.chkExportOutlookSynchronization.UseVisualStyleBackColor = true;
             // 
             // chkExportMarketing
             // 
-            this.chkExportMarketing.AutoSize = true;
-            this.chkExportMarketing.Location = new System.Drawing.Point(153, 127);
+            resources.ApplyResources(this.chkExportMarketing, "chkExportMarketing");
             this.chkExportMarketing.Name = "chkExportMarketing";
-            this.chkExportMarketing.Size = new System.Drawing.Size(80, 19);
-            this.chkExportMarketing.TabIndex = 16;
-            this.chkExportMarketing.Text = "Marketing";
             this.chkExportMarketing.UseVisualStyleBackColor = true;
             // 
             // chkExportISVConfig
             // 
-            this.chkExportISVConfig.AutoSize = true;
-            this.chkExportISVConfig.Location = new System.Drawing.Point(10, 127);
+            resources.ApplyResources(this.chkExportISVConfig, "chkExportISVConfig");
             this.chkExportISVConfig.Name = "chkExportISVConfig";
-            this.chkExportISVConfig.Size = new System.Drawing.Size(81, 19);
-            this.chkExportISVConfig.TabIndex = 15;
-            this.chkExportISVConfig.Text = "ISV Config";
             this.chkExportISVConfig.UseVisualStyleBackColor = true;
             // 
             // chkExportGeneralSettings
             // 
-            this.chkExportGeneralSettings.AutoSize = true;
-            this.chkExportGeneralSettings.Location = new System.Drawing.Point(294, 102);
+            resources.ApplyResources(this.chkExportGeneralSettings, "chkExportGeneralSettings");
             this.chkExportGeneralSettings.Name = "chkExportGeneralSettings";
-            this.chkExportGeneralSettings.Size = new System.Drawing.Size(111, 19);
-            this.chkExportGeneralSettings.TabIndex = 14;
-            this.chkExportGeneralSettings.Text = "General Settings";
             this.chkExportGeneralSettings.UseVisualStyleBackColor = true;
             // 
             // chkExportExternalApplications
             // 
-            this.chkExportExternalApplications.AutoSize = true;
-            this.chkExportExternalApplications.Location = new System.Drawing.Point(153, 102);
+            resources.ApplyResources(this.chkExportExternalApplications, "chkExportExternalApplications");
             this.chkExportExternalApplications.Name = "chkExportExternalApplications";
-            this.chkExportExternalApplications.Size = new System.Drawing.Size(137, 19);
-            this.chkExportExternalApplications.TabIndex = 13;
-            this.chkExportExternalApplications.Text = "External Applications";
             this.chkExportExternalApplications.UseVisualStyleBackColor = true;
             // 
             // chkExportEmailTracking
             // 
-            this.chkExportEmailTracking.AutoSize = true;
-            this.chkExportEmailTracking.Location = new System.Drawing.Point(10, 102);
+            resources.ApplyResources(this.chkExportEmailTracking, "chkExportEmailTracking");
             this.chkExportEmailTracking.Name = "chkExportEmailTracking";
-            this.chkExportEmailTracking.Size = new System.Drawing.Size(102, 19);
-            this.chkExportEmailTracking.TabIndex = 12;
-            this.chkExportEmailTracking.Text = "Email Tracking";
             this.chkExportEmailTracking.UseVisualStyleBackColor = true;
             // 
             // chkExportCustomization
             // 
-            this.chkExportCustomization.AutoSize = true;
-            this.chkExportCustomization.Location = new System.Drawing.Point(294, 77);
+            resources.ApplyResources(this.chkExportCustomization, "chkExportCustomization");
             this.chkExportCustomization.Name = "chkExportCustomization";
-            this.chkExportCustomization.Size = new System.Drawing.Size(103, 19);
-            this.chkExportCustomization.TabIndex = 11;
-            this.chkExportCustomization.Text = "Customization";
             this.chkExportCustomization.UseVisualStyleBackColor = true;
             // 
             // chkExportCalendar
             // 
-            this.chkExportCalendar.AutoSize = true;
-            this.chkExportCalendar.Location = new System.Drawing.Point(153, 77);
+            resources.ApplyResources(this.chkExportCalendar, "chkExportCalendar");
             this.chkExportCalendar.Name = "chkExportCalendar";
-            this.chkExportCalendar.Size = new System.Drawing.Size(73, 19);
-            this.chkExportCalendar.TabIndex = 10;
-            this.chkExportCalendar.Text = "Calendar";
             this.chkExportCalendar.UseVisualStyleBackColor = true;
             // 
             // chkExportAutoNumbering
             // 
-            this.chkExportAutoNumbering.AutoSize = true;
-            this.chkExportAutoNumbering.Location = new System.Drawing.Point(10, 77);
+            resources.ApplyResources(this.chkExportAutoNumbering, "chkExportAutoNumbering");
             this.chkExportAutoNumbering.Name = "chkExportAutoNumbering";
-            this.chkExportAutoNumbering.Size = new System.Drawing.Size(116, 19);
-            this.chkExportAutoNumbering.TabIndex = 9;
-            this.chkExportAutoNumbering.Text = "Auto Numbering";
             this.chkExportAutoNumbering.UseVisualStyleBackColor = true;
             // 
             // lblOnlineSolution
             // 
-            this.lblOnlineSolution.AutoSize = true;
-            this.lblOnlineSolution.Location = new System.Drawing.Point(6, 19);
+            resources.ApplyResources(this.lblOnlineSolution, "lblOnlineSolution");
             this.lblOnlineSolution.Name = "lblOnlineSolution";
-            this.lblOnlineSolution.Size = new System.Drawing.Size(80, 15);
-            this.lblOnlineSolution.TabIndex = 5;
-            this.lblOnlineSolution.Text = "CRM Solution";
             // 
             // cmbCrmSolutions
             // 
             this.cmbCrmSolutions.DisplayMember = "FriendlyName";
             this.cmbCrmSolutions.FormattingEnabled = true;
-            this.cmbCrmSolutions.Location = new System.Drawing.Point(93, 16);
+            resources.ApplyResources(this.cmbCrmSolutions, "cmbCrmSolutions");
             this.cmbCrmSolutions.Name = "cmbCrmSolutions";
-            this.cmbCrmSolutions.Size = new System.Drawing.Size(270, 23);
-            this.cmbCrmSolutions.TabIndex = 4;
             this.cmbCrmSolutions.ValueMember = "SolutionId";
             // 
             // btnRefreshSolutions
             // 
             this.btnRefreshSolutions.BackgroundImage = global::AlbanianXrm.SolutionPackager.Properties.Resources.Solutions;
-            this.btnRefreshSolutions.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRefreshSolutions.Location = new System.Drawing.Point(386, 12);
+            resources.ApplyResources(this.btnRefreshSolutions, "btnRefreshSolutions");
             this.btnRefreshSolutions.Name = "btnRefreshSolutions";
-            this.btnRefreshSolutions.Size = new System.Drawing.Size(30, 30);
-            this.btnRefreshSolutions.TabIndex = 8;
             this.btnRefreshSolutions.UseVisualStyleBackColor = true;
             this.btnRefreshSolutions.Click += new System.EventHandler(this.BtnRefreshSolutions_Click);
             // 
             // btnExtract
             // 
-            this.btnExtract.Location = new System.Drawing.Point(341, 185);
+            resources.ApplyResources(this.btnExtract, "btnExtract");
             this.btnExtract.Name = "btnExtract";
-            this.btnExtract.Size = new System.Drawing.Size(75, 23);
-            this.btnExtract.TabIndex = 10;
-            this.btnExtract.Text = "Extract";
             this.btnExtract.UseVisualStyleBackColor = true;
             this.btnExtract.Click += new System.EventHandler(this.BtnExtract_Click);
             // 
             // btnOutputFolder
             // 
             this.btnOutputFolder.BackgroundImage = global::AlbanianXrm.SolutionPackager.Properties.Resources.Folder;
-            this.btnOutputFolder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnOutputFolder.Location = new System.Drawing.Point(384, 56);
+            resources.ApplyResources(this.btnOutputFolder, "btnOutputFolder");
             this.btnOutputFolder.Name = "btnOutputFolder";
-            this.btnOutputFolder.Size = new System.Drawing.Size(30, 30);
-            this.btnOutputFolder.TabIndex = 9;
             this.btnOutputFolder.UseVisualStyleBackColor = true;
             this.btnOutputFolder.Click += new System.EventHandler(this.BtnOutputFolder_Click);
             // 
             // btnOpenZip
             // 
             this.btnOpenZip.BackgroundImage = global::AlbanianXrm.SolutionPackager.Properties.Resources.Zip;
-            this.btnOpenZip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnOpenZip.Location = new System.Drawing.Point(384, 24);
+            resources.ApplyResources(this.btnOpenZip, "btnOpenZip");
             this.btnOpenZip.Name = "btnOpenZip";
-            this.btnOpenZip.Size = new System.Drawing.Size(30, 30);
-            this.btnOpenZip.TabIndex = 7;
             this.btnOpenZip.UseVisualStyleBackColor = true;
             this.btnOpenZip.Click += new System.EventHandler(this.BtnOpenZip_Click);
             // 
             // txtOutputFolder
             // 
-            this.txtOutputFolder.Location = new System.Drawing.Point(92, 60);
-            this.txtOutputFolder.Multiline = false;
+            resources.ApplyResources(this.txtOutputFolder, "txtOutputFolder");
             this.txtOutputFolder.Name = "txtOutputFolder";
             this.txtOutputFolder.ReadOnly = true;
-            this.txtOutputFolder.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.txtOutputFolder.ShortcutsEnabled = false;
-            this.txtOutputFolder.Size = new System.Drawing.Size(270, 24);
-            this.txtOutputFolder.TabIndex = 6;
             this.txtOutputFolder.TabStop = false;
-            this.txtOutputFolder.Text = "";
-            this.txtOutputFolder.WordWrap = false;
             // 
             // lblExtractZipPath
             // 
-            this.lblExtractZipPath.AutoSize = true;
-            this.lblExtractZipPath.Location = new System.Drawing.Point(7, 32);
+            resources.ApplyResources(this.lblExtractZipPath, "lblExtractZipPath");
             this.lblExtractZipPath.Name = "lblExtractZipPath";
-            this.lblExtractZipPath.Size = new System.Drawing.Size(78, 15);
-            this.lblExtractZipPath.TabIndex = 3;
-            this.lblExtractZipPath.Text = "Solution Path";
             // 
             // lblOutputFolder
             // 
-            this.lblOutputFolder.AutoSize = true;
-            this.lblOutputFolder.Location = new System.Drawing.Point(7, 64);
+            resources.ApplyResources(this.lblOutputFolder, "lblOutputFolder");
             this.lblOutputFolder.Name = "lblOutputFolder";
-            this.lblOutputFolder.Size = new System.Drawing.Size(81, 15);
-            this.lblOutputFolder.TabIndex = 2;
-            this.lblOutputFolder.Text = "Output Folder";
             // 
             // txtZipPath
             // 
-            this.txtZipPath.Location = new System.Drawing.Point(94, 28);
-            this.txtZipPath.Multiline = false;
+            resources.ApplyResources(this.txtZipPath, "txtZipPath");
             this.txtZipPath.Name = "txtZipPath";
             this.txtZipPath.ReadOnly = true;
-            this.txtZipPath.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.txtZipPath.ShortcutsEnabled = false;
-            this.txtZipPath.Size = new System.Drawing.Size(270, 24);
-            this.txtZipPath.TabIndex = 0;
             this.txtZipPath.TabStop = false;
-            this.txtZipPath.Text = "";
-            this.txtZipPath.WordWrap = false;
             // 
             // localOrCrm
             // 
-            this.localOrCrm.AutoSize = true;
-            this.localOrCrm.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.localOrCrm.Location = new System.Drawing.Point(7, 7);
+            resources.ApplyResources(this.localOrCrm, "localOrCrm");
             this.localOrCrm.Name = "localOrCrm";
-            this.localOrCrm.Size = new System.Drawing.Size(271, 19);
-            this.localOrCrm.TabIndex = 1;
-            this.localOrCrm.Text = "Download the solution from the Organization?";
             this.localOrCrm.UseVisualStyleBackColor = true;
             this.localOrCrm.CheckedChanged += new System.EventHandler(this.LocalOrCrm_CheckedChanged);
             // 
             // tabPack
             // 
-            this.tabPack.Location = new System.Drawing.Point(4, 24);
+            resources.ApplyResources(this.tabPack, "tabPack");
             this.tabPack.Name = "tabPack";
-            this.tabPack.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPack.Size = new System.Drawing.Size(432, 572);
-            this.tabPack.TabIndex = 1;
-            this.tabPack.Text = "Pack";
             this.tabPack.UseVisualStyleBackColor = true;
             // 
             // tabSettings
             // 
+            this.tabSettings.Controls.Add(this.cmbLanguage);
+            this.tabSettings.Controls.Add(this.lblLanguage);
             this.tabSettings.Controls.Add(this.btnNuGetFeed);
             this.tabSettings.Controls.Add(this.lblNuGetFeed);
             this.tabSettings.Controls.Add(this.txtNuGetFeed);
             this.tabSettings.Controls.Add(this.btnCoreTools);
             this.tabSettings.Controls.Add(this.label1);
             this.tabSettings.Controls.Add(this.txtCoreTools);
-            this.tabSettings.Location = new System.Drawing.Point(4, 24);
+            resources.ApplyResources(this.tabSettings, "tabSettings");
             this.tabSettings.Name = "tabSettings";
-            this.tabSettings.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSettings.Size = new System.Drawing.Size(432, 572);
-            this.tabSettings.TabIndex = 2;
-            this.tabSettings.Text = "Settings";
             this.tabSettings.UseVisualStyleBackColor = true;
+            // 
+            // cmbLanguage
+            // 
+            this.cmbLanguage.FormattingEnabled = true;
+            this.cmbLanguage.Items.AddRange(new object[] {
+            resources.GetString("cmbLanguage.Items"),
+            resources.GetString("cmbLanguage.Items1")});
+            resources.ApplyResources(this.cmbLanguage, "cmbLanguage");
+            this.cmbLanguage.Name = "cmbLanguage";
+            this.cmbLanguage.SelectedIndexChanged += new System.EventHandler(this.CmbLanguage_SelectedIndexChanged);
+            // 
+            // lblLanguage
+            // 
+            resources.ApplyResources(this.lblLanguage, "lblLanguage");
+            this.lblLanguage.Name = "lblLanguage";
             // 
             // btnNuGetFeed
             // 
             this.btnNuGetFeed.BackgroundImage = global::AlbanianXrm.SolutionPackager.Properties.Resources.Refresh;
-            this.btnNuGetFeed.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNuGetFeed.Location = new System.Drawing.Point(386, 32);
+            resources.ApplyResources(this.btnNuGetFeed, "btnNuGetFeed");
             this.btnNuGetFeed.Name = "btnNuGetFeed";
-            this.btnNuGetFeed.Size = new System.Drawing.Size(30, 30);
-            this.btnNuGetFeed.TabIndex = 13;
             this.btnNuGetFeed.UseVisualStyleBackColor = true;
             this.btnNuGetFeed.Click += new System.EventHandler(this.BtnNuGetFeed_Click);
             // 
             // lblNuGetFeed
             // 
-            this.lblNuGetFeed.AutoSize = true;
-            this.lblNuGetFeed.Location = new System.Drawing.Point(5, 40);
+            resources.ApplyResources(this.lblNuGetFeed, "lblNuGetFeed");
             this.lblNuGetFeed.Name = "lblNuGetFeed";
-            this.lblNuGetFeed.Size = new System.Drawing.Size(69, 15);
-            this.lblNuGetFeed.TabIndex = 12;
-            this.lblNuGetFeed.Text = "NuGet Feed";
             // 
             // txtNuGetFeed
             // 
-            this.txtNuGetFeed.Location = new System.Drawing.Point(110, 36);
-            this.txtNuGetFeed.Multiline = false;
+            resources.ApplyResources(this.txtNuGetFeed, "txtNuGetFeed");
             this.txtNuGetFeed.Name = "txtNuGetFeed";
-            this.txtNuGetFeed.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.txtNuGetFeed.ShortcutsEnabled = false;
-            this.txtNuGetFeed.Size = new System.Drawing.Size(270, 24);
-            this.txtNuGetFeed.TabIndex = 11;
             this.txtNuGetFeed.TabStop = false;
-            this.txtNuGetFeed.Text = "https://packages.nuget.org/api/v2";
-            this.txtNuGetFeed.WordWrap = false;
             // 
             // btnCoreTools
             // 
             this.btnCoreTools.BackgroundImage = global::AlbanianXrm.SolutionPackager.Properties.Resources.Solutions;
-            this.btnCoreTools.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCoreTools.Location = new System.Drawing.Point(386, 2);
+            resources.ApplyResources(this.btnCoreTools, "btnCoreTools");
             this.btnCoreTools.Name = "btnCoreTools";
-            this.btnCoreTools.Size = new System.Drawing.Size(30, 30);
-            this.btnCoreTools.TabIndex = 10;
             this.btnCoreTools.UseVisualStyleBackColor = true;
             this.btnCoreTools.Click += new System.EventHandler(this.BtnCoreTools_Click);
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 10);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 15);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "CoreTools Version";
             // 
             // txtCoreTools
             // 
-            this.txtCoreTools.Location = new System.Drawing.Point(110, 6);
-            this.txtCoreTools.Multiline = false;
+            resources.ApplyResources(this.txtCoreTools, "txtCoreTools");
             this.txtCoreTools.Name = "txtCoreTools";
             this.txtCoreTools.ReadOnly = true;
-            this.txtCoreTools.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.txtCoreTools.ShortcutsEnabled = false;
-            this.txtCoreTools.Size = new System.Drawing.Size(270, 24);
-            this.txtCoreTools.TabIndex = 8;
             this.txtCoreTools.TabStop = false;
-            this.txtCoreTools.Text = "";
-            this.txtCoreTools.WordWrap = false;
             // 
             // errorProvider
             // 
@@ -494,14 +414,12 @@ namespace AlbanianXrm.SolutionPackager
             // openZipFile
             // 
             this.openZipFile.FileName = "openFileDialog1";
-            this.openZipFile.Filter = "Solution|*.zip|All Files|*.*";
+            resources.ApplyResources(this.openZipFile, "openZipFile");
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            resources.ApplyResources(this.splitContainer1, "splitContainer1");
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.IsSplitterFixed = true;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -511,97 +429,25 @@ namespace AlbanianXrm.SolutionPackager
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.txtOutput);
-            this.splitContainer1.Size = new System.Drawing.Size(800, 600);
-            this.splitContainer1.SplitterDistance = 440;
-            this.splitContainer1.TabIndex = 1;
             // 
             // txtOutput
             // 
             this.txtOutput.BackColor = System.Drawing.Color.Black;
-            this.txtOutput.Dock = System.Windows.Forms.DockStyle.Fill;
+            resources.ApplyResources(this.txtOutput, "txtOutput");
             this.txtOutput.ForeColor = System.Drawing.Color.White;
-            this.txtOutput.Location = new System.Drawing.Point(0, 0);
             this.txtOutput.Name = "txtOutput";
             this.txtOutput.ReadOnly = true;
-            this.txtOutput.Size = new System.Drawing.Size(356, 600);
-            this.txtOutput.TabIndex = 0;
-            this.txtOutput.Text = "";
-            // 
-            // chkAllowWrite
-            // 
-            this.chkAllowWrite.AutoSize = true;
-            this.chkAllowWrite.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkAllowWrite.Checked = true;
-            this.chkAllowWrite.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkAllowWrite.Location = new System.Drawing.Point(7, 96);
-            this.chkAllowWrite.Name = "chkAllowWrite";
-            this.chkAllowWrite.Size = new System.Drawing.Size(98, 19);
-            this.chkAllowWrite.TabIndex = 12;
-            this.chkAllowWrite.Text = "Allow Write?  ";
-            this.chkAllowWrite.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.radAllowDeletePrompt);
-            this.panel1.Controls.Add(this.radAllowDeleteYes);
-            this.panel1.Controls.Add(this.radAllowDeleteNo);
-            this.panel1.Controls.Add(this.lblAllowDelete);
-            this.panel1.Location = new System.Drawing.Point(0, 128);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(333, 31);
-            this.panel1.TabIndex = 13;
-            // 
-            // lblAllowDelete
-            // 
-            this.lblAllowDelete.AutoSize = true;
-            this.lblAllowDelete.Location = new System.Drawing.Point(7, 0);
-            this.lblAllowDelete.Name = "lblAllowDelete";
-            this.lblAllowDelete.Size = new System.Drawing.Size(73, 15);
-            this.lblAllowDelete.TabIndex = 0;
-            this.lblAllowDelete.Text = "Allow Delete";
-            // 
-            // radAllowDeleteNo
-            // 
-            this.radAllowDeleteNo.AutoSize = true;
-            this.radAllowDeleteNo.Location = new System.Drawing.Point(211, 0);
-            this.radAllowDeleteNo.Name = "radAllowDeleteNo";
-            this.radAllowDeleteNo.Size = new System.Drawing.Size(41, 19);
-            this.radAllowDeleteNo.TabIndex = 1;
-            this.radAllowDeleteNo.TabStop = true;
-            this.radAllowDeleteNo.Text = "No";
-            this.radAllowDeleteNo.UseVisualStyleBackColor = true;
-            // 
-            // radAllowDeleteYes
-            // 
-            this.radAllowDeleteYes.AutoSize = true;
-            this.radAllowDeleteYes.Location = new System.Drawing.Point(163, 0);
-            this.radAllowDeleteYes.Name = "radAllowDeleteYes";
-            this.radAllowDeleteYes.Size = new System.Drawing.Size(42, 19);
-            this.radAllowDeleteYes.TabIndex = 2;
-            this.radAllowDeleteYes.TabStop = true;
-            this.radAllowDeleteYes.Text = "Yes";
-            this.radAllowDeleteYes.UseVisualStyleBackColor = true;
-            // 
-            // radAllowDeletePrompt
-            // 
-            this.radAllowDeletePrompt.AutoSize = true;
-            this.radAllowDeletePrompt.Checked = true;
-            this.radAllowDeletePrompt.Location = new System.Drawing.Point(92, 0);
-            this.radAllowDeletePrompt.Name = "radAllowDeletePrompt";
-            this.radAllowDeletePrompt.Size = new System.Drawing.Size(65, 19);
-            this.radAllowDeletePrompt.TabIndex = 3;
-            this.radAllowDeletePrompt.TabStop = true;
-            this.radAllowDeletePrompt.Text = "Prompt";
-            this.radAllowDeletePrompt.UseVisualStyleBackColor = true;
             // 
             // SolutionPackagerControl
             // 
             this.Controls.Add(this.splitContainer1);
             this.Name = "SolutionPackagerControl";
-            this.Size = new System.Drawing.Size(800, 600);
+            resources.ApplyResources(this, "$this");
             this.tabsExtractOrPack.ResumeLayout(false);
             this.tabExtract.ResumeLayout(false);
             this.tabExtract.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.grpExportSolution.ResumeLayout(false);
             this.grpExportSolution.PerformLayout();
             this.tabSettings.ResumeLayout(false);
@@ -611,8 +457,6 @@ namespace AlbanianXrm.SolutionPackager
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -666,5 +510,7 @@ namespace AlbanianXrm.SolutionPackager
         private System.Windows.Forms.RadioButton radAllowDeletePrompt;
         private System.Windows.Forms.RadioButton radAllowDeleteYes;
         private System.Windows.Forms.RadioButton radAllowDeleteNo;
+        private System.Windows.Forms.Label lblLanguage;
+        private System.Windows.Forms.ComboBox cmbLanguage;
     }
 }

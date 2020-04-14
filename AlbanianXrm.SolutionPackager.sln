@@ -7,8 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbanianXrm.SolutionPackage
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "AlbanianXrm.SolutionPackager.Version", "AlbanianXrm.SolutionPackager.Version\AlbanianXrm.SolutionPackager.Version.shproj", "{C7C0FE3B-A8FC-48A4-82BF-A1EE925D2651}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlbanianXrm.SolutionPackager.Tool", "AlbanianXrm.SolutionPackager.Tool\AlbanianXrm.SolutionPackager.Tool.csproj", "{3FD66B29-1E94-4F57-9AD3-F3EAE83FF972}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		AlbanianXrm.SolutionPackager.Version\AlbanianXrm.SolutionPackager.Version.projitems*{3fd66b29-1e94-4f57-9ad3-f3eae83ff972}*SharedItemsImports = 4
 		AlbanianXrm.SolutionPackager.Version\AlbanianXrm.SolutionPackager.Version.projitems*{46e1154e-5a13-4bb8-8251-de6e69952c6b}*SharedItemsImports = 4
 		AlbanianXrm.SolutionPackager.Version\AlbanianXrm.SolutionPackager.Version.projitems*{c7c0fe3b-a8fc-48a4-82bf-a1ee925d2651}*SharedItemsImports = 13
 	EndGlobalSection
@@ -21,6 +24,10 @@ Global
 		{46E1154E-5A13-4BB8-8251-DE6E69952C6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46E1154E-5A13-4BB8-8251-DE6E69952C6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46E1154E-5A13-4BB8-8251-DE6E69952C6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FD66B29-1E94-4F57-9AD3-F3EAE83FF972}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FD66B29-1E94-4F57-9AD3-F3EAE83FF972}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FD66B29-1E94-4F57-9AD3-F3EAE83FF972}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FD66B29-1E94-4F57-9AD3-F3EAE83FF972}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

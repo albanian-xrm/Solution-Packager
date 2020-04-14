@@ -1,18 +1,16 @@
 ﻿using System.Reflection;
-using System.Resources;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-
-[assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.MainAssembly)]
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AlbanianXrm.SolutionPackager")]
+[assembly: AssemblyTitle("AlbanianXrm.SolutionPackager.Tool")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Betim Beja")]
-[assembly: AssemblyProduct("AlbanianXrm.SolutionPackager")]
-[assembly: AssemblyCopyright("Copyright © Betim Beja 2020")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("AlbanianXrm.SolutionPackager.Tool")]
+[assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -22,4 +20,6 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("46e1154e-5a13-4bb8-8251-de6e69952c6b")]
+[assembly: Guid("3fd66b29-1e94-4f57-9ad3-f3eae83ff972")]
+
+[assembly: InternalsVisibleTo("AlbanianXrm.SolutionPackager")]

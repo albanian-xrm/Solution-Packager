@@ -21,6 +21,12 @@ namespace AlbanianXrm.SolutionPackager
        ExportMetadata("SecondaryFontColor", "Gray")]
     public class AlbanianXrmPlugin : PluginBase
     {
+        public AlbanianXrmPlugin()
+        {
+            AppDomain.CurrentDomain.AssemblyResolve += new ResolveEventHandler(AssemblyResolveEventHandler);
+        }
+
+
         public override IXrmToolBoxPluginControl GetControl()
         {
             return new SolutionPackagerControl();
@@ -37,7 +43,6 @@ namespace AlbanianXrm.SolutionPackager
         private Assembly AssemblyResolveEventHandler(object sender, ResolveEventArgs args)
         {
             Assembly currAssembly = Assembly.GetExecutingAssembly();
-
             // base name of the assembly that failed to resolve
             var argName = args.Name.Substring(0, args.Name.IndexOf(",", StringComparison.InvariantCulture));
 

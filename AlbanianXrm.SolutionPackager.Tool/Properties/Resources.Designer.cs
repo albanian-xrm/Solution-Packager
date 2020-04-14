@@ -125,6 +125,15 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Launch command line.
+        /// </summary>
+        internal static string LAUNCH_COMMAND_LINE {
+            get {
+                return ResourceManager.GetString("LAUNCH_COMMAND_LINE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         internal static string MBOX_ERROR {
@@ -157,6 +166,15 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         internal static string OUTPUT_FOLDER_NOT_SPECIFIED {
             get {
                 return ResourceManager.GetString("OUTPUT_FOLDER_NOT_SPECIFIED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Program output.
+        /// </summary>
+        internal static string PROGRAM_OUTPUT {
+            get {
+                return ResourceManager.GetString("PROGRAM_OUTPUT", resourceCulture);
             }
         }
         

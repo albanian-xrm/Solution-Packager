@@ -15,11 +15,13 @@ namespace AlbanianXrm.SolutionPackager
     {
         private readonly AsyncWorkQueue asyncWorkQueue;
         private readonly RichTextBox txtOutput;
+        private readonly SolutionPackagerControl solutionPackagerControl;
 
         private const string deleteFilesQuestion = "Delete files? [Yes/No/List]:";
 
-        public SolutionPackagerCaller(AsyncWorkQueue asyncWorkQueue, RichTextBox txtOutput)
+        public SolutionPackagerCaller(SolutionPackagerControl solutionPackagerControl, AsyncWorkQueue asyncWorkQueue, RichTextBox txtOutput)
         {
+            this.solutionPackagerControl = solutionPackagerControl ?? throw new ArgumentNullException(nameof(solutionPackagerControl));
             this.asyncWorkQueue = asyncWorkQueue ?? throw new ArgumentNullException(nameof(asyncWorkQueue));
             this.txtOutput = txtOutput ?? throw new ArgumentNullException(nameof(txtOutput));
         }
@@ -180,7 +182,7 @@ namespace AlbanianXrm.SolutionPackager
                         txtOutput.Text = "";
                         txtOutput.SelectionStart = 0;
                         txtOutput.SelectionFont = new Font(txtOutput.Font.FontFamily, 12, FontStyle.Underline);
-                        txtOutput.AppendText("Launch Command Line" + Environment.NewLine);
+                        txtOutput.AppendText(Resources.LAUNCH_COMMAND_LINE + Environment.NewLine);
                         txtOutput.SelectionStart = txtOutput.TextLength;
                         txtOutput.SelectionFont = new Font(txtOutput.Font, FontStyle.Bold | FontStyle.Italic);
                         txtOutput.AppendText("SolutionPackager.exe");
@@ -198,7 +200,7 @@ namespace AlbanianXrm.SolutionPackager
                         txtOutput.AppendText(Environment.NewLine + Environment.NewLine);
                         txtOutput.SelectionStart = txtOutput.TextLength;
                         txtOutput.SelectionFont = new Font(txtOutput.Font.FontFamily, 12, FontStyle.Underline);
-                        txtOutput.AppendText("Program Output" + Environment.NewLine);
+                        txtOutput.AppendText(Resources.PROGRAM_OUTPUT + Environment.NewLine);
                         txtOutput.SelectionStart = txtOutput.TextLength;
                         txtOutput.SelectionFont = txtOutput.Font;
                     }
@@ -223,10 +225,14 @@ namespace AlbanianXrm.SolutionPackager
                 case 21:
                     {
                         var @params = args.UserState as Parameters;
-                        var dialogResponse = MessageBox.Show("There are unnecessary files. Do you want to delete them?", Resources.MBOX_INFORMATION, MessageBoxButtons.YesNo);
-                        var response = dialogResponse == DialogResult.Yes ? (@params.AllowWrite ? "Yes" : "List") : "No";
+                        DialogResult dialogResponse;
+                        using (var dialog = new SolutionPackagerDialog())
+                        {
+                            dialogResponse = dialog.ShowDialog(solutionPackagerControl);
+                        }
+                        var response = dialogResponse == DialogResult.Yes ? "Yes" : (dialogResponse == DialogResult.Retry ? "List" : "No");
                         @params.StandardInput.WriteLine(response);
-                        txtOutput.AppendText(response + Environment.NewLine);
+                        txtOutput.AppendText(" " + response + Environment.NewLine);
                     }
                     break;
             }

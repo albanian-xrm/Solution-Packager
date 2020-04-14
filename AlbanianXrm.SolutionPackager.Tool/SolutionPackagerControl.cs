@@ -1,7 +1,9 @@
-﻿using AlbanianXrm.SolutionPackager.Properties;
+﻿using AlbanianXrm.SolutionPackager.Extensions;
+using AlbanianXrm.SolutionPackager.Properties;
 using McTools.Xrm.Connection;
 using Microsoft.Xrm.Sdk;
 using System;
+using System.ComponentModel;
 using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
@@ -30,12 +32,13 @@ namespace AlbanianXrm.SolutionPackager
 
         public SolutionPackagerControl()
         {
+            CultureInfo.CurrentUICulture = CultureInfo.GetCultureInfo("it-IT");
             InitializeComponent();
 
             pluginViewModel = new PluginViewModel();
             asyncWorkQueue = new AsyncWorkQueue(this, pluginViewModel);
             coreToolsDownloader = new CoreToolsDownloader(asyncWorkQueue, txtCoreTools);
-            solutionPackagerCaller = new SolutionPackagerCaller(asyncWorkQueue, txtOutput);
+            solutionPackagerCaller = new SolutionPackagerCaller(this, asyncWorkQueue, txtOutput);
             crmSolutionManager = new CrmSolutionManager(this, asyncWorkQueue, solutionPackagerCaller, cmbCrmSolutions);
 
             localOrCrm.DataBindings.Add(nameof(localOrCrm.Enabled), pluginViewModel, nameof(pluginViewModel.HasConnection));
@@ -94,6 +97,11 @@ namespace AlbanianXrm.SolutionPackager
             if (txtOutputFolder.Text.Length == 0)
             {
                 errorProvider.SetError(txtOutputFolder, Resources.OUTPUT_FOLDER_NOT_SPECIFIED);
+                nrErrors += 1;
+            }
+            if (CoreToolsDownloader.GetSolutionPackagerVersion() == null)
+            {
+                errorProvider.SetError(tabSettings, Resources.SOLUTIONPACKAGER_MISSING);
                 nrErrors += 1;
             }
             if (localOrCrm.Checked)
@@ -175,6 +183,25 @@ namespace AlbanianXrm.SolutionPackager
             txtNuGetFeed.Text = "https://packages.nuget.org/api/v2";
         }
 
+        private void CmbLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (cmbLanguage.SelectedIndex)
+            {
+                case 1:
+                    Resources.Culture = CultureInfo.GetCultureInfo("it-IT");
+
+                    break;
+                default:
+                    Resources.Culture = CultureInfo.GetCultureInfo("en-US");
+                    break;
+            }
+
+            ComponentResourceManager resources = new ComponentResourceManager(typeof(SolutionPackagerControl));
+            foreach (Control c in this.GetAllControls())
+            {              
+                resources.ApplyResources(c, c.Name, Resources.Culture);
+            }
+        }
         #endregion
 
         private void TabsExtractOrPack_Selected(object sender, TabControlEventArgs e)
@@ -184,5 +211,7 @@ namespace AlbanianXrm.SolutionPackager
                 txtCoreTools.Text = CoreToolsDownloader.GetSolutionPackagerVersion()?.ToString() ?? Resources.SOLUTIONPACKAGER_MISSING;
             }
         }
+
+
     }
 }
