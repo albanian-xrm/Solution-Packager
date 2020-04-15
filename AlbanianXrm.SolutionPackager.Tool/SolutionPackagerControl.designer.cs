@@ -353,12 +353,11 @@ namespace AlbanianXrm.SolutionPackager
             // 
             // cmbLanguage
             // 
+            this.cmbLanguage.DisplayMember = "DisplayName";
             this.cmbLanguage.FormattingEnabled = true;
-            this.cmbLanguage.Items.AddRange(new object[] {
-            resources.GetString("cmbLanguage.Items"),
-            resources.GetString("cmbLanguage.Items1")});
             resources.ApplyResources(this.cmbLanguage, "cmbLanguage");
             this.cmbLanguage.Name = "cmbLanguage";
+            this.cmbLanguage.ValueMember = "Name";
             this.cmbLanguage.SelectedIndexChanged += new System.EventHandler(this.CmbLanguage_SelectedIndexChanged);
             // 
             // lblLanguage

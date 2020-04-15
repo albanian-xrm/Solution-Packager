@@ -32,7 +32,6 @@ namespace AlbanianXrm.SolutionPackager
 
         public SolutionPackagerControl()
         {
-            CultureInfo.CurrentUICulture = CultureInfo.GetCultureInfo("it-IT");
             InitializeComponent();
 
             pluginViewModel = new PluginViewModel();
@@ -46,6 +45,27 @@ namespace AlbanianXrm.SolutionPackager
 
             btnRefreshSolutions.DataBindings.Add(nameof(btnRefreshSolutions.Enabled), pluginViewModel, nameof(pluginViewModel.LocalOrCrm));
             tabsExtractOrPack.DataBindings.Add(nameof(tabsExtractOrPack.Enabled), pluginViewModel, nameof(pluginViewModel.AllowRequests));
+
+            txtCoreTools.DataBindings.Add(nameof(txtCoreTools.Text), pluginViewModel, nameof(pluginViewModel.SolutionPackagerVersion));
+
+            pluginViewModel.PropertyChanged += PluginViewModel_PropertyChanged;
+
+            cmbLanguage.Items.AddRange(new object[] { CultureInfo.GetCultureInfo("en"), CultureInfo.GetCultureInfo("it") });
+            cmbLanguage.SelectedIndex = 0;
+
+
+        }
+
+        private void PluginViewModel_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(pluginViewModel.CultureInfo))
+            {
+                ComponentResourceManager resources = new ComponentResourceManager(typeof(SolutionPackagerControl));
+                foreach (Control c in this.GetAllControls())
+                {
+                    resources.ApplyResources(c, c.Name, Resources.Culture);
+                }
+            }
         }
 
         #region Extract
@@ -185,22 +205,7 @@ namespace AlbanianXrm.SolutionPackager
 
         private void CmbLanguage_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (cmbLanguage.SelectedIndex)
-            {
-                case 1:
-                    Resources.Culture = CultureInfo.GetCultureInfo("it-IT");
-
-                    break;
-                default:
-                    Resources.Culture = CultureInfo.GetCultureInfo("en-US");
-                    break;
-            }
-
-            ComponentResourceManager resources = new ComponentResourceManager(typeof(SolutionPackagerControl));
-            foreach (Control c in this.GetAllControls())
-            {              
-                resources.ApplyResources(c, c.Name, Resources.Culture);
-            }
+            pluginViewModel.CultureInfo = cmbLanguage.Items[cmbLanguage.SelectedIndex] as CultureInfo;
         }
         #endregion
 
@@ -208,7 +213,7 @@ namespace AlbanianXrm.SolutionPackager
         {
             if (e.Action == TabControlAction.Selected && e.TabPage == tabSettings)
             {
-                txtCoreTools.Text = CoreToolsDownloader.GetSolutionPackagerVersion()?.ToString() ?? Resources.SOLUTIONPACKAGER_MISSING;
+                pluginViewModel.SolutionPackagerVersion = CoreToolsDownloader.GetSolutionPackagerVersion()?.ToString();
             }
         }
 

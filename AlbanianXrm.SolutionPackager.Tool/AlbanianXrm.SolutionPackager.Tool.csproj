@@ -196,16 +196,6 @@
     <Compile Include="SolutionPackagerControl.designer.cs">
       <DependentUpon>SolutionPackagerControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="SolutionPackagerControl.it.Designer.cs">
-      <DependentUpon>SolutionPackagerControl.it.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="SolutionPackagerControl1.Designer.cs">
-      <DependentUpon>SolutionPackagerControl.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="SolutionPackagerDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,14 +224,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SolutionPackagerControl.it.resx">
       <DependentUpon>SolutionPackagerControl.cs</DependentUpon>
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>SolutionPackagerControl.it.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>AlbanianXrm.SolutionPackager.FormLocalization</CustomToolNamespace>
     </EmbeddedResource>
     <EmbeddedResource Include="SolutionPackagerControl.resx">
       <DependentUpon>SolutionPackagerControl.cs</DependentUpon>
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>SolutionPackagerControl1.Designer.cs</LastGenOutput>
       <CustomToolNamespace>AlbanianXrm.SolutionPackager.FormLocalization</CustomToolNamespace>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="SolutionPackagerDialog.resx">
       <DependentUpon>SolutionPackagerDialog.cs</DependentUpon>

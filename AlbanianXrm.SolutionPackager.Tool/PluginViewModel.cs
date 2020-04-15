@@ -1,4 +1,6 @@
-﻿using System.ComponentModel;
+﻿using AlbanianXrm.SolutionPackager.Properties;
+using System.ComponentModel;
+using System.Globalization;
 
 namespace AlbanianXrm.SolutionPackager
 {
@@ -52,7 +54,6 @@ namespace AlbanianXrm.SolutionPackager
             }
         }
 
-
         private bool _LocalOrCrm = false;
         public bool LocalOrCrm
         {
@@ -64,6 +65,34 @@ namespace AlbanianXrm.SolutionPackager
 
                 if (_HasConnection)
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(LocalOrCrm)));
+            }
+        }
+
+        private string _SolutionPackagerVersion;
+        public string SolutionPackagerVersion
+        {
+            get { return _SolutionPackagerVersion ?? Resources.SOLUTIONPACKAGER_MISSING; }
+            set
+            {
+                if (_SolutionPackagerVersion == value) return;
+                _SolutionPackagerVersion = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SolutionPackagerVersion)));
+            }
+        }
+
+        public CultureInfo CultureInfo
+        {
+            get { return Resources.Culture; }
+            set
+            {
+                if (Resources.Culture != null && Resources.Culture.Equals(value) || Resources.Culture == value) return;
+                Resources.Culture = value;
+
+                if (_SolutionPackagerVersion == null)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SolutionPackagerVersion)));
+                }
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CultureInfo)));
             }
         }
     }

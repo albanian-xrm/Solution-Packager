@@ -1029,12 +1029,6 @@
   <data name="&gt;&gt;tabPack.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="cmbLanguage.Items" xml:space="preserve">
-    <value>English</value>
-  </data>
-  <data name="cmbLanguage.Items1" xml:space="preserve">
-    <value>Italiano</value>
-  </data>
   <data name="cmbLanguage.Location" type="System.Drawing.Point, System.Drawing">
     <value>110, 67</value>
   </data>
@@ -1236,9 +1230,6 @@
   <data name="txtCoreTools.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="txtCoreTools.Text" xml:space="preserve">
-    <value />
-  </data>
   <data name="txtCoreTools.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -1308,12 +1299,12 @@
   <data name="&gt;&gt;tabsExtractOrPack.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="errorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="errorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  </data>
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
+  </data>
   <data name="splitContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -1422,12 +1413,12 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>XrmToolBox.Extensibility.PluginControlBase, XrmToolBox.Extensibility, Version=1.2020.2.37, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <metadata name="selectFolder.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="selectFolder.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>140, 17</value>
-  </metadata>
-  <metadata name="openZipFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  </data>
+  <data name="openZipFile.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>257, 17</value>
-  </metadata>
+  </data>
   <data name="openZipFile.Filter" xml:space="preserve">
     <value>Solution|*.zip|All Files|*.*</value>
   </data>
