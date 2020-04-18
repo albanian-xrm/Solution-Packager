@@ -30,6 +30,9 @@ namespace AlbanianXrm.SolutionPackager
         private readonly CrmSolutionManager crmSolutionManager;
         private readonly SolutionPackagerCaller solutionPackagerCaller;
 
+        private readonly string[] packageTypes = new string[] { null, "Unmanaged", "Managed", "Both" };
+        private readonly string[] errorLevels = new string[] { "Off", "Error", "Warning", "Info", "Verbose" };
+
         public SolutionPackagerControl()
         {
             InitializeComponent();
@@ -52,8 +55,8 @@ namespace AlbanianXrm.SolutionPackager
 
             cmbLanguage.Items.AddRange(new object[] { CultureInfo.GetCultureInfo("en"), CultureInfo.GetCultureInfo("it") });
             cmbLanguage.SelectedIndex = 0;
-
-
+            cmbPackageType.SelectedIndex = 0;
+            cmbErrorLevel.SelectedIndex = 3;
         }
 
         private void PluginViewModel_PropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -150,8 +153,14 @@ namespace AlbanianXrm.SolutionPackager
             {
                 ZipFile = txtZipPath.Text,
                 OutputFolder = txtOutputFolder.Text,
+                PackageType = packageTypes[cmbPackageType.SelectedIndex],
                 AllowWrite = chkAllowWrite.Checked,
-                AllowDelete = radAllowDeleteYes.Checked ? true : (radAllowDeleteNo.Checked ? false : default(bool?))
+                AllowDelete = radAllowDeleteYes.Checked ? true : (radAllowDeleteNo.Checked ? false : default(bool?)),
+                Clobber = chkClobber.Checked,
+                ErrorLevel = errorLevels[cmbErrorLevel.SelectedIndex],
+                NoLogo = !chkBanner.Checked,
+                Localize = chkLocalize.Checked,
+                FormatXml = chkFormatDocument.Checked
             };
 
             if (localOrCrm.Checked)

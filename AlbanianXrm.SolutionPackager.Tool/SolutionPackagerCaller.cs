@@ -69,13 +69,36 @@ namespace AlbanianXrm.SolutionPackager
                 EnableRaisingEvents = true
             };
 
+            if (!string.IsNullOrEmpty(@params.PackageType))
+            {
+                process.StartInfo.Arguments += " /packagetype:" + @params.PackageType;
+            }
+
             if (!@params.AllowWrite)
             {
                 process.StartInfo.Arguments += " /allowWrite:No";
             }
+
             if (@params.AllowDelete.HasValue)
             {
                 process.StartInfo.Arguments += " /allowDelete:" + (@params.AllowDelete.Value ? "Yes" : "No");
+            }
+
+            if (@params.Clobber)
+            {
+                process.StartInfo.Arguments += " /clobber";
+            }
+
+            process.StartInfo.Arguments += " /errorlevel:" + @params.ErrorLevel;
+
+            if (@params.NoLogo)
+            {
+                process.StartInfo.Arguments += " /nologo";
+            }
+
+            if (@params.Localize)
+            {
+                process.StartInfo.Arguments += " /localize";
             }
 
             //Report call parameters
@@ -161,14 +184,15 @@ namespace AlbanianXrm.SolutionPackager
             }
         }
 
-        private void AppendArgument(string argument, string value)
+        private void AppendArgument(string argument, string value = null)
         {
             txtOutput.SelectionStart = txtOutput.TextLength;
             txtOutput.SelectionFont = new Font(txtOutput.Font, FontStyle.Bold);
-            txtOutput.AppendText(" /" + argument + ":");
+            txtOutput.AppendText(" /" + argument + (value != null ? ":" : ""));
             txtOutput.SelectionStart = txtOutput.TextLength;
             txtOutput.SelectionFont = txtOutput.Font;
-            txtOutput.AppendText(value);
+            if (value != null)
+                txtOutput.AppendText(value);
         }
 
         private void ExtractSolutionProgress(ProgressChangedEventArgs args)
@@ -189,6 +213,10 @@ namespace AlbanianXrm.SolutionPackager
                         AppendArgument("Action", "Extract");
                         AppendArgument("zipfile", $"\"{@params.ZipFile}\"");
                         AppendArgument("folder", $"\"{@params.OutputFolder}\"");
+                        if (!string.IsNullOrEmpty(@params.PackageType))
+                        {
+                            AppendArgument("packagetype", @params.PackageType);
+                        }
                         if (!@params.AllowWrite)
                         {
                             AppendArgument("allowWrite", "No");
@@ -196,6 +224,19 @@ namespace AlbanianXrm.SolutionPackager
                         if (@params.AllowDelete.HasValue)
                         {
                             AppendArgument("allowDelete", @params.AllowDelete.Value ? "Yes" : "No");
+                        }
+                        if (@params.Clobber)
+                        {
+                            AppendArgument("clobber");
+                        }
+                        AppendArgument("errorlevel", @params.ErrorLevel);
+                        if (@params.NoLogo)
+                        {
+                            AppendArgument("nologo");
+                        }
+                        if (@params.Localize)
+                        {
+                            AppendArgument("localize");
                         }
                         txtOutput.AppendText(Environment.NewLine + Environment.NewLine);
                         txtOutput.SelectionStart = txtOutput.TextLength;
@@ -258,9 +299,19 @@ namespace AlbanianXrm.SolutionPackager
 
             public bool FormatXml { get; set; }
 
+            public string PackageType { get; set; }
+
             public bool AllowWrite { get; set; }
 
             public bool? AllowDelete { get; set; }
+
+            public bool Clobber { get; set; }
+
+            public string ErrorLevel { get; set; }
+
+            public bool NoLogo { get; set; }
+
+            public bool Localize { get; set; }
 
             public StreamWriter StandardInput { get; set; }
         }

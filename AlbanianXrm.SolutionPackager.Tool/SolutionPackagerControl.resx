@@ -118,10 +118,248 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="radAllowDeletePrompt.AutoSize" type="System.Boolean, mscorlib">
+  <data name="chkFormatDocument.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="chkFormatDocument.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <metadata name="helpProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>372, 17</value>
+  </metadata>
+  <data name="chkFormatDocument.HelpString" xml:space="preserve">
+    <value>Post processing of xml files to put attributes on new line to minimize file diff</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="chkFormatDocument.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkFormatDocument.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 256</value>
+  </data>
+  <data name="chkFormatDocument.ShowHelp" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkFormatDocument.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 19</value>
+  </data>
+  <data name="chkFormatDocument.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="chkFormatDocument.Text" xml:space="preserve">
+    <value>Format XML*?  </value>
+  </data>
+  <data name="&gt;&gt;chkFormatDocument.Name" xml:space="preserve">
+    <value>chkFormatDocument</value>
+  </data>
+  <data name="&gt;&gt;chkFormatDocument.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkFormatDocument.Parent" xml:space="preserve">
+    <value>tabExtract</value>
+  </data>
+  <data name="&gt;&gt;chkFormatDocument.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="chkLocalize.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkLocalize.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="chkLocalize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkLocalize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>172, 224</value>
+  </data>
+  <data name="chkLocalize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 19</value>
+  </data>
+  <data name="chkLocalize.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="chkLocalize.Text" xml:space="preserve">
+    <value>Localize?  </value>
+  </data>
+  <data name="&gt;&gt;chkLocalize.Name" xml:space="preserve">
+    <value>chkLocalize</value>
+  </data>
+  <data name="&gt;&gt;chkLocalize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkLocalize.Parent" xml:space="preserve">
+    <value>tabExtract</value>
+  </data>
+  <data name="&gt;&gt;chkLocalize.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblErrorLevel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblErrorLevel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblErrorLevel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 192</value>
+  </data>
+  <data name="lblErrorLevel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 15</value>
+  </data>
+  <data name="lblErrorLevel.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="lblErrorLevel.Text" xml:space="preserve">
+    <value>Error Level</value>
+  </data>
+  <data name="&gt;&gt;lblErrorLevel.Name" xml:space="preserve">
+    <value>lblErrorLevel</value>
+  </data>
+  <data name="&gt;&gt;lblErrorLevel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblErrorLevel.Parent" xml:space="preserve">
+    <value>tabExtract</value>
+  </data>
+  <data name="&gt;&gt;lblErrorLevel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cmbErrorLevel.Items" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="cmbErrorLevel.Items1" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="cmbErrorLevel.Items2" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="cmbErrorLevel.Items3" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="cmbErrorLevel.Items4" xml:space="preserve">
+    <value>Verbose</value>
+  </data>
+  <data name="cmbErrorLevel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>94, 189</value>
+  </data>
+  <data name="cmbErrorLevel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 23</value>
+  </data>
+  <data name="cmbErrorLevel.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="&gt;&gt;cmbErrorLevel.Name" xml:space="preserve">
+    <value>cmbErrorLevel</value>
+  </data>
+  <data name="&gt;&gt;cmbErrorLevel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmbErrorLevel.Parent" xml:space="preserve">
+    <value>tabExtract</value>
+  </data>
+  <data name="&gt;&gt;cmbErrorLevel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="chkBanner.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkBanner.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="chkBanner.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkBanner.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 224</value>
+  </data>
+  <data name="chkBanner.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 19</value>
+  </data>
+  <data name="chkBanner.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="chkBanner.Text" xml:space="preserve">
+    <value>Show Banner?  </value>
+  </data>
+  <data name="&gt;&gt;chkBanner.Name" xml:space="preserve">
+    <value>chkBanner</value>
+  </data>
+  <data name="&gt;&gt;chkBanner.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkBanner.Parent" xml:space="preserve">
+    <value>tabExtract</value>
+  </data>
+  <data name="&gt;&gt;chkBanner.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="chkClobber.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkClobber.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="chkClobber.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkClobber.Location" type="System.Drawing.Point, System.Drawing">
+    <value>172, 127</value>
+  </data>
+  <data name="chkClobber.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 19</value>
+  </data>
+  <data name="chkClobber.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="chkClobber.Text" xml:space="preserve">
+    <value>Clobber?  </value>
+  </data>
+  <data name="&gt;&gt;chkClobber.Name" xml:space="preserve">
+    <value>chkClobber</value>
+  </data>
+  <data name="&gt;&gt;chkClobber.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkClobber.Parent" xml:space="preserve">
+    <value>tabExtract</value>
+  </data>
+  <data name="&gt;&gt;chkClobber.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblPackageType.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPackageType.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblPackageType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 96</value>
+  </data>
+  <data name="lblPackageType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 15</value>
+  </data>
+  <data name="lblPackageType.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="lblPackageType.Text" xml:space="preserve">
+    <value>Package Type</value>
+  </data>
+  <data name="&gt;&gt;lblPackageType.Name" xml:space="preserve">
+    <value>lblPackageType</value>
+  </data>
+  <data name="&gt;&gt;lblPackageType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPackageType.Parent" xml:space="preserve">
+    <value>tabExtract</value>
+  </data>
+  <data name="&gt;&gt;lblPackageType.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="radAllowDeletePrompt.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="radAllowDeletePrompt.Location" type="System.Drawing.Point, System.Drawing">
     <value>92, 8</value>
   </data>
@@ -228,7 +466,7 @@
     <value>3</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 120</value>
+    <value>0, 152</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>432, 31</value>
@@ -246,7 +484,40 @@
     <value>tabExtract</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>7</value>
+  </data>
+  <data name="cmbPackageType.Items" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmbPackageType.Items1" xml:space="preserve">
+    <value>Unmanaged</value>
+  </data>
+  <data name="cmbPackageType.Items2" xml:space="preserve">
+    <value>Managed</value>
+  </data>
+  <data name="cmbPackageType.Items3" xml:space="preserve">
+    <value>Both</value>
+  </data>
+  <data name="cmbPackageType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>94, 93</value>
+  </data>
+  <data name="cmbPackageType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 23</value>
+  </data>
+  <data name="cmbPackageType.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;cmbPackageType.Name" xml:space="preserve">
+    <value>cmbPackageType</value>
+  </data>
+  <data name="&gt;&gt;cmbPackageType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmbPackageType.Parent" xml:space="preserve">
+    <value>tabExtract</value>
+  </data>
+  <data name="&gt;&gt;cmbPackageType.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
   <data name="chkAllowWrite.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -255,7 +526,7 @@
     <value>MiddleRight</value>
   </data>
   <data name="chkAllowWrite.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 96</value>
+    <value>7, 128</value>
   </data>
   <data name="chkAllowWrite.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 19</value>
@@ -276,7 +547,7 @@
     <value>tabExtract</value>
   </data>
   <data name="&gt;&gt;chkAllowWrite.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>9</value>
   </data>
   <data name="lblExportAs.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -660,7 +931,7 @@
     <value>True</value>
   </data>
   <data name="lblOnlineSolution.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
+    <value>7, 19</value>
   </data>
   <data name="lblOnlineSolution.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 15</value>
@@ -684,7 +955,7 @@
     <value>14</value>
   </data>
   <data name="cmbCrmSolutions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>93, 16</value>
+    <value>94, 16</value>
   </data>
   <data name="cmbCrmSolutions.Size" type="System.Drawing.Size, System.Drawing">
     <value>270, 23</value>
@@ -704,7 +975,6 @@
   <data name="&gt;&gt;cmbCrmSolutions.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnRefreshSolutions.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
@@ -730,7 +1000,7 @@
     <value>16</value>
   </data>
   <data name="grpExportSolution.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 212</value>
+    <value>0, 363</value>
   </data>
   <data name="grpExportSolution.Size" type="System.Drawing.Size, System.Drawing">
     <value>432, 178</value>
@@ -751,10 +1021,10 @@
     <value>tabExtract</value>
   </data>
   <data name="&gt;&gt;grpExportSolution.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>10</value>
   </data>
   <data name="btnExtract.Location" type="System.Drawing.Point, System.Drawing">
-    <value>341, 185</value>
+    <value>341, 312</value>
   </data>
   <data name="btnExtract.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -775,7 +1045,7 @@
     <value>tabExtract</value>
   </data>
   <data name="&gt;&gt;btnExtract.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>11</value>
   </data>
   <data name="btnOutputFolder.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -799,7 +1069,7 @@
     <value>tabExtract</value>
   </data>
   <data name="&gt;&gt;btnOutputFolder.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>12</value>
   </data>
   <data name="btnOpenZip.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -823,10 +1093,10 @@
     <value>tabExtract</value>
   </data>
   <data name="&gt;&gt;btnOpenZip.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>13</value>
   </data>
   <data name="txtOutputFolder.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 60</value>
+    <value>94, 60</value>
   </data>
   <data name="txtOutputFolder.Multiline" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -856,7 +1126,7 @@
     <value>tabExtract</value>
   </data>
   <data name="&gt;&gt;txtOutputFolder.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>14</value>
   </data>
   <data name="lblExtractZipPath.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -883,7 +1153,7 @@
     <value>tabExtract</value>
   </data>
   <data name="&gt;&gt;lblExtractZipPath.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>15</value>
   </data>
   <data name="lblOutputFolder.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -910,7 +1180,7 @@
     <value>tabExtract</value>
   </data>
   <data name="&gt;&gt;lblOutputFolder.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>16</value>
   </data>
   <data name="txtZipPath.Location" type="System.Drawing.Point, System.Drawing">
     <value>94, 28</value>
@@ -943,7 +1213,7 @@
     <value>tabExtract</value>
   </data>
   <data name="&gt;&gt;txtZipPath.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>17</value>
   </data>
   <data name="localOrCrm.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -973,7 +1243,7 @@
     <value>tabExtract</value>
   </data>
   <data name="&gt;&gt;localOrCrm.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>18</value>
   </data>
   <data name="tabExtract.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 24</value>
@@ -1230,6 +1500,9 @@
   <data name="txtCoreTools.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
+  <data name="txtCoreTools.Text" xml:space="preserve">
+    <value />
+  </data>
   <data name="txtCoreTools.WordWrap" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -1299,12 +1572,12 @@
   <data name="&gt;&gt;tabsExtractOrPack.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="errorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing">
+  <metadata name="errorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
-  </data>
-  <data name="$this.Localizable" type="System.Boolean, mscorlib">
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </data>
+  </metadata>
   <data name="splitContainer1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -1407,18 +1680,24 @@
   <data name="&gt;&gt;openZipFile.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;helpProvider.Name" xml:space="preserve">
+    <value>helpProvider</value>
+  </data>
+  <data name="&gt;&gt;helpProvider.Type" xml:space="preserve">
+    <value>System.Windows.Forms.HelpProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SolutionPackagerControl</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>XrmToolBox.Extensibility.PluginControlBase, XrmToolBox.Extensibility, Version=1.2020.2.37, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="selectFolder.TrayLocation" type="System.Drawing.Point, System.Drawing">
+  <metadata name="selectFolder.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>140, 17</value>
-  </data>
-  <data name="openZipFile.TrayLocation" type="System.Drawing.Point, System.Drawing">
+  </metadata>
+  <metadata name="openZipFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>257, 17</value>
-  </data>
+  </metadata>
   <data name="openZipFile.Filter" xml:space="preserve">
     <value>Solution|*.zip|All Files|*.*</value>
   </data>

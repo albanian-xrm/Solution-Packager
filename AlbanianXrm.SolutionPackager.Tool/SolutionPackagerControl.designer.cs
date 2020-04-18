@@ -16,11 +16,19 @@ namespace AlbanianXrm.SolutionPackager
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SolutionPackagerControl));
             this.tabsExtractOrPack = new System.Windows.Forms.TabControl();
             this.tabExtract = new System.Windows.Forms.TabPage();
+            this.chkFormatDocument = new System.Windows.Forms.CheckBox();
+            this.chkLocalize = new System.Windows.Forms.CheckBox();
+            this.lblErrorLevel = new System.Windows.Forms.Label();
+            this.cmbErrorLevel = new System.Windows.Forms.ComboBox();
+            this.chkBanner = new System.Windows.Forms.CheckBox();
+            this.chkClobber = new System.Windows.Forms.CheckBox();
+            this.lblPackageType = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.radAllowDeletePrompt = new System.Windows.Forms.RadioButton();
             this.radAllowDeleteYes = new System.Windows.Forms.RadioButton();
             this.radAllowDeleteNo = new System.Windows.Forms.RadioButton();
             this.lblAllowDelete = new System.Windows.Forms.Label();
+            this.cmbPackageType = new System.Windows.Forms.ComboBox();
             this.chkAllowWrite = new System.Windows.Forms.CheckBox();
             this.grpExportSolution = new System.Windows.Forms.GroupBox();
             this.lblExportAs = new System.Windows.Forms.Label();
@@ -63,6 +71,7 @@ namespace AlbanianXrm.SolutionPackager
             this.openZipFile = new System.Windows.Forms.OpenFileDialog();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.txtOutput = new System.Windows.Forms.RichTextBox();
+            this.helpProvider = new System.Windows.Forms.HelpProvider();
             this.tabsExtractOrPack.SuspendLayout();
             this.tabExtract.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -87,7 +96,15 @@ namespace AlbanianXrm.SolutionPackager
             // 
             // tabExtract
             // 
+            this.tabExtract.Controls.Add(this.chkFormatDocument);
+            this.tabExtract.Controls.Add(this.chkLocalize);
+            this.tabExtract.Controls.Add(this.lblErrorLevel);
+            this.tabExtract.Controls.Add(this.cmbErrorLevel);
+            this.tabExtract.Controls.Add(this.chkBanner);
+            this.tabExtract.Controls.Add(this.chkClobber);
+            this.tabExtract.Controls.Add(this.lblPackageType);
             this.tabExtract.Controls.Add(this.panel1);
+            this.tabExtract.Controls.Add(this.cmbPackageType);
             this.tabExtract.Controls.Add(this.chkAllowWrite);
             this.tabExtract.Controls.Add(this.grpExportSolution);
             this.tabExtract.Controls.Add(this.btnExtract);
@@ -101,6 +118,60 @@ namespace AlbanianXrm.SolutionPackager
             resources.ApplyResources(this.tabExtract, "tabExtract");
             this.tabExtract.Name = "tabExtract";
             this.tabExtract.UseVisualStyleBackColor = true;
+            // 
+            // chkFormatDocument
+            // 
+            resources.ApplyResources(this.chkFormatDocument, "chkFormatDocument");
+            this.chkFormatDocument.Checked = true;
+            this.chkFormatDocument.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.helpProvider.SetHelpString(this.chkFormatDocument, resources.GetString("chkFormatDocument.HelpString"));
+            this.chkFormatDocument.Name = "chkFormatDocument";
+            this.helpProvider.SetShowHelp(this.chkFormatDocument, ((bool)(resources.GetObject("chkFormatDocument.ShowHelp"))));
+            this.chkFormatDocument.UseVisualStyleBackColor = true;
+            // 
+            // chkLocalize
+            // 
+            resources.ApplyResources(this.chkLocalize, "chkLocalize");
+            this.chkLocalize.Name = "chkLocalize";
+            this.chkLocalize.UseVisualStyleBackColor = true;
+            // 
+            // lblErrorLevel
+            // 
+            resources.ApplyResources(this.lblErrorLevel, "lblErrorLevel");
+            this.lblErrorLevel.Name = "lblErrorLevel";
+            // 
+            // cmbErrorLevel
+            // 
+            this.cmbErrorLevel.DisplayMember = "FriendlyName";
+            this.cmbErrorLevel.FormattingEnabled = true;
+            this.cmbErrorLevel.Items.AddRange(new object[] {
+            resources.GetString("cmbErrorLevel.Items"),
+            resources.GetString("cmbErrorLevel.Items1"),
+            resources.GetString("cmbErrorLevel.Items2"),
+            resources.GetString("cmbErrorLevel.Items3"),
+            resources.GetString("cmbErrorLevel.Items4")});
+            resources.ApplyResources(this.cmbErrorLevel, "cmbErrorLevel");
+            this.cmbErrorLevel.Name = "cmbErrorLevel";
+            this.cmbErrorLevel.ValueMember = "SolutionId";
+            // 
+            // chkBanner
+            // 
+            resources.ApplyResources(this.chkBanner, "chkBanner");
+            this.chkBanner.Checked = true;
+            this.chkBanner.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkBanner.Name = "chkBanner";
+            this.chkBanner.UseVisualStyleBackColor = true;
+            // 
+            // chkClobber
+            // 
+            resources.ApplyResources(this.chkClobber, "chkClobber");
+            this.chkClobber.Name = "chkClobber";
+            this.chkClobber.UseVisualStyleBackColor = true;
+            // 
+            // lblPackageType
+            // 
+            resources.ApplyResources(this.lblPackageType, "lblPackageType");
+            this.lblPackageType.Name = "lblPackageType";
             // 
             // panel1
             // 
@@ -137,6 +208,19 @@ namespace AlbanianXrm.SolutionPackager
             // 
             resources.ApplyResources(this.lblAllowDelete, "lblAllowDelete");
             this.lblAllowDelete.Name = "lblAllowDelete";
+            // 
+            // cmbPackageType
+            // 
+            this.cmbPackageType.DisplayMember = "FriendlyName";
+            this.cmbPackageType.FormattingEnabled = true;
+            this.cmbPackageType.Items.AddRange(new object[] {
+            resources.GetString("cmbPackageType.Items"),
+            resources.GetString("cmbPackageType.Items1"),
+            resources.GetString("cmbPackageType.Items2"),
+            resources.GetString("cmbPackageType.Items3")});
+            resources.ApplyResources(this.cmbPackageType, "cmbPackageType");
+            this.cmbPackageType.Name = "cmbPackageType";
+            this.cmbPackageType.ValueMember = "SolutionId";
             // 
             // chkAllowWrite
             // 
@@ -511,5 +595,14 @@ namespace AlbanianXrm.SolutionPackager
         private System.Windows.Forms.RadioButton radAllowDeleteNo;
         private System.Windows.Forms.Label lblLanguage;
         private System.Windows.Forms.ComboBox cmbLanguage;
+        private System.Windows.Forms.Label lblPackageType;
+        private System.Windows.Forms.ComboBox cmbPackageType;
+        private System.Windows.Forms.CheckBox chkClobber;
+        private System.Windows.Forms.CheckBox chkBanner;
+        private System.Windows.Forms.Label lblErrorLevel;
+        private System.Windows.Forms.ComboBox cmbErrorLevel;
+        private System.Windows.Forms.CheckBox chkLocalize;
+        private System.Windows.Forms.CheckBox chkFormatDocument;
+        private System.Windows.Forms.HelpProvider helpProvider;
     }
 }
