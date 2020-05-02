@@ -120,6 +120,9 @@
   <data name="btnExtract.Text" xml:space="preserve">
     <value>Estrai</value>
   </data>
+  <data name="btnSaveSettings.Text" xml:space="preserve">
+    <value>Salva</value>
+  </data>
   <data name="localOrCrm.Text" xml:space="preserve">
     <value>Scaricare la solution dalla organizzazione?</value>
   </data>

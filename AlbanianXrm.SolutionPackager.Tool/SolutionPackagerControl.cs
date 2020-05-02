@@ -29,12 +29,14 @@ namespace AlbanianXrm.SolutionPackager
         private readonly CoreToolsDownloader coreToolsDownloader;
         private readonly CrmSolutionManager crmSolutionManager;
         private readonly SolutionPackagerCaller solutionPackagerCaller;
+        private readonly Type pluginType;
 
         private readonly string[] packageTypes = new string[] { null, "Unmanaged", "Managed", "Both" };
         private readonly string[] errorLevels = new string[] { "Off", "Error", "Warning", "Info", "Verbose" };
 
-        public SolutionPackagerControl()
+        public SolutionPackagerControl(Type pluginType)
         {
+            this.pluginType = pluginType;
             InitializeComponent();
 
             pluginViewModel = new PluginViewModel();
@@ -73,9 +75,11 @@ namespace AlbanianXrm.SolutionPackager
 
         private void SolutionPackagerControl_Load(object sender, EventArgs e)
         {
+#pragma warning disable IDE0018 // Inline variable declaration
             Settings settings;
+#pragma warning restore IDE0018 // Inline variable declaration
             // Loads or creates the settings for the plugin
-            if (!SettingsManager.Instance.TryLoad(GetType(), out settings))
+            if (!SettingsManager.Instance.TryLoad(pluginType, out settings))
             {
                 LogWarning(Resources.SETTINGS_NOT_FOUND);
                 return;
@@ -106,17 +110,6 @@ namespace AlbanianXrm.SolutionPackager
             }
 
             info.Cancel = MessageBox.Show(Resources.QUESTION_CLOSE_TOOL, Resources.QUESTION, MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes;
-        }
-
-        /// <summary>
-        /// This event occurs when the plugin is closed
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void SolutionPackagerControl_OnCloseTool(object sender, EventArgs e)
-        {
-            LogInfo(Resources.SETTINGS_SAVING);
-            SettingsManager.Instance.Save(GetType(), pluginViewModel.Settings);
         }
 
         #region Extract
@@ -260,6 +253,12 @@ namespace AlbanianXrm.SolutionPackager
             txtNuGetFeed.Text = "https://packages.nuget.org/api/v2";
         }
 
+        private void BtnSaveSettings_Click(object sender, EventArgs e)
+        {
+            LogInfo(Resources.SETTINGS_SAVING);
+            SettingsManager.Instance.Save(pluginType, pluginViewModel.Settings);
+        }
+
         private void CmbLanguage_SelectedIndexChanged(object sender, EventArgs e)
         {
             pluginViewModel.CultureInfo = cmbLanguage.Items[cmbLanguage.SelectedIndex] as CultureInfo;
@@ -273,7 +272,5 @@ namespace AlbanianXrm.SolutionPackager
                 pluginViewModel.SolutionPackagerVersion = CoreToolsDownloader.GetSolutionPackagerVersion()?.ToString();
             }
         }
-
-
     }
 }

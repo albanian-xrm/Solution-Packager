@@ -29,7 +29,7 @@ namespace AlbanianXrm.SolutionPackager
 
         public override IXrmToolBoxPluginControl GetControl()
         {
-            return new SolutionPackagerControl();
+            return new SolutionPackagerControl(GetType());
         }
 
         /// <summary>

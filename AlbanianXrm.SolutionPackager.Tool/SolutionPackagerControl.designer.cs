@@ -58,6 +58,7 @@ namespace AlbanianXrm.SolutionPackager
             this.localOrCrm = new System.Windows.Forms.CheckBox();
             this.tabPack = new System.Windows.Forms.TabPage();
             this.tabSettings = new System.Windows.Forms.TabPage();
+            this.btnSaveSettings = new System.Windows.Forms.Button();
             this.cmbLanguage = new System.Windows.Forms.ComboBox();
             this.lblLanguage = new System.Windows.Forms.Label();
             this.btnNuGetFeed = new System.Windows.Forms.Button();
@@ -422,6 +423,7 @@ namespace AlbanianXrm.SolutionPackager
             // 
             // tabSettings
             // 
+            this.tabSettings.Controls.Add(this.btnSaveSettings);
             this.tabSettings.Controls.Add(this.cmbLanguage);
             this.tabSettings.Controls.Add(this.lblLanguage);
             this.tabSettings.Controls.Add(this.btnNuGetFeed);
@@ -433,6 +435,13 @@ namespace AlbanianXrm.SolutionPackager
             resources.ApplyResources(this.tabSettings, "tabSettings");
             this.tabSettings.Name = "tabSettings";
             this.tabSettings.UseVisualStyleBackColor = true;
+            // 
+            // btnSaveSettings
+            // 
+            resources.ApplyResources(this.btnSaveSettings, "btnSaveSettings");
+            this.btnSaveSettings.Name = "btnSaveSettings";
+            this.btnSaveSettings.UseVisualStyleBackColor = true;
+            this.btnSaveSettings.Click += new System.EventHandler(this.BtnSaveSettings_Click);
             // 
             // cmbLanguage
             // 
@@ -525,7 +534,6 @@ namespace AlbanianXrm.SolutionPackager
             this.Controls.Add(this.splitContainer);
             this.Name = "SolutionPackagerControl";
             resources.ApplyResources(this, "$this");
-            this.OnCloseTool += new System.EventHandler(this.SolutionPackagerControl_OnCloseTool);
             this.Load += new System.EventHandler(this.SolutionPackagerControl_Load);
             this.tabsExtractOrPack.ResumeLayout(false);
             this.tabExtract.ResumeLayout(false);
@@ -605,5 +613,6 @@ namespace AlbanianXrm.SolutionPackager
         private System.Windows.Forms.CheckBox chkLocalize;
         private System.Windows.Forms.CheckBox chkFormatDocument;
         private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.Button btnSaveSettings;
     }
 }
