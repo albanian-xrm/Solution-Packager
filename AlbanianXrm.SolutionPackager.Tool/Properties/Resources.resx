@@ -157,11 +157,26 @@
   <data name="PROGRAM_OUTPUT" xml:space="preserve">
     <value>Program output</value>
   </data>
+  <data name="QUESTION" xml:space="preserve">
+    <value>Question</value>
+  </data>
+  <data name="QUESTION_CLOSE_TOOL" xml:space="preserve">
+    <value>Are you sure you want to close this tab?</value>
+  </data>
   <data name="Refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="REFRESHING_SOLUTION_LIST" xml:space="preserve">
     <value>Refreshing solution list</value>
+  </data>
+  <data name="SETTINGS_FOUND" xml:space="preserve">
+    <value>Configuration settigns correctly loaded</value>
+  </data>
+  <data name="SETTINGS_NOT_FOUND" xml:space="preserve">
+    <value>Configuration settings were not found</value>
+  </data>
+  <data name="SETTINGS_SAVING" xml:space="preserve">
+    <value>Saving Configuration settings</value>
   </data>
   <data name="SOLUTIONPACKAGER_MISSING" xml:space="preserve">
     <value>SolutionPackager.exe is missing!</value>

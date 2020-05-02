@@ -23,7 +23,7 @@ namespace AlbanianXrm.SolutionPackager
             this.chkBanner = new System.Windows.Forms.CheckBox();
             this.chkClobber = new System.Windows.Forms.CheckBox();
             this.lblPackageType = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.deleteContainter = new System.Windows.Forms.Panel();
             this.radAllowDeletePrompt = new System.Windows.Forms.RadioButton();
             this.radAllowDeleteYes = new System.Windows.Forms.RadioButton();
             this.radAllowDeleteNo = new System.Windows.Forms.RadioButton();
@@ -69,19 +69,19 @@ namespace AlbanianXrm.SolutionPackager
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.selectFolder = new System.Windows.Forms.FolderBrowserDialog();
             this.openZipFile = new System.Windows.Forms.OpenFileDialog();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.txtOutput = new System.Windows.Forms.RichTextBox();
-            this.helpProvider = new System.Windows.Forms.HelpProvider();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.tabsExtractOrPack.SuspendLayout();
             this.tabExtract.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.deleteContainter.SuspendLayout();
             this.grpExportSolution.SuspendLayout();
             this.tabSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
+            this.splitContainer.Panel1.SuspendLayout();
+            this.splitContainer.Panel2.SuspendLayout();
+            this.splitContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabsExtractOrPack
@@ -103,7 +103,7 @@ namespace AlbanianXrm.SolutionPackager
             this.tabExtract.Controls.Add(this.chkBanner);
             this.tabExtract.Controls.Add(this.chkClobber);
             this.tabExtract.Controls.Add(this.lblPackageType);
-            this.tabExtract.Controls.Add(this.panel1);
+            this.tabExtract.Controls.Add(this.deleteContainter);
             this.tabExtract.Controls.Add(this.cmbPackageType);
             this.tabExtract.Controls.Add(this.chkAllowWrite);
             this.tabExtract.Controls.Add(this.grpExportSolution);
@@ -124,9 +124,8 @@ namespace AlbanianXrm.SolutionPackager
             resources.ApplyResources(this.chkFormatDocument, "chkFormatDocument");
             this.chkFormatDocument.Checked = true;
             this.chkFormatDocument.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.helpProvider.SetHelpString(this.chkFormatDocument, resources.GetString("chkFormatDocument.HelpString"));
             this.chkFormatDocument.Name = "chkFormatDocument";
-            this.helpProvider.SetShowHelp(this.chkFormatDocument, ((bool)(resources.GetObject("chkFormatDocument.ShowHelp"))));
+            this.toolTip.SetToolTip(this.chkFormatDocument, resources.GetString("chkFormatDocument.ToolTip"));
             this.chkFormatDocument.UseVisualStyleBackColor = true;
             // 
             // chkLocalize
@@ -173,14 +172,14 @@ namespace AlbanianXrm.SolutionPackager
             resources.ApplyResources(this.lblPackageType, "lblPackageType");
             this.lblPackageType.Name = "lblPackageType";
             // 
-            // panel1
+            // deleteContainter
             // 
-            this.panel1.Controls.Add(this.radAllowDeletePrompt);
-            this.panel1.Controls.Add(this.radAllowDeleteYes);
-            this.panel1.Controls.Add(this.radAllowDeleteNo);
-            this.panel1.Controls.Add(this.lblAllowDelete);
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Name = "panel1";
+            this.deleteContainter.Controls.Add(this.radAllowDeletePrompt);
+            this.deleteContainter.Controls.Add(this.radAllowDeleteYes);
+            this.deleteContainter.Controls.Add(this.radAllowDeleteNo);
+            this.deleteContainter.Controls.Add(this.lblAllowDelete);
+            resources.ApplyResources(this.deleteContainter, "deleteContainter");
+            this.deleteContainter.Name = "deleteContainter";
             // 
             // radAllowDeletePrompt
             // 
@@ -499,19 +498,19 @@ namespace AlbanianXrm.SolutionPackager
             this.openZipFile.FileName = "openFileDialog1";
             resources.ApplyResources(this.openZipFile, "openZipFile");
             // 
-            // splitContainer1
+            // splitContainer
             // 
-            resources.ApplyResources(this.splitContainer1, "splitContainer1");
-            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.Name = "splitContainer1";
+            resources.ApplyResources(this.splitContainer, "splitContainer");
+            this.splitContainer.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer.Name = "splitContainer";
             // 
-            // splitContainer1.Panel1
+            // splitContainer.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.tabsExtractOrPack);
+            this.splitContainer.Panel1.Controls.Add(this.tabsExtractOrPack);
             // 
-            // splitContainer1.Panel2
+            // splitContainer.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.txtOutput);
+            this.splitContainer.Panel2.Controls.Add(this.txtOutput);
             // 
             // txtOutput
             // 
@@ -523,23 +522,25 @@ namespace AlbanianXrm.SolutionPackager
             // 
             // SolutionPackagerControl
             // 
-            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.splitContainer);
             this.Name = "SolutionPackagerControl";
             resources.ApplyResources(this, "$this");
+            this.OnCloseTool += new System.EventHandler(this.SolutionPackagerControl_OnCloseTool);
+            this.Load += new System.EventHandler(this.SolutionPackagerControl_Load);
             this.tabsExtractOrPack.ResumeLayout(false);
             this.tabExtract.ResumeLayout(false);
             this.tabExtract.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.deleteContainter.ResumeLayout(false);
+            this.deleteContainter.PerformLayout();
             this.grpExportSolution.ResumeLayout(false);
             this.grpExportSolution.PerformLayout();
             this.tabSettings.ResumeLayout(false);
             this.tabSettings.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.splitContainer.Panel1.ResumeLayout(false);
+            this.splitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
+            this.splitContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -570,7 +571,7 @@ namespace AlbanianXrm.SolutionPackager
         private System.Windows.Forms.FolderBrowserDialog selectFolder;
         private System.Windows.Forms.OpenFileDialog openZipFile;
         private System.Windows.Forms.Button btnExtract;
-        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.SplitContainer splitContainer;
         private System.Windows.Forms.RichTextBox txtOutput;
         private System.Windows.Forms.GroupBox grpExportSolution;
         private System.Windows.Forms.CheckBox chkExportAutoNumbering;
@@ -588,7 +589,7 @@ namespace AlbanianXrm.SolutionPackager
         private System.Windows.Forms.RadioButton radManaged;
         private System.Windows.Forms.RadioButton radUnmanaged;
         private System.Windows.Forms.CheckBox chkAllowWrite;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel deleteContainter;
         private System.Windows.Forms.Label lblAllowDelete;
         private System.Windows.Forms.RadioButton radAllowDeletePrompt;
         private System.Windows.Forms.RadioButton radAllowDeleteYes;
@@ -603,6 +604,6 @@ namespace AlbanianXrm.SolutionPackager
         private System.Windows.Forms.ComboBox cmbErrorLevel;
         private System.Windows.Forms.CheckBox chkLocalize;
         private System.Windows.Forms.CheckBox chkFormatDocument;
-        private System.Windows.Forms.HelpProvider helpProvider;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }

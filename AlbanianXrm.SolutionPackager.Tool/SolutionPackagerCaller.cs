@@ -43,11 +43,10 @@ namespace AlbanianXrm.SolutionPackager
         {
             var @params = args.Argument as Parameters ?? throw new ArgumentNullException(nameof(args.Argument));
 
-            string dir = Path.GetDirectoryName(typeof(SolutionPackagerCaller).Assembly.Location);
-            string folder = Path.GetFileNameWithoutExtension(typeof(SolutionPackagerCaller).Assembly.Location);
-            dir = Path.Combine(dir, folder);
+            string dir = CoreToolsDownloader.GetToolDirectory();
+            string solutionPackagerFile = Path.Combine(dir, CoreToolsDownloader.solutionPackagerName);
 
-            if (!File.Exists(Path.Combine(dir, "SolutionPackager.exe")))
+            if (!File.Exists(solutionPackagerFile))
             {
                 args.Result = Resources.SOLUTIONPACKAGER_MISSING;
                 return;
@@ -57,7 +56,7 @@ namespace AlbanianXrm.SolutionPackager
             {
                 StartInfo =
                 {
-                    FileName =  Path.Combine(dir,"SolutionPackager.exe"),
+                    FileName =  solutionPackagerFile,
                     Arguments = $"/action:Extract /zipfile:\"{@params.ZipFile}\" /folder:\"{@params.OutputFolder}\"",
                     WorkingDirectory = dir,
                     UseShellExecute = false,

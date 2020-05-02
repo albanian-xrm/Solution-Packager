@@ -179,6 +179,24 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Question.
+        /// </summary>
+        internal static string QUESTION {
+            get {
+                return ResourceManager.GetString("QUESTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to close this tab?.
+        /// </summary>
+        internal static string QUESTION_CLOSE_TOOL {
+            get {
+                return ResourceManager.GetString("QUESTION_CLOSE_TOOL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Refresh {
@@ -194,6 +212,33 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         internal static string REFRESHING_SOLUTION_LIST {
             get {
                 return ResourceManager.GetString("REFRESHING_SOLUTION_LIST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Configuration settigns correctly loaded.
+        /// </summary>
+        internal static string SETTINGS_FOUND {
+            get {
+                return ResourceManager.GetString("SETTINGS_FOUND", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Configuration settings were not found.
+        /// </summary>
+        internal static string SETTINGS_NOT_FOUND {
+            get {
+                return ResourceManager.GetString("SETTINGS_NOT_FOUND", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Saving Configuration settings.
+        /// </summary>
+        internal static string SETTINGS_SAVING {
+            get {
+                return ResourceManager.GetString("SETTINGS_SAVING", resourceCulture);
             }
         }
         

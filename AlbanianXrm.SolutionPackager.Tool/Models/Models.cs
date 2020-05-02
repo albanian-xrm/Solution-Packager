@@ -5,7 +5,7 @@ using System;
 namespace AlbanianXrm.SolutionPackager.Models
 {
     [EntityLogicalName(EntityLogicalName)]
-    public partial class Solution : Entity
+    internal partial class Solution : Entity
     {
 
         public Solution() :

@@ -39,7 +39,7 @@ namespace AlbanianXrm.SolutionPackager
 
             pluginViewModel = new PluginViewModel();
             asyncWorkQueue = new AsyncWorkQueue(this, pluginViewModel);
-            coreToolsDownloader = new CoreToolsDownloader(asyncWorkQueue, txtCoreTools);
+            coreToolsDownloader = new CoreToolsDownloader(asyncWorkQueue, pluginViewModel);
             solutionPackagerCaller = new SolutionPackagerCaller(this, asyncWorkQueue, txtOutput);
             crmSolutionManager = new CrmSolutionManager(this, asyncWorkQueue, solutionPackagerCaller, cmbCrmSolutions);
 
@@ -69,6 +69,54 @@ namespace AlbanianXrm.SolutionPackager
                     resources.ApplyResources(c, c.Name, Resources.Culture);
                 }
             }
+        }
+
+        private void SolutionPackagerControl_Load(object sender, EventArgs e)
+        {
+            Settings settings;
+            // Loads or creates the settings for the plugin
+            if (!SettingsManager.Instance.TryLoad(GetType(), out settings))
+            {
+                LogWarning(Resources.SETTINGS_NOT_FOUND);
+                return;
+            }
+            pluginViewModel.Settings = settings;
+
+            var selection = cmbLanguage.Items.IndexOf(CultureInfo.GetCultureInfo(settings.Language));
+            if (selection >= 0)
+            {
+                cmbLanguage.SelectedIndex = selection;
+            }
+            LogInfo(Resources.SETTINGS_FOUND);
+        }
+
+        /// <summary>
+        /// Allows for the plugin to prevent the form from closing, or preform some action before closing
+        /// By default, if the Form is being closed, or a close all or all except active is being called, it won't prompt the user to ensure they wanted to close
+        /// </summary>
+        /// <param name="info"></param>
+        public override void ClosingPlugin(PluginCloseInfo info)
+        {
+            if (info.Silent ||
+                info.FormReason != CloseReason.None ||
+                info.ToolBoxReason == ToolBoxCloseReason.CloseAll ||
+                info.ToolBoxReason == ToolBoxCloseReason.CloseAllExceptActive)
+            {
+                return;
+            }
+
+            info.Cancel = MessageBox.Show(Resources.QUESTION_CLOSE_TOOL, Resources.QUESTION, MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes;
+        }
+
+        /// <summary>
+        /// This event occurs when the plugin is closed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SolutionPackagerControl_OnCloseTool(object sender, EventArgs e)
+        {
+            LogInfo(Resources.SETTINGS_SAVING);
+            SettingsManager.Instance.Save(GetType(), pluginViewModel.Settings);
         }
 
         #region Extract

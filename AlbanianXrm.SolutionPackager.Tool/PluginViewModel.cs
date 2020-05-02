@@ -87,6 +87,7 @@ namespace AlbanianXrm.SolutionPackager
             {
                 if (Resources.Culture != null && Resources.Culture.Equals(value) || Resources.Culture == value) return;
                 Resources.Culture = value;
+                Settings.Language = value.Name;
 
                 if (_SolutionPackagerVersion == null)
                 {
@@ -95,5 +96,7 @@ namespace AlbanianXrm.SolutionPackager
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CultureInfo)));
             }
         }
+
+        public Settings Settings { get; set; } = new Settings();
     }
 }

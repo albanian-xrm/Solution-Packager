@@ -12,15 +12,15 @@ namespace AlbanianXrm.SolutionPackager
 {
     internal class CoreToolsDownloader
     {
-        private const string coreToolsId = "Microsoft.CrmSdk.CoreTools";
-        private const string solutionPackagerName = "SolutionPackager.exe";
+        public const string coreToolsId = "Microsoft.CrmSdk.CoreTools";
+        public const string solutionPackagerName = "SolutionPackager.exe";
         private readonly AsyncWorkQueue workQueue;
-        private readonly RichTextBox txtCoreTools;
+        private readonly PluginViewModel pluginViewModel;
 
-        public CoreToolsDownloader(AsyncWorkQueue workQueue, RichTextBox txtCoreTools)
+        public CoreToolsDownloader(AsyncWorkQueue workQueue, PluginViewModel pluginViewModel)
         {
             this.workQueue = workQueue ?? throw new ArgumentNullException(nameof(workQueue));
-            this.txtCoreTools = txtCoreTools ?? throw new ArgumentNullException(nameof(txtCoreTools));
+            this.pluginViewModel = pluginViewModel ?? throw new ArgumentNullException(nameof(pluginViewModel));
         }
 
         public void DownloadCoreTools(string nuGetFeed)
@@ -39,11 +39,10 @@ namespace AlbanianXrm.SolutionPackager
             return GetSolutionPackagerVersion(GetToolDirectory());
         }
 
-        private static string GetToolDirectory()
+        public static string GetToolDirectory()
         {
             string dir = Path.GetDirectoryName(typeof(CoreToolsDownloader).Assembly.Location).ToUpperInvariant();
-            string folder = Path.GetFileNameWithoutExtension(typeof(CoreToolsDownloader).Assembly.Location);
-            dir = Path.Combine(dir, folder);
+            dir = Path.Combine(dir, coreToolsId);
             Directory.CreateDirectory(dir);
             return dir;
         }
@@ -104,7 +103,7 @@ namespace AlbanianXrm.SolutionPackager
             }
             else if (args.Result is Version version)
             {
-                txtCoreTools.Text = version.ToString();
+                pluginViewModel.SolutionPackagerVersion = version.ToString();
             }
         }
     }
