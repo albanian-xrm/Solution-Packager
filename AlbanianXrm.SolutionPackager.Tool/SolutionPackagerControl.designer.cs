@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AlbanianXrm.SolutionPackager
+﻿namespace AlbanianXrm.SolutionPackager
 {
     internal partial class SolutionPackagerControl
     {
@@ -57,16 +51,48 @@ namespace AlbanianXrm.SolutionPackager
             this.txtZipPath = new System.Windows.Forms.RichTextBox();
             this.localOrCrm = new System.Windows.Forms.CheckBox();
             this.tabPack = new System.Windows.Forms.TabPage();
+            this.tlpPack = new System.Windows.Forms.TableLayoutPanel();
+            this.btnPack = new System.Windows.Forms.Button();
+            this.flpPackLabels = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblInputFolder = new System.Windows.Forms.Label();
+            this.lblOutputZip = new System.Windows.Forms.Label();
+            this.lblPackageTypePack = new System.Windows.Forms.Label();
+            this.lblErrorLevelPack = new System.Windows.Forms.Label();
+            this.lblPackMap = new System.Windows.Forms.Label();
+            this.lblNoLogoPack = new System.Windows.Forms.Label();
+            this.lblLogPack = new System.Windows.Forms.Label();
+            this.lblArgumentsPack = new System.Windows.Forms.Label();
+            this.lblLocalizePack = new System.Windows.Forms.Label();
+            this.flpPackControls = new System.Windows.Forms.FlowLayoutPanel();
+            this.txtPackFolder = new System.Windows.Forms.RichTextBox();
+            this.txtPackZip = new System.Windows.Forms.RichTextBox();
+            this.cmbPackPackageType = new System.Windows.Forms.ComboBox();
+            this.cmbPackErrorLevel = new System.Windows.Forms.ComboBox();
+            this.txtPackMap = new System.Windows.Forms.RichTextBox();
+            this.chkPackNoLogo = new System.Windows.Forms.CheckBox();
+            this.txtPackLog = new System.Windows.Forms.RichTextBox();
+            this.txtPackArguments = new System.Windows.Forms.RichTextBox();
+            this.chkPackLocalize = new System.Windows.Forms.CheckBox();
+            this.flpPackButtons = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnInputFolder = new System.Windows.Forms.Button();
+            this.btnOutputZip = new System.Windows.Forms.Button();
+            this.btnPackMap = new System.Windows.Forms.Button();
+            this.btnLogPack = new System.Windows.Forms.Button();
+            this.btnArgumentsPack = new System.Windows.Forms.Button();
             this.tabSettings = new System.Windows.Forms.TabPage();
+            this.tlpSettings = new System.Windows.Forms.TableLayoutPanel();
             this.btnSaveSettings = new System.Windows.Forms.Button();
-            this.cmbLanguage = new System.Windows.Forms.ComboBox();
-            this.lblLanguage = new System.Windows.Forms.Label();
-            this.btnNuGetFeed = new System.Windows.Forms.Button();
-            this.lblNuGetFeed = new System.Windows.Forms.Label();
-            this.txtNuGetFeed = new System.Windows.Forms.RichTextBox();
+            this.flpSettingsButtons = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCoreTools = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnNuGetFeed = new System.Windows.Forms.Button();
+            this.flpSettingsLabels = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblCoreToolsVersion = new System.Windows.Forms.Label();
+            this.lblNuGetFeed = new System.Windows.Forms.Label();
+            this.lblLanguage = new System.Windows.Forms.Label();
+            this.flpSettingsControls = new System.Windows.Forms.FlowLayoutPanel();
             this.txtCoreTools = new System.Windows.Forms.RichTextBox();
+            this.txtNuGetFeed = new System.Windows.Forms.RichTextBox();
+            this.cmbLanguage = new System.Windows.Forms.ComboBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.selectFolder = new System.Windows.Forms.FolderBrowserDialog();
             this.openZipFile = new System.Windows.Forms.OpenFileDialog();
@@ -77,7 +103,16 @@ namespace AlbanianXrm.SolutionPackager
             this.tabExtract.SuspendLayout();
             this.deleteContainter.SuspendLayout();
             this.grpExportSolution.SuspendLayout();
+            this.tabPack.SuspendLayout();
+            this.tlpPack.SuspendLayout();
+            this.flpPackLabels.SuspendLayout();
+            this.flpPackControls.SuspendLayout();
+            this.flpPackButtons.SuspendLayout();
             this.tabSettings.SuspendLayout();
+            this.tlpSettings.SuspendLayout();
+            this.flpSettingsButtons.SuspendLayout();
+            this.flpSettingsLabels.SuspendLayout();
+            this.flpSettingsControls.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
@@ -133,6 +168,7 @@ namespace AlbanianXrm.SolutionPackager
             // 
             resources.ApplyResources(this.chkLocalize, "chkLocalize");
             this.chkLocalize.Name = "chkLocalize";
+            this.toolTip.SetToolTip(this.chkLocalize, resources.GetString("chkLocalize.ToolTip"));
             this.chkLocalize.UseVisualStyleBackColor = true;
             // 
             // lblErrorLevel
@@ -417,65 +453,251 @@ namespace AlbanianXrm.SolutionPackager
             // 
             // tabPack
             // 
+            this.tabPack.Controls.Add(this.tlpPack);
             resources.ApplyResources(this.tabPack, "tabPack");
             this.tabPack.Name = "tabPack";
             this.tabPack.UseVisualStyleBackColor = true;
             // 
+            // tlpPack
+            // 
+            resources.ApplyResources(this.tlpPack, "tlpPack");
+            this.tlpPack.Controls.Add(this.btnPack, 1, 1);
+            this.tlpPack.Controls.Add(this.flpPackLabels, 0, 0);
+            this.tlpPack.Controls.Add(this.flpPackControls, 1, 0);
+            this.tlpPack.Controls.Add(this.flpPackButtons, 2, 0);
+            this.tlpPack.Name = "tlpPack";
+            // 
+            // btnPack
+            // 
+            resources.ApplyResources(this.btnPack, "btnPack");
+            this.btnPack.Name = "btnPack";
+            this.btnPack.UseVisualStyleBackColor = true;
+            // 
+            // flpPackLabels
+            // 
+            this.flpPackLabels.Controls.Add(this.lblInputFolder);
+            this.flpPackLabels.Controls.Add(this.lblOutputZip);
+            this.flpPackLabels.Controls.Add(this.lblPackageTypePack);
+            this.flpPackLabels.Controls.Add(this.lblErrorLevelPack);
+            this.flpPackLabels.Controls.Add(this.lblPackMap);
+            this.flpPackLabels.Controls.Add(this.lblNoLogoPack);
+            this.flpPackLabels.Controls.Add(this.lblLogPack);
+            this.flpPackLabels.Controls.Add(this.lblArgumentsPack);
+            this.flpPackLabels.Controls.Add(this.lblLocalizePack);
+            resources.ApplyResources(this.flpPackLabels, "flpPackLabels");
+            this.flpPackLabels.Name = "flpPackLabels";
+            // 
+            // lblInputFolder
+            // 
+            resources.ApplyResources(this.lblInputFolder, "lblInputFolder");
+            this.lblInputFolder.Name = "lblInputFolder";
+            // 
+            // lblOutputZip
+            // 
+            resources.ApplyResources(this.lblOutputZip, "lblOutputZip");
+            this.lblOutputZip.Name = "lblOutputZip";
+            // 
+            // lblPackageTypePack
+            // 
+            resources.ApplyResources(this.lblPackageTypePack, "lblPackageTypePack");
+            this.lblPackageTypePack.Name = "lblPackageTypePack";
+            // 
+            // lblErrorLevelPack
+            // 
+            resources.ApplyResources(this.lblErrorLevelPack, "lblErrorLevelPack");
+            this.lblErrorLevelPack.Name = "lblErrorLevelPack";
+            // 
+            // lblPackMap
+            // 
+            resources.ApplyResources(this.lblPackMap, "lblPackMap");
+            this.lblPackMap.Name = "lblPackMap";
+            // 
+            // lblNoLogoPack
+            // 
+            resources.ApplyResources(this.lblNoLogoPack, "lblNoLogoPack");
+            this.lblNoLogoPack.Name = "lblNoLogoPack";
+            // 
+            // lblLogPack
+            // 
+            resources.ApplyResources(this.lblLogPack, "lblLogPack");
+            this.lblLogPack.Name = "lblLogPack";
+            // 
+            // lblArgumentsPack
+            // 
+            resources.ApplyResources(this.lblArgumentsPack, "lblArgumentsPack");
+            this.lblArgumentsPack.Name = "lblArgumentsPack";
+            // 
+            // lblLocalizePack
+            // 
+            resources.ApplyResources(this.lblLocalizePack, "lblLocalizePack");
+            this.lblLocalizePack.Name = "lblLocalizePack";
+            // 
+            // flpPackControls
+            // 
+            this.flpPackControls.Controls.Add(this.txtPackFolder);
+            this.flpPackControls.Controls.Add(this.txtPackZip);
+            this.flpPackControls.Controls.Add(this.cmbPackPackageType);
+            this.flpPackControls.Controls.Add(this.cmbPackErrorLevel);
+            this.flpPackControls.Controls.Add(this.txtPackMap);
+            this.flpPackControls.Controls.Add(this.chkPackNoLogo);
+            this.flpPackControls.Controls.Add(this.txtPackLog);
+            this.flpPackControls.Controls.Add(this.txtPackArguments);
+            this.flpPackControls.Controls.Add(this.chkPackLocalize);
+            resources.ApplyResources(this.flpPackControls, "flpPackControls");
+            this.flpPackControls.Name = "flpPackControls";
+            // 
+            // txtPackFolder
+            // 
+            resources.ApplyResources(this.txtPackFolder, "txtPackFolder");
+            this.txtPackFolder.Name = "txtPackFolder";
+            this.txtPackFolder.ReadOnly = true;
+            this.txtPackFolder.ShortcutsEnabled = false;
+            this.txtPackFolder.TabStop = false;
+            // 
+            // txtPackZip
+            // 
+            resources.ApplyResources(this.txtPackZip, "txtPackZip");
+            this.txtPackZip.Name = "txtPackZip";
+            this.txtPackZip.ReadOnly = true;
+            this.txtPackZip.ShortcutsEnabled = false;
+            this.txtPackZip.TabStop = false;
+            // 
+            // cmbPackPackageType
+            // 
+            this.cmbPackPackageType.DisplayMember = "FriendlyName";
+            this.cmbPackPackageType.FormattingEnabled = true;
+            this.cmbPackPackageType.Items.AddRange(new object[] {
+            resources.GetString("cmbPackPackageType.Items"),
+            resources.GetString("cmbPackPackageType.Items1"),
+            resources.GetString("cmbPackPackageType.Items2"),
+            resources.GetString("cmbPackPackageType.Items3")});
+            resources.ApplyResources(this.cmbPackPackageType, "cmbPackPackageType");
+            this.cmbPackPackageType.Name = "cmbPackPackageType";
+            this.cmbPackPackageType.ValueMember = "SolutionId";
+            // 
+            // cmbPackErrorLevel
+            // 
+            this.cmbPackErrorLevel.DisplayMember = "FriendlyName";
+            this.cmbPackErrorLevel.FormattingEnabled = true;
+            this.cmbPackErrorLevel.Items.AddRange(new object[] {
+            resources.GetString("cmbPackErrorLevel.Items"),
+            resources.GetString("cmbPackErrorLevel.Items1"),
+            resources.GetString("cmbPackErrorLevel.Items2"),
+            resources.GetString("cmbPackErrorLevel.Items3"),
+            resources.GetString("cmbPackErrorLevel.Items4")});
+            resources.ApplyResources(this.cmbPackErrorLevel, "cmbPackErrorLevel");
+            this.cmbPackErrorLevel.Name = "cmbPackErrorLevel";
+            this.cmbPackErrorLevel.ValueMember = "SolutionId";
+            // 
+            // txtPackMap
+            // 
+            resources.ApplyResources(this.txtPackMap, "txtPackMap");
+            this.txtPackMap.Name = "txtPackMap";
+            this.txtPackMap.ReadOnly = true;
+            this.txtPackMap.ShortcutsEnabled = false;
+            this.txtPackMap.TabStop = false;
+            // 
+            // chkPackNoLogo
+            // 
+            resources.ApplyResources(this.chkPackNoLogo, "chkPackNoLogo");
+            this.chkPackNoLogo.Name = "chkPackNoLogo";
+            this.chkPackNoLogo.UseVisualStyleBackColor = true;
+            // 
+            // txtPackLog
+            // 
+            resources.ApplyResources(this.txtPackLog, "txtPackLog");
+            this.txtPackLog.Name = "txtPackLog";
+            this.txtPackLog.ReadOnly = true;
+            this.txtPackLog.ShortcutsEnabled = false;
+            this.txtPackLog.TabStop = false;
+            // 
+            // txtPackArguments
+            // 
+            resources.ApplyResources(this.txtPackArguments, "txtPackArguments");
+            this.txtPackArguments.Name = "txtPackArguments";
+            this.txtPackArguments.ReadOnly = true;
+            this.txtPackArguments.ShortcutsEnabled = false;
+            this.txtPackArguments.TabStop = false;
+            // 
+            // chkPackLocalize
+            // 
+            resources.ApplyResources(this.chkPackLocalize, "chkPackLocalize");
+            this.chkPackLocalize.Name = "chkPackLocalize";
+            this.chkPackLocalize.UseVisualStyleBackColor = true;
+            // 
+            // flpPackButtons
+            // 
+            this.flpPackButtons.Controls.Add(this.btnInputFolder);
+            this.flpPackButtons.Controls.Add(this.btnOutputZip);
+            this.flpPackButtons.Controls.Add(this.btnPackMap);
+            this.flpPackButtons.Controls.Add(this.btnLogPack);
+            this.flpPackButtons.Controls.Add(this.btnArgumentsPack);
+            resources.ApplyResources(this.flpPackButtons, "flpPackButtons");
+            this.flpPackButtons.Name = "flpPackButtons";
+            // 
+            // btnInputFolder
+            // 
+            this.btnInputFolder.BackgroundImage = global::AlbanianXrm.SolutionPackager.Properties.Resources.Folder;
+            resources.ApplyResources(this.btnInputFolder, "btnInputFolder");
+            this.btnInputFolder.Name = "btnInputFolder";
+            this.btnInputFolder.UseVisualStyleBackColor = true;
+            // 
+            // btnOutputZip
+            // 
+            this.btnOutputZip.BackgroundImage = global::AlbanianXrm.SolutionPackager.Properties.Resources.Zip;
+            resources.ApplyResources(this.btnOutputZip, "btnOutputZip");
+            this.btnOutputZip.Name = "btnOutputZip";
+            this.btnOutputZip.UseVisualStyleBackColor = true;
+            // 
+            // btnPackMap
+            // 
+            this.btnPackMap.BackgroundImage = global::AlbanianXrm.SolutionPackager.Properties.Resources.Zip;
+            resources.ApplyResources(this.btnPackMap, "btnPackMap");
+            this.btnPackMap.Name = "btnPackMap";
+            this.btnPackMap.UseVisualStyleBackColor = true;
+            // 
+            // btnLogPack
+            // 
+            this.btnLogPack.BackgroundImage = global::AlbanianXrm.SolutionPackager.Properties.Resources.Zip;
+            resources.ApplyResources(this.btnLogPack, "btnLogPack");
+            this.btnLogPack.Name = "btnLogPack";
+            this.btnLogPack.UseVisualStyleBackColor = true;
+            // 
+            // btnArgumentsPack
+            // 
+            this.btnArgumentsPack.BackgroundImage = global::AlbanianXrm.SolutionPackager.Properties.Resources.Zip;
+            resources.ApplyResources(this.btnArgumentsPack, "btnArgumentsPack");
+            this.btnArgumentsPack.Name = "btnArgumentsPack";
+            this.btnArgumentsPack.UseVisualStyleBackColor = true;
+            // 
             // tabSettings
             // 
-            this.tabSettings.Controls.Add(this.btnSaveSettings);
-            this.tabSettings.Controls.Add(this.cmbLanguage);
-            this.tabSettings.Controls.Add(this.lblLanguage);
-            this.tabSettings.Controls.Add(this.btnNuGetFeed);
-            this.tabSettings.Controls.Add(this.lblNuGetFeed);
-            this.tabSettings.Controls.Add(this.txtNuGetFeed);
-            this.tabSettings.Controls.Add(this.btnCoreTools);
-            this.tabSettings.Controls.Add(this.label1);
-            this.tabSettings.Controls.Add(this.txtCoreTools);
+            this.tabSettings.Controls.Add(this.tlpSettings);
             resources.ApplyResources(this.tabSettings, "tabSettings");
             this.tabSettings.Name = "tabSettings";
             this.tabSettings.UseVisualStyleBackColor = true;
+            // 
+            // tlpSettings
+            // 
+            resources.ApplyResources(this.tlpSettings, "tlpSettings");
+            this.tlpSettings.Controls.Add(this.btnSaveSettings, 1, 1);
+            this.tlpSettings.Controls.Add(this.flpSettingsButtons, 2, 0);
+            this.tlpSettings.Controls.Add(this.flpSettingsLabels, 0, 0);
+            this.tlpSettings.Controls.Add(this.flpSettingsControls, 1, 0);
+            this.tlpSettings.Name = "tlpSettings";
             // 
             // btnSaveSettings
             // 
             resources.ApplyResources(this.btnSaveSettings, "btnSaveSettings");
             this.btnSaveSettings.Name = "btnSaveSettings";
             this.btnSaveSettings.UseVisualStyleBackColor = true;
-            this.btnSaveSettings.Click += new System.EventHandler(this.BtnSaveSettings_Click);
             // 
-            // cmbLanguage
+            // flpSettingsButtons
             // 
-            this.cmbLanguage.DisplayMember = "DisplayName";
-            this.cmbLanguage.FormattingEnabled = true;
-            resources.ApplyResources(this.cmbLanguage, "cmbLanguage");
-            this.cmbLanguage.Name = "cmbLanguage";
-            this.cmbLanguage.ValueMember = "Name";
-            this.cmbLanguage.SelectedIndexChanged += new System.EventHandler(this.CmbLanguage_SelectedIndexChanged);
-            // 
-            // lblLanguage
-            // 
-            resources.ApplyResources(this.lblLanguage, "lblLanguage");
-            this.lblLanguage.Name = "lblLanguage";
-            // 
-            // btnNuGetFeed
-            // 
-            this.btnNuGetFeed.BackgroundImage = global::AlbanianXrm.SolutionPackager.Properties.Resources.Refresh;
-            resources.ApplyResources(this.btnNuGetFeed, "btnNuGetFeed");
-            this.btnNuGetFeed.Name = "btnNuGetFeed";
-            this.btnNuGetFeed.UseVisualStyleBackColor = true;
-            this.btnNuGetFeed.Click += new System.EventHandler(this.BtnNuGetFeed_Click);
-            // 
-            // lblNuGetFeed
-            // 
-            resources.ApplyResources(this.lblNuGetFeed, "lblNuGetFeed");
-            this.lblNuGetFeed.Name = "lblNuGetFeed";
-            // 
-            // txtNuGetFeed
-            // 
-            resources.ApplyResources(this.txtNuGetFeed, "txtNuGetFeed");
-            this.txtNuGetFeed.Name = "txtNuGetFeed";
-            this.txtNuGetFeed.ShortcutsEnabled = false;
-            this.txtNuGetFeed.TabStop = false;
+            this.flpSettingsButtons.Controls.Add(this.btnCoreTools);
+            this.flpSettingsButtons.Controls.Add(this.btnNuGetFeed);
+            resources.ApplyResources(this.flpSettingsButtons, "flpSettingsButtons");
+            this.flpSettingsButtons.Name = "flpSettingsButtons";
             // 
             // btnCoreTools
             // 
@@ -483,12 +705,44 @@ namespace AlbanianXrm.SolutionPackager
             resources.ApplyResources(this.btnCoreTools, "btnCoreTools");
             this.btnCoreTools.Name = "btnCoreTools";
             this.btnCoreTools.UseVisualStyleBackColor = true;
-            this.btnCoreTools.Click += new System.EventHandler(this.BtnCoreTools_Click);
             // 
-            // label1
+            // btnNuGetFeed
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
+            this.btnNuGetFeed.BackgroundImage = global::AlbanianXrm.SolutionPackager.Properties.Resources.Refresh;
+            resources.ApplyResources(this.btnNuGetFeed, "btnNuGetFeed");
+            this.btnNuGetFeed.Name = "btnNuGetFeed";
+            this.btnNuGetFeed.UseVisualStyleBackColor = true;
+            // 
+            // flpSettingsLabels
+            // 
+            this.flpSettingsLabels.Controls.Add(this.lblCoreToolsVersion);
+            this.flpSettingsLabels.Controls.Add(this.lblNuGetFeed);
+            this.flpSettingsLabels.Controls.Add(this.lblLanguage);
+            resources.ApplyResources(this.flpSettingsLabels, "flpSettingsLabels");
+            this.flpSettingsLabels.Name = "flpSettingsLabels";
+            // 
+            // lblCoreToolsVersion
+            // 
+            resources.ApplyResources(this.lblCoreToolsVersion, "lblCoreToolsVersion");
+            this.lblCoreToolsVersion.Name = "lblCoreToolsVersion";
+            // 
+            // lblNuGetFeed
+            // 
+            resources.ApplyResources(this.lblNuGetFeed, "lblNuGetFeed");
+            this.lblNuGetFeed.Name = "lblNuGetFeed";
+            // 
+            // lblLanguage
+            // 
+            resources.ApplyResources(this.lblLanguage, "lblLanguage");
+            this.lblLanguage.Name = "lblLanguage";
+            // 
+            // flpSettingsControls
+            // 
+            this.flpSettingsControls.Controls.Add(this.txtCoreTools);
+            this.flpSettingsControls.Controls.Add(this.txtNuGetFeed);
+            this.flpSettingsControls.Controls.Add(this.cmbLanguage);
+            resources.ApplyResources(this.flpSettingsControls, "flpSettingsControls");
+            this.flpSettingsControls.Name = "flpSettingsControls";
             // 
             // txtCoreTools
             // 
@@ -497,6 +751,21 @@ namespace AlbanianXrm.SolutionPackager
             this.txtCoreTools.ReadOnly = true;
             this.txtCoreTools.ShortcutsEnabled = false;
             this.txtCoreTools.TabStop = false;
+            // 
+            // txtNuGetFeed
+            // 
+            resources.ApplyResources(this.txtNuGetFeed, "txtNuGetFeed");
+            this.txtNuGetFeed.Name = "txtNuGetFeed";
+            this.txtNuGetFeed.ShortcutsEnabled = false;
+            this.txtNuGetFeed.TabStop = false;
+            // 
+            // cmbLanguage
+            // 
+            this.cmbLanguage.DisplayMember = "DisplayName";
+            this.cmbLanguage.FormattingEnabled = true;
+            resources.ApplyResources(this.cmbLanguage, "cmbLanguage");
+            this.cmbLanguage.Name = "cmbLanguage";
+            this.cmbLanguage.ValueMember = "Name";
             // 
             // errorProvider
             // 
@@ -542,8 +811,19 @@ namespace AlbanianXrm.SolutionPackager
             this.deleteContainter.PerformLayout();
             this.grpExportSolution.ResumeLayout(false);
             this.grpExportSolution.PerformLayout();
+            this.tabPack.ResumeLayout(false);
+            this.tlpPack.ResumeLayout(false);
+            this.flpPackLabels.ResumeLayout(false);
+            this.flpPackLabels.PerformLayout();
+            this.flpPackControls.ResumeLayout(false);
+            this.flpPackControls.PerformLayout();
+            this.flpPackButtons.ResumeLayout(false);
             this.tabSettings.ResumeLayout(false);
-            this.tabSettings.PerformLayout();
+            this.tlpSettings.ResumeLayout(false);
+            this.flpSettingsButtons.ResumeLayout(false);
+            this.flpSettingsLabels.ResumeLayout(false);
+            this.flpSettingsLabels.PerformLayout();
+            this.flpSettingsControls.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.splitContainer.Panel1.ResumeLayout(false);
             this.splitContainer.Panel2.ResumeLayout(false);
@@ -569,13 +849,7 @@ namespace AlbanianXrm.SolutionPackager
         private System.Windows.Forms.Button btnRefreshSolutions;
         private System.Windows.Forms.Button btnOutputFolder;
         private System.Windows.Forms.TabPage tabSettings;
-        private System.Windows.Forms.Button btnCoreTools;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox txtCoreTools;
         private System.Windows.Forms.TabPage tabPack;
-        private System.Windows.Forms.Button btnNuGetFeed;
-        private System.Windows.Forms.Label lblNuGetFeed;
-        private System.Windows.Forms.RichTextBox txtNuGetFeed;
         private System.Windows.Forms.FolderBrowserDialog selectFolder;
         private System.Windows.Forms.OpenFileDialog openZipFile;
         private System.Windows.Forms.Button btnExtract;
@@ -602,8 +876,6 @@ namespace AlbanianXrm.SolutionPackager
         private System.Windows.Forms.RadioButton radAllowDeletePrompt;
         private System.Windows.Forms.RadioButton radAllowDeleteYes;
         private System.Windows.Forms.RadioButton radAllowDeleteNo;
-        private System.Windows.Forms.Label lblLanguage;
-        private System.Windows.Forms.ComboBox cmbLanguage;
         private System.Windows.Forms.Label lblPackageType;
         private System.Windows.Forms.ComboBox cmbPackageType;
         private System.Windows.Forms.CheckBox chkClobber;
@@ -613,6 +885,46 @@ namespace AlbanianXrm.SolutionPackager
         private System.Windows.Forms.CheckBox chkLocalize;
         private System.Windows.Forms.CheckBox chkFormatDocument;
         private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.TableLayoutPanel tlpPack;
+        private System.Windows.Forms.FlowLayoutPanel flpPackLabels;
+        private System.Windows.Forms.Label lblInputFolder;
+        private System.Windows.Forms.FlowLayoutPanel flpPackControls;
+        private System.Windows.Forms.FlowLayoutPanel flpPackButtons;
+        private System.Windows.Forms.RichTextBox txtPackFolder;
+        private System.Windows.Forms.Button btnInputFolder;
+        private System.Windows.Forms.Button btnOutputZip;
+        private System.Windows.Forms.Label lblOutputZip;
+        private System.Windows.Forms.RichTextBox txtPackZip;
+        private System.Windows.Forms.ComboBox cmbPackPackageType;
+        private System.Windows.Forms.Label lblPackageTypePack;
+        private System.Windows.Forms.ComboBox cmbPackErrorLevel;
+        private System.Windows.Forms.Label lblErrorLevelPack;
+        private System.Windows.Forms.Label lblNoLogoPack;
+        private System.Windows.Forms.CheckBox chkPackNoLogo;
+        private System.Windows.Forms.Label lblLogPack;
+        private System.Windows.Forms.RichTextBox txtPackLog;
+        private System.Windows.Forms.Button btnLogPack;
+        private System.Windows.Forms.RichTextBox txtPackArguments;
+        private System.Windows.Forms.Label lblArgumentsPack;
+        private System.Windows.Forms.Button btnArgumentsPack;
+        private System.Windows.Forms.Label lblLocalizePack;
+        private System.Windows.Forms.CheckBox chkPackLocalize;
+        private System.Windows.Forms.Button btnPack;
+        private System.Windows.Forms.TableLayoutPanel tlpSettings;
+        private System.Windows.Forms.FlowLayoutPanel flpSettingsButtons;
+        private System.Windows.Forms.FlowLayoutPanel flpSettingsLabels;
+        private System.Windows.Forms.FlowLayoutPanel flpSettingsControls;
         private System.Windows.Forms.Button btnSaveSettings;
+        private System.Windows.Forms.Button btnCoreTools;
+        private System.Windows.Forms.Label lblCoreToolsVersion;
+        private System.Windows.Forms.Label lblNuGetFeed;
+        private System.Windows.Forms.Label lblLanguage;
+        private System.Windows.Forms.RichTextBox txtCoreTools;
+        private System.Windows.Forms.RichTextBox txtNuGetFeed;
+        private System.Windows.Forms.ComboBox cmbLanguage;
+        private System.Windows.Forms.Button btnNuGetFeed;
+        private System.Windows.Forms.RichTextBox txtPackMap;
+        private System.Windows.Forms.Label lblPackMap;
+        private System.Windows.Forms.Button btnPackMap;
     }
 }

@@ -9,5 +9,10 @@
         /// The selected language
         /// </summary>
         public string Language { get; set; }
+
+        /// <summary>
+        /// Nuget Feed
+        /// </summary>
+        public string NugetFeed { get; set; }
     }
 }

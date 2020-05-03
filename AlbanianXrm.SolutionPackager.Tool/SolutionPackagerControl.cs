@@ -85,7 +85,7 @@ namespace AlbanianXrm.SolutionPackager
                 return;
             }
             pluginViewModel.Settings = settings;
-
+            txtNuGetFeed.Text = settings.NugetFeed;
             var selection = cmbLanguage.Items.IndexOf(CultureInfo.GetCultureInfo(settings.Language));
             if (selection >= 0)
             {
@@ -255,6 +255,7 @@ namespace AlbanianXrm.SolutionPackager
 
         private void BtnSaveSettings_Click(object sender, EventArgs e)
         {
+            pluginViewModel.Settings.NugetFeed = txtNuGetFeed.Text;
             LogInfo(Resources.SETTINGS_SAVING);
             SettingsManager.Instance.Save(pluginType, pluginViewModel.Settings);
         }
