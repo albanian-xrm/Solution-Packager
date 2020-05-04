@@ -33,7 +33,7 @@ namespace AlbanianXrm.SolutionPackager
 
         private readonly string[] packageTypes = new string[] { null, "Unmanaged", "Managed", "Both" };
         private readonly string[] errorLevels = new string[] { "Off", "Error", "Warning", "Info", "Verbose" };
-
+        private readonly string[] languageCodes = new string[] { null, "auto", "1033", "1025", "1069", "1026", "1027", "3076", "2052", "1028", "1050", "1029", "1030", "1043", "1061", "1035", "1036", "1110", "1031", "1032", "1037", "1081", "1038", "1057", "1040", "1041", "1087", "1042", "1062", "1063", "1086", "1044", "1045", "1046", "2070", "1048", "1049", "3098", "2074", "1051", "1060", "3082", "1053", "1054", "1055", "1058", "1066" };
         public SolutionPackagerControl(Type pluginType)
         {
             this.pluginType = pluginType;
@@ -165,7 +165,7 @@ namespace AlbanianXrm.SolutionPackager
             }
             if (CoreToolsDownloader.GetSolutionPackagerVersion() == null)
             {
-                errorProvider.SetError(tabSettings, Resources.SOLUTIONPACKAGER_MISSING);
+                errorProvider.SetError(localOrCrm, Resources.SOLUTIONPACKAGER_MISSING);
                 nrErrors += 1;
             }
             if (localOrCrm.Checked)
@@ -192,6 +192,7 @@ namespace AlbanianXrm.SolutionPackager
 
             var parameters = new SolutionPackagerCaller.Parameters()
             {
+                Action = "Extract",
                 ZipFile = txtZipPath.Text,
                 OutputFolder = txtOutputFolder.Text,
                 PackageType = packageTypes[cmbPackageType.SelectedIndex],
@@ -199,7 +200,11 @@ namespace AlbanianXrm.SolutionPackager
                 AllowDelete = radAllowDeleteYes.Checked ? true : (radAllowDeleteNo.Checked ? false : default(bool?)),
                 Clobber = chkClobber.Checked,
                 ErrorLevel = errorLevels[cmbErrorLevel.SelectedIndex],
-                NoLogo = !chkBanner.Checked,
+                MapFile = txtExtractMap.Text,
+                NoLogo = chkExtractNoLogo.Checked,
+                LogFile = txtExtractLog.Text,
+                Arguments = txtExtractArguments.Text,
+                SourceLocale = languageCodes[cmbExtractSourceLocale.SelectedIndex],
                 Localize = chkLocalize.Checked,
                 FormatXml = chkFormatDocument.Checked
             };
@@ -211,7 +216,7 @@ namespace AlbanianXrm.SolutionPackager
                        cmbCrmSolutions.SelectedItem as Models.Solution,
                        zipDirectory: txtZipPath.Text,
                        solutionPackagerParameters: parameters,
-                       managed: radManaged.Checked,
+                       managed: parameters.PackageType == "Both" ? new bool[] { true, false } : new bool[] { radManaged.Checked },
                        exportAutoNumberingSettings: chkExportAutoNumbering.Checked,
                        exportCalendarSettings: chkExportCalendar.Checked,
                        exportCustomizationSettings: chkExportCustomization.Checked,

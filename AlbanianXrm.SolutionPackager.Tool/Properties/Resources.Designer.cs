@@ -61,6 +61,26 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Code {
+            get {
+                object obj = ResourceManager.GetObject("Code", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Command {
+            get {
+                object obj = ResourceManager.GetObject("Command", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0} package not found on {1}.
         /// </summary>
         internal static string CORE_TOOLS_NOT_FOUND {
@@ -130,6 +150,16 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         internal static string LAUNCH_COMMAND_LINE {
             get {
                 return ResourceManager.GetString("LAUNCH_COMMAND_LINE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Log {
+            get {
+                object obj = ResourceManager.GetObject("Log", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

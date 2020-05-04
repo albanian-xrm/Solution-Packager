@@ -214,7 +214,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Command.png" />
+    <None Include="Resources\Code.png" />
     <Content Include="Resources\Folder.png" />
+    <None Include="Resources\Log.png" />
     <Content Include="Resources\Refresh.png" />
     <Content Include="Resources\Solutions.png" />
     <Content Include="Resources\Zip.png" />

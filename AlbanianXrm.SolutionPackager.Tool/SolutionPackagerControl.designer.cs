@@ -10,20 +10,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SolutionPackagerControl));
             this.tabsExtractOrPack = new System.Windows.Forms.TabControl();
             this.tabExtract = new System.Windows.Forms.TabPage();
-            this.chkFormatDocument = new System.Windows.Forms.CheckBox();
-            this.chkLocalize = new System.Windows.Forms.CheckBox();
-            this.lblErrorLevel = new System.Windows.Forms.Label();
-            this.cmbErrorLevel = new System.Windows.Forms.ComboBox();
-            this.chkBanner = new System.Windows.Forms.CheckBox();
-            this.chkClobber = new System.Windows.Forms.CheckBox();
-            this.lblPackageType = new System.Windows.Forms.Label();
-            this.deleteContainter = new System.Windows.Forms.Panel();
-            this.radAllowDeletePrompt = new System.Windows.Forms.RadioButton();
-            this.radAllowDeleteYes = new System.Windows.Forms.RadioButton();
-            this.radAllowDeleteNo = new System.Windows.Forms.RadioButton();
-            this.lblAllowDelete = new System.Windows.Forms.Label();
-            this.cmbPackageType = new System.Windows.Forms.ComboBox();
-            this.chkAllowWrite = new System.Windows.Forms.CheckBox();
+            this.tlpExtract = new System.Windows.Forms.TableLayoutPanel();
+            this.localOrCrm = new System.Windows.Forms.CheckBox();
             this.grpExportSolution = new System.Windows.Forms.GroupBox();
             this.lblExportAs = new System.Windows.Forms.Label();
             this.radManaged = new System.Windows.Forms.RadioButton();
@@ -43,13 +31,45 @@
             this.cmbCrmSolutions = new System.Windows.Forms.ComboBox();
             this.btnRefreshSolutions = new System.Windows.Forms.Button();
             this.btnExtract = new System.Windows.Forms.Button();
-            this.btnOutputFolder = new System.Windows.Forms.Button();
-            this.btnOpenZip = new System.Windows.Forms.Button();
-            this.txtOutputFolder = new System.Windows.Forms.RichTextBox();
+            this.flpExtractLabels = new System.Windows.Forms.FlowLayoutPanel();
             this.lblExtractZipPath = new System.Windows.Forms.Label();
             this.lblOutputFolder = new System.Windows.Forms.Label();
+            this.lblPackageType = new System.Windows.Forms.Label();
+            this.lblPackWrite = new System.Windows.Forms.Label();
+            this.lblAllowDelete = new System.Windows.Forms.Label();
+            this.lblExtractClobber = new System.Windows.Forms.Label();
+            this.lblErrorLevel = new System.Windows.Forms.Label();
+            this.lblExtractMap = new System.Windows.Forms.Label();
+            this.lblExtractLogo = new System.Windows.Forms.Label();
+            this.lblExtractLog = new System.Windows.Forms.Label();
+            this.lblExtractArguments = new System.Windows.Forms.Label();
+            this.lblExtractSourceLocale = new System.Windows.Forms.Label();
+            this.lblExtractLocalize = new System.Windows.Forms.Label();
+            this.lblExtractFormat = new System.Windows.Forms.Label();
+            this.flpExtractControls = new System.Windows.Forms.FlowLayoutPanel();
             this.txtZipPath = new System.Windows.Forms.RichTextBox();
-            this.localOrCrm = new System.Windows.Forms.CheckBox();
+            this.txtOutputFolder = new System.Windows.Forms.RichTextBox();
+            this.cmbPackageType = new System.Windows.Forms.ComboBox();
+            this.chkAllowWrite = new System.Windows.Forms.CheckBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.radAllowDeletePrompt = new System.Windows.Forms.RadioButton();
+            this.radAllowDeleteYes = new System.Windows.Forms.RadioButton();
+            this.radAllowDeleteNo = new System.Windows.Forms.RadioButton();
+            this.chkClobber = new System.Windows.Forms.CheckBox();
+            this.cmbErrorLevel = new System.Windows.Forms.ComboBox();
+            this.txtExtractMap = new System.Windows.Forms.RichTextBox();
+            this.chkExtractNoLogo = new System.Windows.Forms.CheckBox();
+            this.txtExtractLog = new System.Windows.Forms.RichTextBox();
+            this.txtExtractArguments = new System.Windows.Forms.RichTextBox();
+            this.cmbExtractSourceLocale = new System.Windows.Forms.ComboBox();
+            this.chkLocalize = new System.Windows.Forms.CheckBox();
+            this.chkFormatDocument = new System.Windows.Forms.CheckBox();
+            this.flpExtractButtons = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnOpenZip = new System.Windows.Forms.Button();
+            this.btnOutputFolder = new System.Windows.Forms.Button();
+            this.btnExtractMapFile = new System.Windows.Forms.Button();
+            this.btnExtractLog = new System.Windows.Forms.Button();
+            this.btnExtractArguments = new System.Windows.Forms.Button();
             this.tabPack = new System.Windows.Forms.TabPage();
             this.tlpPack = new System.Windows.Forms.TableLayoutPanel();
             this.btnPack = new System.Windows.Forms.Button();
@@ -101,8 +121,12 @@
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.tabsExtractOrPack.SuspendLayout();
             this.tabExtract.SuspendLayout();
-            this.deleteContainter.SuspendLayout();
+            this.tlpExtract.SuspendLayout();
             this.grpExportSolution.SuspendLayout();
+            this.flpExtractLabels.SuspendLayout();
+            this.flpExtractControls.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.flpExtractButtons.SuspendLayout();
             this.tabPack.SuspendLayout();
             this.tlpPack.SuspendLayout();
             this.flpPackLabels.SuspendLayout();
@@ -132,142 +156,33 @@
             // 
             // tabExtract
             // 
-            this.tabExtract.Controls.Add(this.chkFormatDocument);
-            this.tabExtract.Controls.Add(this.chkLocalize);
-            this.tabExtract.Controls.Add(this.lblErrorLevel);
-            this.tabExtract.Controls.Add(this.cmbErrorLevel);
-            this.tabExtract.Controls.Add(this.chkBanner);
-            this.tabExtract.Controls.Add(this.chkClobber);
-            this.tabExtract.Controls.Add(this.lblPackageType);
-            this.tabExtract.Controls.Add(this.deleteContainter);
-            this.tabExtract.Controls.Add(this.cmbPackageType);
-            this.tabExtract.Controls.Add(this.chkAllowWrite);
-            this.tabExtract.Controls.Add(this.grpExportSolution);
-            this.tabExtract.Controls.Add(this.btnExtract);
-            this.tabExtract.Controls.Add(this.btnOutputFolder);
-            this.tabExtract.Controls.Add(this.btnOpenZip);
-            this.tabExtract.Controls.Add(this.txtOutputFolder);
-            this.tabExtract.Controls.Add(this.lblExtractZipPath);
-            this.tabExtract.Controls.Add(this.lblOutputFolder);
-            this.tabExtract.Controls.Add(this.txtZipPath);
-            this.tabExtract.Controls.Add(this.localOrCrm);
+            this.tabExtract.Controls.Add(this.tlpExtract);
             resources.ApplyResources(this.tabExtract, "tabExtract");
             this.tabExtract.Name = "tabExtract";
             this.tabExtract.UseVisualStyleBackColor = true;
             // 
-            // chkFormatDocument
+            // tlpExtract
             // 
-            resources.ApplyResources(this.chkFormatDocument, "chkFormatDocument");
-            this.chkFormatDocument.Checked = true;
-            this.chkFormatDocument.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkFormatDocument.Name = "chkFormatDocument";
-            this.toolTip.SetToolTip(this.chkFormatDocument, resources.GetString("chkFormatDocument.ToolTip"));
-            this.chkFormatDocument.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.tlpExtract, "tlpExtract");
+            this.tlpExtract.Controls.Add(this.localOrCrm, 0, 0);
+            this.tlpExtract.Controls.Add(this.grpExportSolution, 0, 3);
+            this.tlpExtract.Controls.Add(this.btnExtract, 1, 2);
+            this.tlpExtract.Controls.Add(this.flpExtractLabels, 0, 1);
+            this.tlpExtract.Controls.Add(this.flpExtractControls, 1, 1);
+            this.tlpExtract.Controls.Add(this.flpExtractButtons, 2, 1);
+            this.tlpExtract.Name = "tlpExtract";
             // 
-            // chkLocalize
+            // localOrCrm
             // 
-            resources.ApplyResources(this.chkLocalize, "chkLocalize");
-            this.chkLocalize.Name = "chkLocalize";
-            this.toolTip.SetToolTip(this.chkLocalize, resources.GetString("chkLocalize.ToolTip"));
-            this.chkLocalize.UseVisualStyleBackColor = true;
-            // 
-            // lblErrorLevel
-            // 
-            resources.ApplyResources(this.lblErrorLevel, "lblErrorLevel");
-            this.lblErrorLevel.Name = "lblErrorLevel";
-            // 
-            // cmbErrorLevel
-            // 
-            this.cmbErrorLevel.DisplayMember = "FriendlyName";
-            this.cmbErrorLevel.FormattingEnabled = true;
-            this.cmbErrorLevel.Items.AddRange(new object[] {
-            resources.GetString("cmbErrorLevel.Items"),
-            resources.GetString("cmbErrorLevel.Items1"),
-            resources.GetString("cmbErrorLevel.Items2"),
-            resources.GetString("cmbErrorLevel.Items3"),
-            resources.GetString("cmbErrorLevel.Items4")});
-            resources.ApplyResources(this.cmbErrorLevel, "cmbErrorLevel");
-            this.cmbErrorLevel.Name = "cmbErrorLevel";
-            this.cmbErrorLevel.ValueMember = "SolutionId";
-            // 
-            // chkBanner
-            // 
-            resources.ApplyResources(this.chkBanner, "chkBanner");
-            this.chkBanner.Checked = true;
-            this.chkBanner.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkBanner.Name = "chkBanner";
-            this.chkBanner.UseVisualStyleBackColor = true;
-            // 
-            // chkClobber
-            // 
-            resources.ApplyResources(this.chkClobber, "chkClobber");
-            this.chkClobber.Name = "chkClobber";
-            this.chkClobber.UseVisualStyleBackColor = true;
-            // 
-            // lblPackageType
-            // 
-            resources.ApplyResources(this.lblPackageType, "lblPackageType");
-            this.lblPackageType.Name = "lblPackageType";
-            // 
-            // deleteContainter
-            // 
-            this.deleteContainter.Controls.Add(this.radAllowDeletePrompt);
-            this.deleteContainter.Controls.Add(this.radAllowDeleteYes);
-            this.deleteContainter.Controls.Add(this.radAllowDeleteNo);
-            this.deleteContainter.Controls.Add(this.lblAllowDelete);
-            resources.ApplyResources(this.deleteContainter, "deleteContainter");
-            this.deleteContainter.Name = "deleteContainter";
-            // 
-            // radAllowDeletePrompt
-            // 
-            resources.ApplyResources(this.radAllowDeletePrompt, "radAllowDeletePrompt");
-            this.radAllowDeletePrompt.Checked = true;
-            this.radAllowDeletePrompt.Name = "radAllowDeletePrompt";
-            this.radAllowDeletePrompt.TabStop = true;
-            this.radAllowDeletePrompt.UseVisualStyleBackColor = true;
-            // 
-            // radAllowDeleteYes
-            // 
-            resources.ApplyResources(this.radAllowDeleteYes, "radAllowDeleteYes");
-            this.radAllowDeleteYes.Name = "radAllowDeleteYes";
-            this.radAllowDeleteYes.TabStop = true;
-            this.radAllowDeleteYes.UseVisualStyleBackColor = true;
-            // 
-            // radAllowDeleteNo
-            // 
-            resources.ApplyResources(this.radAllowDeleteNo, "radAllowDeleteNo");
-            this.radAllowDeleteNo.Name = "radAllowDeleteNo";
-            this.radAllowDeleteNo.TabStop = true;
-            this.radAllowDeleteNo.UseVisualStyleBackColor = true;
-            // 
-            // lblAllowDelete
-            // 
-            resources.ApplyResources(this.lblAllowDelete, "lblAllowDelete");
-            this.lblAllowDelete.Name = "lblAllowDelete";
-            // 
-            // cmbPackageType
-            // 
-            this.cmbPackageType.DisplayMember = "FriendlyName";
-            this.cmbPackageType.FormattingEnabled = true;
-            this.cmbPackageType.Items.AddRange(new object[] {
-            resources.GetString("cmbPackageType.Items"),
-            resources.GetString("cmbPackageType.Items1"),
-            resources.GetString("cmbPackageType.Items2"),
-            resources.GetString("cmbPackageType.Items3")});
-            resources.ApplyResources(this.cmbPackageType, "cmbPackageType");
-            this.cmbPackageType.Name = "cmbPackageType";
-            this.cmbPackageType.ValueMember = "SolutionId";
-            // 
-            // chkAllowWrite
-            // 
-            resources.ApplyResources(this.chkAllowWrite, "chkAllowWrite");
-            this.chkAllowWrite.Checked = true;
-            this.chkAllowWrite.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkAllowWrite.Name = "chkAllowWrite";
-            this.chkAllowWrite.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.localOrCrm, "localOrCrm");
+            this.tlpExtract.SetColumnSpan(this.localOrCrm, 2);
+            this.localOrCrm.Name = "localOrCrm";
+            this.localOrCrm.UseVisualStyleBackColor = true;
+            this.localOrCrm.CheckedChanged += new System.EventHandler(this.LocalOrCrm_CheckedChanged);
             // 
             // grpExportSolution
             // 
+            this.tlpExtract.SetColumnSpan(this.grpExportSolution, 3);
             this.grpExportSolution.Controls.Add(this.lblExportAs);
             this.grpExportSolution.Controls.Add(this.radManaged);
             this.grpExportSolution.Controls.Add(this.radUnmanaged);
@@ -402,29 +317,24 @@
             this.btnExtract.UseVisualStyleBackColor = true;
             this.btnExtract.Click += new System.EventHandler(this.BtnExtract_Click);
             // 
-            // btnOutputFolder
+            // flpExtractLabels
             // 
-            this.btnOutputFolder.BackgroundImage = global::AlbanianXrm.SolutionPackager.Properties.Resources.Folder;
-            resources.ApplyResources(this.btnOutputFolder, "btnOutputFolder");
-            this.btnOutputFolder.Name = "btnOutputFolder";
-            this.btnOutputFolder.UseVisualStyleBackColor = true;
-            this.btnOutputFolder.Click += new System.EventHandler(this.BtnOutputFolder_Click);
-            // 
-            // btnOpenZip
-            // 
-            this.btnOpenZip.BackgroundImage = global::AlbanianXrm.SolutionPackager.Properties.Resources.Zip;
-            resources.ApplyResources(this.btnOpenZip, "btnOpenZip");
-            this.btnOpenZip.Name = "btnOpenZip";
-            this.btnOpenZip.UseVisualStyleBackColor = true;
-            this.btnOpenZip.Click += new System.EventHandler(this.BtnOpenZip_Click);
-            // 
-            // txtOutputFolder
-            // 
-            resources.ApplyResources(this.txtOutputFolder, "txtOutputFolder");
-            this.txtOutputFolder.Name = "txtOutputFolder";
-            this.txtOutputFolder.ReadOnly = true;
-            this.txtOutputFolder.ShortcutsEnabled = false;
-            this.txtOutputFolder.TabStop = false;
+            this.flpExtractLabels.Controls.Add(this.lblExtractZipPath);
+            this.flpExtractLabels.Controls.Add(this.lblOutputFolder);
+            this.flpExtractLabels.Controls.Add(this.lblPackageType);
+            this.flpExtractLabels.Controls.Add(this.lblPackWrite);
+            this.flpExtractLabels.Controls.Add(this.lblAllowDelete);
+            this.flpExtractLabels.Controls.Add(this.lblExtractClobber);
+            this.flpExtractLabels.Controls.Add(this.lblErrorLevel);
+            this.flpExtractLabels.Controls.Add(this.lblExtractMap);
+            this.flpExtractLabels.Controls.Add(this.lblExtractLogo);
+            this.flpExtractLabels.Controls.Add(this.lblExtractLog);
+            this.flpExtractLabels.Controls.Add(this.lblExtractArguments);
+            this.flpExtractLabels.Controls.Add(this.lblExtractSourceLocale);
+            this.flpExtractLabels.Controls.Add(this.lblExtractLocalize);
+            this.flpExtractLabels.Controls.Add(this.lblExtractFormat);
+            resources.ApplyResources(this.flpExtractLabels, "flpExtractLabels");
+            this.flpExtractLabels.Name = "flpExtractLabels";
             // 
             // lblExtractZipPath
             // 
@@ -436,6 +346,85 @@
             resources.ApplyResources(this.lblOutputFolder, "lblOutputFolder");
             this.lblOutputFolder.Name = "lblOutputFolder";
             // 
+            // lblPackageType
+            // 
+            resources.ApplyResources(this.lblPackageType, "lblPackageType");
+            this.lblPackageType.Name = "lblPackageType";
+            // 
+            // lblPackWrite
+            // 
+            resources.ApplyResources(this.lblPackWrite, "lblPackWrite");
+            this.lblPackWrite.Name = "lblPackWrite";
+            // 
+            // lblAllowDelete
+            // 
+            resources.ApplyResources(this.lblAllowDelete, "lblAllowDelete");
+            this.lblAllowDelete.Name = "lblAllowDelete";
+            // 
+            // lblExtractClobber
+            // 
+            resources.ApplyResources(this.lblExtractClobber, "lblExtractClobber");
+            this.lblExtractClobber.Name = "lblExtractClobber";
+            // 
+            // lblErrorLevel
+            // 
+            resources.ApplyResources(this.lblErrorLevel, "lblErrorLevel");
+            this.lblErrorLevel.Name = "lblErrorLevel";
+            // 
+            // lblExtractMap
+            // 
+            resources.ApplyResources(this.lblExtractMap, "lblExtractMap");
+            this.lblExtractMap.Name = "lblExtractMap";
+            // 
+            // lblExtractLogo
+            // 
+            resources.ApplyResources(this.lblExtractLogo, "lblExtractLogo");
+            this.lblExtractLogo.Name = "lblExtractLogo";
+            // 
+            // lblExtractLog
+            // 
+            resources.ApplyResources(this.lblExtractLog, "lblExtractLog");
+            this.lblExtractLog.Name = "lblExtractLog";
+            // 
+            // lblExtractArguments
+            // 
+            resources.ApplyResources(this.lblExtractArguments, "lblExtractArguments");
+            this.lblExtractArguments.Name = "lblExtractArguments";
+            // 
+            // lblExtractSourceLocale
+            // 
+            resources.ApplyResources(this.lblExtractSourceLocale, "lblExtractSourceLocale");
+            this.lblExtractSourceLocale.Name = "lblExtractSourceLocale";
+            // 
+            // lblExtractLocalize
+            // 
+            resources.ApplyResources(this.lblExtractLocalize, "lblExtractLocalize");
+            this.lblExtractLocalize.Name = "lblExtractLocalize";
+            // 
+            // lblExtractFormat
+            // 
+            resources.ApplyResources(this.lblExtractFormat, "lblExtractFormat");
+            this.lblExtractFormat.Name = "lblExtractFormat";
+            // 
+            // flpExtractControls
+            // 
+            this.flpExtractControls.Controls.Add(this.txtZipPath);
+            this.flpExtractControls.Controls.Add(this.txtOutputFolder);
+            this.flpExtractControls.Controls.Add(this.cmbPackageType);
+            this.flpExtractControls.Controls.Add(this.chkAllowWrite);
+            this.flpExtractControls.Controls.Add(this.flowLayoutPanel1);
+            this.flpExtractControls.Controls.Add(this.chkClobber);
+            this.flpExtractControls.Controls.Add(this.cmbErrorLevel);
+            this.flpExtractControls.Controls.Add(this.txtExtractMap);
+            this.flpExtractControls.Controls.Add(this.chkExtractNoLogo);
+            this.flpExtractControls.Controls.Add(this.txtExtractLog);
+            this.flpExtractControls.Controls.Add(this.txtExtractArguments);
+            this.flpExtractControls.Controls.Add(this.cmbExtractSourceLocale);
+            this.flpExtractControls.Controls.Add(this.chkLocalize);
+            this.flpExtractControls.Controls.Add(this.chkFormatDocument);
+            resources.ApplyResources(this.flpExtractControls, "flpExtractControls");
+            this.flpExtractControls.Name = "flpExtractControls";
+            // 
             // txtZipPath
             // 
             resources.ApplyResources(this.txtZipPath, "txtZipPath");
@@ -444,12 +433,233 @@
             this.txtZipPath.ShortcutsEnabled = false;
             this.txtZipPath.TabStop = false;
             // 
-            // localOrCrm
+            // txtOutputFolder
             // 
-            resources.ApplyResources(this.localOrCrm, "localOrCrm");
-            this.localOrCrm.Name = "localOrCrm";
-            this.localOrCrm.UseVisualStyleBackColor = true;
-            this.localOrCrm.CheckedChanged += new System.EventHandler(this.LocalOrCrm_CheckedChanged);
+            resources.ApplyResources(this.txtOutputFolder, "txtOutputFolder");
+            this.txtOutputFolder.Name = "txtOutputFolder";
+            this.txtOutputFolder.ReadOnly = true;
+            this.txtOutputFolder.ShortcutsEnabled = false;
+            this.txtOutputFolder.TabStop = false;
+            // 
+            // cmbPackageType
+            // 
+            this.cmbPackageType.DisplayMember = "FriendlyName";
+            this.cmbPackageType.FormattingEnabled = true;
+            this.cmbPackageType.Items.AddRange(new object[] {
+            resources.GetString("cmbPackageType.Items"),
+            resources.GetString("cmbPackageType.Items1"),
+            resources.GetString("cmbPackageType.Items2"),
+            resources.GetString("cmbPackageType.Items3")});
+            resources.ApplyResources(this.cmbPackageType, "cmbPackageType");
+            this.cmbPackageType.Name = "cmbPackageType";
+            this.cmbPackageType.ValueMember = "SolutionId";
+            // 
+            // chkAllowWrite
+            // 
+            resources.ApplyResources(this.chkAllowWrite, "chkAllowWrite");
+            this.chkAllowWrite.Checked = true;
+            this.chkAllowWrite.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkAllowWrite.Name = "chkAllowWrite";
+            this.chkAllowWrite.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.radAllowDeletePrompt);
+            this.flowLayoutPanel1.Controls.Add(this.radAllowDeleteYes);
+            this.flowLayoutPanel1.Controls.Add(this.radAllowDeleteNo);
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            // 
+            // radAllowDeletePrompt
+            // 
+            resources.ApplyResources(this.radAllowDeletePrompt, "radAllowDeletePrompt");
+            this.radAllowDeletePrompt.Checked = true;
+            this.radAllowDeletePrompt.Name = "radAllowDeletePrompt";
+            this.radAllowDeletePrompt.TabStop = true;
+            this.radAllowDeletePrompt.UseVisualStyleBackColor = true;
+            // 
+            // radAllowDeleteYes
+            // 
+            resources.ApplyResources(this.radAllowDeleteYes, "radAllowDeleteYes");
+            this.radAllowDeleteYes.Name = "radAllowDeleteYes";
+            this.radAllowDeleteYes.TabStop = true;
+            this.radAllowDeleteYes.UseVisualStyleBackColor = true;
+            // 
+            // radAllowDeleteNo
+            // 
+            resources.ApplyResources(this.radAllowDeleteNo, "radAllowDeleteNo");
+            this.radAllowDeleteNo.Name = "radAllowDeleteNo";
+            this.radAllowDeleteNo.TabStop = true;
+            this.radAllowDeleteNo.UseVisualStyleBackColor = true;
+            // 
+            // chkClobber
+            // 
+            resources.ApplyResources(this.chkClobber, "chkClobber");
+            this.chkClobber.Name = "chkClobber";
+            this.chkClobber.UseVisualStyleBackColor = true;
+            // 
+            // cmbErrorLevel
+            // 
+            this.cmbErrorLevel.DisplayMember = "FriendlyName";
+            this.cmbErrorLevel.FormattingEnabled = true;
+            this.cmbErrorLevel.Items.AddRange(new object[] {
+            resources.GetString("cmbErrorLevel.Items"),
+            resources.GetString("cmbErrorLevel.Items1"),
+            resources.GetString("cmbErrorLevel.Items2"),
+            resources.GetString("cmbErrorLevel.Items3"),
+            resources.GetString("cmbErrorLevel.Items4")});
+            resources.ApplyResources(this.cmbErrorLevel, "cmbErrorLevel");
+            this.cmbErrorLevel.Name = "cmbErrorLevel";
+            this.cmbErrorLevel.ValueMember = "SolutionId";
+            // 
+            // txtExtractMap
+            // 
+            resources.ApplyResources(this.txtExtractMap, "txtExtractMap");
+            this.txtExtractMap.Name = "txtExtractMap";
+            this.txtExtractMap.ReadOnly = true;
+            this.txtExtractMap.ShortcutsEnabled = false;
+            this.txtExtractMap.TabStop = false;
+            // 
+            // chkExtractNoLogo
+            // 
+            resources.ApplyResources(this.chkExtractNoLogo, "chkExtractNoLogo");
+            this.chkExtractNoLogo.Name = "chkExtractNoLogo";
+            this.chkExtractNoLogo.UseVisualStyleBackColor = true;
+            // 
+            // txtExtractLog
+            // 
+            resources.ApplyResources(this.txtExtractLog, "txtExtractLog");
+            this.txtExtractLog.Name = "txtExtractLog";
+            this.txtExtractLog.ReadOnly = true;
+            this.txtExtractLog.ShortcutsEnabled = false;
+            this.txtExtractLog.TabStop = false;
+            // 
+            // txtExtractArguments
+            // 
+            resources.ApplyResources(this.txtExtractArguments, "txtExtractArguments");
+            this.txtExtractArguments.Name = "txtExtractArguments";
+            this.txtExtractArguments.ReadOnly = true;
+            this.txtExtractArguments.ShortcutsEnabled = false;
+            this.txtExtractArguments.TabStop = false;
+            // 
+            // cmbExtractSourceLocale
+            // 
+            this.cmbExtractSourceLocale.DisplayMember = "FriendlyName";
+            this.cmbExtractSourceLocale.FormattingEnabled = true;
+            this.cmbExtractSourceLocale.Items.AddRange(new object[] {
+            resources.GetString("cmbExtractSourceLocale.Items"),
+            resources.GetString("cmbExtractSourceLocale.Items1"),
+            resources.GetString("cmbExtractSourceLocale.Items2"),
+            resources.GetString("cmbExtractSourceLocale.Items3"),
+            resources.GetString("cmbExtractSourceLocale.Items4"),
+            resources.GetString("cmbExtractSourceLocale.Items5"),
+            resources.GetString("cmbExtractSourceLocale.Items6"),
+            resources.GetString("cmbExtractSourceLocale.Items7"),
+            resources.GetString("cmbExtractSourceLocale.Items8"),
+            resources.GetString("cmbExtractSourceLocale.Items9"),
+            resources.GetString("cmbExtractSourceLocale.Items10"),
+            resources.GetString("cmbExtractSourceLocale.Items11"),
+            resources.GetString("cmbExtractSourceLocale.Items12"),
+            resources.GetString("cmbExtractSourceLocale.Items13"),
+            resources.GetString("cmbExtractSourceLocale.Items14"),
+            resources.GetString("cmbExtractSourceLocale.Items15"),
+            resources.GetString("cmbExtractSourceLocale.Items16"),
+            resources.GetString("cmbExtractSourceLocale.Items17"),
+            resources.GetString("cmbExtractSourceLocale.Items18"),
+            resources.GetString("cmbExtractSourceLocale.Items19"),
+            resources.GetString("cmbExtractSourceLocale.Items20"),
+            resources.GetString("cmbExtractSourceLocale.Items21"),
+            resources.GetString("cmbExtractSourceLocale.Items22"),
+            resources.GetString("cmbExtractSourceLocale.Items23"),
+            resources.GetString("cmbExtractSourceLocale.Items24"),
+            resources.GetString("cmbExtractSourceLocale.Items25"),
+            resources.GetString("cmbExtractSourceLocale.Items26"),
+            resources.GetString("cmbExtractSourceLocale.Items27"),
+            resources.GetString("cmbExtractSourceLocale.Items28"),
+            resources.GetString("cmbExtractSourceLocale.Items29"),
+            resources.GetString("cmbExtractSourceLocale.Items30"),
+            resources.GetString("cmbExtractSourceLocale.Items31"),
+            resources.GetString("cmbExtractSourceLocale.Items32"),
+            resources.GetString("cmbExtractSourceLocale.Items33"),
+            resources.GetString("cmbExtractSourceLocale.Items34"),
+            resources.GetString("cmbExtractSourceLocale.Items35"),
+            resources.GetString("cmbExtractSourceLocale.Items36"),
+            resources.GetString("cmbExtractSourceLocale.Items37"),
+            resources.GetString("cmbExtractSourceLocale.Items38"),
+            resources.GetString("cmbExtractSourceLocale.Items39"),
+            resources.GetString("cmbExtractSourceLocale.Items40"),
+            resources.GetString("cmbExtractSourceLocale.Items41"),
+            resources.GetString("cmbExtractSourceLocale.Items42"),
+            resources.GetString("cmbExtractSourceLocale.Items43"),
+            resources.GetString("cmbExtractSourceLocale.Items44"),
+            resources.GetString("cmbExtractSourceLocale.Items45"),
+            resources.GetString("cmbExtractSourceLocale.Items46")});
+            resources.ApplyResources(this.cmbExtractSourceLocale, "cmbExtractSourceLocale");
+            this.cmbExtractSourceLocale.Name = "cmbExtractSourceLocale";
+            this.cmbExtractSourceLocale.ValueMember = "SolutionId";
+            // 
+            // chkLocalize
+            // 
+            resources.ApplyResources(this.chkLocalize, "chkLocalize");
+            this.chkLocalize.Name = "chkLocalize";
+            this.toolTip.SetToolTip(this.chkLocalize, resources.GetString("chkLocalize.ToolTip"));
+            this.chkLocalize.UseVisualStyleBackColor = true;
+            // 
+            // chkFormatDocument
+            // 
+            resources.ApplyResources(this.chkFormatDocument, "chkFormatDocument");
+            this.chkFormatDocument.Checked = true;
+            this.chkFormatDocument.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkFormatDocument.Name = "chkFormatDocument";
+            this.toolTip.SetToolTip(this.chkFormatDocument, resources.GetString("chkFormatDocument.ToolTip"));
+            this.chkFormatDocument.UseVisualStyleBackColor = true;
+            // 
+            // flpExtractButtons
+            // 
+            this.flpExtractButtons.Controls.Add(this.btnOpenZip);
+            this.flpExtractButtons.Controls.Add(this.btnOutputFolder);
+            this.flpExtractButtons.Controls.Add(this.btnExtractMapFile);
+            this.flpExtractButtons.Controls.Add(this.btnExtractLog);
+            this.flpExtractButtons.Controls.Add(this.btnExtractArguments);
+            resources.ApplyResources(this.flpExtractButtons, "flpExtractButtons");
+            this.flpExtractButtons.Name = "flpExtractButtons";
+            // 
+            // btnOpenZip
+            // 
+            this.btnOpenZip.BackgroundImage = global::AlbanianXrm.SolutionPackager.Properties.Resources.Zip;
+            resources.ApplyResources(this.btnOpenZip, "btnOpenZip");
+            this.btnOpenZip.Name = "btnOpenZip";
+            this.btnOpenZip.UseVisualStyleBackColor = true;
+            this.btnOpenZip.Click += new System.EventHandler(this.BtnOpenZip_Click);
+            // 
+            // btnOutputFolder
+            // 
+            this.btnOutputFolder.BackgroundImage = global::AlbanianXrm.SolutionPackager.Properties.Resources.Folder;
+            resources.ApplyResources(this.btnOutputFolder, "btnOutputFolder");
+            this.btnOutputFolder.Name = "btnOutputFolder";
+            this.btnOutputFolder.UseVisualStyleBackColor = true;
+            this.btnOutputFolder.Click += new System.EventHandler(this.BtnOutputFolder_Click);
+            // 
+            // btnExtractMapFile
+            // 
+            this.btnExtractMapFile.BackgroundImage = global::AlbanianXrm.SolutionPackager.Properties.Resources.Code;
+            resources.ApplyResources(this.btnExtractMapFile, "btnExtractMapFile");
+            this.btnExtractMapFile.Name = "btnExtractMapFile";
+            this.btnExtractMapFile.UseVisualStyleBackColor = true;
+            // 
+            // btnExtractLog
+            // 
+            this.btnExtractLog.BackgroundImage = global::AlbanianXrm.SolutionPackager.Properties.Resources.Log;
+            resources.ApplyResources(this.btnExtractLog, "btnExtractLog");
+            this.btnExtractLog.Name = "btnExtractLog";
+            this.btnExtractLog.UseVisualStyleBackColor = true;
+            // 
+            // btnExtractArguments
+            // 
+            this.btnExtractArguments.BackgroundImage = global::AlbanianXrm.SolutionPackager.Properties.Resources.Command;
+            resources.ApplyResources(this.btnExtractArguments, "btnExtractArguments");
+            this.btnExtractArguments.Name = "btnExtractArguments";
+            this.btnExtractArguments.UseVisualStyleBackColor = true;
             // 
             // tabPack
             // 
@@ -651,21 +861,21 @@
             // 
             // btnPackMap
             // 
-            this.btnPackMap.BackgroundImage = global::AlbanianXrm.SolutionPackager.Properties.Resources.Zip;
+            this.btnPackMap.BackgroundImage = global::AlbanianXrm.SolutionPackager.Properties.Resources.Code;
             resources.ApplyResources(this.btnPackMap, "btnPackMap");
             this.btnPackMap.Name = "btnPackMap";
             this.btnPackMap.UseVisualStyleBackColor = true;
             // 
             // btnLogPack
             // 
-            this.btnLogPack.BackgroundImage = global::AlbanianXrm.SolutionPackager.Properties.Resources.Zip;
+            this.btnLogPack.BackgroundImage = global::AlbanianXrm.SolutionPackager.Properties.Resources.Log;
             resources.ApplyResources(this.btnLogPack, "btnLogPack");
             this.btnLogPack.Name = "btnLogPack";
             this.btnLogPack.UseVisualStyleBackColor = true;
             // 
             // btnArgumentsPack
             // 
-            this.btnArgumentsPack.BackgroundImage = global::AlbanianXrm.SolutionPackager.Properties.Resources.Zip;
+            this.btnArgumentsPack.BackgroundImage = global::AlbanianXrm.SolutionPackager.Properties.Resources.Command;
             resources.ApplyResources(this.btnArgumentsPack, "btnArgumentsPack");
             this.btnArgumentsPack.Name = "btnArgumentsPack";
             this.btnArgumentsPack.UseVisualStyleBackColor = true;
@@ -691,6 +901,7 @@
             resources.ApplyResources(this.btnSaveSettings, "btnSaveSettings");
             this.btnSaveSettings.Name = "btnSaveSettings";
             this.btnSaveSettings.UseVisualStyleBackColor = true;
+            this.btnSaveSettings.Click += new System.EventHandler(this.BtnSaveSettings_Click);
             // 
             // flpSettingsButtons
             // 
@@ -705,6 +916,7 @@
             resources.ApplyResources(this.btnCoreTools, "btnCoreTools");
             this.btnCoreTools.Name = "btnCoreTools";
             this.btnCoreTools.UseVisualStyleBackColor = true;
+            this.btnCoreTools.Click += new System.EventHandler(this.BtnCoreTools_Click);
             // 
             // btnNuGetFeed
             // 
@@ -712,6 +924,7 @@
             resources.ApplyResources(this.btnNuGetFeed, "btnNuGetFeed");
             this.btnNuGetFeed.Name = "btnNuGetFeed";
             this.btnNuGetFeed.UseVisualStyleBackColor = true;
+            this.btnNuGetFeed.Click += new System.EventHandler(this.BtnNuGetFeed_Click);
             // 
             // flpSettingsLabels
             // 
@@ -806,11 +1019,17 @@
             this.Load += new System.EventHandler(this.SolutionPackagerControl_Load);
             this.tabsExtractOrPack.ResumeLayout(false);
             this.tabExtract.ResumeLayout(false);
-            this.tabExtract.PerformLayout();
-            this.deleteContainter.ResumeLayout(false);
-            this.deleteContainter.PerformLayout();
+            this.tlpExtract.ResumeLayout(false);
+            this.tlpExtract.PerformLayout();
             this.grpExportSolution.ResumeLayout(false);
             this.grpExportSolution.PerformLayout();
+            this.flpExtractLabels.ResumeLayout(false);
+            this.flpExtractLabels.PerformLayout();
+            this.flpExtractControls.ResumeLayout(false);
+            this.flpExtractControls.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.flpExtractButtons.ResumeLayout(false);
             this.tabPack.ResumeLayout(false);
             this.tlpPack.ResumeLayout(false);
             this.flpPackLabels.ResumeLayout(false);
@@ -871,7 +1090,6 @@
         private System.Windows.Forms.RadioButton radManaged;
         private System.Windows.Forms.RadioButton radUnmanaged;
         private System.Windows.Forms.CheckBox chkAllowWrite;
-        private System.Windows.Forms.Panel deleteContainter;
         private System.Windows.Forms.Label lblAllowDelete;
         private System.Windows.Forms.RadioButton radAllowDeletePrompt;
         private System.Windows.Forms.RadioButton radAllowDeleteYes;
@@ -879,7 +1097,7 @@
         private System.Windows.Forms.Label lblPackageType;
         private System.Windows.Forms.ComboBox cmbPackageType;
         private System.Windows.Forms.CheckBox chkClobber;
-        private System.Windows.Forms.CheckBox chkBanner;
+        private System.Windows.Forms.CheckBox chkExtractNoLogo;
         private System.Windows.Forms.Label lblErrorLevel;
         private System.Windows.Forms.ComboBox cmbErrorLevel;
         private System.Windows.Forms.CheckBox chkLocalize;
@@ -926,5 +1144,26 @@
         private System.Windows.Forms.RichTextBox txtPackMap;
         private System.Windows.Forms.Label lblPackMap;
         private System.Windows.Forms.Button btnPackMap;
+        private System.Windows.Forms.TableLayoutPanel tlpExtract;
+        private System.Windows.Forms.FlowLayoutPanel flpExtractLabels;
+        private System.Windows.Forms.FlowLayoutPanel flpExtractControls;
+        private System.Windows.Forms.Label lblPackWrite;
+        private System.Windows.Forms.Label lblExtractClobber;
+        private System.Windows.Forms.FlowLayoutPanel flpExtractButtons;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label lblExtractMap;
+        private System.Windows.Forms.RichTextBox txtExtractMap;
+        private System.Windows.Forms.Label lblExtractLogo;
+        private System.Windows.Forms.Label lblExtractLocalize;
+        private System.Windows.Forms.Label lblExtractFormat;
+        private System.Windows.Forms.RichTextBox txtExtractLog;
+        private System.Windows.Forms.RichTextBox txtExtractArguments;
+        private System.Windows.Forms.Label lblExtractLog;
+        private System.Windows.Forms.Label lblExtractArguments;
+        private System.Windows.Forms.Label lblExtractSourceLocale;
+        private System.Windows.Forms.ComboBox cmbExtractSourceLocale;
+        private System.Windows.Forms.Button btnExtractMapFile;
+        private System.Windows.Forms.Button btnExtractLog;
+        private System.Windows.Forms.Button btnExtractArguments;
     }
 }

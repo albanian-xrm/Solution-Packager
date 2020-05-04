@@ -43,32 +43,36 @@ namespace AlbanianXrm.SolutionPackager
         private void DownloadSolution(BackgroundWorker worker, DoWorkEventArgs args)
         {
             var @params = args.Argument as DownloadSolutionParams ?? throw new ArgumentNullException(nameof(args.Argument));
-            ExportSolutionRequest request = new ExportSolutionRequest()
+            foreach (var managed in @params.Managed)
             {
-                SolutionName = @params.Solution.UniqueName,
-                Managed = @params.Managed,
-                ExportAutoNumberingSettings = @params.ExportAutoNumberingSettings,
-                ExportCalendarSettings = @params.ExportCalendarSettings,
-                ExportCustomizationSettings = @params.ExportCustomizationSettings,
-                ExportEmailTrackingSettings = @params.ExportEmailTrackingSettings,
-                ExportExternalApplications = @params.ExportExternalApplications,
-                ExportGeneralSettings = @params.ExportGeneralSettings,
-                ExportIsvConfig = @params.ExportIsvConfig,
-                ExportMarketingSettings = @params.ExportMarketingSettings,
-                ExportOutlookSynchronizationSettings = @params.ExportOutlookSynchronizationSettings,
-                ExportRelationshipRoles = @params.ExportRelationshipRoles,
-                ExportSales = @params.ExportSales
-            };
-            var response = solutionPackagerControl.Service.Execute(request) as ExportSolutionResponse;
+                ExportSolutionRequest request = new ExportSolutionRequest()
+                {
+                    SolutionName = @params.Solution.UniqueName,
+                    Managed = managed,
+                    ExportAutoNumberingSettings = @params.ExportAutoNumberingSettings,
+                    ExportCalendarSettings = @params.ExportCalendarSettings,
+                    ExportCustomizationSettings = @params.ExportCustomizationSettings,
+                    ExportEmailTrackingSettings = @params.ExportEmailTrackingSettings,
+                    ExportExternalApplications = @params.ExportExternalApplications,
+                    ExportGeneralSettings = @params.ExportGeneralSettings,
+                    ExportIsvConfig = @params.ExportIsvConfig,
+                    ExportMarketingSettings = @params.ExportMarketingSettings,
+                    ExportOutlookSynchronizationSettings = @params.ExportOutlookSynchronizationSettings,
+                    ExportRelationshipRoles = @params.ExportRelationshipRoles,
+                    ExportSales = @params.ExportSales
+                };
+                var response = solutionPackagerControl.Service.Execute(request) as ExportSolutionResponse;
 
-            string filePath = Path.Combine(@params.ZipDirectory, $"{@params.Solution.UniqueName}_{@params.Solution.Version.ToString().Replace(".", "_")}.zip");
+                string filePath = Path.Combine(@params.ZipDirectory, $"{@params.Solution.UniqueName}_{@params.Solution.Version.ToString().Replace(".", "_")}{(managed ? "_managed" : "")}.zip");
 
-            using (FileStream writer = File.Create(filePath))
-            {
-                writer.Write(response.ExportSolutionFile, 0, response.ExportSolutionFile.Length);
+                using (FileStream writer = File.Create(filePath))
+                {
+                    writer.Write(response.ExportSolutionFile, 0, response.ExportSolutionFile.Length);
+                }
+
+                @params.SolutionPackagerParameters.ZipFile = new FileInfo(filePath).FullName;
+
             }
-
-            @params.SolutionPackagerParameters.ZipFile = new FileInfo(filePath).FullName;
 
             args.Result = @params.SolutionPackagerParameters;
 
@@ -140,7 +144,7 @@ namespace AlbanianXrm.SolutionPackager
                 Solution solution,
                 string zipDirectory,
                 SolutionPackagerCaller.Parameters solutionPackagerParameters,
-                bool managed,
+                bool[] managed,
                 bool exportAutoNumberingSettings,
                 bool exportCalendarSettings,
                 bool exportCustomizationSettings,
@@ -174,7 +178,7 @@ namespace AlbanianXrm.SolutionPackager
             public Solution Solution { get; private set; }
             public string ZipDirectory { get; private set; }
             public SolutionPackagerCaller.Parameters SolutionPackagerParameters { get; private set; }
-            public bool Managed { get; private set; }
+            public bool[] Managed { get; private set; }
             public bool ExportAutoNumberingSettings { get; private set; }
             public bool ExportCalendarSettings { get; private set; }
             public bool ExportCustomizationSettings { get; private set; }

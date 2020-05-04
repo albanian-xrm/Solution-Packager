@@ -28,7 +28,6 @@ namespace AlbanianXrm.SolutionPackager
 
         public void ExtractSolution(Parameters @params)
         {
-
             asyncWorkQueue.Enqueue(new WorkAsyncInfo
             {
                 Message = string.Format(CultureInfo.InvariantCulture, Resources.EXTRACTING_SOLUTION, new FileInfo(@params.ZipFile).Name),
@@ -57,7 +56,7 @@ namespace AlbanianXrm.SolutionPackager
                 StartInfo =
                 {
                     FileName =  solutionPackagerFile,
-                    Arguments = $"/action:Extract /zipfile:\"{@params.ZipFile}\" /folder:\"{@params.OutputFolder}\"",
+                    Arguments = $"/action:{@params.Action} /zipfile:\"{@params.ZipFile}\" /folder:\"{@params.OutputFolder}\"",
                     WorkingDirectory = dir,
                     UseShellExecute = false,
                     CreateNoWindow = true,
@@ -90,9 +89,29 @@ namespace AlbanianXrm.SolutionPackager
 
             process.StartInfo.Arguments += " /errorlevel:" + @params.ErrorLevel;
 
+            if (!string.IsNullOrEmpty(@params.MapFile))
+            {
+                process.StartInfo.Arguments += $" /map:\"{@params.MapFile}\"";
+            }
+
             if (@params.NoLogo)
             {
                 process.StartInfo.Arguments += " /nologo";
+            }
+
+            if (!string.IsNullOrEmpty(@params.LogFile))
+            {
+                process.StartInfo.Arguments += $" /log:\"{@params.LogFile}\"";
+            }
+
+            if (!string.IsNullOrEmpty(@params.Arguments))
+            {
+                process.StartInfo.Arguments += $" \"{@params.Arguments}\"";
+            }
+
+            if (!string.IsNullOrEmpty(@params.SourceLocale))
+            {
+                process.StartInfo.Arguments += $" /sourceLoc:{@params.SourceLocale}";
             }
 
             if (@params.Localize)
@@ -187,7 +206,7 @@ namespace AlbanianXrm.SolutionPackager
         {
             txtOutput.SelectionStart = txtOutput.TextLength;
             txtOutput.SelectionFont = new Font(txtOutput.Font, FontStyle.Bold);
-            txtOutput.AppendText(" /" + argument + (value != null ? ":" : ""));
+            txtOutput.AppendText(string.IsNullOrEmpty(argument) ? " " : " /" + argument + (value != null ? ":" : ""));
             txtOutput.SelectionStart = txtOutput.TextLength;
             txtOutput.SelectionFont = txtOutput.Font;
             if (value != null)
@@ -209,7 +228,7 @@ namespace AlbanianXrm.SolutionPackager
                         txtOutput.SelectionStart = txtOutput.TextLength;
                         txtOutput.SelectionFont = new Font(txtOutput.Font, FontStyle.Bold | FontStyle.Italic);
                         txtOutput.AppendText("SolutionPackager.exe");
-                        AppendArgument("Action", "Extract");
+                        AppendArgument("Action", @params.Action);
                         AppendArgument("zipfile", $"\"{@params.ZipFile}\"");
                         AppendArgument("folder", $"\"{@params.OutputFolder}\"");
                         if (!string.IsNullOrEmpty(@params.PackageType))
@@ -229,10 +248,31 @@ namespace AlbanianXrm.SolutionPackager
                             AppendArgument("clobber");
                         }
                         AppendArgument("errorlevel", @params.ErrorLevel);
+
+                        if (!string.IsNullOrEmpty(@params.MapFile))
+                        {
+                            AppendArgument("map", $"\"{@params.MapFile}\"");
+                        }
+
                         if (@params.NoLogo)
                         {
                             AppendArgument("nologo");
                         }
+                        if (!string.IsNullOrEmpty(@params.LogFile))
+                        {
+                            AppendArgument("log", $"\"{@params.LogFile}\"");
+                        }
+
+                        if (!string.IsNullOrEmpty(@params.Arguments))
+                        {
+                            AppendArgument("", $"\"{@params.Arguments}\"");
+                        }
+
+                        if (!string.IsNullOrEmpty(@params.SourceLocale))
+                        {
+                            AppendArgument("sourceLoc", @params.SourceLocale);
+                        }
+
                         if (@params.Localize)
                         {
                             AppendArgument("localize");
@@ -292,6 +332,8 @@ namespace AlbanianXrm.SolutionPackager
 
         public class Parameters
         {
+            public string Action { get; set; }
+
             public string ZipFile { get; set; }
 
             public string OutputFolder { get; set; }
@@ -308,7 +350,15 @@ namespace AlbanianXrm.SolutionPackager
 
             public string ErrorLevel { get; set; }
 
+            public string MapFile { get; set; }
+
             public bool NoLogo { get; set; }
+
+            public string LogFile { get; set; }
+
+            public string Arguments { get; set; }
+
+            public string SourceLocale { get; set; }
 
             public bool Localize { get; set; }
 
