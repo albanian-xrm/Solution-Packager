@@ -61,6 +61,24 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        internal static string BTN_NO {
+            get {
+                return ResourceManager.GetString("BTN_NO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        internal static string BTN_YES {
+            get {
+                return ResourceManager.GetString("BTN_YES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Code {

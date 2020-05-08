@@ -39,9 +39,9 @@
             // 
             // imgLogo
             // 
+            resources.ApplyResources(this.imgLogo, "imgLogo");
             this.imgLogo.Image = global::AlbanianXrm.SolutionPackager.Properties.Resources.Logo;
             this.imgLogo.InitialImage = global::AlbanianXrm.SolutionPackager.Properties.Resources.Logo;
-            resources.ApplyResources(this.imgLogo, "imgLogo");
             this.imgLogo.Name = "imgLogo";
             this.imgLogo.TabStop = false;
             // 
@@ -62,10 +62,13 @@
             // 
             // txtDescription
             // 
+            resources.ApplyResources(this.txtDescription, "txtDescription");
             this.txtDescription.BackColor = System.Drawing.SystemColors.Control;
             this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.txtDescription, "txtDescription");
+            this.txtDescription.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtDescription.Name = "txtDescription";
+            this.txtDescription.ReadOnly = true;
+            this.txtDescription.TabStop = false;
             // 
             // SolutionPackagerAbout
             // 

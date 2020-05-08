@@ -33,15 +33,19 @@
             this.btnNo = new System.Windows.Forms.Button();
             this.btnYes = new System.Windows.Forms.Button();
             this.btnList = new System.Windows.Forms.Button();
+            this.flpCommands = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpCommands.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtMessage
             // 
             this.txtMessage.BackColor = System.Drawing.SystemColors.Control;
             this.txtMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMessage.Cursor = System.Windows.Forms.Cursors.Default;
             resources.ApplyResources(this.txtMessage, "txtMessage");
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.ReadOnly = true;
+            this.txtMessage.TabStop = false;
             // 
             // btnNo
             // 
@@ -64,13 +68,19 @@
             this.btnList.Name = "btnList";
             this.btnList.UseVisualStyleBackColor = true;
             // 
+            // flpCommands
+            // 
+            resources.ApplyResources(this.flpCommands, "flpCommands");
+            this.flpCommands.Controls.Add(this.btnList);
+            this.flpCommands.Controls.Add(this.btnNo);
+            this.flpCommands.Controls.Add(this.btnYes);
+            this.flpCommands.Name = "flpCommands";
+            // 
             // SolutionPackagerDialog
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnList);
-            this.Controls.Add(this.btnYes);
-            this.Controls.Add(this.btnNo);
+            this.Controls.Add(this.flpCommands);
             this.Controls.Add(this.txtMessage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
@@ -80,6 +90,7 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.TopMost = true;
+            this.flpCommands.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -91,5 +102,6 @@
         private System.Windows.Forms.Button btnNo;
         private System.Windows.Forms.Button btnYes;
         private System.Windows.Forms.Button btnList;
+        private System.Windows.Forms.FlowLayoutPanel flpCommands;
     }
 }

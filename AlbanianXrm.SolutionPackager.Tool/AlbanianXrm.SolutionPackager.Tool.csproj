@@ -238,6 +238,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="SolutionPackagerAbout.it.resx">
+      <DependentUpon>SolutionPackagerAbout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SolutionPackagerAbout.resx">
       <DependentUpon>SolutionPackagerAbout.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,6 +255,9 @@
       <DependentUpon>SolutionPackagerControl.cs</DependentUpon>
       <CustomToolNamespace>AlbanianXrm.SolutionPackager.FormLocalization</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SolutionPackagerDialog.it.resx">
+      <DependentUpon>SolutionPackagerDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SolutionPackagerDialog.resx">
       <DependentUpon>SolutionPackagerDialog.cs</DependentUpon>

@@ -64,6 +64,7 @@ namespace AlbanianXrm.SolutionPackager
             cmbLanguage.Items.AddRange(new object[] { CultureInfo.GetCultureInfo("en"), CultureInfo.GetCultureInfo("it") });
             cmbLanguage.SelectedIndex = 0;
             cmbPackageType.SelectedIndex = 0;
+            cmbExtractSourceLocale.SelectedIndex = 0;
             cmbErrorLevel.SelectedIndex = 3;
         }
 
@@ -115,7 +116,9 @@ namespace AlbanianXrm.SolutionPackager
                 return;
             }
 
-            info.Cancel = MessageBox.Show(Resources.QUESTION_CLOSE_TOOL, Resources.QUESTION, MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes;
+            info.Cancel = new SolutionPackagerDialog(Resources.QUESTION_CLOSE_TOOL, Resources.QUESTION, 
+                                new SolutionPackagerDialog.ButtonProperties { Text = Resources.BTN_NO, Result = DialogResult.No }, 
+                                new SolutionPackagerDialog.ButtonProperties { Text = Resources.BTN_YES, Result = DialogResult.Yes }).ShowDialog(this) != DialogResult.Yes;
         }
 
         #region Extract

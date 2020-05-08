@@ -2794,7 +2794,7 @@ You can use the short form of the command: /loc.</value>
     <value>3</value>
   </data>
   <data name="txtPackMap.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 141</value>
+    <value>5, 139</value>
   </data>
   <data name="txtPackMap.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 5, 5, 5</value>
@@ -2833,7 +2833,7 @@ You can use the short form of the command: /loc.</value>
     <value>True</value>
   </data>
   <data name="chkPackNoLogo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 180</value>
+    <value>5, 178</value>
   </data>
   <data name="chkPackNoLogo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 10, 5, 10</value>
@@ -2857,7 +2857,7 @@ You can use the short form of the command: /loc.</value>
     <value>5</value>
   </data>
   <data name="txtPackLog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 209</value>
+    <value>5, 207</value>
   </data>
   <data name="txtPackLog.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 5, 5, 5</value>
@@ -2893,7 +2893,7 @@ You can use the short form of the command: /loc.</value>
     <value>6</value>
   </data>
   <data name="txtPackArguments.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 243</value>
+    <value>5, 241</value>
   </data>
   <data name="txtPackArguments.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 5, 5, 5</value>
@@ -2935,7 +2935,7 @@ You can use the short form of the command: /loc.</value>
     <value>NoControl</value>
   </data>
   <data name="chkPackLocalize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 282</value>
+    <value>5, 280</value>
   </data>
   <data name="chkPackLocalize.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 10, 5, 10</value>

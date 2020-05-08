@@ -87,6 +87,7 @@ namespace AlbanianXrm.SolutionPackager
             {
                 if (Resources.Culture != null && Resources.Culture.Equals(value) || Resources.Culture == value) return;
                 Resources.Culture = value;
+                System.Threading.Thread.CurrentThread.CurrentUICulture = value;
                 Settings.Language = value.Name;
 
                 if (_SolutionPackagerVersion == null)

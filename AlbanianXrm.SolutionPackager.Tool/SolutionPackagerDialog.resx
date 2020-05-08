@@ -144,14 +144,14 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtMessage.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnNo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnNo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>361, 67</value>
+    <value>286, 3</value>
   </data>
   <data name="btnNo.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -169,16 +169,16 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnNo.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>flpCommands</value>
   </data>
   <data name="&gt;&gt;btnNo.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="btnYes.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnYes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>280, 67</value>
+    <value>205, 3</value>
   </data>
   <data name="btnYes.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -196,16 +196,16 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnYes.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>flpCommands</value>
   </data>
   <data name="&gt;&gt;btnYes.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btnList.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="btnList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 67</value>
+    <value>367, 3</value>
   </data>
   <data name="btnList.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -223,9 +223,36 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnList.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>flpCommands</value>
   </data>
   <data name="&gt;&gt;btnList.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="flpCommands.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="flpCommands.FlowDirection" type="System.Windows.Forms.FlowDirection, System.Windows.Forms">
+    <value>RightToLeft</value>
+  </data>
+  <data name="flpCommands.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 70</value>
+  </data>
+  <data name="flpCommands.Size" type="System.Drawing.Size, System.Drawing">
+    <value>445, 30</value>
+  </data>
+  <data name="flpCommands.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;flpCommands.Name" xml:space="preserve">
+    <value>flpCommands</value>
+  </data>
+  <data name="&gt;&gt;flpCommands.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;flpCommands.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;flpCommands.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -235,7 +262,7 @@
     <value>7, 15</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>448, 102</value>
+    <value>449, 101</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>

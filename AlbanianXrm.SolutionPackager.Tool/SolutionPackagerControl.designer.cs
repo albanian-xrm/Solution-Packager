@@ -979,6 +979,7 @@
             resources.ApplyResources(this.cmbLanguage, "cmbLanguage");
             this.cmbLanguage.Name = "cmbLanguage";
             this.cmbLanguage.ValueMember = "Name";
+            this.cmbLanguage.SelectedIndexChanged += new System.EventHandler(this.CmbLanguage_SelectedIndexChanged);
             // 
             // errorProvider
             // 
