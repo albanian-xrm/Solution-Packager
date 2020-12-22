@@ -147,10 +147,11 @@ namespace AlbanianXrm.SolutionPackager
             }
             else
             {
-                var result = openZipFile.ShowDialog();
+                openFile.Filter = Resources.FILTER_SOLUTION;
+                var result = openFile.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    txtZipPath.Text = openZipFile.FileName;
+                    txtZipPath.Text = openFile.FileName;
                 }
             }
         }
@@ -166,28 +167,31 @@ namespace AlbanianXrm.SolutionPackager
 
         private void BtnExtractMapFile_Click(object sender, EventArgs e)
         {
-            var result = openXmlFile.ShowDialog();
+            openFile.Filter = Resources.FILTER_XML;
+            var result = openFile.ShowDialog();
             if (result == DialogResult.OK)
             {
-                txtExtractMap.Text = openXmlFile.FileName;
+                txtExtractMap.Text = openFile.FileName;
             }
         }
 
         private void BtnExtractLog_Click(object sender, EventArgs e)
         {
-            var result = openTextFile.ShowDialog();
+            saveFile.Filter = Resources.FILTER_TEXT;
+            var result = saveFile.ShowDialog();
             if (result == DialogResult.OK)
             {
-                txtExtractLog.Text = openTextFile.FileName;
+                txtExtractLog.Text = openFile.FileName;
             }
         }
 
         private void BtnExtractArguments_Click(object sender, EventArgs e)
         {
-            var result = openTextFile.ShowDialog();
+            openFile.Filter = Resources.FILTER_TEXT;
+            var result = openFile.ShowDialog();
             if (result == DialogResult.OK)
             {
-                txtExtractArguments.Text = openTextFile.FileName;
+                txtExtractArguments.Text = openFile.FileName;
             }
         }
 
@@ -284,37 +288,41 @@ namespace AlbanianXrm.SolutionPackager
 
         private void BtnOutputZip_Click(object sender, EventArgs e)
         {
-            var result = openZipFile.ShowDialog();
+            saveFile.Filter = Resources.FILTER_SOLUTION;
+            var result = saveFile.ShowDialog();
             if (result == DialogResult.OK)
             {
-                txtPackZip.Text = openZipFile.FileName;
+                txtPackZip.Text = saveFile.FileName;
             }
         }
 
         private void BtnPackMap_Click(object sender, EventArgs e)
         {
-            var result = openXmlFile.ShowDialog();
+            openFile.Filter = Resources.FILTER_XML;
+            var result = openFile.ShowDialog();
             if (result == DialogResult.OK)
             {
-                txtPackMap.Text = openXmlFile.FileName;
+                txtPackMap.Text = openFile.FileName;
             }
         }
 
         private void BtnLogPack_Click(object sender, EventArgs e)
         {
-            var result = openTextFile.ShowDialog();
+            saveFile.Filter = Resources.FILTER_TEXT;
+            var result = saveFile.ShowDialog();
             if (result == DialogResult.OK)
             {
-                txtPackLog.Text = openTextFile.FileName;
+                txtPackLog.Text = saveFile.FileName;
             }
         }
 
         private void BtnArgumentsPack_Click(object sender, EventArgs e)
         {
-            var result = openTextFile.ShowDialog();
+            openFile.Filter = Resources.FILTER_TEXT;
+            var result = openFile.ShowDialog();
             if (result == DialogResult.OK)
             {
-                txtPackArguments.Text = openTextFile.FileName;
+                txtPackArguments.Text = openFile.FileName;
             }
         }
         #endregion

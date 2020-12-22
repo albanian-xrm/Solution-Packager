@@ -115,12 +115,11 @@
             this.cmbLanguage = new System.Windows.Forms.ComboBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.selectFolder = new System.Windows.Forms.FolderBrowserDialog();
-            this.openZipFile = new System.Windows.Forms.OpenFileDialog();
+            this.openFile = new System.Windows.Forms.OpenFileDialog();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.txtOutput = new System.Windows.Forms.RichTextBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.openXmlFile = new System.Windows.Forms.OpenFileDialog();
-            this.openTextFile = new System.Windows.Forms.OpenFileDialog();
+            this.saveFile = new System.Windows.Forms.SaveFileDialog();
             this.tabsExtractOrPack.SuspendLayout();
             this.tabExtract.SuspendLayout();
             this.tlpExtract.SuspendLayout();
@@ -995,9 +994,9 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
-            // openZipFile
+            // openFile
             // 
-            resources.ApplyResources(this.openZipFile, "openZipFile");
+            resources.ApplyResources(this.openFile, "openFile");
             // 
             // splitContainer
             // 
@@ -1020,14 +1019,6 @@
             this.txtOutput.ForeColor = System.Drawing.Color.White;
             this.txtOutput.Name = "txtOutput";
             this.txtOutput.ReadOnly = true;
-            // 
-            // openXmlFile
-            // 
-            resources.ApplyResources(this.openXmlFile, "openXmlFile");
-            // 
-            // openTextFile
-            // 
-            resources.ApplyResources(this.openTextFile, "openTextFile");
             // 
             // SolutionPackagerControl
             // 
@@ -1088,7 +1079,7 @@
         private System.Windows.Forms.TabPage tabSettings;
         private System.Windows.Forms.TabPage tabPack;
         private System.Windows.Forms.FolderBrowserDialog selectFolder;
-        private System.Windows.Forms.OpenFileDialog openZipFile;
+        private System.Windows.Forms.OpenFileDialog openFile;
         private System.Windows.Forms.Button btnExtract;
         private System.Windows.Forms.SplitContainer splitContainer;
         private System.Windows.Forms.RichTextBox txtOutput;
@@ -1183,7 +1174,6 @@
         private System.Windows.Forms.Button btnExtractMapFile;
         private System.Windows.Forms.Button btnExtractLog;
         private System.Windows.Forms.Button btnExtractArguments;
-        private System.Windows.Forms.OpenFileDialog openXmlFile;
-        private System.Windows.Forms.OpenFileDialog openTextFile;
+        private System.Windows.Forms.SaveFileDialog saveFile;
     }
 }

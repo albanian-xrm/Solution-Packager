@@ -22,7 +22,7 @@ namespace AlbanianXrm.SolutionPackager.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("AlbanianXrm.SolutionPackager.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         /// <summary>
         ///   Looks up a localized string similar to No.
         /// </summary>
-        internal static string BTN_NO {
+        public static string BTN_NO {
             get {
                 return ResourceManager.GetString("BTN_NO", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Yes.
         /// </summary>
-        internal static string BTN_YES {
+        public static string BTN_YES {
             get {
                 return ResourceManager.GetString("BTN_YES", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Code {
+        public static System.Drawing.Bitmap Code {
             get {
                 object obj = ResourceManager.GetObject("Code", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -91,7 +91,7 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Command {
+        public static System.Drawing.Bitmap Command {
             get {
                 object obj = ResourceManager.GetObject("Command", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -101,7 +101,7 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         /// <summary>
         ///   Looks up a localized string similar to {0} package not found on {1}.
         /// </summary>
-        internal static string CORE_TOOLS_NOT_FOUND {
+        public static string CORE_TOOLS_NOT_FOUND {
             get {
                 return ResourceManager.GetString("CORE_TOOLS_NOT_FOUND", resourceCulture);
             }
@@ -110,7 +110,7 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Getting latest version of Core Tools.
         /// </summary>
-        internal static string DOWNLOADING_CORE_TOOLS {
+        public static string DOWNLOADING_CORE_TOOLS {
             get {
                 return ResourceManager.GetString("DOWNLOADING_CORE_TOOLS", resourceCulture);
             }
@@ -119,7 +119,7 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Downloading solution &quot;{0}&quot;.
         /// </summary>
-        internal static string DOWNLOADING_SOLUTION {
+        public static string DOWNLOADING_SOLUTION {
             get {
                 return ResourceManager.GetString("DOWNLOADING_SOLUTION", resourceCulture);
             }
@@ -128,7 +128,7 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         /// <summary>
         ///   Looks up a localized string similar to There is one error.
         /// </summary>
-        internal static string EXPORT_ERROR {
+        public static string EXPORT_ERROR {
             get {
                 return ResourceManager.GetString("EXPORT_ERROR", resourceCulture);
             }
@@ -137,7 +137,7 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         /// <summary>
         ///   Looks up a localized string similar to There are {0} errors.
         /// </summary>
-        internal static string EXPORT_ERRORS {
+        public static string EXPORT_ERRORS {
             get {
                 return ResourceManager.GetString("EXPORT_ERRORS", resourceCulture);
             }
@@ -146,16 +146,43 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Extracting solution &quot;{0}&quot;.
         /// </summary>
-        internal static string EXTRACTING_SOLUTION {
+        public static string EXTRACTING_SOLUTION {
             get {
                 return ResourceManager.GetString("EXTRACTING_SOLUTION", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Solution|*.zip|All Files|*.*.
+        /// </summary>
+        public static string FILTER_SOLUTION {
+            get {
+                return ResourceManager.GetString("FILTER_SOLUTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Text|*.txt|All Files|*.*.
+        /// </summary>
+        public static string FILTER_TEXT {
+            get {
+                return ResourceManager.GetString("FILTER_TEXT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Map|*.xml|All Files|*.*.
+        /// </summary>
+        public static string FILTER_XML {
+            get {
+                return ResourceManager.GetString("FILTER_XML", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Folder {
+        public static System.Drawing.Bitmap Folder {
             get {
                 object obj = ResourceManager.GetObject("Folder", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -165,7 +192,7 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Launch command line.
         /// </summary>
-        internal static string LAUNCH_COMMAND_LINE {
+        public static string LAUNCH_COMMAND_LINE {
             get {
                 return ResourceManager.GetString("LAUNCH_COMMAND_LINE", resourceCulture);
             }
@@ -174,7 +201,7 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Log {
+        public static System.Drawing.Bitmap Log {
             get {
                 object obj = ResourceManager.GetObject("Log", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -184,7 +211,7 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Logo {
+        public static System.Drawing.Bitmap Logo {
             get {
                 object obj = ResourceManager.GetObject("Logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -194,7 +221,7 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
-        internal static string MBOX_ERROR {
+        public static string MBOX_ERROR {
             get {
                 return ResourceManager.GetString("MBOX_ERROR", resourceCulture);
             }
@@ -203,7 +230,7 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Information.
         /// </summary>
-        internal static string MBOX_INFORMATION {
+        public static string MBOX_INFORMATION {
             get {
                 return ResourceManager.GetString("MBOX_INFORMATION", resourceCulture);
             }
@@ -212,7 +239,7 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Please select the solution to download.
         /// </summary>
-        internal static string NO_SOLUTION_SELECTED {
+        public static string NO_SOLUTION_SELECTED {
             get {
                 return ResourceManager.GetString("NO_SOLUTION_SELECTED", resourceCulture);
             }
@@ -221,7 +248,7 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Please select the output folder.
         /// </summary>
-        internal static string OUTPUT_FOLDER_NOT_SPECIFIED {
+        public static string OUTPUT_FOLDER_NOT_SPECIFIED {
             get {
                 return ResourceManager.GetString("OUTPUT_FOLDER_NOT_SPECIFIED", resourceCulture);
             }
@@ -230,7 +257,7 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Program output.
         /// </summary>
-        internal static string PROGRAM_OUTPUT {
+        public static string PROGRAM_OUTPUT {
             get {
                 return ResourceManager.GetString("PROGRAM_OUTPUT", resourceCulture);
             }
@@ -239,7 +266,7 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Question.
         /// </summary>
-        internal static string QUESTION {
+        public static string QUESTION {
             get {
                 return ResourceManager.GetString("QUESTION", resourceCulture);
             }
@@ -248,7 +275,7 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Are you sure you want to close this tab?.
         /// </summary>
-        internal static string QUESTION_CLOSE_TOOL {
+        public static string QUESTION_CLOSE_TOOL {
             get {
                 return ResourceManager.GetString("QUESTION_CLOSE_TOOL", resourceCulture);
             }
@@ -257,7 +284,7 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Refresh {
+        public static System.Drawing.Bitmap Refresh {
             get {
                 object obj = ResourceManager.GetObject("Refresh", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -267,7 +294,7 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Refreshing solution list.
         /// </summary>
-        internal static string REFRESHING_SOLUTION_LIST {
+        public static string REFRESHING_SOLUTION_LIST {
             get {
                 return ResourceManager.GetString("REFRESHING_SOLUTION_LIST", resourceCulture);
             }
@@ -276,7 +303,7 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Configuration settigns correctly loaded.
         /// </summary>
-        internal static string SETTINGS_FOUND {
+        public static string SETTINGS_FOUND {
             get {
                 return ResourceManager.GetString("SETTINGS_FOUND", resourceCulture);
             }
@@ -285,7 +312,7 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Configuration settings were not found.
         /// </summary>
-        internal static string SETTINGS_NOT_FOUND {
+        public static string SETTINGS_NOT_FOUND {
             get {
                 return ResourceManager.GetString("SETTINGS_NOT_FOUND", resourceCulture);
             }
@@ -294,7 +321,7 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Saving Configuration settings.
         /// </summary>
-        internal static string SETTINGS_SAVING {
+        public static string SETTINGS_SAVING {
             get {
                 return ResourceManager.GetString("SETTINGS_SAVING", resourceCulture);
             }
@@ -303,7 +330,7 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         /// <summary>
         ///   Looks up a localized string similar to SolutionPackager.exe is missing!.
         /// </summary>
-        internal static string SOLUTIONPACKAGER_MISSING {
+        public static string SOLUTIONPACKAGER_MISSING {
             get {
                 return ResourceManager.GetString("SOLUTIONPACKAGER_MISSING", resourceCulture);
             }
@@ -312,7 +339,7 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Solutions {
+        public static System.Drawing.Bitmap Solutions {
             get {
                 object obj = ResourceManager.GetObject("Solutions", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -322,7 +349,7 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Zip {
+        public static System.Drawing.Bitmap Zip {
             get {
                 object obj = ResourceManager.GetObject("Zip", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -332,7 +359,7 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Selected Zip File does not exist.
         /// </summary>
-        internal static string ZIP_FILE_DOES_NOT_EXIST {
+        public static string ZIP_FILE_DOES_NOT_EXIST {
             get {
                 return ResourceManager.GetString("ZIP_FILE_DOES_NOT_EXIST", resourceCulture);
             }

@@ -1885,7 +1885,7 @@
     <value>29</value>
   </data>
   <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>372, 17</value>
+    <value>348, 15</value>
   </metadata>
   <data name="chkLocalize.ToolTip" xml:space="preserve">
     <value>[Optional] 
@@ -2794,7 +2794,7 @@ You can use the short form of the command: /loc.</value>
     <value>3</value>
   </data>
   <data name="txtPackMap.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 141</value>
+    <value>5, 139</value>
   </data>
   <data name="txtPackMap.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 5, 5, 5</value>
@@ -2833,7 +2833,7 @@ You can use the short form of the command: /loc.</value>
     <value>True</value>
   </data>
   <data name="chkPackNoLogo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 180</value>
+    <value>5, 178</value>
   </data>
   <data name="chkPackNoLogo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 10, 5, 10</value>
@@ -2857,7 +2857,7 @@ You can use the short form of the command: /loc.</value>
     <value>5</value>
   </data>
   <data name="txtPackLog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 209</value>
+    <value>5, 207</value>
   </data>
   <data name="txtPackLog.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 5, 5, 5</value>
@@ -2893,7 +2893,7 @@ You can use the short form of the command: /loc.</value>
     <value>6</value>
   </data>
   <data name="txtPackArguments.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 243</value>
+    <value>5, 241</value>
   </data>
   <data name="txtPackArguments.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 5, 5, 5</value>
@@ -2935,7 +2935,7 @@ You can use the short form of the command: /loc.</value>
     <value>NoControl</value>
   </data>
   <data name="chkPackLocalize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 282</value>
+    <value>5, 280</value>
   </data>
   <data name="chkPackLocalize.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 10, 5, 10</value>
@@ -3813,10 +3813,10 @@ You can use the short form of the command: /loc.</value>
   <data name="&gt;&gt;selectFolder.Type" xml:space="preserve">
     <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;openZipFile.Name" xml:space="preserve">
-    <value>openZipFile</value>
+  <data name="&gt;&gt;openFile.Name" xml:space="preserve">
+    <value>openFile</value>
   </data>
-  <data name="&gt;&gt;openZipFile.Type" xml:space="preserve">
+  <data name="&gt;&gt;openFile.Type" xml:space="preserve">
     <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolTip.Name" xml:space="preserve">
@@ -3825,17 +3825,11 @@ You can use the short form of the command: /loc.</value>
   <data name="&gt;&gt;toolTip.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;openXmlFile.Name" xml:space="preserve">
-    <value>openXmlFile</value>
+  <data name="&gt;&gt;saveFile.Name" xml:space="preserve">
+    <value>saveFile</value>
   </data>
-  <data name="&gt;&gt;openXmlFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;openTextFile.Name" xml:space="preserve">
-    <value>openTextFile</value>
-  </data>
-  <data name="&gt;&gt;openTextFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;saveFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SolutionPackagerControl</value>
@@ -3846,22 +3840,13 @@ You can use the short form of the command: /loc.</value>
   <metadata name="selectFolder.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>140, 17</value>
   </metadata>
-  <metadata name="openZipFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="openFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>257, 17</value>
   </metadata>
-  <data name="openZipFile.Filter" xml:space="preserve">
+  <data name="openFile.Filter" xml:space="preserve">
     <value>Solution|*.zip|All Files|*.*</value>
   </data>
-  <metadata name="openXmlFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>462, 17</value>
+  <metadata name="saveFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>455, 16</value>
   </metadata>
-  <data name="openXmlFile.Filter" xml:space="preserve">
-    <value>Map|*.xml|All Files|*.*</value>
-  </data>
-  <metadata name="openTextFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>602, 17</value>
-  </metadata>
-  <data name="openTextFile.Filter" xml:space="preserve">
-    <value>Text|*.txt|All Files|*.*</value>
-  </data>
 </root>
