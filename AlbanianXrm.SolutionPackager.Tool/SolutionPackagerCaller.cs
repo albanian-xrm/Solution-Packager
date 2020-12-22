@@ -26,11 +26,11 @@ namespace AlbanianXrm.SolutionPackager
             this.txtOutput = txtOutput ?? throw new ArgumentNullException(nameof(txtOutput));
         }
 
-        public void ExtractSolution(Parameters @params)
+        public void ManageSolution(Parameters @params)
         {
             asyncWorkQueue.Enqueue(new WorkAsyncInfo
             {
-                Message = string.Format(CultureInfo.InvariantCulture, Resources.EXTRACTING_SOLUTION, new FileInfo(@params.ZipFile).Name),
+                Message = string.Format(CultureInfo.InvariantCulture, @params.Action=="Pack" ? Resources.PACKING_SOLUTION : Resources.EXTRACTING_SOLUTION, new FileInfo(@params.ZipFile).Name),
                 AsyncArgument = @params,
                 Work = ExtractSolution,
                 ProgressChanged = ExtractSolutionProgress,

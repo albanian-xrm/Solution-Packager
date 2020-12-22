@@ -271,7 +271,7 @@ namespace AlbanianXrm.SolutionPackager
             }
             else
             {
-                solutionPackagerCaller.ExtractSolution(parameters);
+                solutionPackagerCaller.ManageSolution(parameters);
             }
         }
         #endregion
@@ -325,6 +325,48 @@ namespace AlbanianXrm.SolutionPackager
                 txtPackArguments.Text = openFile.FileName;
             }
         }
+
+        private void btnPack_Click(object sender, EventArgs e)
+        {
+            int nrErrors = 0;
+            if (txtPackFolder.Text.Length == 0)
+            {
+                errorProvider.SetError(txtPackFolder, Resources.INPUT_FOLDER_NOT_SPECIFIED);
+                nrErrors += 1;
+            }
+            if (CoreToolsDownloader.GetSolutionPackagerVersion() == null)
+            {
+                errorProvider.SetError(localOrCrm, Resources.SOLUTIONPACKAGER_MISSING);
+                nrErrors += 1;
+            }
+            if (txtPackZip.Text.Length == 0)
+            {
+                errorProvider.SetError(txtPackZip, Resources.ZIP_FILE_NOT_SPECIFIED);
+                nrErrors += 1;
+            }
+
+            if (nrErrors > 0)
+            {
+                errorProvider.SetError(btnPack, nrErrors == 1 ? Resources.EXPORT_ERROR : string.Format(CultureInfo.InvariantCulture, Resources.EXPORT_ERRORS, nrErrors));
+                return;
+            }
+
+            var parameters = new SolutionPackagerCaller.Parameters()
+            {
+                Action = "Pack",
+                ZipFile = txtPackZip.Text,
+                OutputFolder = txtPackFolder.Text,
+                PackageType = packageTypes[cmbPackPackageType.SelectedIndex],
+                ErrorLevel = errorLevels[cmbPackErrorLevel.SelectedIndex],
+                MapFile = txtPackMap.Text,
+                NoLogo = chkPackNoLogo.Checked,
+                LogFile = txtPackLog.Text,
+                Arguments = txtPackArguments.Text
+            };
+
+
+            solutionPackagerCaller.ManageSolution(parameters);
+        }
         #endregion
 
         #region Tool Events
@@ -369,7 +411,5 @@ namespace AlbanianXrm.SolutionPackager
                 pluginViewModel.SolutionPackagerVersion = CoreToolsDownloader.GetSolutionPackagerVersion()?.ToString();
             }
         }
-
-
     }
 }

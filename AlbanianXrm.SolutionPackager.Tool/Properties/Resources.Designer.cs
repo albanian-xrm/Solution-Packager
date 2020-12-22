@@ -190,6 +190,15 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please select the input folder.
+        /// </summary>
+        public static string INPUT_FOLDER_NOT_SPECIFIED {
+            get {
+                return ResourceManager.GetString("INPUT_FOLDER_NOT_SPECIFIED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Launch command line.
         /// </summary>
         public static string LAUNCH_COMMAND_LINE {
@@ -251,6 +260,15 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         public static string OUTPUT_FOLDER_NOT_SPECIFIED {
             get {
                 return ResourceManager.GetString("OUTPUT_FOLDER_NOT_SPECIFIED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Packing solution &quot;{0}&quot;.
+        /// </summary>
+        public static string PACKING_SOLUTION {
+            get {
+                return ResourceManager.GetString("PACKING_SOLUTION", resourceCulture);
             }
         }
         
@@ -362,6 +380,15 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         public static string ZIP_FILE_DOES_NOT_EXIST {
             get {
                 return ResourceManager.GetString("ZIP_FILE_DOES_NOT_EXIST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zip File was not specified.
+        /// </summary>
+        public static string ZIP_FILE_NOT_SPECIFIED {
+            get {
+                return ResourceManager.GetString("ZIP_FILE_NOT_SPECIFIED", resourceCulture);
             }
         }
     }

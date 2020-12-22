@@ -94,7 +94,7 @@ namespace AlbanianXrm.SolutionPackager
             }
             else if (args.Result is SolutionPackagerCaller.Parameters @params)
             {
-                solutionPackagerCaller.ExtractSolution(@params);
+                solutionPackagerCaller.ManageSolution(@params);
             }
         }
 

@@ -686,6 +686,7 @@
             resources.ApplyResources(this.btnPack, "btnPack");
             this.btnPack.Name = "btnPack";
             this.btnPack.UseVisualStyleBackColor = true;
+            this.btnPack.Click += new System.EventHandler(this.btnPack_Click);
             // 
             // flpPackLabels
             // 
