@@ -37,7 +37,7 @@ namespace AlbanianXrm.SolutionPackager
         private readonly Type pluginType;
 
         private readonly string[] packageTypes = new string[] { null, "Unmanaged", "Managed", "Both" };
-        private readonly string[] errorLevels = new string[] { "Off", "Error", "Warning", "Info", "Verbose" };
+        private readonly string[] errorLevels = new string[] { null, "Off", "Error", "Warning", "Info", "Verbose" };
         private readonly string[] languageCodes = new string[] { null, "auto", "1033", "1025", "1069", "1026", "1027", "3076", "2052", "1028", "1050", "1029", "1030", "1043", "1061", "1035", "1036", "1110", "1031", "1032", "1037", "1081", "1038", "1057", "1040", "1041", "1087", "1042", "1062", "1063", "1086", "1044", "1045", "1046", "2070", "1048", "1049", "3098", "2074", "1051", "1060", "3082", "1053", "1054", "1055", "1058", "1066" };
 
         public SolutionPackagerControl(Type pluginType)

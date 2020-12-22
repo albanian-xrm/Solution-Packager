@@ -117,13 +117,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnExtract.Text" xml:space="preserve">
-    <value>Estrai</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="localOrCrm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 7</value>
   </data>
-  <data name="btnSaveSettings.Text" xml:space="preserve">
-    <value>Salva</value>
+  <data name="localOrCrm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>245, 20</value>
   </data>
   <data name="localOrCrm.Text" xml:space="preserve">
     <value>Scaricare la solution dalla organizzazione?</value>
+  </data>
+  <data name="btnExtract.Text" xml:space="preserve">
+    <value>Estrai</value>
+  </data>
+  <data name="txtPackMap.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 141</value>
+  </data>
+  <data name="chkPackNoLogo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 180</value>
+  </data>
+  <data name="txtPackLog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 209</value>
+  </data>
+  <data name="txtPackArguments.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 243</value>
+  </data>
+  <data name="chkPackLocalize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 282</value>
+  </data>
+  <data name="btnSaveSettings.Text" xml:space="preserve">
+    <value>Salva</value>
   </data>
 </root>

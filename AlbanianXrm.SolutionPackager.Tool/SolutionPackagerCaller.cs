@@ -72,7 +72,7 @@ namespace AlbanianXrm.SolutionPackager
                 process.StartInfo.Arguments += " /packagetype:" + @params.PackageType;
             }
 
-            if (!@params.AllowWrite)
+            if (!@params.AllowWrite && @params.Action=="Pack")
             {
                 process.StartInfo.Arguments += " /allowWrite:No";
             }
@@ -87,7 +87,10 @@ namespace AlbanianXrm.SolutionPackager
                 process.StartInfo.Arguments += " /clobber";
             }
 
-            process.StartInfo.Arguments += " /errorlevel:" + @params.ErrorLevel;
+            if (!string.IsNullOrEmpty(@params.ErrorLevel))
+            {
+                process.StartInfo.Arguments += " /errorlevel:" + @params.ErrorLevel;
+            }
 
             if (!string.IsNullOrEmpty(@params.MapFile))
             {
