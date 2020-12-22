@@ -4,6 +4,8 @@ trigger:
 pool:
   vmImage: 'vs2017-win2016'
 
+name: 1.$(Date:yyyy.MM)$(Rev:.r)
+
 steps:
 - script: echo Starting build pipeline!
   displayName: 'Hello from Albanian Xrm'
@@ -30,6 +32,7 @@ steps:
   inputs:
     solution: '**/*.sln'
     configuration: $(MyVars.configuration)
+    msbuildArguments: '/p:Version=$(Build.BuildNumber)'
   displayName: 'Building Solution'
 
 - task: NuGetCommand@2
@@ -38,6 +41,7 @@ steps:
     command: 'pack'
     packagesToPack: '**/*.nuspec'
     packDestination: '$(Build.ArtifactStagingDirectory)'
+    buildProperties: version=$(Build.BuildNumber)
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))  
 
 - task: PublishBuildArtifacts@1

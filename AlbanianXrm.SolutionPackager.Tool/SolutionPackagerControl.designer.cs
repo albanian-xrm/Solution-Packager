@@ -119,6 +119,8 @@
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.txtOutput = new System.Windows.Forms.RichTextBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.openXmlFile = new System.Windows.Forms.OpenFileDialog();
+            this.openTextFile = new System.Windows.Forms.OpenFileDialog();
             this.tabsExtractOrPack.SuspendLayout();
             this.tabExtract.SuspendLayout();
             this.tlpExtract.SuspendLayout();
@@ -646,6 +648,7 @@
             resources.ApplyResources(this.btnExtractMapFile, "btnExtractMapFile");
             this.btnExtractMapFile.Name = "btnExtractMapFile";
             this.btnExtractMapFile.UseVisualStyleBackColor = true;
+            this.btnExtractMapFile.Click += new System.EventHandler(this.BtnExtractMapFile_Click);
             // 
             // btnExtractLog
             // 
@@ -653,6 +656,7 @@
             resources.ApplyResources(this.btnExtractLog, "btnExtractLog");
             this.btnExtractLog.Name = "btnExtractLog";
             this.btnExtractLog.UseVisualStyleBackColor = true;
+            this.btnExtractLog.Click += new System.EventHandler(this.BtnExtractLog_Click);
             // 
             // btnExtractArguments
             // 
@@ -660,6 +664,7 @@
             resources.ApplyResources(this.btnExtractArguments, "btnExtractArguments");
             this.btnExtractArguments.Name = "btnExtractArguments";
             this.btnExtractArguments.UseVisualStyleBackColor = true;
+            this.btnExtractArguments.Click += new System.EventHandler(this.BtnExtractArguments_Click);
             // 
             // tabPack
             // 
@@ -851,6 +856,7 @@
             resources.ApplyResources(this.btnInputFolder, "btnInputFolder");
             this.btnInputFolder.Name = "btnInputFolder";
             this.btnInputFolder.UseVisualStyleBackColor = true;
+            this.btnInputFolder.Click += new System.EventHandler(this.BtnInputFolder_Click);
             // 
             // btnOutputZip
             // 
@@ -858,6 +864,7 @@
             resources.ApplyResources(this.btnOutputZip, "btnOutputZip");
             this.btnOutputZip.Name = "btnOutputZip";
             this.btnOutputZip.UseVisualStyleBackColor = true;
+            this.btnOutputZip.Click += new System.EventHandler(this.BtnOutputZip_Click);
             // 
             // btnPackMap
             // 
@@ -865,6 +872,7 @@
             resources.ApplyResources(this.btnPackMap, "btnPackMap");
             this.btnPackMap.Name = "btnPackMap";
             this.btnPackMap.UseVisualStyleBackColor = true;
+            this.btnPackMap.Click += new System.EventHandler(this.BtnPackMap_Click);
             // 
             // btnLogPack
             // 
@@ -872,6 +880,7 @@
             resources.ApplyResources(this.btnLogPack, "btnLogPack");
             this.btnLogPack.Name = "btnLogPack";
             this.btnLogPack.UseVisualStyleBackColor = true;
+            this.btnLogPack.Click += new System.EventHandler(this.BtnLogPack_Click);
             // 
             // btnArgumentsPack
             // 
@@ -879,6 +888,7 @@
             resources.ApplyResources(this.btnArgumentsPack, "btnArgumentsPack");
             this.btnArgumentsPack.Name = "btnArgumentsPack";
             this.btnArgumentsPack.UseVisualStyleBackColor = true;
+            this.btnArgumentsPack.Click += new System.EventHandler(this.BtnArgumentsPack_Click);
             // 
             // tabSettings
             // 
@@ -987,7 +997,6 @@
             // 
             // openZipFile
             // 
-            this.openZipFile.FileName = "openFileDialog1";
             resources.ApplyResources(this.openZipFile, "openZipFile");
             // 
             // splitContainer
@@ -1011,6 +1020,14 @@
             this.txtOutput.ForeColor = System.Drawing.Color.White;
             this.txtOutput.Name = "txtOutput";
             this.txtOutput.ReadOnly = true;
+            // 
+            // openXmlFile
+            // 
+            resources.ApplyResources(this.openXmlFile, "openXmlFile");
+            // 
+            // openTextFile
+            // 
+            resources.ApplyResources(this.openTextFile, "openTextFile");
             // 
             // SolutionPackagerControl
             // 
@@ -1166,5 +1183,7 @@
         private System.Windows.Forms.Button btnExtractMapFile;
         private System.Windows.Forms.Button btnExtractLog;
         private System.Windows.Forms.Button btnExtractArguments;
+        private System.Windows.Forms.OpenFileDialog openXmlFile;
+        private System.Windows.Forms.OpenFileDialog openTextFile;
     }
 }

@@ -116,8 +116,8 @@ namespace AlbanianXrm.SolutionPackager
                 return;
             }
 
-            info.Cancel = new SolutionPackagerDialog(Resources.QUESTION_CLOSE_TOOL, Resources.QUESTION, 
-                                new SolutionPackagerDialog.ButtonProperties { Text = Resources.BTN_NO, Result = DialogResult.No }, 
+            info.Cancel = new SolutionPackagerDialog(Resources.QUESTION_CLOSE_TOOL, Resources.QUESTION,
+                                new SolutionPackagerDialog.ButtonProperties { Text = Resources.BTN_NO, Result = DialogResult.No },
                                 new SolutionPackagerDialog.ButtonProperties { Text = Resources.BTN_YES, Result = DialogResult.Yes }).ShowDialog(this) != DialogResult.Yes;
         }
 
@@ -161,6 +161,33 @@ namespace AlbanianXrm.SolutionPackager
             if (result == DialogResult.OK)
             {
                 txtOutputFolder.Text = selectFolder.SelectedPath;
+            }
+        }
+
+        private void BtnExtractMapFile_Click(object sender, EventArgs e)
+        {
+            var result = openXmlFile.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                txtExtractMap.Text = openXmlFile.FileName;
+            }
+        }
+
+        private void BtnExtractLog_Click(object sender, EventArgs e)
+        {
+            var result = openTextFile.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                txtExtractLog.Text = openTextFile.FileName;
+            }
+        }
+
+        private void BtnExtractArguments_Click(object sender, EventArgs e)
+        {
+            var result = openTextFile.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                txtExtractArguments.Text = openTextFile.FileName;
             }
         }
 
@@ -245,6 +272,53 @@ namespace AlbanianXrm.SolutionPackager
         }
         #endregion
 
+        #region Pack
+        private void BtnInputFolder_Click(object sender, EventArgs e)
+        {
+            var result = selectFolder.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                txtPackFolder.Text = selectFolder.SelectedPath;
+            }
+        }
+
+        private void BtnOutputZip_Click(object sender, EventArgs e)
+        {
+            var result = openZipFile.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                txtPackZip.Text = openZipFile.FileName;
+            }
+        }
+
+        private void BtnPackMap_Click(object sender, EventArgs e)
+        {
+            var result = openXmlFile.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                txtPackMap.Text = openXmlFile.FileName;
+            }
+        }
+
+        private void BtnLogPack_Click(object sender, EventArgs e)
+        {
+            var result = openTextFile.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                txtPackLog.Text = openTextFile.FileName;
+            }
+        }
+
+        private void BtnArgumentsPack_Click(object sender, EventArgs e)
+        {
+            var result = openTextFile.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                txtPackArguments.Text = openTextFile.FileName;
+            }
+        }
+        #endregion
+
         #region Tool Events
         /// <summary>
         /// This event occurs when the connection has been updated in XrmToolBox
@@ -287,5 +361,7 @@ namespace AlbanianXrm.SolutionPackager
                 pluginViewModel.SolutionPackagerVersion = CoreToolsDownloader.GetSolutionPackagerVersion()?.ToString();
             }
         }
+
+
     }
 }

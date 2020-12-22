@@ -1,8 +1,4 @@
-﻿using AlbanianXrm.SolutionPackager.Properties;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Web.Compilation;
+﻿using System;
 using System.Windows.Forms;
 
 namespace AlbanianXrm.SolutionPackager
