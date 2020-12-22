@@ -65,7 +65,9 @@ namespace AlbanianXrm.SolutionPackager
             cmbLanguage.SelectedIndex = 0;
             cmbPackageType.SelectedIndex = 0;
             cmbExtractSourceLocale.SelectedIndex = 0;
-            cmbErrorLevel.SelectedIndex = 3;
+            cmbErrorLevel.SelectedIndex = 0;
+            cmbPackPackageType.SelectedIndex = 0;
+            cmbPackErrorLevel.SelectedIndex = 0;
         }
 
         private void PluginViewModel_PropertyChanged(object sender, PropertyChangedEventArgs e)
