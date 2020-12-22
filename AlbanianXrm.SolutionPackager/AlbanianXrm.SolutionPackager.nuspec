@@ -12,9 +12,8 @@
     <iconUrl>https://raw.githubusercontent.com/albanian-xrm/solution-packager/master/Logo_80x80.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Uses SolutionPackager.exe from the SDK which can be downloaded from any NuGet source (even local directory for isolated environments).</description>
-    <releaseNotes>v0.2020.12.1:
-- Work in progress
-For older releases go here: https://github.com/albanian-xrm/Solution-Packager/releases
+    <releaseNotes>v$version$:
+- First release. This is a GUI for SolutionPackager.exe (it shows the command line used to help with the parameters)
     </releaseNotes>
     <copyright>Copyright 2020</copyright>
     <tags>XrmToolBox Plugins Xrm AlbanianXrm SolutionPackager</tags>

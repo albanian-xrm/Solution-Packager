@@ -72,7 +72,7 @@ namespace AlbanianXrm.SolutionPackager
                 process.StartInfo.Arguments += " /packagetype:" + @params.PackageType;
             }
 
-            if (!@params.AllowWrite && @params.Action == "Pack")
+            if (!@params.AllowWrite && @params.Action != "Pack")
             {
                 process.StartInfo.Arguments += " /allowWrite:No";
             }
@@ -238,7 +238,7 @@ namespace AlbanianXrm.SolutionPackager
                         {
                             AppendArgument("packagetype", @params.PackageType);
                         }
-                        if (!@params.AllowWrite && @params.Action == "Pack")
+                        if (!@params.AllowWrite && @params.Action != "Pack")
                         {
                             AppendArgument("allowWrite", "No");
                         }
