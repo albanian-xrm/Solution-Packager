@@ -1,19 +1,19 @@
-trigger:
-- master
-
 pool:
   vmImage: 'vs2017-win2016'
 
-name: 1.$(Date:yyyy.MM)$(Rev:.r)
+name: 1.$(Date:yyyy.MM)$(Rev:.r)+$(SourceBranchName)
 
 steps:
 - script: echo Starting build pipeline!
   displayName: 'Hello from Albanian Xrm'
 
-- powershell: echo "##vso[task.setvariable variable=configuration;isOutput=true]$(IF($env:BRANCH -eq "refs/heads/master"){"Azure Pipelines"}else{"release"})"
+- powershell: |
+    echo "##vso[task.setvariable variable=configuration;isOutput=true]$(IF($env:BRANCH -eq "refs/heads/master"){"Azure Pipelines"}else{"release"})"
+    echo "##vso[task.setvariable variable=BuildNumber;isOutput=true]$(($env:BuildNumber).Substring(0,($env:BuildNumber).IndexOf('+')))"
   name: MyVars
   env: 
     BRANCH: $(Build.SourceBranch)
+    BuildNumber: $(Build.BuildNumber)
   displayName: 'Set Configuration Variable'
 
 - task: NuGetToolInstaller@0
@@ -32,7 +32,7 @@ steps:
   inputs:
     solution: '**/*.sln'
     configuration: $(MyVars.configuration)
-    msbuildArguments: '/p:Version=$(Build.BuildNumber)'
+    msbuildArguments: '/p:Version=$(MyVars.BuildNumber)'
   displayName: 'Building Solution'
 
 - task: NuGetCommand@2
@@ -41,7 +41,7 @@ steps:
     command: 'pack'
     packagesToPack: '**/*.nuspec'
     packDestination: '$(Build.ArtifactStagingDirectory)'
-    buildProperties: version=$(Build.BuildNumber)
+    buildProperties: version=$(MyVars.BuildNumber)
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))  
 
 - task: PublishBuildArtifacts@1

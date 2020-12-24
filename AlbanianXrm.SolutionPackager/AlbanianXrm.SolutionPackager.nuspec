@@ -12,9 +12,10 @@
     <iconUrl>https://raw.githubusercontent.com/albanian-xrm/solution-packager/master/Logo_80x80.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Uses SolutionPackager.exe from the SDK which can be downloaded from any NuGet source (even local directory for isolated environments).</description>
-    <releaseNotes>v$version$:
-- First release. This is a GUI for SolutionPackager.exe (it shows the command line used to help with the parameters)
-    </releaseNotes>
+    <releaseNotes>This is a GUI for SolutionPackager.exe (it shows the command line used to help with the parameters)
+v$version$: Added the possibility to clear the Arguments, Log and Map fields.
+
+* For older releases go here: https://github.com/albanian-xrm/Solution-Packager/releases </releaseNotes>
     <copyright>Copyright 2020</copyright>
     <tags>XrmToolBox Plugins Xrm AlbanianXrm SolutionPackager</tags>
     <dependencies>

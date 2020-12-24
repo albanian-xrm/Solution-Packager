@@ -141,6 +141,12 @@
   <data name="EXTRACTING_SOLUTION" xml:space="preserve">
     <value>Estraendo la solution "{0}"</value>
   </data>
+  <data name="FIELD_CLEAR_MESSAGE" xml:space="preserve">
+    <value>Vuoi rimuovere il valore del campo?</value>
+  </data>
+  <data name="FIELD_CLEAR_TITLE" xml:space="preserve">
+    <value>Ripulire campo</value>
+  </data>
   <data name="FILTER_SOLUTION" xml:space="preserve">
     <value>Solution|*.zip|Tutti i File|*.*</value>
   </data>
@@ -189,6 +195,15 @@
   </data>
   <data name="REFRESHING_SOLUTION_LIST" xml:space="preserve">
     <value>Aggiornamento lista solution</value>
+  </data>
+  <data name="SETTINGS_FOUND" xml:space="preserve">
+    <value>Configurazioni caricate correttamente</value>
+  </data>
+  <data name="SETTINGS_NOT_FOUND" xml:space="preserve">
+    <value>Il file delle configurazioni non è stato trovato</value>
+  </data>
+  <data name="SETTINGS_SAVING" xml:space="preserve">
+    <value>Salvando il file delle configurazioni</value>
   </data>
   <data name="SOLUTIONPACKAGER_MISSING" xml:space="preserve">
     <value>Manca SolutionPackager.exe!</value>

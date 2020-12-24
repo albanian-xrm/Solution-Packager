@@ -153,6 +153,24 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you want to clear the field value?.
+        /// </summary>
+        public static string FIELD_CLEAR_MESSAGE {
+            get {
+                return ResourceManager.GetString("FIELD_CLEAR_MESSAGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clear Field.
+        /// </summary>
+        public static string FIELD_CLEAR_TITLE {
+            get {
+                return ResourceManager.GetString("FIELD_CLEAR_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Solution|*.zip|All Files|*.*.
         /// </summary>
         public static string FILTER_SOLUTION {

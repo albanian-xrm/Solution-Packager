@@ -148,6 +148,12 @@
   <data name="EXTRACTING_SOLUTION" xml:space="preserve">
     <value>Extracting solution "{0}"</value>
   </data>
+  <data name="FIELD_CLEAR_MESSAGE" xml:space="preserve">
+    <value>Do you want to clear the field value?</value>
+  </data>
+  <data name="FIELD_CLEAR_TITLE" xml:space="preserve">
+    <value>Clear Field</value>
+  </data>
   <data name="FILTER_SOLUTION" xml:space="preserve">
     <value>Solution|*.zip|All Files|*.*</value>
   </data>

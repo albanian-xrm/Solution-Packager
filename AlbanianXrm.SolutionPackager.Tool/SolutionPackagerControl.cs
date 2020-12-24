@@ -63,11 +63,11 @@ namespace AlbanianXrm.SolutionPackager
 
             cmbLanguage.Items.AddRange(new object[] { CultureInfo.GetCultureInfo("en"), CultureInfo.GetCultureInfo("it") });
             cmbLanguage.SelectedIndex = 0;
-            cmbPackageType.SelectedIndex = 0;
-            cmbExtractSourceLocale.SelectedIndex = 0;
-            cmbErrorLevel.SelectedIndex = 0;
-            cmbPackPackageType.SelectedIndex = 0;
-            cmbPackErrorLevel.SelectedIndex = 0;
+            cmbPackageTypeExtract.SelectedIndex = 0;
+            cmbSourceLocaleExtract.SelectedIndex = 0;
+            cmbErrorLevelExtract.SelectedIndex = 0;
+            cmbPackageTypePack.SelectedIndex = 0;
+            cmbErrorLevelPack.SelectedIndex = 0;
         }
 
         private void PluginViewModel_PropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -144,7 +144,7 @@ namespace AlbanianXrm.SolutionPackager
                 var result = selectFolder.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    txtZipPath.Text = selectFolder.SelectedPath;
+                    txtInputExtract.Text = selectFolder.SelectedPath;
                 }
             }
             else
@@ -153,7 +153,7 @@ namespace AlbanianXrm.SolutionPackager
                 var result = openFile.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    txtZipPath.Text = openFile.FileName;
+                    txtInputExtract.Text = openFile.FileName;
                 }
             }
         }
@@ -163,7 +163,7 @@ namespace AlbanianXrm.SolutionPackager
             var result = selectFolder.ShowDialog();
             if (result == DialogResult.OK)
             {
-                txtOutputFolder.Text = selectFolder.SelectedPath;
+                txtOutputExtract.Text = selectFolder.SelectedPath;
             }
         }
 
@@ -173,7 +173,11 @@ namespace AlbanianXrm.SolutionPackager
             var result = openFile.ShowDialog();
             if (result == DialogResult.OK)
             {
-                txtExtractMap.Text = openFile.FileName;
+                txtMapExtract.Text = openFile.FileName;
+            }
+            else if (txtMapExtract.Text != "" && FieldClearDialog() == DialogResult.Yes)
+            {
+                txtMapExtract.Text = "";
             }
         }
 
@@ -183,7 +187,11 @@ namespace AlbanianXrm.SolutionPackager
             var result = saveFile.ShowDialog();
             if (result == DialogResult.OK)
             {
-                txtExtractLog.Text = openFile.FileName;
+                txtLogExtract.Text = openFile.FileName;
+            }
+            else if (txtLogExtract.Text != "" && FieldClearDialog() == DialogResult.Yes)
+            {
+                txtLogExtract.Text = "";
             }
         }
 
@@ -193,16 +201,20 @@ namespace AlbanianXrm.SolutionPackager
             var result = openFile.ShowDialog();
             if (result == DialogResult.OK)
             {
-                txtExtractArguments.Text = openFile.FileName;
+                txtArgumentsExtract.Text = openFile.FileName;
+            }
+            else if (txtArgumentsExtract.Text != "" && FieldClearDialog() == DialogResult.Yes)
+            {
+                txtArgumentsExtract.Text = "";
             }
         }
 
         private void BtnExtract_Click(object sender, EventArgs e)
         {
             int nrErrors = 0;
-            if (txtOutputFolder.Text.Length == 0)
+            if (txtOutputExtract.Text.Length == 0)
             {
-                errorProvider.SetError(txtOutputFolder, Resources.OUTPUT_FOLDER_NOT_SPECIFIED);
+                errorProvider.SetError(txtOutputExtract, Resources.OUTPUT_FOLDER_NOT_SPECIFIED);
                 nrErrors += 1;
             }
             if (CoreToolsDownloader.GetSolutionPackagerVersion() == null)
@@ -220,9 +232,9 @@ namespace AlbanianXrm.SolutionPackager
             }
             else
             {
-                if (!File.Exists(txtZipPath.Text))
+                if (!File.Exists(txtInputExtract.Text))
                 {
-                    errorProvider.SetError(txtZipPath, Resources.ZIP_FILE_DOES_NOT_EXIST);
+                    errorProvider.SetError(txtInputExtract, Resources.ZIP_FILE_DOES_NOT_EXIST);
                     nrErrors += 1;
                 }
             }
@@ -235,20 +247,20 @@ namespace AlbanianXrm.SolutionPackager
             var parameters = new SolutionPackagerCaller.Parameters()
             {
                 Action = "Extract",
-                ZipFile = txtZipPath.Text,
-                OutputFolder = txtOutputFolder.Text,
-                PackageType = packageTypes[cmbPackageType.SelectedIndex],
-                AllowWrite = chkAllowWrite.Checked,
+                ZipFile = txtInputExtract.Text,
+                OutputFolder = txtOutputExtract.Text,
+                PackageType = packageTypes[cmbPackageTypeExtract.SelectedIndex],
+                AllowWrite = chkAllowWriteExtract.Checked,
                 AllowDelete = radAllowDeleteYes.Checked ? true : (radAllowDeleteNo.Checked ? false : default(bool?)),
-                Clobber = chkClobber.Checked,
-                ErrorLevel = errorLevels[cmbErrorLevel.SelectedIndex],
-                MapFile = txtExtractMap.Text,
-                NoLogo = chkExtractNoLogo.Checked,
-                LogFile = txtExtractLog.Text,
-                Arguments = txtExtractArguments.Text,
-                SourceLocale = languageCodes[cmbExtractSourceLocale.SelectedIndex],
-                Localize = chkLocalize.Checked,
-                FormatXml = chkFormatDocument.Checked
+                Clobber = chkClobberExtract.Checked,
+                ErrorLevel = errorLevels[cmbErrorLevelExtract.SelectedIndex],
+                MapFile = txtMapExtract.Text,
+                NoLogo = chkNoLogoExtract.Checked,
+                LogFile = txtLogExtract.Text,
+                Arguments = txtArgumentsExtract.Text,
+                SourceLocale = languageCodes[cmbSourceLocaleExtract.SelectedIndex],
+                Localize = chkLocalizeExtract.Checked,
+                FormatXml = chkFormatDocumentExtract.Checked
             };
 
             if (localOrCrm.Checked)
@@ -256,7 +268,7 @@ namespace AlbanianXrm.SolutionPackager
                 crmSolutionManager.DownloadSolution(
                    new CrmSolutionManager.DownloadSolutionParams(
                        cmbCrmSolutions.SelectedItem as Models.Solution,
-                       zipDirectory: txtZipPath.Text,
+                       zipDirectory: txtInputExtract.Text,
                        solutionPackagerParameters: parameters,
                        managed: parameters.PackageType == "Both" ? new bool[] { true, false } : new bool[] { radManaged.Checked },
                        exportAutoNumberingSettings: chkExportAutoNumbering.Checked,
@@ -284,7 +296,7 @@ namespace AlbanianXrm.SolutionPackager
             var result = selectFolder.ShowDialog();
             if (result == DialogResult.OK)
             {
-                txtPackFolder.Text = selectFolder.SelectedPath;
+                txtInputPack.Text = selectFolder.SelectedPath;
             }
         }
 
@@ -294,7 +306,7 @@ namespace AlbanianXrm.SolutionPackager
             var result = saveFile.ShowDialog();
             if (result == DialogResult.OK)
             {
-                txtPackZip.Text = saveFile.FileName;
+                txtOutputPack.Text = saveFile.FileName;
             }
         }
 
@@ -304,7 +316,11 @@ namespace AlbanianXrm.SolutionPackager
             var result = openFile.ShowDialog();
             if (result == DialogResult.OK)
             {
-                txtPackMap.Text = openFile.FileName;
+                txtMapPack.Text = openFile.FileName;
+            }
+            else if (txtMapPack.Text != "" && FieldClearDialog() == DialogResult.Yes)
+            {
+                txtMapPack.Text = "";
             }
         }
 
@@ -314,7 +330,11 @@ namespace AlbanianXrm.SolutionPackager
             var result = saveFile.ShowDialog();
             if (result == DialogResult.OK)
             {
-                txtPackLog.Text = saveFile.FileName;
+                txtLogPack.Text = saveFile.FileName;
+            }
+            else if (txtLogPack.Text != "" && FieldClearDialog() == DialogResult.Yes)
+            {
+                txtLogPack.Text = "";
             }
         }
 
@@ -324,16 +344,20 @@ namespace AlbanianXrm.SolutionPackager
             var result = openFile.ShowDialog();
             if (result == DialogResult.OK)
             {
-                txtPackArguments.Text = openFile.FileName;
+                txtArgumentsPack.Text = openFile.FileName;
+            }
+            else if (txtArgumentsPack.Text != "" && FieldClearDialog() == DialogResult.Yes)
+            {
+                txtArgumentsPack.Text = "";
             }
         }
 
         private void btnPack_Click(object sender, EventArgs e)
         {
             int nrErrors = 0;
-            if (txtPackFolder.Text.Length == 0)
+            if (txtInputPack.Text.Length == 0)
             {
-                errorProvider.SetError(txtPackFolder, Resources.INPUT_FOLDER_NOT_SPECIFIED);
+                errorProvider.SetError(txtInputPack, Resources.INPUT_FOLDER_NOT_SPECIFIED);
                 nrErrors += 1;
             }
             if (CoreToolsDownloader.GetSolutionPackagerVersion() == null)
@@ -341,9 +365,9 @@ namespace AlbanianXrm.SolutionPackager
                 errorProvider.SetError(localOrCrm, Resources.SOLUTIONPACKAGER_MISSING);
                 nrErrors += 1;
             }
-            if (txtPackZip.Text.Length == 0)
+            if (txtOutputPack.Text.Length == 0)
             {
-                errorProvider.SetError(txtPackZip, Resources.ZIP_FILE_NOT_SPECIFIED);
+                errorProvider.SetError(txtOutputPack, Resources.ZIP_FILE_NOT_SPECIFIED);
                 nrErrors += 1;
             }
 
@@ -356,14 +380,14 @@ namespace AlbanianXrm.SolutionPackager
             var parameters = new SolutionPackagerCaller.Parameters()
             {
                 Action = "Pack",
-                ZipFile = txtPackZip.Text,
-                OutputFolder = txtPackFolder.Text,
-                PackageType = packageTypes[cmbPackPackageType.SelectedIndex],
-                ErrorLevel = errorLevels[cmbPackErrorLevel.SelectedIndex],
-                MapFile = txtPackMap.Text,
-                NoLogo = chkPackNoLogo.Checked,
-                LogFile = txtPackLog.Text,
-                Arguments = txtPackArguments.Text
+                ZipFile = txtOutputPack.Text,
+                OutputFolder = txtInputPack.Text,
+                PackageType = packageTypes[cmbPackageTypePack.SelectedIndex],
+                ErrorLevel = errorLevels[cmbErrorLevelPack.SelectedIndex],
+                MapFile = txtMapPack.Text,
+                NoLogo = chkNoLogoPack.Checked,
+                LogFile = txtLogPack.Text,
+                Arguments = txtArgumentsPack.Text
             };
 
 
@@ -411,6 +435,17 @@ namespace AlbanianXrm.SolutionPackager
             if (e.Action == TabControlAction.Selected && e.TabPage == tabSettings)
             {
                 pluginViewModel.SolutionPackagerVersion = CoreToolsDownloader.GetSolutionPackagerVersion()?.ToString();
+            }
+        }
+
+        private DialogResult FieldClearDialog()
+        {
+            using (var dialog = new SolutionPackagerDialog(Resources.FIELD_CLEAR_MESSAGE,
+                                                           Resources.FIELD_CLEAR_TITLE,
+                                                           new SolutionPackagerDialog.ButtonProperties() { Text=Resources.BTN_NO, Result = DialogResult.No },
+                                                           new SolutionPackagerDialog.ButtonProperties() { Text=Resources.BTN_YES, Result = DialogResult.Yes }))
+            {
+                return dialog.ShowDialog(this);
             }
         }
     }
