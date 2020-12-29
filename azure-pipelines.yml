@@ -40,13 +40,33 @@ steps:
   inputs:
     command: 'pack'
     packagesToPack: '**/*.nuspec'
-    packDestination: '$(Build.ArtifactStagingDirectory)'
+    packDestination: '$(Build.ArtifactStagingDirectory)/NuGet'
     buildProperties: version=$(MyVars.BuildNumber)
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))  
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publishing NuGet package to pipeline'
   inputs:
-    pathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)/NuGet'
     artifactName: 'NuGet Package'
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))  
+
+- powershell: |
+    New-Item -Type dir Plugins
+    Copy-Item AlbanianXrm.SolutionPackager\bin\Release\net462\AlbanianXrm.SolutionPackager.dll -Destination Plugins\AlbanianXrm.SolutionPackager.dll
+    New-Item -Type dir Plugins\AlbanianXrm.SolutionPackager
+    Copy-Item AlbanianXrm.SolutionPackager\bin\Release\net462\AlbanianXrm.SolutionPackager.Tool.dll -Destination Plugins\AlbanianXrm.SolutionPackager\AlbanianXrm.SolutionPackager.Tool.dll
+    New-Item -Type dir Plugins\AlbanianXrm.SolutionPackager\it
+    Copy-Item AlbanianXrm.SolutionPackager\bin\Release\net462\it\AlbanianXrm.SolutionPackager.Tool.resources.dll -Destination Plugins\AlbanianXrm.SolutionPackager\it\AlbanianXrm.SolutionPackager.Tool.resources.dll
+    Compress-Archive -Path plugins\* -DestinationPath Plugins.zip
+  displayName: 'Create zip for GitHub'
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))  
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publishing NuGet package to pipeline'
+  inputs:
+    pathtoPublish: 'Plugins.zip'
+    artifactName: 'Plugin Package'
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))  
+    
+    
