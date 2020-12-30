@@ -22,7 +22,7 @@ steps:
     SonarCloud: 'AlbanianXrm SonarCloud'
     organization: 'albanian-xrm'
     scannerMode: 'MSBuild'
-    projectKey: 'Albanian-Xrm_Solution_Packager'
+    projectKey: 'Albanian-Xrm_Solution-Packager'
     projectName: 'Solution_Packager'
 
 - task: NuGetToolInstaller@0
