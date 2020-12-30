@@ -68,7 +68,7 @@ steps:
     artifactName: 'NuGet Package'
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))  
 
-- powershell: Compress-Archive -Path AlbanianXrm.SolutionPackager\bin\Release\net462\XrmToolBox\plugins\* -DestinationPath Plugins.zip
+- powershell: Compress-Archive -Path AlbanianXrm.SolutionPackager\bin\Release\net462\XrmToolBox\Plugins\* -DestinationPath Plugins.zip
   displayName: 'Create zip for GitHub'
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))  
 

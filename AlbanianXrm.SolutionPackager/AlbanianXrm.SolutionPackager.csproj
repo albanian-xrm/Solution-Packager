@@ -52,7 +52,7 @@
       <Name>AlbanianXrm.SolutionPackager.Tool</Name>
     </ProjectReference>
   </ItemGroup>
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)'=='Debug'">
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="IF NOT EXIST $(TargetDir)XrmToolBox\Plugins mkdir $(TargetDir)XrmToolBox\Plugins&#xD;&#xA;IF NOT EXIST $(TargetDir)XrmToolBox\Plugins mkdir $(TargetDir)XrmToolBox\Plugins&#xD;&#xA;IF NOT EXIST $(TargetDir)XrmToolBox\Plugins\AlbanianXrm.SolutionPackager mkdir $(TargetDir)XrmToolBox\Plugins\AlbanianXrm.SolutionPackager&#xD;&#xA;move /Y $(TargetDir)AlbanianXrm.SolutionPackager.dll $(TargetDir)XrmToolBox\Plugins &#xD;&#xA;move /Y $(TargetDir)it $(TargetDir)XrmToolBox\Plugins\AlbanianXrm.SolutionPackager\it &#xD;&#xA;move /Y $(TargetDir)AlbanianXrm.SolutionPackager.Tool.dll $(TargetDir)XrmToolBox\Plugins\AlbanianXrm.SolutionPackager\&#xD;&#xA;&#xD;&#xA;IF &quot;$(ConfigurationName)&quot;==&quot;Debug&quot; (&#xD;&#xA;    move /Y $(TargetDir)AlbanianXrm.SolutionPackager.pdb $(TargetDir)XrmToolBox\Plugins &#xD;&#xA;    move /Y $(TargetDir)it $(TargetDir)XrmToolBox\Plugins\AlbanianXrm.SolutionPackager\it &#xD;&#xA;    move /Y $(TargetDir)AlbanianXrm.SolutionPackager.Tool.pdb $(TargetDir)XrmToolBox\Plugins\AlbanianXrm.SolutionPackager\&#xD;&#xA;)" />
   </Target>
 </Project>
