@@ -52,6 +52,6 @@
     </ProjectReference>
   </ItemGroup>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)'=='Debug'">
-    <Exec Command="IF NOT EXIST $(TargetDir)Plugins mkdir $(TargetDir)Plugins&#xD;&#xA;IF NOT EXIST $(TargetDir)Plugins\AlbanianXrm.SolutionPackager mkdir $(TargetDir)Plugins\AlbanianXrm.SolutionPackager&#xD;&#xA;xcopy $(TargetDir)AlbanianXrm.SolutionPackager.dll $(TargetDir)Plugins /Y &#xD;&#xA;xcopy $(TargetDir)it $(TargetDir)Plugins\AlbanianXrm.SolutionPackager\it /Y /I&#xD;&#xA;xcopy $(TargetDir)AlbanianXrm.SolutionPackager.dll $(TargetDir)Plugins\AlbanianXrm.SolutionPackager\" />
+    <Exec Command="IF NOT EXIST $(TargetDir)Plugins mkdir $(TargetDir)Plugins&#xD;&#xA;IF NOT EXIST $(TargetDir)Plugins\AlbanianXrm.SolutionPackager mkdir $(TargetDir)Plugins\AlbanianXrm.SolutionPackager&#xD;&#xA;xcopy $(TargetDir)AlbanianXrm.SolutionPackager.dll $(TargetDir)Plugins /Y &#xD;&#xA;xcopy $(TargetDir)it $(TargetDir)Plugins\AlbanianXrm.SolutionPackager\it /Y /I&#xD;&#xA;xcopy $(TargetDir)AlbanianXrm.SolutionPackager.Tool.dll $(TargetDir)Plugins\AlbanianXrm.SolutionPackager\" />
   </Target>
 </Project>

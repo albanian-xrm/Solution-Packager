@@ -16,6 +16,15 @@ steps:
     BuildNumber: $(Build.BuildNumber)
   displayName: 'Set Configuration Variable'
 
+- task: SonarCloudPrepare@1
+  condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')  
+  inputs:
+    SonarCloud: 'AlbanianXrm SonarCloud'
+    organization: 'albanian-xrm'
+    scannerMode: 'MSBuild'
+    projectKey: 'Albanian-Xrm_Solution_Packager'
+    projectName: 'Solution_Packager'
+
 - task: NuGetToolInstaller@0
   inputs:
     versionSpec: '4.9.x' 
@@ -34,6 +43,14 @@ steps:
     configuration: $(MyVars.configuration)
     msbuildArguments: '/p:Version=$(MyVars.BuildNumber)'
   displayName: 'Building Solution'
+
+- task: SonarCloudAnalyze@1
+  condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')  
+
+- task: SonarCloudPublish@1
+  condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')  
+  inputs:
+    pollingTimeoutSec: '300'
 
 - task: NuGetCommand@2
   displayName: 'Creating NuGet package'
