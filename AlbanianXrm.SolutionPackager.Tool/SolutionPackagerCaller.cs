@@ -27,10 +27,10 @@ namespace AlbanianXrm.SolutionPackager
         }
 
         public void ManageSolution(Parameters @params)
-        {
+        {          
             asyncWorkQueue.Enqueue(new WorkAsyncInfo
             {
-                Message = string.Format(CultureInfo.InvariantCulture, @params.Action == "Pack" ? Resources.PACKING_SOLUTION : Resources.EXTRACTING_SOLUTION, new FileInfo(@params.ZipFile).Name),
+                Message = string.Format(CultureInfo.InvariantCulture, @params.Action == "Pack" ? Resources.PACKING_SOLUTION : Resources.EXTRACTING_SOLUTION, Path.GetFileName(@params.ZipFile)),
                 AsyncArgument = @params,
                 Work = ExtractSolution,
                 ProgressChanged = ExtractSolutionProgress,
@@ -40,7 +40,7 @@ namespace AlbanianXrm.SolutionPackager
 
         private void ExtractSolution(BackgroundWorker worker, DoWorkEventArgs args)
         {
-            var @params = args.Argument as Parameters ?? throw new ArgumentNullException(nameof(args.Argument));
+            var @params = args.Argument as Parameters ?? throw new ArgumentOutOfRangeException(nameof(args));
 
             string dir = CoreToolsDownloader.GetToolDirectory();
             string solutionPackagerFile = Path.Combine(dir, CoreToolsDownloader.solutionPackagerName);

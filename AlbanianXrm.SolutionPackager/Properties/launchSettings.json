@@ -3,7 +3,7 @@
     "AlbanianXrm.SolutionPackager": {
       "commandName": "Executable",
       "executablePath": "$(TargetDir)XrmToolBox.exe",
-      "commandLineArgs": "/overridepath:."
+      "commandLineArgs": "/overridepath:XrmToolBox"
     }
   }
 }
