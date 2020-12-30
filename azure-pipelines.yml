@@ -23,7 +23,7 @@ steps:
     organization: 'albanian-xrm'
     scannerMode: 'MSBuild'
     projectKey: 'Albanian-Xrm_Solution-Packager'
-    projectName: 'Solution_Packager'
+    projectName: 'Solution-Packager'
 
 - task: NuGetToolInstaller@0
   inputs:
