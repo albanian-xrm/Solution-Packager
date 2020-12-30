@@ -23,8 +23,8 @@ v$version$: Added the possibility to clear the Arguments, Log and Map fields.
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\Release\net462\AlbanianXrm.SolutionPackager.dll" target="lib\net462\plugins" />
-    <file src="bin\Release\net462\AlbanianXrm.SolutionPackager.Tool.dll" target="lib\net462\plugins\AlbanianXrm.SolutionPackager" />
-    <file src="bin\Release\net462\it\AlbanianXrm.SolutionPackager.Tool.resources.dll" target="lib\net462\plugins\AlbanianXrm.SolutionPackager\it" />
+    <file src="bin\Release\net462\XrmToolBox\plugins\AlbanianXrm.SolutionPackager.dll" target="lib\net462\plugins" />
+    <file src="bin\Release\net462\XrmToolBox\plugins\AlbanianXrm.SolutionPackager\AlbanianXrm.SolutionPackager.Tool.dll" target="lib\net462\plugins\AlbanianXrm.SolutionPackager" />
+    <file src="bin\Release\net462\XrmToolBox\plugins\AlbanianXrm.SolutionPackager\it\AlbanianXrm.SolutionPackager.Tool.resources.dll" target="lib\net462\plugins\AlbanianXrm.SolutionPackager\it" />
   </files>
 </package>
