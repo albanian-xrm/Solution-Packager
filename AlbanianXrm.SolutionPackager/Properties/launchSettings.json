@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "AlbanianXrm.SolutionPackager": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Users\\Betim\\source\\repos\\BetimBeja\\AlbanianXrm.SolutionPackager\\AlbanianXrm.SolutionPackager\\bin\\Debug\\net462\\XrmToolBox.exe",
+      "commandLineArgs": "/overridepath:."
+    }
+  }
+}
