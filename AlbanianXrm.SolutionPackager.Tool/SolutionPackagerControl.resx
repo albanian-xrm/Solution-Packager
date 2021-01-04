@@ -576,6 +576,54 @@
   <data name="&gt;&gt;lblOnlineSolution.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
+  <metadata name="errorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>800, 800</value>
+  </data>
+  <data name="&gt;&gt;errorProvider.Name" xml:space="preserve">
+    <value>errorProvider</value>
+  </data>
+  <data name="&gt;&gt;errorProvider.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;selectFolder.Name" xml:space="preserve">
+    <value>selectFolder</value>
+  </data>
+  <data name="&gt;&gt;selectFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openFile.Name" xml:space="preserve">
+    <value>openFile</value>
+  </data>
+  <data name="&gt;&gt;openFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolTip.Name" xml:space="preserve">
+    <value>toolTip</value>
+  </data>
+  <data name="&gt;&gt;toolTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;saveFile.Name" xml:space="preserve">
+    <value>saveFile</value>
+  </data>
+  <data name="&gt;&gt;saveFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>SolutionPackagerControl</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>XrmToolBox.Extensibility.PluginControlBase, XrmToolBox.Extensibility, Version=1.2020.12.43, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="cmbCrmSolutions.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleLeft</value>
+  </data>
   <data name="cmbCrmSolutions.Location" type="System.Drawing.Point, System.Drawing">
     <value>94, 16</value>
   </data>
@@ -1237,7 +1285,7 @@
     <value>5, 5</value>
   </data>
   <data name="txtInputExtract.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
+    <value>5, 5, 15, 5</value>
   </data>
   <data name="txtInputExtract.Multiline" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1246,7 +1294,7 @@
     <value>None</value>
   </data>
   <data name="txtInputExtract.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 24</value>
+    <value>260, 24</value>
   </data>
   <data name="txtInputExtract.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1282,10 +1330,10 @@
     <value>None</value>
   </data>
   <data name="txtOutputExtract.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 24</value>
+    <value>260, 24</value>
   </data>
   <data name="txtOutputExtract.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>0</value>
   </data>
   <data name="txtOutputExtract.Text" xml:space="preserve">
     <value />
@@ -1324,10 +1372,10 @@
     <value>5, 5, 5, 6</value>
   </data>
   <data name="cmbPackageTypeExtract.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 23</value>
+    <value>260, 23</value>
   </data>
   <data name="cmbPackageTypeExtract.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;cmbPackageTypeExtract.Name" xml:space="preserve">
     <value>cmbPackageTypeExtract</value>
@@ -1477,7 +1525,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>275, 34</value>
+    <value>260, 34</value>
   </data>
   <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -1552,7 +1600,7 @@
     <value>5, 5, 5, 6</value>
   </data>
   <data name="cmbErrorLevelExtract.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 23</value>
+    <value>260, 23</value>
   </data>
   <data name="cmbErrorLevelExtract.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
@@ -1582,7 +1630,7 @@
     <value>None</value>
   </data>
   <data name="txtMapExtract.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 24</value>
+    <value>260, 24</value>
   </data>
   <data name="txtMapExtract.TabIndex" type="System.Int32, mscorlib">
     <value>34</value>
@@ -1651,7 +1699,7 @@
     <value>None</value>
   </data>
   <data name="txtLogExtract.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 24</value>
+    <value>260, 24</value>
   </data>
   <data name="txtLogExtract.TabIndex" type="System.Int32, mscorlib">
     <value>35</value>
@@ -1687,7 +1735,7 @@
     <value>None</value>
   </data>
   <data name="txtArgumentsExtract.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 24</value>
+    <value>260, 24</value>
   </data>
   <data name="txtArgumentsExtract.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
@@ -1858,7 +1906,7 @@
     <value>5, 5, 5, 6</value>
   </data>
   <data name="cmbSourceLocaleExtract.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 23</value>
+    <value>260, 23</value>
   </data>
   <data name="cmbSourceLocaleExtract.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
@@ -1996,7 +2044,7 @@ You can use the short form of the command: /loc.</value>
     <value>30, 30</value>
   </data>
   <data name="btnOpenZip.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;btnOpenZip.Name" xml:space="preserve">
     <value>btnOpenZip</value>
@@ -2023,7 +2071,7 @@ You can use the short form of the command: /loc.</value>
     <value>30, 30</value>
   </data>
   <data name="btnOutputFolder.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;btnOutputFolder.Name" xml:space="preserve">
     <value>btnOutputFolder</value>
@@ -2671,7 +2719,7 @@ You can use the short form of the command: /loc.</value>
     <value>None</value>
   </data>
   <data name="txtInputPack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 24</value>
+    <value>260, 24</value>
   </data>
   <data name="txtInputPack.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -2707,7 +2755,7 @@ You can use the short form of the command: /loc.</value>
     <value>None</value>
   </data>
   <data name="txtOutputPack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 24</value>
+    <value>260, 24</value>
   </data>
   <data name="txtOutputPack.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -2749,7 +2797,7 @@ You can use the short form of the command: /loc.</value>
     <value>5, 5, 5, 6</value>
   </data>
   <data name="cmbPackageTypePack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 23</value>
+    <value>260, 23</value>
   </data>
   <data name="cmbPackageTypePack.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -2791,7 +2839,7 @@ You can use the short form of the command: /loc.</value>
     <value>5, 5, 5, 6</value>
   </data>
   <data name="cmbErrorLevelPack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 23</value>
+    <value>260, 23</value>
   </data>
   <data name="cmbErrorLevelPack.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -2809,7 +2857,7 @@ You can use the short form of the command: /loc.</value>
     <value>3</value>
   </data>
   <data name="txtMapPack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 141</value>
+    <value>5, 139</value>
   </data>
   <data name="txtMapPack.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 5, 5, 5</value>
@@ -2821,7 +2869,7 @@ You can use the short form of the command: /loc.</value>
     <value>None</value>
   </data>
   <data name="txtMapPack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 24</value>
+    <value>260, 24</value>
   </data>
   <data name="txtMapPack.TabIndex" type="System.Int32, mscorlib">
     <value>33</value>
@@ -2848,7 +2896,7 @@ You can use the short form of the command: /loc.</value>
     <value>True</value>
   </data>
   <data name="chkNoLogoPack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 180</value>
+    <value>5, 178</value>
   </data>
   <data name="chkNoLogoPack.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 10, 5, 10</value>
@@ -2872,7 +2920,7 @@ You can use the short form of the command: /loc.</value>
     <value>5</value>
   </data>
   <data name="txtLogPack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 209</value>
+    <value>5, 207</value>
   </data>
   <data name="txtLogPack.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 5, 5, 5</value>
@@ -2884,7 +2932,7 @@ You can use the short form of the command: /loc.</value>
     <value>None</value>
   </data>
   <data name="txtLogPack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 24</value>
+    <value>260, 24</value>
   </data>
   <data name="txtLogPack.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
@@ -2908,7 +2956,7 @@ You can use the short form of the command: /loc.</value>
     <value>6</value>
   </data>
   <data name="txtArgumentsPack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 243</value>
+    <value>5, 241</value>
   </data>
   <data name="txtArgumentsPack.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 5, 5, 5</value>
@@ -2920,7 +2968,7 @@ You can use the short form of the command: /loc.</value>
     <value>None</value>
   </data>
   <data name="txtArgumentsPack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 24</value>
+    <value>260, 24</value>
   </data>
   <data name="txtArgumentsPack.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
@@ -2950,7 +2998,7 @@ You can use the short form of the command: /loc.</value>
     <value>NoControl</value>
   </data>
   <data name="chkLocalizePack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 282</value>
+    <value>5, 280</value>
   </data>
   <data name="chkLocalizePack.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 10, 5, 10</value>
@@ -3526,7 +3574,7 @@ You can use the short form of the command: /loc.</value>
     <value>None</value>
   </data>
   <data name="txtCoreTools.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 24</value>
+    <value>260, 24</value>
   </data>
   <data name="txtCoreTools.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -3562,7 +3610,7 @@ You can use the short form of the command: /loc.</value>
     <value>None</value>
   </data>
   <data name="txtNuGetFeed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 24</value>
+    <value>260, 24</value>
   </data>
   <data name="txtNuGetFeed.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -3592,7 +3640,7 @@ You can use the short form of the command: /loc.</value>
     <value>5, 5, 5, 6</value>
   </data>
   <data name="cmbLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 23</value>
+    <value>260, 23</value>
   </data>
   <data name="cmbLanguage.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -3797,51 +3845,6 @@ You can use the short form of the command: /loc.</value>
   </data>
   <data name="&gt;&gt;splitContainer.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <metadata name="errorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 800</value>
-  </data>
-  <data name="&gt;&gt;errorProvider.Name" xml:space="preserve">
-    <value>errorProvider</value>
-  </data>
-  <data name="&gt;&gt;errorProvider.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;selectFolder.Name" xml:space="preserve">
-    <value>selectFolder</value>
-  </data>
-  <data name="&gt;&gt;selectFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;openFile.Name" xml:space="preserve">
-    <value>openFile</value>
-  </data>
-  <data name="&gt;&gt;openFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolTip.Name" xml:space="preserve">
-    <value>toolTip</value>
-  </data>
-  <data name="&gt;&gt;toolTip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;saveFile.Name" xml:space="preserve">
-    <value>saveFile</value>
-  </data>
-  <data name="&gt;&gt;saveFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>SolutionPackagerControl</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>XrmToolBox.Extensibility.PluginControlBase, XrmToolBox.Extensibility, Version=1.2020.12.43, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <metadata name="selectFolder.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>140, 17</value>

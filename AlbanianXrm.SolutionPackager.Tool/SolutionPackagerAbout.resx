@@ -124,6 +124,9 @@
   <data name="&gt;&gt;txtDescription.Type" xml:space="preserve">
     <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;txtDescription.Name" xml:space="preserve">
+    <value>txtDescription</value>
+  </data>
   <data name="&gt;&gt;lblTitle.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -152,14 +155,11 @@
   <data name="lblTitle.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 15.75pt, style=Bold</value>
   </data>
-  <data name="imgLogo.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Albanian Solution Packager</value>
   </data>
   <data name="&gt;&gt;txtDescription.Parent" xml:space="preserve">
     <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblVersion.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>564, 255</value>
@@ -170,11 +170,17 @@
   <data name="&gt;&gt;imgLogo.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="lblIcon8.Text" xml:space="preserve">
+    <value>Icons used in this tool are offered by https://icons8.com</value>
+  </data>
   <data name="&gt;&gt;txtDescription.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="lblTitle.Text" xml:space="preserve">
     <value>Albanian Solution Packager</value>
+  </data>
+  <data name="lblVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 15</value>
   </data>
   <data name="txtDescription.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -185,9 +191,6 @@
   <data name="lblIcon8.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;imgLogo.Name" xml:space="preserve">
-    <value>imgLogo</value>
-  </data>
   <data name="&gt;&gt;lblTitle.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
@@ -197,21 +200,20 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="imgLogo.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
+  <data name="imgLogo.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="lblVersion.Location" type="System.Drawing.Point, System.Drawing">
     <value>251, 37</value>
   </data>
-  <data name="&gt;&gt;lblVersion.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;txtDescription.Name" xml:space="preserve">
-    <value>txtDescription</value>
+  <data name="&gt;&gt;lblVersion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;imgLogo.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="lblTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>251, 12</value>
   </data>
   <data name="&gt;&gt;lblIcon8.Parent" xml:space="preserve">
     <value>$this</value>
@@ -228,17 +230,18 @@
   <data name="&gt;&gt;lblIcon8.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="lblIcon8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>256, 229</value>
+  </data>
   <data name="lblVersion.Text" xml:space="preserve">
     <value>Version: </value>
   </data>
-  <data name="lblTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>251, 12</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="imgLogo.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
   </data>
   <data name="txtDescription.Text" xml:space="preserve">
     <value>This tool facilitates the use of SolutionPackager.exe using a simple GUI to configure the desired output.</value>
-  </data>
-  <data name="&gt;&gt;lblTitle.Name" xml:space="preserve">
-    <value>lblTitle</value>
   </data>
   <data name="lblTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>303, 25</value>
@@ -249,31 +252,25 @@
   <data name="lblVersion.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;imgLogo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lblVersion.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="lblIcon8.Text" xml:space="preserve">
-    <value>Icons used in this tool are offered by https://icons8.com</value>
-  </data>
-  <data name="lblIcon8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>256, 229</value>
+  <data name="&gt;&gt;lblTitle.Name" xml:space="preserve">
+    <value>lblTitle</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Albanian Solution Packager</value>
+  <data name="&gt;&gt;imgLogo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="txtDescription.Location" type="System.Drawing.Point, System.Drawing">
     <value>251, 55</value>
   </data>
-  <data name="lblVersion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 15</value>
+  <data name="&gt;&gt;imgLogo.Name" xml:space="preserve">
+    <value>imgLogo</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>it</value>
   </metadata>
 </root>

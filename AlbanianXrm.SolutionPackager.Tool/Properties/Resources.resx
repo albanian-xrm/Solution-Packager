@@ -187,6 +187,9 @@
   <data name="NO_SOLUTION_SELECTED" xml:space="preserve">
     <value>Please select the solution to download</value>
   </data>
+  <data name="NUGET_FEED_ERROR" xml:space="preserve">
+    <value>Please specify a valid NuGet feed</value>
+  </data>
   <data name="OUTPUT_FOLDER_NOT_SPECIFIED" xml:space="preserve">
     <value>Please select the output folder</value>
   </data>

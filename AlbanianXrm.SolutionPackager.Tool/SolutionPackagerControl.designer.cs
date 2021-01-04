@@ -312,7 +312,9 @@
             // cmbCrmSolutions
             // 
             this.cmbCrmSolutions.DisplayMember = "FriendlyName";
+            this.cmbCrmSolutions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCrmSolutions.FormattingEnabled = true;
+            this.errorProvider.SetIconAlignment(this.cmbCrmSolutions, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cmbCrmSolutions.IconAlignment"))));
             resources.ApplyResources(this.cmbCrmSolutions, "cmbCrmSolutions");
             this.cmbCrmSolutions.Name = "cmbCrmSolutions";
             this.cmbCrmSolutions.ValueMember = "SolutionId";
@@ -459,6 +461,7 @@
             // cmbPackageTypeExtract
             // 
             this.cmbPackageTypeExtract.DisplayMember = "FriendlyName";
+            this.cmbPackageTypeExtract.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPackageTypeExtract.FormattingEnabled = true;
             this.cmbPackageTypeExtract.Items.AddRange(new object[] {
             resources.GetString("cmbPackageTypeExtract.Items"),
@@ -516,6 +519,7 @@
             // cmbErrorLevelExtract
             // 
             this.cmbErrorLevelExtract.DisplayMember = "FriendlyName";
+            this.cmbErrorLevelExtract.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbErrorLevelExtract.FormattingEnabled = true;
             this.cmbErrorLevelExtract.Items.AddRange(new object[] {
             resources.GetString("cmbErrorLevelExtract.Items"),
@@ -561,6 +565,7 @@
             // cmbSourceLocaleExtract
             // 
             this.cmbSourceLocaleExtract.DisplayMember = "FriendlyName";
+            this.cmbSourceLocaleExtract.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSourceLocaleExtract.FormattingEnabled = true;
             this.cmbSourceLocaleExtract.Items.AddRange(new object[] {
             resources.GetString("cmbSourceLocaleExtract.Items"),
@@ -701,7 +706,7 @@
             resources.ApplyResources(this.btnPack, "btnPack");
             this.btnPack.Name = "btnPack";
             this.btnPack.UseVisualStyleBackColor = true;
-            this.btnPack.Click += new System.EventHandler(this.btnPack_Click);
+            this.btnPack.Click += new System.EventHandler(this.BtnPack_Click);
             // 
             // flpPackLabels
             // 
@@ -795,6 +800,7 @@
             // cmbPackageTypePack
             // 
             this.cmbPackageTypePack.DisplayMember = "FriendlyName";
+            this.cmbPackageTypePack.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPackageTypePack.FormattingEnabled = true;
             this.cmbPackageTypePack.Items.AddRange(new object[] {
             resources.GetString("cmbPackageTypePack.Items"),
@@ -808,6 +814,7 @@
             // cmbErrorLevelPack
             // 
             this.cmbErrorLevelPack.DisplayMember = "FriendlyName";
+            this.cmbErrorLevelPack.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbErrorLevelPack.FormattingEnabled = true;
             this.cmbErrorLevelPack.Items.AddRange(new object[] {
             resources.GetString("cmbErrorLevelPack.Items"),
@@ -896,7 +903,7 @@
             resources.ApplyResources(this.btnLogPack, "btnLogPack");
             this.btnLogPack.Name = "btnLogPack";
             this.btnLogPack.UseVisualStyleBackColor = true;
-            this.btnLogPack.Click += new System.EventHandler(this.BtnLogPack_Click);
+            this.btnLogPack.Click += new System.EventHandler(this.BtnPackLog_Click);
             // 
             // btnArgumentsPack
             // 
@@ -1001,6 +1008,7 @@
             // cmbLanguage
             // 
             this.cmbLanguage.DisplayMember = "DisplayName";
+            this.cmbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLanguage.FormattingEnabled = true;
             resources.ApplyResources(this.cmbLanguage, "cmbLanguage");
             this.cmbLanguage.Name = "cmbLanguage";

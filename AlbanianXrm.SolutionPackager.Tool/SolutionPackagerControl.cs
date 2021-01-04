@@ -211,6 +211,7 @@ namespace AlbanianXrm.SolutionPackager
 
         private void BtnExtract_Click(object sender, EventArgs e)
         {
+            errorProvider.Clear();
             int nrErrors = 0;
             if (txtOutputExtract.Text.Length == 0)
             {
@@ -324,7 +325,7 @@ namespace AlbanianXrm.SolutionPackager
             }
         }
 
-        private void BtnLogPack_Click(object sender, EventArgs e)
+        private void BtnPackLog_Click(object sender, EventArgs e)
         {
             saveFile.Filter = Resources.FILTER_TEXT;
             var result = saveFile.ShowDialog();
@@ -352,8 +353,9 @@ namespace AlbanianXrm.SolutionPackager
             }
         }
 
-        private void btnPack_Click(object sender, EventArgs e)
+        private void BtnPack_Click(object sender, EventArgs e)
         {
+            errorProvider.Clear();
             int nrErrors = 0;
             if (txtInputPack.Text.Length == 0)
             {
@@ -409,6 +411,14 @@ namespace AlbanianXrm.SolutionPackager
         #region Settings
         private void BtnCoreTools_Click(object sender, EventArgs e)
         {
+            errorProvider.Clear();
+
+            if (txtNuGetFeed.Text == "")
+            {
+                errorProvider.SetError(txtNuGetFeed, Resources.NUGET_FEED_ERROR);
+                return;
+            }
+
             coreToolsDownloader.DownloadCoreTools(txtNuGetFeed.Text);
         }
 

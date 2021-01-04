@@ -273,6 +273,15 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please specify a valid NuGet feed.
+        /// </summary>
+        public static string NUGET_FEED_ERROR {
+            get {
+                return ResourceManager.GetString("NUGET_FEED_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please select the output folder.
         /// </summary>
         public static string OUTPUT_FOLDER_NOT_SPECIFIED {
