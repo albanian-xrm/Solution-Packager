@@ -16,18 +16,20 @@ namespace AlbanianXrm.SolutionPackager
         private readonly AsyncWorkQueue asyncWorkQueue;
         private readonly RichTextBox txtOutput;
         private readonly SolutionPackagerControl solutionPackagerControl;
+        private readonly CrmSolutionImporter crmSolutionImporter;
 
         private const string deleteFilesQuestion = "Delete files? [Yes/No/List]:";
 
-        public SolutionPackagerCaller(SolutionPackagerControl solutionPackagerControl, AsyncWorkQueue asyncWorkQueue, RichTextBox txtOutput)
+        public SolutionPackagerCaller(SolutionPackagerControl solutionPackagerControl, AsyncWorkQueue asyncWorkQueue, RichTextBox txtOutput, CrmSolutionImporter crmSolutionImporter)
         {
             this.solutionPackagerControl = solutionPackagerControl ?? throw new ArgumentNullException(nameof(solutionPackagerControl));
             this.asyncWorkQueue = asyncWorkQueue ?? throw new ArgumentNullException(nameof(asyncWorkQueue));
             this.txtOutput = txtOutput ?? throw new ArgumentNullException(nameof(txtOutput));
+            this.crmSolutionImporter = crmSolutionImporter ?? throw new ArgumentNullException(nameof(crmSolutionImporter));
         }
 
         public void ManageSolution(Parameters @params)
-        {          
+        {
             asyncWorkQueue.Enqueue(new WorkAsyncInfo
             {
                 Message = string.Format(CultureInfo.InvariantCulture, @params.Action == "Pack" ? Resources.PACKING_SOLUTION : Resources.EXTRACTING_SOLUTION, Path.GetFileName(@params.ZipFile)),
@@ -203,6 +205,12 @@ namespace AlbanianXrm.SolutionPackager
                     worker.ReportProgress(90, new FileInfo(xmlFile));
                 }
             }
+
+            if (@params.ImportSolutionParams != null)
+            {
+                @params.ImportSolutionParams.CustomizationFile = @params.ZipFile;
+                crmSolutionImporter.ImportSolution(@params.ImportSolutionParams);
+            }
         }
 
         private void AppendArgument(string argument, string value = null)
@@ -370,6 +378,8 @@ namespace AlbanianXrm.SolutionPackager
             public bool Localize { get; set; }
 
             public StreamWriter StandardInput { get; set; }
+
+            public CrmSolutionImporter.Parameters ImportSolutionParams { get; set; }
         }
     }
 }

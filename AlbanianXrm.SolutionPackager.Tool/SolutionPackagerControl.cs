@@ -32,7 +32,8 @@ namespace AlbanianXrm.SolutionPackager
         private readonly AsyncWorkQueue asyncWorkQueue;
         private readonly PluginViewModel pluginViewModel;
         private readonly CoreToolsDownloader coreToolsDownloader;
-        private readonly CrmSolutionManager crmSolutionManager;
+        private readonly CrmSolutionDownloader crmSolutionManager;
+        private readonly CrmSolutionImporter crmSolutionImporter;
         private readonly SolutionPackagerCaller solutionPackagerCaller;
         private readonly Type pluginType;
 
@@ -48,16 +49,17 @@ namespace AlbanianXrm.SolutionPackager
             pluginViewModel = new PluginViewModel();
             asyncWorkQueue = new AsyncWorkQueue(this, pluginViewModel);
             coreToolsDownloader = new CoreToolsDownloader(asyncWorkQueue, pluginViewModel);
-            solutionPackagerCaller = new SolutionPackagerCaller(this, asyncWorkQueue, txtOutput);
-            crmSolutionManager = new CrmSolutionManager(this, asyncWorkQueue, solutionPackagerCaller, cmbCrmSolutions);
+            crmSolutionImporter = new CrmSolutionImporter(this, asyncWorkQueue, txtOutput);
+            solutionPackagerCaller = new SolutionPackagerCaller(this, asyncWorkQueue, txtOutput, crmSolutionImporter);
+            crmSolutionManager = new CrmSolutionDownloader(this, asyncWorkQueue, solutionPackagerCaller, cmbCrmSolutions);
 
-            localOrCrm.DataBindings.Add(nameof(localOrCrm.Enabled), pluginViewModel, nameof(pluginViewModel.HasConnection));
-            grpExportSolution.DataBindings.Add(nameof(grpExportSolution.Visible), pluginViewModel, nameof(pluginViewModel.LocalOrCrm));
-
-            btnRefreshSolutions.DataBindings.Add(nameof(btnRefreshSolutions.Enabled), pluginViewModel, nameof(pluginViewModel.LocalOrCrm));
-            tabsExtractOrPack.DataBindings.Add(nameof(tabsExtractOrPack.Enabled), pluginViewModel, nameof(pluginViewModel.AllowRequests));
-
-            txtCoreTools.DataBindings.Add(nameof(txtCoreTools.Text), pluginViewModel, nameof(pluginViewModel.SolutionPackagerVersion));
+            localOrCrm.Bind(_ => _.Enabled, pluginViewModel, _ => _.HasConnection);
+            grpExportSolution.Bind(_ => _.Visible, pluginViewModel, _ => _.LocalOrCrm);
+            btnRefreshSolutions.Bind(_ => _.Enabled, pluginViewModel, _ => _.LocalOrCrm);
+            chkImportSolution.Bind(_ => _.Enabled, pluginViewModel, _ => _.HasConnection);
+            grpImportSolution.Bind(_ => _.Visible, pluginViewModel, _ => _.ImportSolutionAfterPack);
+            tabsExtractOrPack.Bind(_ => _.Enabled, pluginViewModel, _ => _.AllowRequests);
+            txtCoreTools.Bind(_ => _.Text, pluginViewModel, _ => _.SolutionPackagerVersion);
 
             pluginViewModel.PropertyChanged += PluginViewModel_PropertyChanged;
 
@@ -118,7 +120,9 @@ namespace AlbanianXrm.SolutionPackager
                 return;
             }
 
-            info.Cancel = new SolutionPackagerDialog(Resources.QUESTION_CLOSE_TOOL, Resources.QUESTION,
+            info.Cancel = new SolutionPackagerDialog(
+                                Resources.QUESTION_CLOSE_TOOL, 
+                                Resources.QUESTION,
                                 new SolutionPackagerDialog.ButtonProperties { Text = Resources.BTN_NO, Result = DialogResult.No },
                                 new SolutionPackagerDialog.ButtonProperties { Text = Resources.BTN_YES, Result = DialogResult.Yes }).ShowDialog(this) != DialogResult.Yes;
         }
@@ -267,7 +271,7 @@ namespace AlbanianXrm.SolutionPackager
             if (localOrCrm.Checked)
             {
                 crmSolutionManager.DownloadSolution(
-                   new CrmSolutionManager.DownloadSolutionParams(
+                   new CrmSolutionDownloader.Parameters(
                        cmbCrmSolutions.SelectedItem as Models.Solution,
                        zipDirectory: txtInputExtract.Text,
                        solutionPackagerParameters: parameters,
@@ -292,6 +296,12 @@ namespace AlbanianXrm.SolutionPackager
         #endregion
 
         #region Pack
+        private void ChkImportSolution_CheckedChanged(object sender, EventArgs e)
+        {
+            errorProvider.Clear();
+            pluginViewModel.ImportSolutionAfterPack = chkImportSolution.Checked;
+        }
+
         private void BtnInputFolder_Click(object sender, EventArgs e)
         {
             var result = selectFolder.ShowDialog();
@@ -364,7 +374,7 @@ namespace AlbanianXrm.SolutionPackager
             }
             if (CoreToolsDownloader.GetSolutionPackagerVersion() == null)
             {
-                errorProvider.SetError(localOrCrm, Resources.SOLUTIONPACKAGER_MISSING);
+                errorProvider.SetError(chkImportSolution, Resources.SOLUTIONPACKAGER_MISSING);
                 nrErrors += 1;
             }
             if (txtOutputPack.Text.Length == 0)
@@ -392,6 +402,17 @@ namespace AlbanianXrm.SolutionPackager
                 Arguments = txtArgumentsPack.Text
             };
 
+            if (chkImportSolution.Checked)
+            {
+                parameters.ImportSolutionParams = new CrmSolutionImporter.Parameters()
+                {
+                    ImportDependencies = chkImportDependencies.Checked,
+                    ImportManaged = chkImportManaged.Checked,
+                    ImportOverwrite = chkImportOverwrite.Checked,
+                    ImportPublishWorkflows = chkImportPublishWorkflows.Checked,
+                    HoldingSolution = chkImportHoldingSolution.Checked
+                };
+            }
 
             solutionPackagerCaller.ManageSolution(parameters);
         }
@@ -452,8 +473,8 @@ namespace AlbanianXrm.SolutionPackager
         {
             using (var dialog = new SolutionPackagerDialog(Resources.FIELD_CLEAR_MESSAGE,
                                                            Resources.FIELD_CLEAR_TITLE,
-                                                           new SolutionPackagerDialog.ButtonProperties() { Text=Resources.BTN_NO, Result = DialogResult.No },
-                                                           new SolutionPackagerDialog.ButtonProperties() { Text=Resources.BTN_YES, Result = DialogResult.Yes }))
+                                                           new SolutionPackagerDialog.ButtonProperties() { Text = Resources.BTN_NO, Result = DialogResult.No },
+                                                           new SolutionPackagerDialog.ButtonProperties() { Text = Resources.BTN_YES, Result = DialogResult.Yes }))
             {
                 return dialog.ShowDialog(this);
             }

@@ -1,6 +1,7 @@
 ﻿using AlbanianXrm.SolutionPackager.Properties;
 using System.ComponentModel;
 using System.Globalization;
+using System.Runtime.CompilerServices;
 
 namespace AlbanianXrm.SolutionPackager
 {
@@ -17,7 +18,7 @@ namespace AlbanianXrm.SolutionPackager
                 if (_AllowRequests == value) return;
                 _AllowRequests = value;
 
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AllowRequests)));
+                NotifyPropertyChanged();
             }
         }
 
@@ -31,10 +32,13 @@ namespace AlbanianXrm.SolutionPackager
                 _HasConnection = value;
 
                 if (_LocalOrCrm)
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(LocalOrCrm)));
+                    NotifyPropertyChanged(nameof(LocalOrCrm));
 
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HasConnection)));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DoesNotHaveConnection)));
+                if (_ImportSolutionAfterPack)
+                    NotifyPropertyChanged(nameof(ImportSolutionAfterPack));
+
+                NotifyPropertyChanged();
+                NotifyPropertyChanged(nameof(DoesNotHaveConnection));
             }
         }
 
@@ -47,10 +51,13 @@ namespace AlbanianXrm.SolutionPackager
                 _HasConnection = !value;
 
                 if (_LocalOrCrm)
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(LocalOrCrm)));
+                   NotifyPropertyChanged(nameof(LocalOrCrm));
 
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(HasConnection)));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DoesNotHaveConnection)));
+                if (_ImportSolutionAfterPack)
+                    NotifyPropertyChanged(nameof(ImportSolutionAfterPack));
+
+                NotifyPropertyChanged(nameof(HasConnection));
+                NotifyPropertyChanged();
             }
         }
 
@@ -64,7 +71,21 @@ namespace AlbanianXrm.SolutionPackager
                 _LocalOrCrm = value;
 
                 if (_HasConnection)
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(LocalOrCrm)));
+                    NotifyPropertyChanged();
+            }
+        }
+
+        private bool _ImportSolutionAfterPack = false;
+        public bool ImportSolutionAfterPack
+        {
+            get { return _ImportSolutionAfterPack && _HasConnection; }
+            set
+            {
+                if (_ImportSolutionAfterPack == value) return;
+                _ImportSolutionAfterPack = value;
+
+                if (_HasConnection)
+                    NotifyPropertyChanged();
             }
         }
 
@@ -76,7 +97,7 @@ namespace AlbanianXrm.SolutionPackager
             {
                 if (_SolutionPackagerVersion == value) return;
                 _SolutionPackagerVersion = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SolutionPackagerVersion)));
+                NotifyPropertyChanged();
             }
         }
 
@@ -89,15 +110,16 @@ namespace AlbanianXrm.SolutionPackager
                 Resources.Culture = value;
                 System.Threading.Thread.CurrentThread.CurrentUICulture = value;
                 Settings.Language = value.Name;
-
-                if (_SolutionPackagerVersion == null)
-                {
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SolutionPackagerVersion)));
-                }
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(CultureInfo)));
+                NotifyPropertyChanged();
+                NotifyPropertyChanged(nameof(SolutionPackagerVersion));
             }
         }
 
         public Settings Settings { get; set; } = new Settings();
+
+        protected void NotifyPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

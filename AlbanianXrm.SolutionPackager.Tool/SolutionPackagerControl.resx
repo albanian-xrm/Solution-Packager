@@ -142,10 +142,10 @@
     <value>MiddleRight</value>
   </data>
   <data name="localOrCrm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>110, 7</value>
+    <value>100, 7</value>
   </data>
   <data name="localOrCrm.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 7, 5, 7</value>
+    <value>5, 7, 15, 7</value>
   </data>
   <data name="localOrCrm.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 1</value>
@@ -2265,6 +2265,48 @@ You can use the short form of the command: /loc.</value>
   <data name="tlpPack.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
+  <data name="chkImportSolution.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="chkImportSolution.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkImportSolution.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="chkImportSolution.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkImportSolution.Location" type="System.Drawing.Point, System.Drawing">
+    <value>207, 7</value>
+  </data>
+  <data name="chkImportSolution.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 7, 15, 7</value>
+  </data>
+  <data name="chkImportSolution.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 1</value>
+  </data>
+  <data name="chkImportSolution.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 20</value>
+  </data>
+  <data name="chkImportSolution.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="chkImportSolution.Text" xml:space="preserve">
+    <value>Import Solution into Crm?</value>
+  </data>
+  <data name="&gt;&gt;chkImportSolution.Name" xml:space="preserve">
+    <value>chkImportSolution</value>
+  </data>
+  <data name="&gt;&gt;chkImportSolution.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkImportSolution.Parent" xml:space="preserve">
+    <value>tlpPack</value>
+  </data>
+  <data name="&gt;&gt;chkImportSolution.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="btnPack.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -2272,7 +2314,7 @@ You can use the short form of the command: /loc.</value>
     <value>NoControl</value>
   </data>
   <data name="btnPack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>109, 309</value>
+    <value>109, 343</value>
   </data>
   <data name="btnPack.Size" type="System.Drawing.Size, System.Drawing">
     <value>274, 34</value>
@@ -2293,7 +2335,7 @@ You can use the short form of the command: /loc.</value>
     <value>tlpPack</value>
   </data>
   <data name="&gt;&gt;btnPack.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="lblInputFolder.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -2680,7 +2722,7 @@ You can use the short form of the command: /loc.</value>
     <value>TopDown</value>
   </data>
   <data name="flpPackLabels.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+    <value>0, 34</value>
   </data>
   <data name="flpPackLabels.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -2704,7 +2746,7 @@ You can use the short form of the command: /loc.</value>
     <value>tlpPack</value>
   </data>
   <data name="&gt;&gt;flpPackLabels.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="txtInputPack.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 5</value>
@@ -2857,7 +2899,7 @@ You can use the short form of the command: /loc.</value>
     <value>3</value>
   </data>
   <data name="txtMapPack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 139</value>
+    <value>5, 141</value>
   </data>
   <data name="txtMapPack.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 5, 5, 5</value>
@@ -2896,7 +2938,7 @@ You can use the short form of the command: /loc.</value>
     <value>True</value>
   </data>
   <data name="chkNoLogoPack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 178</value>
+    <value>5, 180</value>
   </data>
   <data name="chkNoLogoPack.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 10, 5, 10</value>
@@ -2920,7 +2962,7 @@ You can use the short form of the command: /loc.</value>
     <value>5</value>
   </data>
   <data name="txtLogPack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 207</value>
+    <value>5, 209</value>
   </data>
   <data name="txtLogPack.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 5, 5, 5</value>
@@ -2956,7 +2998,7 @@ You can use the short form of the command: /loc.</value>
     <value>6</value>
   </data>
   <data name="txtArgumentsPack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 241</value>
+    <value>5, 243</value>
   </data>
   <data name="txtArgumentsPack.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 5, 5, 5</value>
@@ -2998,7 +3040,7 @@ You can use the short form of the command: /loc.</value>
     <value>NoControl</value>
   </data>
   <data name="chkLocalizePack.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 280</value>
+    <value>5, 282</value>
   </data>
   <data name="chkLocalizePack.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 10, 5, 10</value>
@@ -3025,7 +3067,7 @@ You can use the short form of the command: /loc.</value>
     <value>Fill</value>
   </data>
   <data name="flpPackControls.Location" type="System.Drawing.Point, System.Drawing">
-    <value>106, 0</value>
+    <value>106, 34</value>
   </data>
   <data name="flpPackControls.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -3046,7 +3088,7 @@ You can use the short form of the command: /loc.</value>
     <value>tlpPack</value>
   </data>
   <data name="&gt;&gt;flpPackControls.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="btnInputFolder.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -3202,7 +3244,7 @@ You can use the short form of the command: /loc.</value>
     <value>Fill</value>
   </data>
   <data name="flpPackButtons.Location" type="System.Drawing.Point, System.Drawing">
-    <value>386, 0</value>
+    <value>386, 34</value>
   </data>
   <data name="flpPackButtons.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -3223,7 +3265,178 @@ You can use the short form of the command: /loc.</value>
     <value>tlpPack</value>
   </data>
   <data name="&gt;&gt;flpPackButtons.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="chkImportHoldingSolution.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkImportHoldingSolution.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkImportHoldingSolution.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 122</value>
+  </data>
+  <data name="chkImportHoldingSolution.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 19</value>
+  </data>
+  <data name="chkImportHoldingSolution.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="chkImportHoldingSolution.Text" xml:space="preserve">
+    <value>Holding Solution</value>
+  </data>
+  <data name="&gt;&gt;chkImportHoldingSolution.Name" xml:space="preserve">
+    <value>chkImportHoldingSolution</value>
+  </data>
+  <data name="&gt;&gt;chkImportHoldingSolution.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkImportHoldingSolution.Parent" xml:space="preserve">
+    <value>grpImportSolution</value>
+  </data>
+  <data name="&gt;&gt;chkImportHoldingSolution.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="chkImportDependencies.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkImportDependencies.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkImportDependencies.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 97</value>
+  </data>
+  <data name="chkImportDependencies.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 19</value>
+  </data>
+  <data name="chkImportDependencies.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
+  </data>
+  <data name="chkImportDependencies.Text" xml:space="preserve">
+    <value>Skip Product Update Dependencies</value>
+  </data>
+  <data name="&gt;&gt;chkImportDependencies.Name" xml:space="preserve">
+    <value>chkImportDependencies</value>
+  </data>
+  <data name="&gt;&gt;chkImportDependencies.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkImportDependencies.Parent" xml:space="preserve">
+    <value>grpImportSolution</value>
+  </data>
+  <data name="&gt;&gt;chkImportDependencies.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="chkImportPublishWorkflows.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkImportPublishWorkflows.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkImportPublishWorkflows.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 72</value>
+  </data>
+  <data name="chkImportPublishWorkflows.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 19</value>
+  </data>
+  <data name="chkImportPublishWorkflows.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="chkImportPublishWorkflows.Text" xml:space="preserve">
+    <value>Publish Workflows</value>
+  </data>
+  <data name="&gt;&gt;chkImportPublishWorkflows.Name" xml:space="preserve">
+    <value>chkImportPublishWorkflows</value>
+  </data>
+  <data name="&gt;&gt;chkImportPublishWorkflows.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkImportPublishWorkflows.Parent" xml:space="preserve">
+    <value>grpImportSolution</value>
+  </data>
+  <data name="&gt;&gt;chkImportPublishWorkflows.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="chkImportOverwrite.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkImportOverwrite.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkImportOverwrite.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 47</value>
+  </data>
+  <data name="chkImportOverwrite.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 19</value>
+  </data>
+  <data name="chkImportOverwrite.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="chkImportOverwrite.Text" xml:space="preserve">
+    <value>Overwrite Unmanaged Customizations</value>
+  </data>
+  <data name="&gt;&gt;chkImportOverwrite.Name" xml:space="preserve">
+    <value>chkImportOverwrite</value>
+  </data>
+  <data name="&gt;&gt;chkImportOverwrite.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkImportOverwrite.Parent" xml:space="preserve">
+    <value>grpImportSolution</value>
+  </data>
+  <data name="&gt;&gt;chkImportOverwrite.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="chkImportManaged.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkImportManaged.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 22</value>
+  </data>
+  <data name="chkImportManaged.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 19</value>
+  </data>
+  <data name="chkImportManaged.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="chkImportManaged.Text" xml:space="preserve">
+    <value>Convert to Managed</value>
+  </data>
+  <data name="&gt;&gt;chkImportManaged.Name" xml:space="preserve">
+    <value>chkImportManaged</value>
+  </data>
+  <data name="&gt;&gt;chkImportManaged.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkImportManaged.Parent" xml:space="preserve">
+    <value>grpImportSolution</value>
+  </data>
+  <data name="&gt;&gt;chkImportManaged.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="grpImportSolution.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 383</value>
+  </data>
+  <data name="grpImportSolution.Size" type="System.Drawing.Size, System.Drawing">
+    <value>420, 147</value>
+  </data>
+  <data name="grpImportSolution.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="grpImportSolution.Text" xml:space="preserve">
+    <value>Import Solution</value>
+  </data>
+  <data name="&gt;&gt;grpImportSolution.Name" xml:space="preserve">
+    <value>grpImportSolution</value>
+  </data>
+  <data name="&gt;&gt;grpImportSolution.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpImportSolution.Parent" xml:space="preserve">
+    <value>tlpPack</value>
+  </data>
+  <data name="&gt;&gt;grpImportSolution.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="tlpPack.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -3232,7 +3445,7 @@ You can use the short form of the command: /loc.</value>
     <value>3, 3</value>
   </data>
   <data name="tlpPack.RowCount" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="tlpPack.Size" type="System.Drawing.Size, System.Drawing">
     <value>426, 766</value>
@@ -3253,7 +3466,7 @@ You can use the short form of the command: /loc.</value>
     <value>0</value>
   </data>
   <data name="tlpPack.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btnPack" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="flpPackLabels" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="flpPackControls" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="flpPackButtons" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,106,Absolute,280,Absolute,40" /&gt;&lt;Rows Styles="Absolute,306,Absolute,40,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="chkImportSolution" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="btnPack" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="flpPackLabels" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="flpPackControls" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="flpPackButtons" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="grpImportSolution" Row="3" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,106,Absolute,280,Absolute,40" /&gt;&lt;Rows Styles="Absolute,34,Absolute,306,Absolute,40,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tabPack.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 24</value>

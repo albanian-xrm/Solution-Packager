@@ -208,6 +208,24 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Importing Solution.
+        /// </summary>
+        public static string IMPORT_HEADER {
+            get {
+                return ResourceManager.GetString("IMPORT_HEADER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Started import job with id &apos;{0}&apos;.
+        /// </summary>
+        public static string IMPORT_STARTED {
+            get {
+                return ResourceManager.GetString("IMPORT_STARTED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please select the input folder.
         /// </summary>
         public static string INPUT_FOLDER_NOT_SPECIFIED {

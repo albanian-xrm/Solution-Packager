@@ -14,14 +14,14 @@ using XrmToolBox.Extensibility;
 
 namespace AlbanianXrm.SolutionPackager
 {
-    internal class CrmSolutionManager
+    internal class CrmSolutionDownloader
     {
         private readonly SolutionPackagerControl solutionPackagerControl;
         private readonly AsyncWorkQueue asyncWorkQueue;
         private readonly SolutionPackagerCaller solutionPackagerCaller;
         private readonly ComboBox cmbCrmSolutions;
 
-        public CrmSolutionManager(SolutionPackagerControl solutionPackagerControl, AsyncWorkQueue asyncWorkQueue, SolutionPackagerCaller solutionPackagerCaller, ComboBox cmbCrmSolutions)
+        public CrmSolutionDownloader(SolutionPackagerControl solutionPackagerControl, AsyncWorkQueue asyncWorkQueue, SolutionPackagerCaller solutionPackagerCaller, ComboBox cmbCrmSolutions)
         {
             this.solutionPackagerControl = solutionPackagerControl ?? throw new ArgumentNullException(nameof(solutionPackagerControl));
             this.asyncWorkQueue = asyncWorkQueue ?? throw new ArgumentNullException(nameof(asyncWorkQueue));
@@ -29,7 +29,7 @@ namespace AlbanianXrm.SolutionPackager
             this.cmbCrmSolutions = cmbCrmSolutions ?? throw new ArgumentNullException(nameof(cmbCrmSolutions));
         }
 
-        public void DownloadSolution(DownloadSolutionParams @params)
+        public void DownloadSolution(Parameters @params)
         {
             asyncWorkQueue.Enqueue(new WorkAsyncInfo
             {
@@ -42,7 +42,7 @@ namespace AlbanianXrm.SolutionPackager
 
         private void DownloadSolution(BackgroundWorker worker, DoWorkEventArgs args)
         {
-            var @params = args.Argument as DownloadSolutionParams ?? throw new ArgumentNullException(nameof(args.Argument));
+            var @params = args.Argument as Parameters ?? throw new ArgumentNullException(nameof(args.Argument));
             foreach (var managed in @params.Managed)
             {
                 ExportSolutionRequest request = new ExportSolutionRequest()
@@ -138,9 +138,9 @@ namespace AlbanianXrm.SolutionPackager
             }
         }
 
-        public class DownloadSolutionParams
+        public class Parameters
         {
-            public DownloadSolutionParams(
+            public Parameters(
                 Solution solution,
                 string zipDirectory,
                 SolutionPackagerCaller.Parameters solutionPackagerParameters,
@@ -190,6 +190,6 @@ namespace AlbanianXrm.SolutionPackager
             public bool ExportOutlookSynchronizationSettings { get; private set; }
             public bool ExportRelationshipRoles { get; private set; }
             public bool ExportSales { get; private set; }
-        }
+        }    
     }
 }
