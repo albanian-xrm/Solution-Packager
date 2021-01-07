@@ -187,7 +187,7 @@ namespace AlbanianXrm.SolutionPackager
             var result = saveFile.ShowDialog();
             if (result == DialogResult.OK)
             {
-                txtLogExtract.Text = openFile.FileName;
+                txtLogExtract.Text = saveFile.FileName;
             }
             else if (txtLogExtract.Text != "" && FieldClearDialog() == DialogResult.Yes)
             {

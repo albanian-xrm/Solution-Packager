@@ -13,7 +13,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Uses SolutionPackager.exe from the SDK which can be downloaded from any NuGet source (even local directory for isolated environments).</description>
     <releaseNotes>This is a GUI for SolutionPackager.exe (it shows the command line used to help with the parameters)
-v$version$: Fix: #1 ComboBoxes should be of type DropDownList
+v$version$: Fix: #2 Selecting Log File incorrectly populates the Map File Path
 
 * For older releases go here: https://github.com/albanian-xrm/Solution-Packager/releases </releaseNotes>
     <copyright>Copyright 2020</copyright>
