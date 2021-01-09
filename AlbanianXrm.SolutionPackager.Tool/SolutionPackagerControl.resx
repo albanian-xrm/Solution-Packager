@@ -576,12 +576,12 @@
   <data name="&gt;&gt;lblOnlineSolution.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <metadata name="errorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="errorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  </data>
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
+  </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
     <value>800, 800</value>
   </data>
@@ -691,7 +691,7 @@
     <value>tlpExtract</value>
   </data>
   <data name="&gt;&gt;grpExportSolution.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>5</value>
   </data>
   <data name="btnExtract.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1944,9 +1944,9 @@
   <data name="chkLocalizeExtract.TabIndex" type="System.Int32, mscorlib">
     <value>29</value>
   </data>
-  <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>348, 15</value>
-  </metadata>
+  </data>
   <data name="chkLocalizeExtract.ToolTip" xml:space="preserve">
     <value>[Optional] 
 
@@ -4059,16 +4059,16 @@ You can use the short form of the command: /loc.</value>
   <data name="&gt;&gt;splitContainer.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="selectFolder.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="selectFolder.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>140, 17</value>
-  </metadata>
-  <metadata name="openFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  </data>
+  <data name="openFile.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>257, 17</value>
-  </metadata>
+  </data>
   <data name="openFile.Filter" xml:space="preserve">
     <value>Solution|*.zip|All Files|*.*</value>
   </data>
-  <metadata name="saveFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <data name="saveFile.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>455, 16</value>
-  </metadata>
+  </data>
 </root>

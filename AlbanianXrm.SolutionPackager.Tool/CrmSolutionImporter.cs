@@ -1,4 +1,4 @@
-﻿using AlbanianXrm.SolutionPackager.Properties;
+﻿  using AlbanianXrm.SolutionPackager.Properties;
 using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Messages;
 using System;
@@ -28,11 +28,11 @@ namespace AlbanianXrm.SolutionPackager
         {
             asyncWorkQueue.Enqueue(new WorkAsyncInfo
             {
-                Message = string.Format(CultureInfo.InvariantCulture, Resources.DOWNLOADING_SOLUTION, new FileInfo(@params.CustomizationFile).Name),
+                Message = string.Format(CultureInfo.InvariantCulture, Resources.IMPORT_SOLUTION, new FileInfo(@params.CustomizationFile).Name),
                 IsCancelable = true,
                 AsyncArgument = @params,
                 Work = ImportSolution,
-                PostWorkCallBack = ImportSolutionStarted
+                PostWorkCallBack = ImportSolutionStarted 
             });
         }
 

@@ -217,6 +217,15 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Importing solution &quot;{0}&quot;.
+        /// </summary>
+        public static string IMPORT_SOLUTION {
+            get {
+                return ResourceManager.GetString("IMPORT_SOLUTION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Started import job with id &apos;{0}&apos;.
         /// </summary>
         public static string IMPORT_STARTED {

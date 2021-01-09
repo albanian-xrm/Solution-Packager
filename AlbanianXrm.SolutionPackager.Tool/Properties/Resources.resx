@@ -169,6 +169,9 @@
   <data name="IMPORT_HEADER" xml:space="preserve">
     <value>Importing Solution</value>
   </data>
+  <data name="IMPORT_SOLUTION" xml:space="preserve">
+    <value>Importing solution "{0}"</value>
+  </data>
   <data name="IMPORT_STARTED" xml:space="preserve">
     <value>Started import job with id '{0}'</value>
   </data>

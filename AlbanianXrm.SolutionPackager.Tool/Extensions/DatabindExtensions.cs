@@ -8,7 +8,7 @@ namespace AlbanianXrm.SolutionPackager.Extensions
     static class DatabindExtensions
     {
         public static Binding Bind<T, TSource, TProperty>(this T target, Expression<Func<T, TProperty>> targetProperty, TSource source, Expression<Func<TSource, TProperty>> sourceProperty, bool formattingEnabled = false)
-            where T : IBindableComponent
+            where T : Control
             where TSource : INotifyPropertyChanged
         {
             var targetPropertyInfo = targetProperty.GetProperty();
