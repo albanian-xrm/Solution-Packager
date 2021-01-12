@@ -49,7 +49,7 @@ namespace AlbanianXrm.SolutionPackager
             pluginViewModel = new PluginViewModel();
             asyncWorkQueue = new AsyncWorkQueue(this, pluginViewModel);
             coreToolsDownloader = new CoreToolsDownloader(asyncWorkQueue, pluginViewModel);
-            crmSolutionImporter = new CrmSolutionImporter(this, asyncWorkQueue, txtOutput);
+            crmSolutionImporter = new CrmSolutionImporter(this, asyncWorkQueue, pluginViewModel);
             solutionPackagerCaller = new SolutionPackagerCaller(this, asyncWorkQueue, txtOutput, crmSolutionImporter);
             crmSolutionManager = new CrmSolutionDownloader(this, asyncWorkQueue, solutionPackagerCaller, cmbCrmSolutions);
 
@@ -425,6 +425,7 @@ namespace AlbanianXrm.SolutionPackager
         public override void UpdateConnection(IOrganizationService newService, ConnectionDetail detail, string actionName, object parameter)
         {
             base.UpdateConnection(newService, detail, actionName, parameter);
+            pluginViewModel.OrganizationService = newService;
             pluginViewModel.HasConnection = detail != null;
         }
         #endregion

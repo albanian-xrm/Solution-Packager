@@ -1,4 +1,5 @@
-﻿  using AlbanianXrm.SolutionPackager.Properties;
+﻿using AlbanianXrm.SolutionPackager.Models;
+using AlbanianXrm.SolutionPackager.Properties;
 using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Sdk.Messages;
 using System;
@@ -15,13 +16,14 @@ namespace AlbanianXrm.SolutionPackager
     {
         private readonly SolutionPackagerControl solutionPackagerControl;
         private readonly AsyncWorkQueue asyncWorkQueue;
-        private readonly RichTextBox txtOutput;
+        private readonly PluginViewModel pluginViewModel;
+        private SolutionImportStatus solutionImportStatus;
 
-        public CrmSolutionImporter(SolutionPackagerControl solutionPackagerControl, AsyncWorkQueue asyncWorkQueue, RichTextBox txtOutput)
+        public CrmSolutionImporter(SolutionPackagerControl solutionPackagerControl, AsyncWorkQueue asyncWorkQueue, PluginViewModel pluginViewModel)
         {
             this.solutionPackagerControl = solutionPackagerControl;
             this.asyncWorkQueue = asyncWorkQueue;
-            this.txtOutput = txtOutput;
+            this.pluginViewModel = pluginViewModel;
         }
 
         public void ImportSolution(Parameters @params)
@@ -32,17 +34,19 @@ namespace AlbanianXrm.SolutionPackager
                 IsCancelable = true,
                 AsyncArgument = @params,
                 Work = ImportSolution,
-                PostWorkCallBack = ImportSolutionStarted 
+                PostWorkCallBack = ImportSolutionStarted
             });
         }
 
         private void ImportSolution(BackgroundWorker worker, DoWorkEventArgs args)
         {
             var @params = args.Argument as Parameters;
+            Guid importJobId = Guid.NewGuid();
             var importSolutionRequest = new ExecuteAsyncRequest()
             {
-                Request = new ImportSolutionRequest()
+                Request = new Microsoft.Crm.Sdk.Messages.ImportSolutionRequest()
                 {
+                    ImportJobId = importJobId,
                     ConvertToManaged = @params.ImportManaged,
                     OverwriteUnmanagedCustomizations = @params.ImportOverwrite,
                     SkipProductUpdateDependencies = @params.ImportDependencies,
@@ -50,19 +54,19 @@ namespace AlbanianXrm.SolutionPackager
                     CustomizationFile = File.ReadAllBytes(@params.CustomizationFile)
                 }
             };
-            args.Result = solutionPackagerControl.Service.Execute(importSolutionRequest);
+            args.Result = new Models.ImportSolutionRequest()
+            {
+                ImportJobId = importJobId,
+                ExecuteAsyncResponse = solutionPackagerControl.Service.Execute(importSolutionRequest) as ExecuteAsyncResponse
+            };
         }
 
         private void ImportSolutionStarted(RunWorkerCompletedEventArgs args)
         {
-            ExecuteAsyncResponse executeAsyncResponse = args.Result as ExecuteAsyncResponse;
-            txtOutput.AppendText(Environment.NewLine);
-            txtOutput.SelectionStart = txtOutput.TextLength;
-            txtOutput.SelectionFont = new Font(txtOutput.Font.FontFamily, 12, FontStyle.Underline);
-            txtOutput.AppendText(Resources.IMPORT_HEADER + Environment.NewLine);
-            txtOutput.SelectionStart = txtOutput.TextLength;
-            txtOutput.SelectionFont = new Font(txtOutput.Font, txtOutput.Font.Style);
-            txtOutput.AppendText(string.Format(Resources.IMPORT_STARTED, executeAsyncResponse.AsyncJobId) + Environment.NewLine);
+            var importSolution = args.Result as Models.ImportSolutionRequest;
+
+            solutionImportStatus = new SolutionImportStatus(importSolution.ExecuteAsyncResponse.AsyncJobId, importSolution.ImportJobId, pluginViewModel);
+            solutionImportStatus.Show(solutionPackagerControl);
         }
 
         public class Parameters

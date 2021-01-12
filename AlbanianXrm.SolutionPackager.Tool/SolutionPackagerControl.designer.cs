@@ -73,6 +73,12 @@
             this.btnExtractArguments = new System.Windows.Forms.Button();
             this.tabPack = new System.Windows.Forms.TabPage();
             this.tlpPack = new System.Windows.Forms.TableLayoutPanel();
+            this.grpImportSolution = new System.Windows.Forms.GroupBox();
+            this.chkImportHoldingSolution = new System.Windows.Forms.CheckBox();
+            this.chkImportDependencies = new System.Windows.Forms.CheckBox();
+            this.chkImportPublishWorkflows = new System.Windows.Forms.CheckBox();
+            this.chkImportOverwrite = new System.Windows.Forms.CheckBox();
+            this.chkImportManaged = new System.Windows.Forms.CheckBox();
             this.chkImportSolution = new System.Windows.Forms.CheckBox();
             this.btnPack = new System.Windows.Forms.Button();
             this.flpPackLabels = new System.Windows.Forms.FlowLayoutPanel();
@@ -101,12 +107,6 @@
             this.btnPackMap = new System.Windows.Forms.Button();
             this.btnLogPack = new System.Windows.Forms.Button();
             this.btnArgumentsPack = new System.Windows.Forms.Button();
-            this.grpImportSolution = new System.Windows.Forms.GroupBox();
-            this.chkImportHoldingSolution = new System.Windows.Forms.CheckBox();
-            this.chkImportDependencies = new System.Windows.Forms.CheckBox();
-            this.chkImportPublishWorkflows = new System.Windows.Forms.CheckBox();
-            this.chkImportOverwrite = new System.Windows.Forms.CheckBox();
-            this.chkImportManaged = new System.Windows.Forms.CheckBox();
             this.tabSettings = new System.Windows.Forms.TabPage();
             this.tlpSettings = new System.Windows.Forms.TableLayoutPanel();
             this.btnSaveSettings = new System.Windows.Forms.Button();
@@ -141,10 +141,10 @@
             this.flpExtractButtons.SuspendLayout();
             this.tabPack.SuspendLayout();
             this.tlpPack.SuspendLayout();
+            this.grpImportSolution.SuspendLayout();
             this.flpPackLabels.SuspendLayout();
             this.flpPackControls.SuspendLayout();
             this.flpPackButtons.SuspendLayout();
-            this.grpImportSolution.SuspendLayout();
             this.tabSettings.SuspendLayout();
             this.tlpSettings.SuspendLayout();
             this.flpSettingsButtons.SuspendLayout();
@@ -703,13 +703,55 @@
             // tlpPack
             // 
             resources.ApplyResources(this.tlpPack, "tlpPack");
+            this.tlpPack.Controls.Add(this.grpImportSolution, 0, 3);
             this.tlpPack.Controls.Add(this.chkImportSolution, 1, 0);
             this.tlpPack.Controls.Add(this.btnPack, 1, 2);
             this.tlpPack.Controls.Add(this.flpPackLabels, 0, 1);
             this.tlpPack.Controls.Add(this.flpPackControls, 1, 1);
             this.tlpPack.Controls.Add(this.flpPackButtons, 2, 1);
-            this.tlpPack.Controls.Add(this.grpImportSolution, 0, 3);
             this.tlpPack.Name = "tlpPack";
+            // 
+            // grpImportSolution
+            // 
+            this.tlpPack.SetColumnSpan(this.grpImportSolution, 3);
+            this.grpImportSolution.Controls.Add(this.chkImportHoldingSolution);
+            this.grpImportSolution.Controls.Add(this.chkImportDependencies);
+            this.grpImportSolution.Controls.Add(this.chkImportPublishWorkflows);
+            this.grpImportSolution.Controls.Add(this.chkImportOverwrite);
+            this.grpImportSolution.Controls.Add(this.chkImportManaged);
+            resources.ApplyResources(this.grpImportSolution, "grpImportSolution");
+            this.grpImportSolution.Name = "grpImportSolution";
+            this.grpImportSolution.TabStop = false;
+            // 
+            // chkImportHoldingSolution
+            // 
+            resources.ApplyResources(this.chkImportHoldingSolution, "chkImportHoldingSolution");
+            this.chkImportHoldingSolution.Name = "chkImportHoldingSolution";
+            this.chkImportHoldingSolution.UseVisualStyleBackColor = true;
+            // 
+            // chkImportDependencies
+            // 
+            resources.ApplyResources(this.chkImportDependencies, "chkImportDependencies");
+            this.chkImportDependencies.Name = "chkImportDependencies";
+            this.chkImportDependencies.UseVisualStyleBackColor = true;
+            // 
+            // chkImportPublishWorkflows
+            // 
+            resources.ApplyResources(this.chkImportPublishWorkflows, "chkImportPublishWorkflows");
+            this.chkImportPublishWorkflows.Name = "chkImportPublishWorkflows";
+            this.chkImportPublishWorkflows.UseVisualStyleBackColor = true;
+            // 
+            // chkImportOverwrite
+            // 
+            resources.ApplyResources(this.chkImportOverwrite, "chkImportOverwrite");
+            this.chkImportOverwrite.Name = "chkImportOverwrite";
+            this.chkImportOverwrite.UseVisualStyleBackColor = true;
+            // 
+            // chkImportManaged
+            // 
+            resources.ApplyResources(this.chkImportManaged, "chkImportManaged");
+            this.chkImportManaged.Name = "chkImportManaged";
+            this.chkImportManaged.UseVisualStyleBackColor = true;
             // 
             // chkImportSolution
             // 
@@ -930,48 +972,6 @@
             this.btnArgumentsPack.UseVisualStyleBackColor = true;
             this.btnArgumentsPack.Click += new System.EventHandler(this.BtnArgumentsPack_Click);
             // 
-            // grpImportSolution
-            // 
-            this.tlpPack.SetColumnSpan(this.grpImportSolution, 3);
-            this.grpImportSolution.Controls.Add(this.chkImportHoldingSolution);
-            this.grpImportSolution.Controls.Add(this.chkImportDependencies);
-            this.grpImportSolution.Controls.Add(this.chkImportPublishWorkflows);
-            this.grpImportSolution.Controls.Add(this.chkImportOverwrite);
-            this.grpImportSolution.Controls.Add(this.chkImportManaged);
-            resources.ApplyResources(this.grpImportSolution, "grpImportSolution");
-            this.grpImportSolution.Name = "grpImportSolution";
-            this.grpImportSolution.TabStop = false;
-            // 
-            // chkImportHoldingSolution
-            // 
-            resources.ApplyResources(this.chkImportHoldingSolution, "chkImportHoldingSolution");
-            this.chkImportHoldingSolution.Name = "chkImportHoldingSolution";
-            this.chkImportHoldingSolution.UseVisualStyleBackColor = true;
-            // 
-            // chkImportDependencies
-            // 
-            resources.ApplyResources(this.chkImportDependencies, "chkImportDependencies");
-            this.chkImportDependencies.Name = "chkImportDependencies";
-            this.chkImportDependencies.UseVisualStyleBackColor = true;
-            // 
-            // chkImportPublishWorkflows
-            // 
-            resources.ApplyResources(this.chkImportPublishWorkflows, "chkImportPublishWorkflows");
-            this.chkImportPublishWorkflows.Name = "chkImportPublishWorkflows";
-            this.chkImportPublishWorkflows.UseVisualStyleBackColor = true;
-            // 
-            // chkImportOverwrite
-            // 
-            resources.ApplyResources(this.chkImportOverwrite, "chkImportOverwrite");
-            this.chkImportOverwrite.Name = "chkImportOverwrite";
-            this.chkImportOverwrite.UseVisualStyleBackColor = true;
-            // 
-            // chkImportManaged
-            // 
-            resources.ApplyResources(this.chkImportManaged, "chkImportManaged");
-            this.chkImportManaged.Name = "chkImportManaged";
-            this.chkImportManaged.UseVisualStyleBackColor = true;
-            // 
             // tabSettings
             // 
             this.tabSettings.Controls.Add(this.tlpSettings);
@@ -1116,13 +1116,13 @@
             this.tabPack.ResumeLayout(false);
             this.tlpPack.ResumeLayout(false);
             this.tlpPack.PerformLayout();
+            this.grpImportSolution.ResumeLayout(false);
+            this.grpImportSolution.PerformLayout();
             this.flpPackLabels.ResumeLayout(false);
             this.flpPackLabels.PerformLayout();
             this.flpPackControls.ResumeLayout(false);
             this.flpPackControls.PerformLayout();
             this.flpPackButtons.ResumeLayout(false);
-            this.grpImportSolution.ResumeLayout(false);
-            this.grpImportSolution.PerformLayout();
             this.tabSettings.ResumeLayout(false);
             this.tlpSettings.ResumeLayout(false);
             this.flpSettingsButtons.ResumeLayout(false);

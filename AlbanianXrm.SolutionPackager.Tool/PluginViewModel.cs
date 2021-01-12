@@ -1,13 +1,32 @@
 ﻿using AlbanianXrm.SolutionPackager.Properties;
+using Microsoft.Xrm.Sdk;
 using System.ComponentModel;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 
 namespace AlbanianXrm.SolutionPackager
 {
-    internal class PluginViewModel : INotifyPropertyChanged
+    public class PluginViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
+
+        private IOrganizationService _OrganizationService;
+        public IOrganizationService OrganizationService
+        {
+            get
+            {
+                return _OrganizationService;
+            }
+            set
+            {
+                if (_OrganizationService == value)
+                {
+                    return;
+                }
+                _OrganizationService = value;
+                NotifyPropertyChanged();
+            }
+        }
 
         private bool _AllowRequests = true;
         public bool AllowRequests
@@ -51,7 +70,7 @@ namespace AlbanianXrm.SolutionPackager
                 _HasConnection = !value;
 
                 if (_LocalOrCrm)
-                   NotifyPropertyChanged(nameof(LocalOrCrm));
+                    NotifyPropertyChanged(nameof(LocalOrCrm));
 
                 if (_ImportSolutionAfterPack)
                     NotifyPropertyChanged(nameof(ImportSolutionAfterPack));

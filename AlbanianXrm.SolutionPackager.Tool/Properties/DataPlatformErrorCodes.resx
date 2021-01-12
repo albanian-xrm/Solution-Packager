@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+	<data name="ImportArticleTemplateError" xml:space="preserve">
+		<value>There was an error in parsing the article templates in Import Xml</value>
+	</data>
+	<data name="ImportAttributeNameError" xml:space="preserve">
+		<value>Invalid name for attribute {0}.  Custom attribute names must start with a valid customization prefix. The prefix for a solution component should match the prefix that is specified for the publisher of the solution.</value>
+	</data>
+	<data name="ImportChannelPropertyGroupError" xml:space="preserve">
+		<value>An error occurred while importing Channel Property Group.</value>
+	</data>
+	<data name="ImportComponentDeletedIgnored" xml:space="preserve">
+		<value>You cannot update this component because it does not exist in this Microsoft Dynamics 365 organization.</value>
+	</data>
+	<data name="ImportConfigNotSpecified" xml:space="preserve">
+		<value>Cannot process with Bulk Import as Import Configuration not specified.</value>
+	</data>
+	<data name="ImportContractTemplateError" xml:space="preserve">
+		<value>There was an error in parsing the contract templates in Import Xml</value>
+	</data>
+	<data name="ImportConvertRuleError" xml:space="preserve">
+		<value>An error occurred while importing Convert Rules.</value>
+	</data>
+	<data name="ImportCustomizationsBadZipFileError" xml:space="preserve">
+		<value>The solution file is invalid. The compressed file must contain the following files at its root: solution.xml, customizations.xml, and [Content_Types].xml. Customization files exported from previous versions of Microsoft Dynamics 365 are not supported.</value>
+	</data>
+	<data name="ImportDashboardDeletedError" xml:space="preserve">
+		<value>A dashboard with the same id is marked as deleted in the system. Please first publish the system form entity and import again.</value>
+	</data>
+	<data name="ImportDefaultAsPackageError" xml:space="preserve">
+		<value>The package supplied for the default solution is trying to install it in managed mode. The default solution cannot be managed. In the XML for the default solution, set the Managed value back to &quot;false&quot; and try to import the solution again.</value>
+	</data>
+	<data name="ImportDependencySolutionError" xml:space="preserve">
+		<value>{0} requires solutions that are not currently installed. Import the following solutions before Importing this one. {1}</value>
+	</data>
+	<data name="ImportDuplicateEntity" xml:space="preserve">
+		<value>This import has failed because a different entity with the identical name, {0}, already exists in the target organization.</value>
+	</data>
+	<data name="ImportEmailTemplateError" xml:space="preserve">
+		<value>There was an error in parsing the email templates in Import Xml</value>
+	</data>
+	<data name="ImportEmailTemplateErrorMissingFile" xml:space="preserve">
+		<value>E-mail Template &apos;{0}&apos; import: The attachment &apos;{1}&apos; was not found in the import zip file.</value>
+	</data>
+	<data name="ImportEmailTemplatePersonalError" xml:space="preserve">
+		<value>E-mail Template was not imported. The Template is a personal template on the target system; import cannot overwrite personal templates.</value>
+	</data>
+	<data name="ImportEntityCustomResourcesError" xml:space="preserve">
+		<value>Invalid Custom Resources in the Import File</value>
+	</data>
+	<data name="ImportEntityCustomResourcesNewStringError" xml:space="preserve">
+		<value>Invalid Entity new string in the Custom Resources</value>
+	</data>
+	<data name="ImportEntityIconError" xml:space="preserve">
+		<value>Invalid Icon in the Import File</value>
+	</data>
+	<data name="ImportEntityNameMismatchError" xml:space="preserve">
+		<value>The number of format parameters passed into the input string is incorrect</value>
+	</data>
+	<data name="ImportEntitySystemUserLiveMismatchError" xml:space="preserve">
+		<value>The systemuser entity was imported but customized forms for the entity were not imported. Systemuser entity forms from on-premises or hosted versions of Microsoft Dynamics 365 cannot be imported into Microsoft Dynamics 365 Online.</value>
+	</data>
+	<data name="ImportEntitySystemUserOnPremiseMismatchError" xml:space="preserve">
+		<value>The systemuser entity was imported, but customized forms for the entity were not imported. Systemuser entity forms from Microsoft Dynamics 365 Online cannot be imported into on-premises or hosted versions of Microsoft Dynamics 365.</value>
+	</data>
+	<data name="ImportExportDeprecatedError" xml:space="preserve">
+		<value>This message is no longer available. Please consult the SDK for alternative messages.</value>
+	</data>
+	<data name="ImportFieldSecurityProfileAttributesMissingError" xml:space="preserve">
+		<value>Some field security permissions could not be imported because the following fields are not in the system: {0}.</value>
+	</data>
+	<data name="ImportFieldSecurityProfileError" xml:space="preserve">
+		<value>An error occurred while importing Field Security Profile.</value>
+	</data>
+	<data name="ImportFieldSecurityProfileIsSecuredMissingError" xml:space="preserve">
+		<value>Some field security permissions could not be imported because the following fields are not securable: {0}.</value>
+	</data>
+	<data name="ImportFieldXmlError" xml:space="preserve">
+		<value>The number of format parameters passed into the input string is incorrect</value>
+	</data>
+	<data name="ImportFileFailed" xml:space="preserve">
+		<value>Import and extraction of the file failed.</value>
+	</data>
+	<data name="ImportFileSignatureInvalid" xml:space="preserve">
+		<value>The import file has an invalid digital signature.</value>
+	</data>
+	<data name="ImportFileTooLargeToUpload" xml:space="preserve">
+		<value>The import file is too large to upload.</value>
+	</data>
+	<data name="ImportFileUnprocessed" xml:space="preserve">
+		<value>Unprocessed files found: {0}</value>
+	</data>
+	<data name="ImportFormXmlError" xml:space="preserve">
+		<value>The number of format parameters passed into the input string is incorrect</value>
+	</data>
+	<data name="ImportGenericEntitiesError" xml:space="preserve">
+		<value>An error occurred while importing generic entities.</value>
+	</data>
+	<data name="ImportGenericError" xml:space="preserve">
+		<value>The import failed. For more information, see the related error messages.</value>
+	</data>
+	<data name="ImportHierarchyRuleDeletedError" xml:space="preserve">
+		<value>A hierarchy rule with the same id is marked as deleted in the system,So first publish the customized entity and import again.</value>
+	</data>
+	<data name="ImportHierarchyRuleExistingError" xml:space="preserve">
+		<value>Cannot reuse existing hierarchy rule.</value>
+	</data>
+	<data name="ImportHierarchyRuleOtcMismatchError" xml:space="preserve">
+		<value>There was an error processing hierarchy rules of the same object type code.(unresolvable system collision)</value>
+	</data>
+	<data name="ImportInvalidFileError" xml:space="preserve">
+		<value>Invalid Import File</value>
+	</data>
+	<data name="ImportInvalidPrivilegeError" xml:space="preserve">
+		<value>The privilege to be imported is invalid</value>
+	</data>
+	<data name="ImportInvalidXmlError" xml:space="preserve">
+		<value>This solution package cannot be imported because it contains invalid XML. You can attempt to repair the file by manually editing the XML contents using the information found in the schema validation errors, or you can contact your solution provider.</value>
+	</data>
+	<data name="ImportIsvConfigError" xml:space="preserve">
+		<value>There was an error parsing the IsvConfig during Import</value>
+	</data>
+	<data name="ImportLanguagesIgnoredError" xml:space="preserve">
+		<value>Translated labels for the following languages could not be imported because they have not been enabled for this organization: {0}</value>
+	</data>
+	<data name="ImportMailMergeTemplateEntityMissingError" xml:space="preserve">
+		<value>The {0} mail merge template was not imported because the {1} entity associated with this template is not in the target system.</value>
+	</data>
+	<data name="ImportMailMergeTemplateError" xml:space="preserve">
+		<value>There was an error in parsing the mail merge templates in Import Xml</value>
+	</data>
+	<data name="ImportMapInUse" xml:space="preserve">
+		<value>One or more of the selected data maps cannot be deleted because it is currently used in a data import.</value>
+	</data>
+	<data name="ImportMappingsInvalidIdSpecified" xml:space="preserve">
+		<value>The XML file has one or more invalid IDs. The specified ID cannot be used as a unique identifier.</value>
+	</data>
+	<data name="ImportMappingsMissingEntityMapError" xml:space="preserve">
+		<value>This customization file contains a reference to an entity map that does not exist on the target system.</value>
+	</data>
+	<data name="ImportMappingsSystemMapError" xml:space="preserve">
+		<value>Import cannot create system attribute mappings</value>
+	</data>
+	<data name="ImportMissingComponent" xml:space="preserve">
+		<value>Cannot add a Root Component {0} of type {1} because it is not in the target system.</value>
+	</data>
+	<data name="ImportMissingDependenciesError" xml:space="preserve">
+		<value>The following solution cannot be imported: {0}. Some dependencies are missing.</value>
+	</data>
+	<data name="ImportMissingRootComponentEntry" xml:space="preserve">
+		<value>The import has failed because component {0} of type {1} is not declared in the solution file as a root component. To fix this, import again using the XML file that was generated when you exported the solution.</value>
+	</data>
+	<data name="ImportMobileOfflineProfileError" xml:space="preserve">
+		<value>An error occurred while importing Mobile Offline Profiles.</value>
+	</data>
+	<data name="ImportNewPluginTypesError" xml:space="preserve">
+		<value>Existing plug-in types have been removed. Please update major or minor verion of plug-in assembly.</value>
+	</data>
+	<data name="ImportNonWellFormedFileError" xml:space="preserve">
+		<value>Invalid customization file. This file is not well formed.</value>
+	</data>
+	<data name="ImportNotComplete" xml:space="preserve">
+		<value>One or more imports are not in completed state. Imported records can only be deleted from completed jobs. Wait until job completes, and then try again.</value>
+	</data>
+	<data name="ImportOperationChildFailure" xml:space="preserve">
+		<value>One or more of the Import Child Jobs Failed</value>
+	</data>
+	<data name="ImportOptionSetAttributeError" xml:space="preserve">
+		<value>Attribute &apos;{0}&apos; was not imported as it references a non-existing global Option Set (&apos;{1}&apos;).</value>
+	</data>
+	<data name="ImportOptionSetsError" xml:space="preserve">
+		<value>An error occurred while importing OptionSets.</value>
+	</data>
+	<data name="ImportOrgSettingsError" xml:space="preserve">
+		<value>There was an error parsing the Organization Settings during Import.</value>
+	</data>
+	<data name="ImportPluginTypesError" xml:space="preserve">
+		<value>An error occurred while importing plug-in types.</value>
+	</data>
+	<data name="ImportRelationshipRoleMapsError" xml:space="preserve">
+		<value>The number of format parameters passed into the input string is incorrect</value>
+	</data>
+	<data name="ImportRelationshipRolesError" xml:space="preserve">
+		<value>The number of format parameters passed into the input string is incorrect</value>
+	</data>
+	<data name="ImportRelationshipRolesPrivilegeError" xml:space="preserve">
+		<value>{0} cannot be imported. The {1} privilege is required to import this component.</value>
+	</data>
+	<data name="ImportReportsError" xml:space="preserve">
+		<value>An error occurred while importing Reports.</value>
+	</data>
+	<data name="ImportRestrictedSolutionError" xml:space="preserve">
+		<value>Solution ID provided is restricted and cannot be imported.</value>
+	</data>
+	<data name="ImportRibbonsError" xml:space="preserve">
+		<value>An error occurred while importing Ribbons.</value>
+	</data>
+	<data name="ImportRoleError" xml:space="preserve">
+		<value>Cannot import security role. The role with specified role id is not updatable or role name is not unique.</value>
+	</data>
+	<data name="ImportRolePermissionError" xml:space="preserve">
+		<value>You do not have the necessary privileges to import security roles.</value>
+	</data>
+	<data name="ImportRoutingRuleError" xml:space="preserve">
+		<value>An error occurred while importing Routing Rule Sets.</value>
+	</data>
+	<data name="ImportSavedQueryDeletedError" xml:space="preserve">
+		<value>A saved query with the same id is marked as deleted in the system. Please first publish the customized entity and import again.</value>
+	</data>
+	<data name="ImportSavedQueryExistingError" xml:space="preserve">
+		<value>The number of format parameters passed into the input string is incorrect</value>
+	</data>
+	<data name="ImportSavedQueryOtcMismatchError" xml:space="preserve">
+		<value>There was an error processing saved queries of the same object type code (unresolvable system collision)</value>
+	</data>
+	<data name="ImportSdkMessagesError" xml:space="preserve">
+		<value>An error occurred while importing Sdk Messages.</value>
+	</data>
+	<data name="ImportServiceEndpointError" xml:space="preserve">
+		<value>An error occurred while importing Service Endpoints.</value>
+	</data>
+	<data name="ImportSiteMapError" xml:space="preserve">
+		<value>An error occurred while importing the Site Map.</value>
+	</data>
+	<data name="ImportSlaError" xml:space="preserve">
+		<value>An error occurred while importing SLAs.</value>
+	</data>
+	<data name="ImportSolutionError" xml:space="preserve">
+		<value>An error occurred while importing a Solution.</value>
+	</data>
+	<data name="ImportSolutionIsvConfigWarning" xml:space="preserve">
+		<value>ISV Config was overwritten.</value>
+	</data>
+	<data name="ImportSolutionManagedError" xml:space="preserve">
+		<value>Solution &apos;{0}&apos; already exists in this system as managed and cannot be upgraded.</value>
+	</data>
+	<data name="ImportSolutionManagedToUnmanagedMismatch" xml:space="preserve">
+		<value>The solution is already installed on this system as an unmanaged solution and the package supplied is attempting to install it in managed mode. Import can only update solutions when the modes match. Uninstall the current solution and try again.</value>
+	</data>
+	<data name="ImportSolutionOrganizationSettingsWarning" xml:space="preserve">
+		<value>Organization settings were overwritten.</value>
+	</data>
+	<data name="ImportSolutionPackageInvalidSku" xml:space="preserve">
+		<value>The solution package you are importing was generated on Microsoft Dynamics 365 Online, it cannot be imported into on-premises or hosted versions of Microsoft Dynamics 365.</value>
+	</data>
+	<data name="ImportSolutionPackageInvalidSolutionPackageVersion" xml:space="preserve">
+		<value>You can only import solutions with a package version of {0} or earlier into this organization. Also, you can&apos;t import any solutions into this organization that were exported from Microsoft Dynamics 365 2011 or earlier.</value>
+	</data>
+	<data name="ImportSolutionPackageMinimumVersionNeeded" xml:space="preserve">
+		<value>Deprecated, not removing now as it might cause issues during integrations.</value>
+	</data>
+	<data name="ImportSolutionPackageNeedsUpgrade" xml:space="preserve">
+		<value>The solution package you are importing was generated on a different version of Microsoft Dynamics 365. The system will attempt to transform the package prior to import. Package Version: {0} {1}, System Version: {2} {3}.</value>
+	</data>
+	<data name="ImportSolutionPackageNotValid" xml:space="preserve">
+		<value>The solution package you are importing was generated on a version of Microsoft Dynamics 365 that cannot be imported into this system. Package Version: {0} {1}, System Version: {2} {3}.</value>
+	</data>
+	<data name="ImportSolutionPackageRequiresOptInAvailable" xml:space="preserve">
+		<value>Some components in the solution package you are importing require opt in. Opt in is available, please consult your administrator.</value>
+	</data>
+	<data name="ImportSolutionPackageRequiresOptInNotAvailable" xml:space="preserve">
+		<value>The solution package you are importing was generated on a SKU of Microsoft Dynamics 365 that supports opt in. It cannot be imported in your system.</value>
+	</data>
+	<data name="ImportSolutionPackageUpgradeError" xml:space="preserve">
+		<value>An error occurred while importing Solution Package Upgrade.</value>
+	</data>
+	<data name="ImportSolutionSiteMapWarning" xml:space="preserve">
+		<value>SiteMap was overwritten.</value>
+	</data>
+	<data name="ImportSolutionUnmanagedToManagedMismatch" xml:space="preserve">
+		<value>The solution is already installed on this system as a managed solution and the package supplied is attempting to install it in unmanaged mode. Import can only update solutions when the modes match. Uninstall the current solution and try again.</value>
+	</data>
+	<data name="ImportSystemSolutionError" xml:space="preserve">
+		<value>System solution cannot be imported.</value>
+	</data>
+	<data name="ImportTemplateLanguageIgnored" xml:space="preserve">
+		<value>You cannot import this template because its language is not enabled in your Microsoft Dynamics 365 organization.</value>
+	</data>
+	<data name="ImportTemplatePersonalIgnored" xml:space="preserve">
+		<value>You cannot import this template because it is set as &quot;personal&quot; in your Microsoft Dynamics 365 organization.</value>
+	</data>
+	<data name="ImportTranslationMissingSolutionError" xml:space="preserve">
+		<value>An error occurred while importing the translations. The solution associated with the translations does not exist in this system.</value>
+	</data>
+	<data name="ImportTranslationsBadZipFileError" xml:space="preserve">
+		<value>The translation file is invalid. The compressed file must contain the following files at its root: {0}, [Content_Types].xml.</value>
+	</data>
+	<data name="ImportVisualizationDeletedError" xml:space="preserve">
+		<value>A saved query visualization with id {0} is marked for deletion in the system. Please publish the customized entity first and then import again.</value>
+	</data>
+	<data name="ImportVisualizationExistingError" xml:space="preserve">
+		<value>A saved query visualization with id {0} already exists in the system, and cannot be resused by a new custom entity.</value>
+	</data>
+	<data name="ImportWillExceedCustomEntityQuota" xml:space="preserve">
+		<value>This import process is trying to import {0} new custom entities. This would exceed the custom entity limits for this organization.</value>
+	</data>
+	<data name="ImportWorkflowAttributeDependencyError" xml:space="preserve">
+		<value>Cannot import workflow definition. Required attribute dependency is missing.</value>
+	</data>
+	<data name="ImportWorkflowEntityDependencyError" xml:space="preserve">
+		<value>Cannot import workflow definition. Required entity dependency is missing.</value>
+	</data>
+	<data name="ImportWorkflowError" xml:space="preserve">
+		<value>Cannot import workflow definition. The workflow with specified workflow id is not updatable or workflow name is not unique.</value>
+	</data>
+	<data name="ImportWorkflowNameConflictError" xml:space="preserve">
+		<value>Workflow {0} cannot be imported because a workflow with same name and different unique identifier exists in the target system. Change the name of this workflow, and then try again.</value>
+	</data>
+	<data name="ImportWorkflowPublishedError" xml:space="preserve">
+		<value>Workflow {0}({1}) cannot be imported because a workflow with same unique identifier is published on the target system. Unpublish the workflow on the target system before attempting to import this workflow again.</value>
+	</data>
+	<data name="ImportWrongPublisherError" xml:space="preserve">
+		<value>The following managed solution cannot be imported: {0}. The publisher name cannot be changed from {1} to {2}.</value>
+	</data>
+	<data name="ImportXsdValidationError" xml:space="preserve">
+		<value>The import file is invalid. XSD validation failed with the following error: &apos;{0}&apos;. The validation failed at: &apos;...{1} &lt;&lt;&lt;&lt;</value>
+	</data>
+</root>

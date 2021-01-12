@@ -61,6 +61,15 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Asynchronous job with id &apos;{0}&apos; was not found .
+        /// </summary>
+        public static string ASYNC_JOB_NOT_FOUND {
+            get {
+                return ResourceManager.GetString("ASYNC_JOB_NOT_FOUND", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No.
         /// </summary>
         public static string BTN_NO {
