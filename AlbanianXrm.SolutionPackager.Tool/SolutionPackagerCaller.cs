@@ -178,6 +178,13 @@ namespace AlbanianXrm.SolutionPackager
             }
 
             process.WaitForExit();
+       
+            if(process.ExitCode != 0)
+            {
+                args.Result = Resources.SOLUTIONPACKAGER_ERROR;
+                return;
+            }
+
             worker.ReportProgress(70, "Ended");
 
             if (@params.FormatXml)
@@ -337,7 +344,8 @@ namespace AlbanianXrm.SolutionPackager
         {
             if (args.Error != null)
             {
-                MessageBox.Show(args.Error.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                solutionPackagerControl.WriteErrorLog("An error occurred while calling SolutionPackager.exe. Details:\r\n{0}", args.Error);
+                MessageBox.Show(args.Error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (args.Result != null)
             {

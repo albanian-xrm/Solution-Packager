@@ -74,6 +74,9 @@
             this.tabPack = new System.Windows.Forms.TabPage();
             this.tlpPack = new System.Windows.Forms.TableLayoutPanel();
             this.grpImportSolution = new System.Windows.Forms.GroupBox();
+            this.cntImportPreference = new System.Windows.Forms.FlowLayoutPanel();
+            this.radPreferManaged = new System.Windows.Forms.RadioButton();
+            this.radPreferUnmanaged = new System.Windows.Forms.RadioButton();
             this.chkImportHoldingSolution = new System.Windows.Forms.CheckBox();
             this.chkImportDependencies = new System.Windows.Forms.CheckBox();
             this.chkImportPublishWorkflows = new System.Windows.Forms.CheckBox();
@@ -142,6 +145,7 @@
             this.tabPack.SuspendLayout();
             this.tlpPack.SuspendLayout();
             this.grpImportSolution.SuspendLayout();
+            this.cntImportPreference.SuspendLayout();
             this.flpPackLabels.SuspendLayout();
             this.flpPackControls.SuspendLayout();
             this.flpPackButtons.SuspendLayout();
@@ -714,6 +718,7 @@
             // grpImportSolution
             // 
             this.tlpPack.SetColumnSpan(this.grpImportSolution, 3);
+            this.grpImportSolution.Controls.Add(this.cntImportPreference);
             this.grpImportSolution.Controls.Add(this.chkImportHoldingSolution);
             this.grpImportSolution.Controls.Add(this.chkImportDependencies);
             this.grpImportSolution.Controls.Add(this.chkImportPublishWorkflows);
@@ -722,6 +727,27 @@
             resources.ApplyResources(this.grpImportSolution, "grpImportSolution");
             this.grpImportSolution.Name = "grpImportSolution";
             this.grpImportSolution.TabStop = false;
+            // 
+            // cntImportPreference
+            // 
+            this.cntImportPreference.Controls.Add(this.radPreferManaged);
+            this.cntImportPreference.Controls.Add(this.radPreferUnmanaged);
+            resources.ApplyResources(this.cntImportPreference, "cntImportPreference");
+            this.cntImportPreference.Name = "cntImportPreference";
+            // 
+            // radPreferManaged
+            // 
+            resources.ApplyResources(this.radPreferManaged, "radPreferManaged");
+            this.radPreferManaged.Name = "radPreferManaged";
+            this.radPreferManaged.UseVisualStyleBackColor = true;
+            // 
+            // radPreferUnmanaged
+            // 
+            resources.ApplyResources(this.radPreferUnmanaged, "radPreferUnmanaged");
+            this.radPreferUnmanaged.Checked = true;
+            this.radPreferUnmanaged.Name = "radPreferUnmanaged";
+            this.radPreferUnmanaged.TabStop = true;
+            this.radPreferUnmanaged.UseVisualStyleBackColor = true;
             // 
             // chkImportHoldingSolution
             // 
@@ -869,6 +895,7 @@
             resources.ApplyResources(this.cmbPackageTypePack, "cmbPackageTypePack");
             this.cmbPackageTypePack.Name = "cmbPackageTypePack";
             this.cmbPackageTypePack.ValueMember = "SolutionId";
+            this.cmbPackageTypePack.SelectedIndexChanged += new System.EventHandler(this.CmbPackageTypePack_SelectedIndexChanged);
             // 
             // cmbErrorLevelPack
             // 
@@ -1118,6 +1145,8 @@
             this.tlpPack.PerformLayout();
             this.grpImportSolution.ResumeLayout(false);
             this.grpImportSolution.PerformLayout();
+            this.cntImportPreference.ResumeLayout(false);
+            this.cntImportPreference.PerformLayout();
             this.flpPackLabels.ResumeLayout(false);
             this.flpPackLabels.PerformLayout();
             this.flpPackControls.ResumeLayout(false);
@@ -1255,5 +1284,8 @@
         private System.Windows.Forms.CheckBox chkImportPublishWorkflows;
         private System.Windows.Forms.CheckBox chkImportDependencies;
         private System.Windows.Forms.CheckBox chkImportHoldingSolution;
+        private System.Windows.Forms.FlowLayoutPanel cntImportPreference;
+        private System.Windows.Forms.RadioButton radPreferManaged;
+        private System.Windows.Forms.RadioButton radPreferUnmanaged;
     }
 }

@@ -15,12 +15,12 @@ namespace AlbanianXrm.SolutionPackager
         public const string coreToolsId = "Microsoft.CrmSdk.CoreTools";
         public const string solutionPackagerName = "SolutionPackager.exe";
         private readonly AsyncWorkQueue workQueue;
-        private readonly PluginViewModel pluginViewModel;
+        private readonly SolutionPackagerControl solutionPackagerControl;
 
-        public CoreToolsDownloader(AsyncWorkQueue workQueue, PluginViewModel pluginViewModel)
+        public CoreToolsDownloader(AsyncWorkQueue workQueue, SolutionPackagerControl solutionPackagerControl)
         {
             this.workQueue = workQueue ?? throw new ArgumentNullException(nameof(workQueue));
-            this.pluginViewModel = pluginViewModel ?? throw new ArgumentNullException(nameof(pluginViewModel));
+            this.solutionPackagerControl = solutionPackagerControl ?? throw new ArgumentNullException(nameof(solutionPackagerControl));
         }
 
         public void DownloadCoreTools(string nuGetFeed)
@@ -95,7 +95,8 @@ namespace AlbanianXrm.SolutionPackager
         {
             if (args.Error != null)
             {
-                MessageBox.Show(args.Error.ToString(), Resources.MBOX_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                solutionPackagerControl.WriteErrorLog("The following error occured while downloading core tools: \r\n{0}", args.Error);
+                MessageBox.Show(args.Error.Message, Resources.MBOX_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (args.Result is string errorMessage)
             {
@@ -103,7 +104,7 @@ namespace AlbanianXrm.SolutionPackager
             }
             else if (args.Result is Version version)
             {
-                pluginViewModel.SolutionPackagerVersion = version.ToString();
+                solutionPackagerControl.pluginViewModel.SolutionPackagerVersion = version.ToString();
             }
         }
     }

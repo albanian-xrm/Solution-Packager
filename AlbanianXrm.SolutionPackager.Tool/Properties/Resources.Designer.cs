@@ -409,6 +409,15 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SolutionPackager.exe encoutered an error. Please take a look at the output window for the details..
+        /// </summary>
+        public static string SOLUTIONPACKAGER_ERROR {
+            get {
+                return ResourceManager.GetString("SOLUTIONPACKAGER_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SolutionPackager.exe is missing!.
         /// </summary>
         public static string SOLUTIONPACKAGER_MISSING {

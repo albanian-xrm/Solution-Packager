@@ -28,9 +28,15 @@ namespace AlbanianXrm.SolutionPackager
 
         public void ImportSolution(Parameters @params)
         {
+            var fileInfo = new FileInfo(@params.CustomizationFile);
+            if (@params.PreferManaged)
+            {
+                fileInfo = new FileInfo(fileInfo.FullName.Substring(0, fileInfo.FullName.Length - fileInfo.Extension.Length) + "_managed" + fileInfo.Extension);
+                @params.CustomizationFile = fileInfo.FullName;
+            }
             asyncWorkQueue.Enqueue(new WorkAsyncInfo
             {
-                Message = string.Format(CultureInfo.InvariantCulture, Resources.IMPORT_SOLUTION, new FileInfo(@params.CustomizationFile).Name),
+                Message = string.Format(CultureInfo.InvariantCulture, Resources.IMPORT_SOLUTION, fileInfo.Name),
                 IsCancelable = true,
                 AsyncArgument = @params,
                 Work = ImportSolution,
@@ -63,6 +69,13 @@ namespace AlbanianXrm.SolutionPackager
 
         private void ImportSolutionStarted(RunWorkerCompletedEventArgs args)
         {
+            if (args.Error != null)
+            {
+                solutionPackagerControl.WriteErrorLog("The following error occurred while importing the solution:\r\n{0}", args.Error);
+                MessageBox.Show(args.Error.Message, Resources.MBOX_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             var importSolution = args.Result as Models.ImportSolutionRequest;
 
             solutionImportStatus = new SolutionImportStatus(importSolution.ExecuteAsyncResponse.AsyncJobId, importSolution.ImportJobId, pluginViewModel);
@@ -77,6 +90,7 @@ namespace AlbanianXrm.SolutionPackager
             public bool ImportOverwrite { get; set; }
             public bool ImportManaged { get; set; }
             public bool HoldingSolution { get; set; }
+            public bool PreferManaged { get; set; }
         }
     }
 }

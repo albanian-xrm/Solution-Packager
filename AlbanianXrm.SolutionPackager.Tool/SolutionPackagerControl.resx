@@ -2265,6 +2265,81 @@ You can use the short form of the command: /loc.</value>
   <data name="tlpPack.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
+  <data name="radPreferManaged.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radPreferManaged.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="radPreferManaged.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 19</value>
+  </data>
+  <data name="radPreferManaged.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="radPreferManaged.Text" xml:space="preserve">
+    <value>Prefer Managed</value>
+  </data>
+  <data name="&gt;&gt;radPreferManaged.Name" xml:space="preserve">
+    <value>radPreferManaged</value>
+  </data>
+  <data name="&gt;&gt;radPreferManaged.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radPreferManaged.Parent" xml:space="preserve">
+    <value>cntImportPreference</value>
+  </data>
+  <data name="&gt;&gt;radPreferManaged.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="radPreferUnmanaged.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radPreferUnmanaged.Location" type="System.Drawing.Point, System.Drawing">
+    <value>118, 3</value>
+  </data>
+  <data name="radPreferUnmanaged.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 19</value>
+  </data>
+  <data name="radPreferUnmanaged.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="radPreferUnmanaged.Text" xml:space="preserve">
+    <value>Prefer Unmanaged</value>
+  </data>
+  <data name="&gt;&gt;radPreferUnmanaged.Name" xml:space="preserve">
+    <value>radPreferUnmanaged</value>
+  </data>
+  <data name="&gt;&gt;radPreferUnmanaged.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radPreferUnmanaged.Parent" xml:space="preserve">
+    <value>cntImportPreference</value>
+  </data>
+  <data name="&gt;&gt;radPreferUnmanaged.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cntImportPreference.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 142</value>
+  </data>
+  <data name="cntImportPreference.Size" type="System.Drawing.Size, System.Drawing">
+    <value>414, 25</value>
+  </data>
+  <data name="cntImportPreference.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;cntImportPreference.Name" xml:space="preserve">
+    <value>cntImportPreference</value>
+  </data>
+  <data name="&gt;&gt;cntImportPreference.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cntImportPreference.Parent" xml:space="preserve">
+    <value>grpImportSolution</value>
+  </data>
+  <data name="&gt;&gt;cntImportPreference.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="chkImportHoldingSolution.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2293,7 +2368,7 @@ You can use the short form of the command: /loc.</value>
     <value>grpImportSolution</value>
   </data>
   <data name="&gt;&gt;chkImportHoldingSolution.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="chkImportDependencies.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2323,7 +2398,7 @@ You can use the short form of the command: /loc.</value>
     <value>grpImportSolution</value>
   </data>
   <data name="&gt;&gt;chkImportDependencies.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="chkImportPublishWorkflows.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2353,7 +2428,7 @@ You can use the short form of the command: /loc.</value>
     <value>grpImportSolution</value>
   </data>
   <data name="&gt;&gt;chkImportPublishWorkflows.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="chkImportOverwrite.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2383,7 +2458,7 @@ You can use the short form of the command: /loc.</value>
     <value>grpImportSolution</value>
   </data>
   <data name="&gt;&gt;chkImportOverwrite.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="chkImportManaged.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2410,13 +2485,13 @@ You can use the short form of the command: /loc.</value>
     <value>grpImportSolution</value>
   </data>
   <data name="&gt;&gt;chkImportManaged.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="grpImportSolution.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 383</value>
   </data>
   <data name="grpImportSolution.Size" type="System.Drawing.Size, System.Drawing">
-    <value>420, 147</value>
+    <value>420, 167</value>
   </data>
   <data name="grpImportSolution.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>

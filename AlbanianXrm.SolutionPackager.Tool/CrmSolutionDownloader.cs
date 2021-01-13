@@ -71,22 +71,22 @@ namespace AlbanianXrm.SolutionPackager
                 }
 
                 @params.SolutionPackagerParameters.ZipFile = new FileInfo(filePath).FullName;
-
             }
 
             args.Result = @params.SolutionPackagerParameters;
-
         }
 
         private void DownloadSolutionCompleted(RunWorkerCompletedEventArgs args)
         {
             if (args.Error is FaultException<OrganizationServiceFault> crmError)
             {
+                solutionPackagerControl.WriteErrorLog("The following error occurred while downloading the solution:\r\n{0}", crmError);
                 MessageBox.Show(crmError.Message, Resources.MBOX_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (args.Error != null)
+            else if (args.Error!=null)
             {
-                MessageBox.Show(args.Error.ToString(), Resources.MBOX_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                solutionPackagerControl.WriteErrorLog("The following error occurred while downloading the solution:\r\n{0}", args.Error);
+                MessageBox.Show(args.Error.Message, Resources.MBOX_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (args.Result is string errorMessage)
             {
@@ -123,7 +123,8 @@ namespace AlbanianXrm.SolutionPackager
         {
             if (args.Error != null)
             {
-                MessageBox.Show(args.Error.ToString(), Resources.MBOX_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                solutionPackagerControl.WriteErrorLog("The following error occurred while refreshing the solution list:\r\n{0}", args.Error);
+                MessageBox.Show(args.Error.Message, Resources.MBOX_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (args.Result is string errorMessage)
             {
@@ -190,6 +191,6 @@ namespace AlbanianXrm.SolutionPackager
             public bool ExportOutlookSynchronizationSettings { get; private set; }
             public bool ExportRelationshipRoles { get; private set; }
             public bool ExportSales { get; private set; }
-        }    
+        }
     }
 }

@@ -30,7 +30,7 @@ namespace AlbanianXrm.SolutionPackager
         }
 
         private readonly AsyncWorkQueue asyncWorkQueue;
-        private readonly PluginViewModel pluginViewModel;
+        internal readonly PluginViewModel pluginViewModel;
         private readonly CoreToolsDownloader coreToolsDownloader;
         private readonly CrmSolutionDownloader crmSolutionManager;
         private readonly CrmSolutionImporter crmSolutionImporter;
@@ -48,7 +48,7 @@ namespace AlbanianXrm.SolutionPackager
 
             pluginViewModel = new PluginViewModel();
             asyncWorkQueue = new AsyncWorkQueue(this, pluginViewModel);
-            coreToolsDownloader = new CoreToolsDownloader(asyncWorkQueue, pluginViewModel);
+            coreToolsDownloader = new CoreToolsDownloader(asyncWorkQueue, this);
             crmSolutionImporter = new CrmSolutionImporter(this, asyncWorkQueue, pluginViewModel);
             solutionPackagerCaller = new SolutionPackagerCaller(this, asyncWorkQueue, txtOutput, crmSolutionImporter);
             crmSolutionManager = new CrmSolutionDownloader(this, asyncWorkQueue, solutionPackagerCaller, cmbCrmSolutions);
@@ -59,8 +59,7 @@ namespace AlbanianXrm.SolutionPackager
             chkImportSolution.Bind(_ => _.Enabled, pluginViewModel, _ => _.HasConnection);
             grpImportSolution.DataBindings.Add(nameof(grpImportSolution.Visible), pluginViewModel, nameof(pluginViewModel.ImportSolutionAfterPack)); // Bind(_ => _.Visible, pluginViewModel, _ => _.ImportSolutionAfterPack);
             tabsExtractOrPack.Bind(_ => _.Enabled, pluginViewModel, _ => _.AllowRequests);
-            txtCoreTools.Bind(_ => _.Text, pluginViewModel, _ => _.SolutionPackagerVersion);
-
+            txtCoreTools.Bind(_ => _.Text, pluginViewModel, _ => _.SolutionPackagerVersion);         
             pluginViewModel.PropertyChanged += PluginViewModel_PropertyChanged;
 
             cmbLanguage.Items.AddRange(new object[] { CultureInfo.GetCultureInfo("en"), CultureInfo.GetCultureInfo("it") });
@@ -311,6 +310,11 @@ namespace AlbanianXrm.SolutionPackager
             }
         }
 
+        private void CmbPackageTypePack_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cntImportPreference.Visible = cmbPackageTypePack.SelectedIndex == 3;
+        }
+
         private void BtnOutputZip_Click(object sender, EventArgs e)
         {
             saveFile.Filter = Resources.FILTER_SOLUTION;
@@ -410,7 +414,8 @@ namespace AlbanianXrm.SolutionPackager
                     ImportManaged = chkImportManaged.Checked,
                     ImportOverwrite = chkImportOverwrite.Checked,
                     ImportPublishWorkflows = chkImportPublishWorkflows.Checked,
-                    HoldingSolution = chkImportHoldingSolution.Checked
+                    HoldingSolution = chkImportHoldingSolution.Checked,
+                    PreferManaged = cmbPackageTypePack.SelectedIndex== 3 && radPreferManaged.Checked
                 };
             }
 
@@ -427,6 +432,16 @@ namespace AlbanianXrm.SolutionPackager
             base.UpdateConnection(newService, detail, actionName, parameter);
             pluginViewModel.OrganizationService = newService;
             pluginViewModel.HasConnection = detail != null;
+        }
+
+        internal void WriteInfoLog(string message, params object[] args)
+        {
+            LogInfo(message, args);
+        }
+
+        internal void WriteErrorLog(string message, params object[] args)
+        {
+            LogError(message, args);
         }
         #endregion
 
@@ -480,5 +495,7 @@ namespace AlbanianXrm.SolutionPackager
                 return dialog.ShowDialog(this);
             }
         }
+
+     
     }
 }

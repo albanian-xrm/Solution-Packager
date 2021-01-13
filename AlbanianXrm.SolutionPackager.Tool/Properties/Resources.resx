@@ -232,6 +232,9 @@
   <data name="SETTINGS_SAVING" xml:space="preserve">
     <value>Saving Configuration settings</value>
   </data>
+  <data name="SOLUTIONPACKAGER_ERROR" xml:space="preserve">
+    <value>SolutionPackager.exe encoutered an error. Please take a look at the output window for the details.</value>
+  </data>
   <data name="SOLUTIONPACKAGER_MISSING" xml:space="preserve">
     <value>SolutionPackager.exe is missing!</value>
   </data>
