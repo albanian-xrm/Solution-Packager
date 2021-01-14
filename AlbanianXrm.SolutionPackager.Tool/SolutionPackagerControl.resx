@@ -171,528 +171,6 @@
   <data name="&gt;&gt;localOrCrm.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="lblExportAs.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblExportAs.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 50</value>
-  </data>
-  <data name="lblExportAs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 15</value>
-  </data>
-  <data name="lblExportAs.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="lblExportAs.Text" xml:space="preserve">
-    <value>Export As: </value>
-  </data>
-  <data name="&gt;&gt;lblExportAs.Name" xml:space="preserve">
-    <value>lblExportAs</value>
-  </data>
-  <data name="&gt;&gt;lblExportAs.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblExportAs.Parent" xml:space="preserve">
-    <value>grpExportSolution</value>
-  </data>
-  <data name="&gt;&gt;lblExportAs.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="radManaged.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="radManaged.Location" type="System.Drawing.Point, System.Drawing">
-    <value>172, 48</value>
-  </data>
-  <data name="radManaged.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 19</value>
-  </data>
-  <data name="radManaged.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="radManaged.Text" xml:space="preserve">
-    <value>Managed</value>
-  </data>
-  <data name="&gt;&gt;radManaged.Name" xml:space="preserve">
-    <value>radManaged</value>
-  </data>
-  <data name="&gt;&gt;radManaged.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radManaged.Parent" xml:space="preserve">
-    <value>grpExportSolution</value>
-  </data>
-  <data name="&gt;&gt;radManaged.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="radUnmanaged.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="radUnmanaged.Location" type="System.Drawing.Point, System.Drawing">
-    <value>76, 48</value>
-  </data>
-  <data name="radUnmanaged.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 19</value>
-  </data>
-  <data name="radUnmanaged.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="radUnmanaged.Text" xml:space="preserve">
-    <value>Unmanaged</value>
-  </data>
-  <data name="&gt;&gt;radUnmanaged.Name" xml:space="preserve">
-    <value>radUnmanaged</value>
-  </data>
-  <data name="&gt;&gt;radUnmanaged.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radUnmanaged.Parent" xml:space="preserve">
-    <value>grpExportSolution</value>
-  </data>
-  <data name="&gt;&gt;radUnmanaged.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="chkExportRelationshipRoles.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkExportRelationshipRoles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 152</value>
-  </data>
-  <data name="chkExportRelationshipRoles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 19</value>
-  </data>
-  <data name="chkExportRelationshipRoles.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="chkExportRelationshipRoles.Text" xml:space="preserve">
-    <value>Relationship Roles</value>
-  </data>
-  <data name="&gt;&gt;chkExportRelationshipRoles.Name" xml:space="preserve">
-    <value>chkExportRelationshipRoles</value>
-  </data>
-  <data name="&gt;&gt;chkExportRelationshipRoles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkExportRelationshipRoles.Parent" xml:space="preserve">
-    <value>grpExportSolution</value>
-  </data>
-  <data name="&gt;&gt;chkExportRelationshipRoles.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="chkExportSales.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkExportSales.Location" type="System.Drawing.Point, System.Drawing">
-    <value>294, 127</value>
-  </data>
-  <data name="chkExportSales.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 19</value>
-  </data>
-  <data name="chkExportSales.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="chkExportSales.Text" xml:space="preserve">
-    <value>Sales</value>
-  </data>
-  <data name="&gt;&gt;chkExportSales.Name" xml:space="preserve">
-    <value>chkExportSales</value>
-  </data>
-  <data name="&gt;&gt;chkExportSales.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkExportSales.Parent" xml:space="preserve">
-    <value>grpExportSolution</value>
-  </data>
-  <data name="&gt;&gt;chkExportSales.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="chkExportOutlookSynchronization.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkExportOutlookSynchronization.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 152</value>
-  </data>
-  <data name="chkExportOutlookSynchronization.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 19</value>
-  </data>
-  <data name="chkExportOutlookSynchronization.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="chkExportOutlookSynchronization.Text" xml:space="preserve">
-    <value>Outlook Syncronization</value>
-  </data>
-  <data name="&gt;&gt;chkExportOutlookSynchronization.Name" xml:space="preserve">
-    <value>chkExportOutlookSynchronization</value>
-  </data>
-  <data name="&gt;&gt;chkExportOutlookSynchronization.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkExportOutlookSynchronization.Parent" xml:space="preserve">
-    <value>grpExportSolution</value>
-  </data>
-  <data name="&gt;&gt;chkExportOutlookSynchronization.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="chkExportMarketing.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkExportMarketing.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 127</value>
-  </data>
-  <data name="chkExportMarketing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 19</value>
-  </data>
-  <data name="chkExportMarketing.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="chkExportMarketing.Text" xml:space="preserve">
-    <value>Marketing</value>
-  </data>
-  <data name="&gt;&gt;chkExportMarketing.Name" xml:space="preserve">
-    <value>chkExportMarketing</value>
-  </data>
-  <data name="&gt;&gt;chkExportMarketing.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkExportMarketing.Parent" xml:space="preserve">
-    <value>grpExportSolution</value>
-  </data>
-  <data name="&gt;&gt;chkExportMarketing.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="chkExportISVConfig.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkExportISVConfig.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 127</value>
-  </data>
-  <data name="chkExportISVConfig.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 19</value>
-  </data>
-  <data name="chkExportISVConfig.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="chkExportISVConfig.Text" xml:space="preserve">
-    <value>ISV Config</value>
-  </data>
-  <data name="&gt;&gt;chkExportISVConfig.Name" xml:space="preserve">
-    <value>chkExportISVConfig</value>
-  </data>
-  <data name="&gt;&gt;chkExportISVConfig.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkExportISVConfig.Parent" xml:space="preserve">
-    <value>grpExportSolution</value>
-  </data>
-  <data name="&gt;&gt;chkExportISVConfig.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="chkExportGeneralSettings.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkExportGeneralSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>294, 102</value>
-  </data>
-  <data name="chkExportGeneralSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 19</value>
-  </data>
-  <data name="chkExportGeneralSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="chkExportGeneralSettings.Text" xml:space="preserve">
-    <value>General Settings</value>
-  </data>
-  <data name="&gt;&gt;chkExportGeneralSettings.Name" xml:space="preserve">
-    <value>chkExportGeneralSettings</value>
-  </data>
-  <data name="&gt;&gt;chkExportGeneralSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkExportGeneralSettings.Parent" xml:space="preserve">
-    <value>grpExportSolution</value>
-  </data>
-  <data name="&gt;&gt;chkExportGeneralSettings.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="chkExportExternalApplications.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkExportExternalApplications.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 102</value>
-  </data>
-  <data name="chkExportExternalApplications.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 19</value>
-  </data>
-  <data name="chkExportExternalApplications.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="chkExportExternalApplications.Text" xml:space="preserve">
-    <value>External Applications</value>
-  </data>
-  <data name="&gt;&gt;chkExportExternalApplications.Name" xml:space="preserve">
-    <value>chkExportExternalApplications</value>
-  </data>
-  <data name="&gt;&gt;chkExportExternalApplications.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkExportExternalApplications.Parent" xml:space="preserve">
-    <value>grpExportSolution</value>
-  </data>
-  <data name="&gt;&gt;chkExportExternalApplications.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="chkExportEmailTracking.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkExportEmailTracking.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 102</value>
-  </data>
-  <data name="chkExportEmailTracking.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 19</value>
-  </data>
-  <data name="chkExportEmailTracking.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="chkExportEmailTracking.Text" xml:space="preserve">
-    <value>Email Tracking</value>
-  </data>
-  <data name="&gt;&gt;chkExportEmailTracking.Name" xml:space="preserve">
-    <value>chkExportEmailTracking</value>
-  </data>
-  <data name="&gt;&gt;chkExportEmailTracking.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkExportEmailTracking.Parent" xml:space="preserve">
-    <value>grpExportSolution</value>
-  </data>
-  <data name="&gt;&gt;chkExportEmailTracking.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="chkExportCustomization.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkExportCustomization.Location" type="System.Drawing.Point, System.Drawing">
-    <value>294, 77</value>
-  </data>
-  <data name="chkExportCustomization.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 19</value>
-  </data>
-  <data name="chkExportCustomization.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="chkExportCustomization.Text" xml:space="preserve">
-    <value>Customization</value>
-  </data>
-  <data name="&gt;&gt;chkExportCustomization.Name" xml:space="preserve">
-    <value>chkExportCustomization</value>
-  </data>
-  <data name="&gt;&gt;chkExportCustomization.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkExportCustomization.Parent" xml:space="preserve">
-    <value>grpExportSolution</value>
-  </data>
-  <data name="&gt;&gt;chkExportCustomization.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="chkExportCalendar.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkExportCalendar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>153, 77</value>
-  </data>
-  <data name="chkExportCalendar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 19</value>
-  </data>
-  <data name="chkExportCalendar.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="chkExportCalendar.Text" xml:space="preserve">
-    <value>Calendar</value>
-  </data>
-  <data name="&gt;&gt;chkExportCalendar.Name" xml:space="preserve">
-    <value>chkExportCalendar</value>
-  </data>
-  <data name="&gt;&gt;chkExportCalendar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkExportCalendar.Parent" xml:space="preserve">
-    <value>grpExportSolution</value>
-  </data>
-  <data name="&gt;&gt;chkExportCalendar.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="chkExportAutoNumbering.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkExportAutoNumbering.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 77</value>
-  </data>
-  <data name="chkExportAutoNumbering.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 19</value>
-  </data>
-  <data name="chkExportAutoNumbering.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="chkExportAutoNumbering.Text" xml:space="preserve">
-    <value>Auto Numbering</value>
-  </data>
-  <data name="&gt;&gt;chkExportAutoNumbering.Name" xml:space="preserve">
-    <value>chkExportAutoNumbering</value>
-  </data>
-  <data name="&gt;&gt;chkExportAutoNumbering.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkExportAutoNumbering.Parent" xml:space="preserve">
-    <value>grpExportSolution</value>
-  </data>
-  <data name="&gt;&gt;chkExportAutoNumbering.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="lblOnlineSolution.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblOnlineSolution.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 19</value>
-  </data>
-  <data name="lblOnlineSolution.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 15</value>
-  </data>
-  <data name="lblOnlineSolution.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="lblOnlineSolution.Text" xml:space="preserve">
-    <value>CRM Solution</value>
-  </data>
-  <data name="&gt;&gt;lblOnlineSolution.Name" xml:space="preserve">
-    <value>lblOnlineSolution</value>
-  </data>
-  <data name="&gt;&gt;lblOnlineSolution.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblOnlineSolution.Parent" xml:space="preserve">
-    <value>grpExportSolution</value>
-  </data>
-  <data name="&gt;&gt;lblOnlineSolution.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <metadata name="errorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 800</value>
-  </data>
-  <data name="&gt;&gt;errorProvider.Name" xml:space="preserve">
-    <value>errorProvider</value>
-  </data>
-  <data name="&gt;&gt;errorProvider.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;selectFolder.Name" xml:space="preserve">
-    <value>selectFolder</value>
-  </data>
-  <data name="&gt;&gt;selectFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;openFile.Name" xml:space="preserve">
-    <value>openFile</value>
-  </data>
-  <data name="&gt;&gt;openFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolTip.Name" xml:space="preserve">
-    <value>toolTip</value>
-  </data>
-  <data name="&gt;&gt;toolTip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;saveFile.Name" xml:space="preserve">
-    <value>saveFile</value>
-  </data>
-  <data name="&gt;&gt;saveFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>SolutionPackagerControl</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>XrmToolBox.Extensibility.PluginControlBase, XrmToolBox.Extensibility, Version=1.2020.12.43, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="cmbCrmSolutions.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="cmbCrmSolutions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>94, 16</value>
-  </data>
-  <data name="cmbCrmSolutions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 23</value>
-  </data>
-  <data name="cmbCrmSolutions.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;cmbCrmSolutions.Name" xml:space="preserve">
-    <value>cmbCrmSolutions</value>
-  </data>
-  <data name="&gt;&gt;cmbCrmSolutions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cmbCrmSolutions.Parent" xml:space="preserve">
-    <value>grpExportSolution</value>
-  </data>
-  <data name="&gt;&gt;cmbCrmSolutions.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="btnRefreshSolutions.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Stretch</value>
-  </data>
-  <data name="btnRefreshSolutions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>386, 12</value>
-  </data>
-  <data name="btnRefreshSolutions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 30</value>
-  </data>
-  <data name="btnRefreshSolutions.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;btnRefreshSolutions.Name" xml:space="preserve">
-    <value>btnRefreshSolutions</value>
-  </data>
-  <data name="&gt;&gt;btnRefreshSolutions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnRefreshSolutions.Parent" xml:space="preserve">
-    <value>grpExportSolution</value>
-  </data>
-  <data name="&gt;&gt;btnRefreshSolutions.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="grpExportSolution.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 577</value>
-  </data>
-  <data name="grpExportSolution.Size" type="System.Drawing.Size, System.Drawing">
-    <value>420, 178</value>
-  </data>
-  <data name="grpExportSolution.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="grpExportSolution.Text" xml:space="preserve">
-    <value>Export Solution</value>
-  </data>
-  <data name="&gt;&gt;grpExportSolution.Name" xml:space="preserve">
-    <value>grpExportSolution</value>
-  </data>
-  <data name="&gt;&gt;grpExportSolution.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grpExportSolution.Parent" xml:space="preserve">
-    <value>tlpExtract</value>
-  </data>
-  <data name="&gt;&gt;grpExportSolution.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="btnExtract.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -718,7 +196,7 @@
     <value>tlpExtract</value>
   </data>
   <data name="&gt;&gt;btnExtract.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="lblExtractZipPath.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -1279,7 +757,7 @@
     <value>tlpExtract</value>
   </data>
   <data name="&gt;&gt;flpExtractLabels.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="txtInputExtract.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 5</value>
@@ -2029,7 +1507,7 @@ You can use the short form of the command: /loc.</value>
     <value>tlpExtract</value>
   </data>
   <data name="&gt;&gt;flpExtractControls.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="btnOpenZip.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -2203,6 +1681,534 @@ You can use the short form of the command: /loc.</value>
     <value>tlpExtract</value>
   </data>
   <data name="&gt;&gt;flpExtractButtons.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblExportAs.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblExportAs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 50</value>
+  </data>
+  <data name="lblExportAs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 15</value>
+  </data>
+  <data name="lblExportAs.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="lblExportAs.Text" xml:space="preserve">
+    <value>Export As: </value>
+  </data>
+  <data name="&gt;&gt;lblExportAs.Name" xml:space="preserve">
+    <value>lblExportAs</value>
+  </data>
+  <data name="&gt;&gt;lblExportAs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblExportAs.Parent" xml:space="preserve">
+    <value>grpExportSolution</value>
+  </data>
+  <data name="&gt;&gt;lblExportAs.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="radManaged.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radManaged.Location" type="System.Drawing.Point, System.Drawing">
+    <value>172, 48</value>
+  </data>
+  <data name="radManaged.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 19</value>
+  </data>
+  <data name="radManaged.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="radManaged.Text" xml:space="preserve">
+    <value>Managed</value>
+  </data>
+  <data name="&gt;&gt;radManaged.Name" xml:space="preserve">
+    <value>radManaged</value>
+  </data>
+  <data name="&gt;&gt;radManaged.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radManaged.Parent" xml:space="preserve">
+    <value>grpExportSolution</value>
+  </data>
+  <data name="&gt;&gt;radManaged.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="radUnmanaged.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radUnmanaged.Location" type="System.Drawing.Point, System.Drawing">
+    <value>76, 48</value>
+  </data>
+  <data name="radUnmanaged.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 19</value>
+  </data>
+  <data name="radUnmanaged.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="radUnmanaged.Text" xml:space="preserve">
+    <value>Unmanaged</value>
+  </data>
+  <data name="&gt;&gt;radUnmanaged.Name" xml:space="preserve">
+    <value>radUnmanaged</value>
+  </data>
+  <data name="&gt;&gt;radUnmanaged.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radUnmanaged.Parent" xml:space="preserve">
+    <value>grpExportSolution</value>
+  </data>
+  <data name="&gt;&gt;radUnmanaged.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="chkExportRelationshipRoles.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkExportRelationshipRoles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 152</value>
+  </data>
+  <data name="chkExportRelationshipRoles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>122, 19</value>
+  </data>
+  <data name="chkExportRelationshipRoles.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="chkExportRelationshipRoles.Text" xml:space="preserve">
+    <value>Relationship Roles</value>
+  </data>
+  <data name="&gt;&gt;chkExportRelationshipRoles.Name" xml:space="preserve">
+    <value>chkExportRelationshipRoles</value>
+  </data>
+  <data name="&gt;&gt;chkExportRelationshipRoles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkExportRelationshipRoles.Parent" xml:space="preserve">
+    <value>grpExportSolution</value>
+  </data>
+  <data name="&gt;&gt;chkExportRelationshipRoles.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="chkExportSales.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkExportSales.Location" type="System.Drawing.Point, System.Drawing">
+    <value>294, 127</value>
+  </data>
+  <data name="chkExportSales.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 19</value>
+  </data>
+  <data name="chkExportSales.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="chkExportSales.Text" xml:space="preserve">
+    <value>Sales</value>
+  </data>
+  <data name="&gt;&gt;chkExportSales.Name" xml:space="preserve">
+    <value>chkExportSales</value>
+  </data>
+  <data name="&gt;&gt;chkExportSales.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkExportSales.Parent" xml:space="preserve">
+    <value>grpExportSolution</value>
+  </data>
+  <data name="&gt;&gt;chkExportSales.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="chkExportOutlookSynchronization.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkExportOutlookSynchronization.Location" type="System.Drawing.Point, System.Drawing">
+    <value>153, 152</value>
+  </data>
+  <data name="chkExportOutlookSynchronization.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 19</value>
+  </data>
+  <data name="chkExportOutlookSynchronization.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="chkExportOutlookSynchronization.Text" xml:space="preserve">
+    <value>Outlook Syncronization</value>
+  </data>
+  <data name="&gt;&gt;chkExportOutlookSynchronization.Name" xml:space="preserve">
+    <value>chkExportOutlookSynchronization</value>
+  </data>
+  <data name="&gt;&gt;chkExportOutlookSynchronization.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkExportOutlookSynchronization.Parent" xml:space="preserve">
+    <value>grpExportSolution</value>
+  </data>
+  <data name="&gt;&gt;chkExportOutlookSynchronization.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="chkExportMarketing.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkExportMarketing.Location" type="System.Drawing.Point, System.Drawing">
+    <value>153, 127</value>
+  </data>
+  <data name="chkExportMarketing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 19</value>
+  </data>
+  <data name="chkExportMarketing.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="chkExportMarketing.Text" xml:space="preserve">
+    <value>Marketing</value>
+  </data>
+  <data name="&gt;&gt;chkExportMarketing.Name" xml:space="preserve">
+    <value>chkExportMarketing</value>
+  </data>
+  <data name="&gt;&gt;chkExportMarketing.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkExportMarketing.Parent" xml:space="preserve">
+    <value>grpExportSolution</value>
+  </data>
+  <data name="&gt;&gt;chkExportMarketing.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="chkExportISVConfig.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkExportISVConfig.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 127</value>
+  </data>
+  <data name="chkExportISVConfig.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 19</value>
+  </data>
+  <data name="chkExportISVConfig.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="chkExportISVConfig.Text" xml:space="preserve">
+    <value>ISV Config</value>
+  </data>
+  <data name="&gt;&gt;chkExportISVConfig.Name" xml:space="preserve">
+    <value>chkExportISVConfig</value>
+  </data>
+  <data name="&gt;&gt;chkExportISVConfig.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkExportISVConfig.Parent" xml:space="preserve">
+    <value>grpExportSolution</value>
+  </data>
+  <data name="&gt;&gt;chkExportISVConfig.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="chkExportGeneralSettings.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkExportGeneralSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>294, 102</value>
+  </data>
+  <data name="chkExportGeneralSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 19</value>
+  </data>
+  <data name="chkExportGeneralSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="chkExportGeneralSettings.Text" xml:space="preserve">
+    <value>General Settings</value>
+  </data>
+  <data name="&gt;&gt;chkExportGeneralSettings.Name" xml:space="preserve">
+    <value>chkExportGeneralSettings</value>
+  </data>
+  <data name="&gt;&gt;chkExportGeneralSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkExportGeneralSettings.Parent" xml:space="preserve">
+    <value>grpExportSolution</value>
+  </data>
+  <data name="&gt;&gt;chkExportGeneralSettings.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="chkExportExternalApplications.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkExportExternalApplications.Location" type="System.Drawing.Point, System.Drawing">
+    <value>153, 102</value>
+  </data>
+  <data name="chkExportExternalApplications.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 19</value>
+  </data>
+  <data name="chkExportExternalApplications.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="chkExportExternalApplications.Text" xml:space="preserve">
+    <value>External Applications</value>
+  </data>
+  <data name="&gt;&gt;chkExportExternalApplications.Name" xml:space="preserve">
+    <value>chkExportExternalApplications</value>
+  </data>
+  <data name="&gt;&gt;chkExportExternalApplications.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkExportExternalApplications.Parent" xml:space="preserve">
+    <value>grpExportSolution</value>
+  </data>
+  <data name="&gt;&gt;chkExportExternalApplications.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="chkExportEmailTracking.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkExportEmailTracking.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 102</value>
+  </data>
+  <data name="chkExportEmailTracking.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 19</value>
+  </data>
+  <data name="chkExportEmailTracking.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="chkExportEmailTracking.Text" xml:space="preserve">
+    <value>Email Tracking</value>
+  </data>
+  <data name="&gt;&gt;chkExportEmailTracking.Name" xml:space="preserve">
+    <value>chkExportEmailTracking</value>
+  </data>
+  <data name="&gt;&gt;chkExportEmailTracking.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkExportEmailTracking.Parent" xml:space="preserve">
+    <value>grpExportSolution</value>
+  </data>
+  <data name="&gt;&gt;chkExportEmailTracking.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="chkExportCustomization.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkExportCustomization.Location" type="System.Drawing.Point, System.Drawing">
+    <value>294, 77</value>
+  </data>
+  <data name="chkExportCustomization.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 19</value>
+  </data>
+  <data name="chkExportCustomization.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="chkExportCustomization.Text" xml:space="preserve">
+    <value>Customization</value>
+  </data>
+  <data name="&gt;&gt;chkExportCustomization.Name" xml:space="preserve">
+    <value>chkExportCustomization</value>
+  </data>
+  <data name="&gt;&gt;chkExportCustomization.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkExportCustomization.Parent" xml:space="preserve">
+    <value>grpExportSolution</value>
+  </data>
+  <data name="&gt;&gt;chkExportCustomization.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="chkExportCalendar.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkExportCalendar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>153, 77</value>
+  </data>
+  <data name="chkExportCalendar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 19</value>
+  </data>
+  <data name="chkExportCalendar.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="chkExportCalendar.Text" xml:space="preserve">
+    <value>Calendar</value>
+  </data>
+  <data name="&gt;&gt;chkExportCalendar.Name" xml:space="preserve">
+    <value>chkExportCalendar</value>
+  </data>
+  <data name="&gt;&gt;chkExportCalendar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkExportCalendar.Parent" xml:space="preserve">
+    <value>grpExportSolution</value>
+  </data>
+  <data name="&gt;&gt;chkExportCalendar.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="chkExportAutoNumbering.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkExportAutoNumbering.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 77</value>
+  </data>
+  <data name="chkExportAutoNumbering.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 19</value>
+  </data>
+  <data name="chkExportAutoNumbering.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="chkExportAutoNumbering.Text" xml:space="preserve">
+    <value>Auto Numbering</value>
+  </data>
+  <data name="&gt;&gt;chkExportAutoNumbering.Name" xml:space="preserve">
+    <value>chkExportAutoNumbering</value>
+  </data>
+  <data name="&gt;&gt;chkExportAutoNumbering.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkExportAutoNumbering.Parent" xml:space="preserve">
+    <value>grpExportSolution</value>
+  </data>
+  <data name="&gt;&gt;chkExportAutoNumbering.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="lblOnlineSolution.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblOnlineSolution.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 19</value>
+  </data>
+  <data name="lblOnlineSolution.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 15</value>
+  </data>
+  <data name="lblOnlineSolution.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lblOnlineSolution.Text" xml:space="preserve">
+    <value>CRM Solution</value>
+  </data>
+  <data name="&gt;&gt;lblOnlineSolution.Name" xml:space="preserve">
+    <value>lblOnlineSolution</value>
+  </data>
+  <data name="&gt;&gt;lblOnlineSolution.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblOnlineSolution.Parent" xml:space="preserve">
+    <value>grpExportSolution</value>
+  </data>
+  <data name="&gt;&gt;lblOnlineSolution.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <metadata name="errorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>800, 800</value>
+  </data>
+  <data name="&gt;&gt;errorProvider.Name" xml:space="preserve">
+    <value>errorProvider</value>
+  </data>
+  <data name="&gt;&gt;errorProvider.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;selectFolder.Name" xml:space="preserve">
+    <value>selectFolder</value>
+  </data>
+  <data name="&gt;&gt;selectFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openFile.Name" xml:space="preserve">
+    <value>openFile</value>
+  </data>
+  <data name="&gt;&gt;openFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolTip.Name" xml:space="preserve">
+    <value>toolTip</value>
+  </data>
+  <data name="&gt;&gt;toolTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;saveFile.Name" xml:space="preserve">
+    <value>saveFile</value>
+  </data>
+  <data name="&gt;&gt;saveFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>SolutionPackagerControl</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>XrmToolBox.Extensibility.PluginControlBase, XrmToolBox.Extensibility, Version=1.2020.12.43, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="cmbCrmSolutions.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="cmbCrmSolutions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>94, 16</value>
+  </data>
+  <data name="cmbCrmSolutions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 23</value>
+  </data>
+  <data name="cmbCrmSolutions.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;cmbCrmSolutions.Name" xml:space="preserve">
+    <value>cmbCrmSolutions</value>
+  </data>
+  <data name="&gt;&gt;cmbCrmSolutions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmbCrmSolutions.Parent" xml:space="preserve">
+    <value>grpExportSolution</value>
+  </data>
+  <data name="&gt;&gt;cmbCrmSolutions.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="btnRefreshSolutions.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="btnRefreshSolutions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>386, 12</value>
+  </data>
+  <data name="btnRefreshSolutions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 30</value>
+  </data>
+  <data name="btnRefreshSolutions.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;btnRefreshSolutions.Name" xml:space="preserve">
+    <value>btnRefreshSolutions</value>
+  </data>
+  <data name="&gt;&gt;btnRefreshSolutions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRefreshSolutions.Parent" xml:space="preserve">
+    <value>grpExportSolution</value>
+  </data>
+  <data name="&gt;&gt;btnRefreshSolutions.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="grpExportSolution.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="grpExportSolution.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 577</value>
+  </data>
+  <data name="grpExportSolution.Size" type="System.Drawing.Size, System.Drawing">
+    <value>420, 186</value>
+  </data>
+  <data name="grpExportSolution.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="grpExportSolution.Text" xml:space="preserve">
+    <value>Export Solution</value>
+  </data>
+  <data name="grpExportSolution.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;grpExportSolution.Name" xml:space="preserve">
+    <value>grpExportSolution</value>
+  </data>
+  <data name="&gt;&gt;grpExportSolution.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpExportSolution.Parent" xml:space="preserve">
+    <value>tlpExtract</value>
+  </data>
+  <data name="&gt;&gt;grpExportSolution.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
   <data name="tlpExtract.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -2233,7 +2239,7 @@ You can use the short form of the command: /loc.</value>
     <value>0</value>
   </data>
   <data name="tlpExtract.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="localOrCrm" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="grpExportSolution" Row="3" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="btnExtract" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="flpExtractLabels" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="flpExtractControls" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="flpExtractButtons" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,106,Absolute,280,Absolute,40" /&gt;&lt;Rows Styles="Absolute,34,Absolute,500,Absolute,40,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="localOrCrm" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="btnExtract" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="flpExtractLabels" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="flpExtractControls" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="flpExtractButtons" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="grpExportSolution" Row="3" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,106,Absolute,280,Absolute,40" /&gt;&lt;Rows Styles="Absolute,34,Absolute,500,Absolute,40,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tabExtract.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 24</value>
@@ -2264,252 +2270,6 @@ You can use the short form of the command: /loc.</value>
   </data>
   <data name="tlpPack.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
-  </data>
-  <data name="radPreferManaged.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="radPreferManaged.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="radPreferManaged.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 19</value>
-  </data>
-  <data name="radPreferManaged.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="radPreferManaged.Text" xml:space="preserve">
-    <value>Prefer Managed</value>
-  </data>
-  <data name="&gt;&gt;radPreferManaged.Name" xml:space="preserve">
-    <value>radPreferManaged</value>
-  </data>
-  <data name="&gt;&gt;radPreferManaged.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radPreferManaged.Parent" xml:space="preserve">
-    <value>cntImportPreference</value>
-  </data>
-  <data name="&gt;&gt;radPreferManaged.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="radPreferUnmanaged.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="radPreferUnmanaged.Location" type="System.Drawing.Point, System.Drawing">
-    <value>118, 3</value>
-  </data>
-  <data name="radPreferUnmanaged.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 19</value>
-  </data>
-  <data name="radPreferUnmanaged.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="radPreferUnmanaged.Text" xml:space="preserve">
-    <value>Prefer Unmanaged</value>
-  </data>
-  <data name="&gt;&gt;radPreferUnmanaged.Name" xml:space="preserve">
-    <value>radPreferUnmanaged</value>
-  </data>
-  <data name="&gt;&gt;radPreferUnmanaged.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radPreferUnmanaged.Parent" xml:space="preserve">
-    <value>cntImportPreference</value>
-  </data>
-  <data name="&gt;&gt;radPreferUnmanaged.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="cntImportPreference.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 142</value>
-  </data>
-  <data name="cntImportPreference.Size" type="System.Drawing.Size, System.Drawing">
-    <value>414, 25</value>
-  </data>
-  <data name="cntImportPreference.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;cntImportPreference.Name" xml:space="preserve">
-    <value>cntImportPreference</value>
-  </data>
-  <data name="&gt;&gt;cntImportPreference.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cntImportPreference.Parent" xml:space="preserve">
-    <value>grpImportSolution</value>
-  </data>
-  <data name="&gt;&gt;cntImportPreference.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="chkImportHoldingSolution.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkImportHoldingSolution.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkImportHoldingSolution.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 122</value>
-  </data>
-  <data name="chkImportHoldingSolution.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 19</value>
-  </data>
-  <data name="chkImportHoldingSolution.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="chkImportHoldingSolution.Text" xml:space="preserve">
-    <value>Holding Solution</value>
-  </data>
-  <data name="&gt;&gt;chkImportHoldingSolution.Name" xml:space="preserve">
-    <value>chkImportHoldingSolution</value>
-  </data>
-  <data name="&gt;&gt;chkImportHoldingSolution.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkImportHoldingSolution.Parent" xml:space="preserve">
-    <value>grpImportSolution</value>
-  </data>
-  <data name="&gt;&gt;chkImportHoldingSolution.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="chkImportDependencies.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkImportDependencies.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkImportDependencies.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 97</value>
-  </data>
-  <data name="chkImportDependencies.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 19</value>
-  </data>
-  <data name="chkImportDependencies.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="chkImportDependencies.Text" xml:space="preserve">
-    <value>Skip Product Update Dependencies</value>
-  </data>
-  <data name="&gt;&gt;chkImportDependencies.Name" xml:space="preserve">
-    <value>chkImportDependencies</value>
-  </data>
-  <data name="&gt;&gt;chkImportDependencies.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkImportDependencies.Parent" xml:space="preserve">
-    <value>grpImportSolution</value>
-  </data>
-  <data name="&gt;&gt;chkImportDependencies.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="chkImportPublishWorkflows.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkImportPublishWorkflows.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkImportPublishWorkflows.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 72</value>
-  </data>
-  <data name="chkImportPublishWorkflows.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 19</value>
-  </data>
-  <data name="chkImportPublishWorkflows.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="chkImportPublishWorkflows.Text" xml:space="preserve">
-    <value>Publish Workflows</value>
-  </data>
-  <data name="&gt;&gt;chkImportPublishWorkflows.Name" xml:space="preserve">
-    <value>chkImportPublishWorkflows</value>
-  </data>
-  <data name="&gt;&gt;chkImportPublishWorkflows.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkImportPublishWorkflows.Parent" xml:space="preserve">
-    <value>grpImportSolution</value>
-  </data>
-  <data name="&gt;&gt;chkImportPublishWorkflows.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="chkImportOverwrite.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkImportOverwrite.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkImportOverwrite.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 47</value>
-  </data>
-  <data name="chkImportOverwrite.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 19</value>
-  </data>
-  <data name="chkImportOverwrite.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="chkImportOverwrite.Text" xml:space="preserve">
-    <value>Overwrite Unmanaged Customizations</value>
-  </data>
-  <data name="&gt;&gt;chkImportOverwrite.Name" xml:space="preserve">
-    <value>chkImportOverwrite</value>
-  </data>
-  <data name="&gt;&gt;chkImportOverwrite.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkImportOverwrite.Parent" xml:space="preserve">
-    <value>grpImportSolution</value>
-  </data>
-  <data name="&gt;&gt;chkImportOverwrite.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="chkImportManaged.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkImportManaged.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 22</value>
-  </data>
-  <data name="chkImportManaged.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 19</value>
-  </data>
-  <data name="chkImportManaged.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="chkImportManaged.Text" xml:space="preserve">
-    <value>Convert to Managed</value>
-  </data>
-  <data name="&gt;&gt;chkImportManaged.Name" xml:space="preserve">
-    <value>chkImportManaged</value>
-  </data>
-  <data name="&gt;&gt;chkImportManaged.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkImportManaged.Parent" xml:space="preserve">
-    <value>grpImportSolution</value>
-  </data>
-  <data name="&gt;&gt;chkImportManaged.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="grpImportSolution.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 383</value>
-  </data>
-  <data name="grpImportSolution.Size" type="System.Drawing.Size, System.Drawing">
-    <value>420, 167</value>
-  </data>
-  <data name="grpImportSolution.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="grpImportSolution.Text" xml:space="preserve">
-    <value>Import Solution</value>
-  </data>
-  <data name="&gt;&gt;grpImportSolution.Name" xml:space="preserve">
-    <value>grpImportSolution</value>
-  </data>
-  <data name="&gt;&gt;grpImportSolution.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;grpImportSolution.Parent" xml:space="preserve">
-    <value>tlpPack</value>
-  </data>
-  <data name="&gt;&gt;grpImportSolution.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="chkImportSolution.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -2551,7 +2311,7 @@ You can use the short form of the command: /loc.</value>
     <value>tlpPack</value>
   </data>
   <data name="&gt;&gt;chkImportSolution.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="btnPack.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -2581,7 +2341,7 @@ You can use the short form of the command: /loc.</value>
     <value>tlpPack</value>
   </data>
   <data name="&gt;&gt;btnPack.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="lblInputFolder.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -2992,7 +2752,7 @@ You can use the short form of the command: /loc.</value>
     <value>tlpPack</value>
   </data>
   <data name="&gt;&gt;flpPackLabels.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="txtInputPack.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 5</value>
@@ -3334,7 +3094,7 @@ You can use the short form of the command: /loc.</value>
     <value>tlpPack</value>
   </data>
   <data name="&gt;&gt;flpPackControls.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="btnInputFolder.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -3511,6 +3271,258 @@ You can use the short form of the command: /loc.</value>
     <value>tlpPack</value>
   </data>
   <data name="&gt;&gt;flpPackButtons.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="radPreferManaged.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radPreferManaged.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="radPreferManaged.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 19</value>
+  </data>
+  <data name="radPreferManaged.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="radPreferManaged.Text" xml:space="preserve">
+    <value>Prefer Managed</value>
+  </data>
+  <data name="&gt;&gt;radPreferManaged.Name" xml:space="preserve">
+    <value>radPreferManaged</value>
+  </data>
+  <data name="&gt;&gt;radPreferManaged.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radPreferManaged.Parent" xml:space="preserve">
+    <value>cntImportPreference</value>
+  </data>
+  <data name="&gt;&gt;radPreferManaged.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="radPreferUnmanaged.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radPreferUnmanaged.Location" type="System.Drawing.Point, System.Drawing">
+    <value>118, 3</value>
+  </data>
+  <data name="radPreferUnmanaged.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 19</value>
+  </data>
+  <data name="radPreferUnmanaged.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="radPreferUnmanaged.Text" xml:space="preserve">
+    <value>Prefer Unmanaged</value>
+  </data>
+  <data name="&gt;&gt;radPreferUnmanaged.Name" xml:space="preserve">
+    <value>radPreferUnmanaged</value>
+  </data>
+  <data name="&gt;&gt;radPreferUnmanaged.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radPreferUnmanaged.Parent" xml:space="preserve">
+    <value>cntImportPreference</value>
+  </data>
+  <data name="&gt;&gt;radPreferUnmanaged.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cntImportPreference.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 142</value>
+  </data>
+  <data name="cntImportPreference.Size" type="System.Drawing.Size, System.Drawing">
+    <value>417, 33</value>
+  </data>
+  <data name="cntImportPreference.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;cntImportPreference.Name" xml:space="preserve">
+    <value>cntImportPreference</value>
+  </data>
+  <data name="&gt;&gt;cntImportPreference.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FlowLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cntImportPreference.Parent" xml:space="preserve">
+    <value>grpImportSolution</value>
+  </data>
+  <data name="&gt;&gt;cntImportPreference.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="chkImportHoldingSolution.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkImportHoldingSolution.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkImportHoldingSolution.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 122</value>
+  </data>
+  <data name="chkImportHoldingSolution.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 19</value>
+  </data>
+  <data name="chkImportHoldingSolution.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="chkImportHoldingSolution.Text" xml:space="preserve">
+    <value>Holding Solution</value>
+  </data>
+  <data name="&gt;&gt;chkImportHoldingSolution.Name" xml:space="preserve">
+    <value>chkImportHoldingSolution</value>
+  </data>
+  <data name="&gt;&gt;chkImportHoldingSolution.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkImportHoldingSolution.Parent" xml:space="preserve">
+    <value>grpImportSolution</value>
+  </data>
+  <data name="&gt;&gt;chkImportHoldingSolution.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="chkImportDependencies.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkImportDependencies.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkImportDependencies.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 97</value>
+  </data>
+  <data name="chkImportDependencies.Size" type="System.Drawing.Size, System.Drawing">
+    <value>211, 19</value>
+  </data>
+  <data name="chkImportDependencies.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="chkImportDependencies.Text" xml:space="preserve">
+    <value>Skip Product Update Dependencies</value>
+  </data>
+  <data name="&gt;&gt;chkImportDependencies.Name" xml:space="preserve">
+    <value>chkImportDependencies</value>
+  </data>
+  <data name="&gt;&gt;chkImportDependencies.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkImportDependencies.Parent" xml:space="preserve">
+    <value>grpImportSolution</value>
+  </data>
+  <data name="&gt;&gt;chkImportDependencies.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="chkImportPublishWorkflows.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkImportPublishWorkflows.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkImportPublishWorkflows.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 72</value>
+  </data>
+  <data name="chkImportPublishWorkflows.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 19</value>
+  </data>
+  <data name="chkImportPublishWorkflows.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="chkImportPublishWorkflows.Text" xml:space="preserve">
+    <value>Publish Workflows</value>
+  </data>
+  <data name="&gt;&gt;chkImportPublishWorkflows.Name" xml:space="preserve">
+    <value>chkImportPublishWorkflows</value>
+  </data>
+  <data name="&gt;&gt;chkImportPublishWorkflows.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkImportPublishWorkflows.Parent" xml:space="preserve">
+    <value>grpImportSolution</value>
+  </data>
+  <data name="&gt;&gt;chkImportPublishWorkflows.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="chkImportOverwrite.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkImportOverwrite.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkImportOverwrite.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 47</value>
+  </data>
+  <data name="chkImportOverwrite.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 19</value>
+  </data>
+  <data name="chkImportOverwrite.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="chkImportOverwrite.Text" xml:space="preserve">
+    <value>Overwrite Unmanaged Customizations</value>
+  </data>
+  <data name="&gt;&gt;chkImportOverwrite.Name" xml:space="preserve">
+    <value>chkImportOverwrite</value>
+  </data>
+  <data name="&gt;&gt;chkImportOverwrite.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkImportOverwrite.Parent" xml:space="preserve">
+    <value>grpImportSolution</value>
+  </data>
+  <data name="&gt;&gt;chkImportOverwrite.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="chkImportManaged.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkImportManaged.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 22</value>
+  </data>
+  <data name="chkImportManaged.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 19</value>
+  </data>
+  <data name="chkImportManaged.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="chkImportManaged.Text" xml:space="preserve">
+    <value>Convert to Managed</value>
+  </data>
+  <data name="&gt;&gt;chkImportManaged.Name" xml:space="preserve">
+    <value>chkImportManaged</value>
+  </data>
+  <data name="&gt;&gt;chkImportManaged.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkImportManaged.Parent" xml:space="preserve">
+    <value>grpImportSolution</value>
+  </data>
+  <data name="&gt;&gt;chkImportManaged.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="grpImportSolution.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="grpImportSolution.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 383</value>
+  </data>
+  <data name="grpImportSolution.Size" type="System.Drawing.Size, System.Drawing">
+    <value>420, 380</value>
+  </data>
+  <data name="grpImportSolution.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="grpImportSolution.Text" xml:space="preserve">
+    <value>Import Solution</value>
+  </data>
+  <data name="grpImportSolution.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;grpImportSolution.Name" xml:space="preserve">
+    <value>grpImportSolution</value>
+  </data>
+  <data name="&gt;&gt;grpImportSolution.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;grpImportSolution.Parent" xml:space="preserve">
+    <value>tlpPack</value>
+  </data>
+  <data name="&gt;&gt;grpImportSolution.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
   <data name="tlpPack.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -3541,7 +3553,7 @@ You can use the short form of the command: /loc.</value>
     <value>0</value>
   </data>
   <data name="tlpPack.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="grpImportSolution" Row="3" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="chkImportSolution" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="btnPack" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="flpPackLabels" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="flpPackControls" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="flpPackButtons" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,106,Absolute,280,Absolute,40" /&gt;&lt;Rows Styles="Absolute,34,Absolute,306,Absolute,40,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="chkImportSolution" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="btnPack" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="flpPackLabels" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="flpPackControls" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="flpPackButtons" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="grpImportSolution" Row="3" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,106,Absolute,280,Absolute,40" /&gt;&lt;Rows Styles="Absolute,34,Absolute,306,Absolute,40,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tabPack.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 24</value>

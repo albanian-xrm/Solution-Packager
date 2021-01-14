@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AlbanianXrm.SolutionPackager
+﻿namespace AlbanianXrm.SolutionPackager
 {
-    public partial class SolutionImportStatus
+    internal partial class SolutionImportStatus
     {
         private void InitializeComponent()
         {
@@ -25,11 +19,13 @@ namespace AlbanianXrm.SolutionPackager
             this.lblCompletedOn = new System.Windows.Forms.Label();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.lblErrorCodeLabel = new System.Windows.Forms.Label();
-            this.lblErrorCode = new System.Windows.Forms.Label();
             this.lblSolutionNameLabel = new System.Windows.Forms.Label();
             this.lblSolutionName = new System.Windows.Forms.Label();
+            this.btnCancelImport = new System.Windows.Forms.Button();
+            this.lblErrorCode = new System.Windows.Forms.Label();
             this.btnCopyMessage = new System.Windows.Forms.Button();
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorkerCancel = new System.ComponentModel.BackgroundWorker();
             this.tlpContainer.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,10 +46,11 @@ namespace AlbanianXrm.SolutionPackager
             this.tlpContainer.Controls.Add(this.lblCompletedOn, 1, 4);
             this.tlpContainer.Controls.Add(this.progressBar, 0, 0);
             this.tlpContainer.Controls.Add(this.lblErrorCodeLabel, 0, 6);
-            this.tlpContainer.Controls.Add(this.lblErrorCode, 1, 6);
             this.tlpContainer.Controls.Add(this.lblSolutionNameLabel, 0, 5);
             this.tlpContainer.Controls.Add(this.lblSolutionName, 1, 5);
-            this.tlpContainer.Controls.Add(this.btnCopyMessage, 0, 7);
+            this.tlpContainer.Controls.Add(this.btnCancelImport, 0, 7);
+            this.tlpContainer.Controls.Add(this.lblErrorCode, 1, 6);
+            this.tlpContainer.Controls.Add(this.btnCopyMessage, 0, 8);
             this.tlpContainer.Name = "tlpContainer";
             // 
             // lblJobStatus
@@ -108,11 +105,6 @@ namespace AlbanianXrm.SolutionPackager
             resources.ApplyResources(this.lblErrorCodeLabel, "lblErrorCodeLabel");
             this.lblErrorCodeLabel.Name = "lblErrorCodeLabel";
             // 
-            // lblErrorCode
-            // 
-            resources.ApplyResources(this.lblErrorCode, "lblErrorCode");
-            this.lblErrorCode.Name = "lblErrorCode";
-            // 
             // lblSolutionNameLabel
             // 
             resources.ApplyResources(this.lblSolutionNameLabel, "lblSolutionNameLabel");
@@ -122,6 +114,19 @@ namespace AlbanianXrm.SolutionPackager
             // 
             resources.ApplyResources(this.lblSolutionName, "lblSolutionName");
             this.lblSolutionName.Name = "lblSolutionName";
+            // 
+            // btnCancelImport
+            // 
+            resources.ApplyResources(this.btnCancelImport, "btnCancelImport");
+            this.tlpContainer.SetColumnSpan(this.btnCancelImport, 3);
+            this.btnCancelImport.Name = "btnCancelImport";
+            this.btnCancelImport.UseVisualStyleBackColor = true;
+            this.btnCancelImport.Click += new System.EventHandler(this.BtnCancelImport_Click);
+            // 
+            // lblErrorCode
+            // 
+            resources.ApplyResources(this.lblErrorCode, "lblErrorCode");
+            this.lblErrorCode.Name = "lblErrorCode";
             // 
             // btnCopyMessage
             // 
@@ -164,5 +169,7 @@ namespace AlbanianXrm.SolutionPackager
         private System.Windows.Forms.Label lblSolutionNameLabel;
         private System.Windows.Forms.Label lblSolutionName;
         private System.Windows.Forms.Button btnCopyMessage;
+        private System.Windows.Forms.Button btnCancelImport;
+        private System.ComponentModel.BackgroundWorker backgroundWorkerCancel;
     }
 }

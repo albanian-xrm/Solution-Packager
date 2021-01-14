@@ -435,36 +435,6 @@
   <data name="&gt;&gt;lblErrorCodeLabel.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="lblErrorCode.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="lblErrorCode.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblErrorCode.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblErrorCode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>109, 200</value>
-  </data>
-  <data name="lblErrorCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="lblErrorCode.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;lblErrorCode.Name" xml:space="preserve">
-    <value>lblErrorCode</value>
-  </data>
-  <data name="&gt;&gt;lblErrorCode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblErrorCode.Parent" xml:space="preserve">
-    <value>tlpContainer</value>
-  </data>
-  <data name="&gt;&gt;lblErrorCode.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
   <data name="lblSolutionNameLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Right</value>
   </data>
@@ -496,7 +466,7 @@
     <value>tlpContainer</value>
   </data>
   <data name="&gt;&gt;lblSolutionNameLabel.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="lblSolutionName.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
@@ -526,16 +496,76 @@
     <value>tlpContainer</value>
   </data>
   <data name="&gt;&gt;lblSolutionName.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="btnCancelImport.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btnCancelImport.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnCancelImport.Location" type="System.Drawing.Point, System.Drawing">
+    <value>168, 229</value>
+  </data>
+  <data name="btnCancelImport.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 23</value>
+  </data>
+  <data name="btnCancelImport.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="btnCancelImport.Text" xml:space="preserve">
+    <value>Cancel Import</value>
+  </data>
+  <data name="&gt;&gt;btnCancelImport.Name" xml:space="preserve">
+    <value>btnCancelImport</value>
+  </data>
+  <data name="&gt;&gt;btnCancelImport.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnCancelImport.Parent" xml:space="preserve">
+    <value>tlpContainer</value>
+  </data>
+  <data name="&gt;&gt;btnCancelImport.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
+  <data name="lblErrorCode.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="lblErrorCode.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblErrorCode.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblErrorCode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>109, 200</value>
+  </data>
+  <data name="lblErrorCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 13</value>
+  </data>
+  <data name="lblErrorCode.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;lblErrorCode.Name" xml:space="preserve">
+    <value>lblErrorCode</value>
+  </data>
+  <data name="&gt;&gt;lblErrorCode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblErrorCode.Parent" xml:space="preserve">
+    <value>tlpContainer</value>
+  </data>
+  <data name="&gt;&gt;lblErrorCode.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
   <data name="btnCopyMessage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top</value>
+    <value>None</value>
   </data>
   <data name="btnCopyMessage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>175, 227</value>
+    <value>157, 261</value>
   </data>
   <data name="btnCopyMessage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>112, 28</value>
   </data>
   <data name="btnCopyMessage.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -556,7 +586,7 @@
     <value>tlpContainer</value>
   </data>
   <data name="&gt;&gt;btnCopyMessage.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="tlpContainer.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -565,10 +595,10 @@
     <value>0, 0</value>
   </data>
   <data name="tlpContainer.RowCount" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="tlpContainer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>426, 261</value>
+    <value>426, 259</value>
   </data>
   <data name="tlpContainer.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -586,16 +616,19 @@
     <value>0</value>
   </data>
   <data name="tlpContainer.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="lblJobStatus" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblJobStatusLabel" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblCreatedOnLabel" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblCreatedOn" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblStartedOnLabel" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblCompletedOnLabel" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblStartedOn" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblCompletedOn" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="progressBar" Row="0" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="lblErrorCodeLabel" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblErrorCode" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblSolutionNameLabel" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblSolutionName" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="btnCopyMessage" Row="7" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,106,Absolute,280,Absolute,40" /&gt;&lt;Rows Styles="Absolute,20,Absolute,34,Absolute,34,Absolute,34,Absolute,34,Absolute,34,Absolute,34,AutoSize,0,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="lblJobStatus" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblJobStatusLabel" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblCreatedOnLabel" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblCreatedOn" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblStartedOnLabel" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblCompletedOnLabel" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblStartedOn" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lblCompletedOn" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="progressBar" Row="0" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="lblErrorCodeLabel" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblSolutionNameLabel" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblSolutionName" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="btnCancelImport" Row="7" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;Control Name="lblErrorCode" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="btnCopyMessage" Row="8" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,106,Absolute,280,Absolute,40" /&gt;&lt;Rows Styles="Absolute,20,Absolute,34,Absolute,34,Absolute,34,Absolute,34,Absolute,34,Absolute,34,Absolute,34,Absolute,34,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <metadata name="backgroundWorker.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>187, 17</value>
+  </metadata>
+  <metadata name="backgroundWorkerCancel.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>344, 17</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>426, 261</value>
+    <value>426, 259</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -695,6 +728,12 @@
     <value>backgroundWorker</value>
   </data>
   <data name="&gt;&gt;backgroundWorker.Type" xml:space="preserve">
+    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;backgroundWorkerCancel.Name" xml:space="preserve">
+    <value>backgroundWorkerCancel</value>
+  </data>
+  <data name="&gt;&gt;backgroundWorkerCancel.Type" xml:space="preserve">
     <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

@@ -1,10 +1,7 @@
-﻿using AlbanianXrm.SolutionPackager.Models;
-using AlbanianXrm.SolutionPackager.Properties;
-using Microsoft.Crm.Sdk.Messages;
+﻿using AlbanianXrm.SolutionPackager.Properties;
 using Microsoft.Xrm.Sdk.Messages;
 using System;
 using System.ComponentModel;
-using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
@@ -78,7 +75,7 @@ namespace AlbanianXrm.SolutionPackager
 
             var importSolution = args.Result as Models.ImportSolutionRequest;
 
-            solutionImportStatus = new SolutionImportStatus(importSolution.ExecuteAsyncResponse.AsyncJobId, importSolution.ImportJobId, pluginViewModel);
+            solutionImportStatus = new SolutionImportStatus(importSolution.ExecuteAsyncResponse.AsyncJobId, importSolution.ImportJobId, solutionPackagerControl);
             solutionImportStatus.Show(solutionPackagerControl);
         }
 

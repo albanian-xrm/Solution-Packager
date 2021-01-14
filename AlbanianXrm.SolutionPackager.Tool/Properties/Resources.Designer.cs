@@ -345,6 +345,15 @@ namespace AlbanianXrm.SolutionPackager.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Progress {0}%.
+        /// </summary>
+        public static string PROGRESS_X_PERCENT {
+            get {
+                return ResourceManager.GetString("PROGRESS_X_PERCENT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Question.
         /// </summary>
         public static string QUESTION {

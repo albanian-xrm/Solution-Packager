@@ -13,24 +13,6 @@
             this.tabExtract = new System.Windows.Forms.TabPage();
             this.tlpExtract = new System.Windows.Forms.TableLayoutPanel();
             this.localOrCrm = new System.Windows.Forms.CheckBox();
-            this.grpExportSolution = new System.Windows.Forms.GroupBox();
-            this.lblExportAs = new System.Windows.Forms.Label();
-            this.radManaged = new System.Windows.Forms.RadioButton();
-            this.radUnmanaged = new System.Windows.Forms.RadioButton();
-            this.chkExportRelationshipRoles = new System.Windows.Forms.CheckBox();
-            this.chkExportSales = new System.Windows.Forms.CheckBox();
-            this.chkExportOutlookSynchronization = new System.Windows.Forms.CheckBox();
-            this.chkExportMarketing = new System.Windows.Forms.CheckBox();
-            this.chkExportISVConfig = new System.Windows.Forms.CheckBox();
-            this.chkExportGeneralSettings = new System.Windows.Forms.CheckBox();
-            this.chkExportExternalApplications = new System.Windows.Forms.CheckBox();
-            this.chkExportEmailTracking = new System.Windows.Forms.CheckBox();
-            this.chkExportCustomization = new System.Windows.Forms.CheckBox();
-            this.chkExportCalendar = new System.Windows.Forms.CheckBox();
-            this.chkExportAutoNumbering = new System.Windows.Forms.CheckBox();
-            this.lblOnlineSolution = new System.Windows.Forms.Label();
-            this.cmbCrmSolutions = new System.Windows.Forms.ComboBox();
-            this.btnRefreshSolutions = new System.Windows.Forms.Button();
             this.btnExtract = new System.Windows.Forms.Button();
             this.flpExtractLabels = new System.Windows.Forms.FlowLayoutPanel();
             this.lblExtractZipPath = new System.Windows.Forms.Label();
@@ -71,17 +53,26 @@
             this.btnExtractMapFile = new System.Windows.Forms.Button();
             this.btnExtractLog = new System.Windows.Forms.Button();
             this.btnExtractArguments = new System.Windows.Forms.Button();
+            this.grpExportSolution = new System.Windows.Forms.GroupBox();
+            this.lblExportAs = new System.Windows.Forms.Label();
+            this.radManaged = new System.Windows.Forms.RadioButton();
+            this.radUnmanaged = new System.Windows.Forms.RadioButton();
+            this.chkExportRelationshipRoles = new System.Windows.Forms.CheckBox();
+            this.chkExportSales = new System.Windows.Forms.CheckBox();
+            this.chkExportOutlookSynchronization = new System.Windows.Forms.CheckBox();
+            this.chkExportMarketing = new System.Windows.Forms.CheckBox();
+            this.chkExportISVConfig = new System.Windows.Forms.CheckBox();
+            this.chkExportGeneralSettings = new System.Windows.Forms.CheckBox();
+            this.chkExportExternalApplications = new System.Windows.Forms.CheckBox();
+            this.chkExportEmailTracking = new System.Windows.Forms.CheckBox();
+            this.chkExportCustomization = new System.Windows.Forms.CheckBox();
+            this.chkExportCalendar = new System.Windows.Forms.CheckBox();
+            this.chkExportAutoNumbering = new System.Windows.Forms.CheckBox();
+            this.lblOnlineSolution = new System.Windows.Forms.Label();
+            this.cmbCrmSolutions = new System.Windows.Forms.ComboBox();
+            this.btnRefreshSolutions = new System.Windows.Forms.Button();
             this.tabPack = new System.Windows.Forms.TabPage();
             this.tlpPack = new System.Windows.Forms.TableLayoutPanel();
-            this.grpImportSolution = new System.Windows.Forms.GroupBox();
-            this.cntImportPreference = new System.Windows.Forms.FlowLayoutPanel();
-            this.radPreferManaged = new System.Windows.Forms.RadioButton();
-            this.radPreferUnmanaged = new System.Windows.Forms.RadioButton();
-            this.chkImportHoldingSolution = new System.Windows.Forms.CheckBox();
-            this.chkImportDependencies = new System.Windows.Forms.CheckBox();
-            this.chkImportPublishWorkflows = new System.Windows.Forms.CheckBox();
-            this.chkImportOverwrite = new System.Windows.Forms.CheckBox();
-            this.chkImportManaged = new System.Windows.Forms.CheckBox();
             this.chkImportSolution = new System.Windows.Forms.CheckBox();
             this.btnPack = new System.Windows.Forms.Button();
             this.flpPackLabels = new System.Windows.Forms.FlowLayoutPanel();
@@ -110,6 +101,15 @@
             this.btnPackMap = new System.Windows.Forms.Button();
             this.btnLogPack = new System.Windows.Forms.Button();
             this.btnArgumentsPack = new System.Windows.Forms.Button();
+            this.grpImportSolution = new System.Windows.Forms.GroupBox();
+            this.cntImportPreference = new System.Windows.Forms.FlowLayoutPanel();
+            this.radPreferManaged = new System.Windows.Forms.RadioButton();
+            this.radPreferUnmanaged = new System.Windows.Forms.RadioButton();
+            this.chkImportHoldingSolution = new System.Windows.Forms.CheckBox();
+            this.chkImportDependencies = new System.Windows.Forms.CheckBox();
+            this.chkImportPublishWorkflows = new System.Windows.Forms.CheckBox();
+            this.chkImportOverwrite = new System.Windows.Forms.CheckBox();
+            this.chkImportManaged = new System.Windows.Forms.CheckBox();
             this.tabSettings = new System.Windows.Forms.TabPage();
             this.tlpSettings = new System.Windows.Forms.TableLayoutPanel();
             this.btnSaveSettings = new System.Windows.Forms.Button();
@@ -137,18 +137,18 @@
             this.tabsExtractOrPack.SuspendLayout();
             this.tabExtract.SuspendLayout();
             this.tlpExtract.SuspendLayout();
-            this.grpExportSolution.SuspendLayout();
             this.flpExtractLabels.SuspendLayout();
             this.flpExtractControls.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flpExtractButtons.SuspendLayout();
+            this.grpExportSolution.SuspendLayout();
             this.tabPack.SuspendLayout();
             this.tlpPack.SuspendLayout();
-            this.grpImportSolution.SuspendLayout();
-            this.cntImportPreference.SuspendLayout();
             this.flpPackLabels.SuspendLayout();
             this.flpPackControls.SuspendLayout();
             this.flpPackButtons.SuspendLayout();
+            this.grpImportSolution.SuspendLayout();
+            this.cntImportPreference.SuspendLayout();
             this.tabSettings.SuspendLayout();
             this.tlpSettings.SuspendLayout();
             this.flpSettingsButtons.SuspendLayout();
@@ -192,11 +192,11 @@
             // 
             resources.ApplyResources(this.tlpExtract, "tlpExtract");
             this.tlpExtract.Controls.Add(this.localOrCrm, 0, 0);
-            this.tlpExtract.Controls.Add(this.grpExportSolution, 0, 3);
             this.tlpExtract.Controls.Add(this.btnExtract, 1, 2);
             this.tlpExtract.Controls.Add(this.flpExtractLabels, 0, 1);
             this.tlpExtract.Controls.Add(this.flpExtractControls, 1, 1);
             this.tlpExtract.Controls.Add(this.flpExtractButtons, 2, 1);
+            this.tlpExtract.Controls.Add(this.grpExportSolution, 0, 3);
             this.tlpExtract.Name = "tlpExtract";
             // 
             // localOrCrm
@@ -206,138 +206,6 @@
             this.localOrCrm.Name = "localOrCrm";
             this.localOrCrm.UseVisualStyleBackColor = true;
             this.localOrCrm.CheckedChanged += new System.EventHandler(this.LocalOrCrm_CheckedChanged);
-            // 
-            // grpExportSolution
-            // 
-            this.tlpExtract.SetColumnSpan(this.grpExportSolution, 3);
-            this.grpExportSolution.Controls.Add(this.lblExportAs);
-            this.grpExportSolution.Controls.Add(this.radManaged);
-            this.grpExportSolution.Controls.Add(this.radUnmanaged);
-            this.grpExportSolution.Controls.Add(this.chkExportRelationshipRoles);
-            this.grpExportSolution.Controls.Add(this.chkExportSales);
-            this.grpExportSolution.Controls.Add(this.chkExportOutlookSynchronization);
-            this.grpExportSolution.Controls.Add(this.chkExportMarketing);
-            this.grpExportSolution.Controls.Add(this.chkExportISVConfig);
-            this.grpExportSolution.Controls.Add(this.chkExportGeneralSettings);
-            this.grpExportSolution.Controls.Add(this.chkExportExternalApplications);
-            this.grpExportSolution.Controls.Add(this.chkExportEmailTracking);
-            this.grpExportSolution.Controls.Add(this.chkExportCustomization);
-            this.grpExportSolution.Controls.Add(this.chkExportCalendar);
-            this.grpExportSolution.Controls.Add(this.chkExportAutoNumbering);
-            this.grpExportSolution.Controls.Add(this.lblOnlineSolution);
-            this.grpExportSolution.Controls.Add(this.cmbCrmSolutions);
-            this.grpExportSolution.Controls.Add(this.btnRefreshSolutions);
-            resources.ApplyResources(this.grpExportSolution, "grpExportSolution");
-            this.grpExportSolution.Name = "grpExportSolution";
-            this.grpExportSolution.TabStop = false;
-            // 
-            // lblExportAs
-            // 
-            resources.ApplyResources(this.lblExportAs, "lblExportAs");
-            this.lblExportAs.Name = "lblExportAs";
-            // 
-            // radManaged
-            // 
-            resources.ApplyResources(this.radManaged, "radManaged");
-            this.radManaged.Name = "radManaged";
-            this.radManaged.UseVisualStyleBackColor = true;
-            // 
-            // radUnmanaged
-            // 
-            resources.ApplyResources(this.radUnmanaged, "radUnmanaged");
-            this.radUnmanaged.Checked = true;
-            this.radUnmanaged.Name = "radUnmanaged";
-            this.radUnmanaged.TabStop = true;
-            this.radUnmanaged.UseVisualStyleBackColor = true;
-            // 
-            // chkExportRelationshipRoles
-            // 
-            resources.ApplyResources(this.chkExportRelationshipRoles, "chkExportRelationshipRoles");
-            this.chkExportRelationshipRoles.Name = "chkExportRelationshipRoles";
-            this.chkExportRelationshipRoles.UseVisualStyleBackColor = true;
-            // 
-            // chkExportSales
-            // 
-            resources.ApplyResources(this.chkExportSales, "chkExportSales");
-            this.chkExportSales.Name = "chkExportSales";
-            this.chkExportSales.UseVisualStyleBackColor = true;
-            // 
-            // chkExportOutlookSynchronization
-            // 
-            resources.ApplyResources(this.chkExportOutlookSynchronization, "chkExportOutlookSynchronization");
-            this.chkExportOutlookSynchronization.Name = "chkExportOutlookSynchronization";
-            this.chkExportOutlookSynchronization.UseVisualStyleBackColor = true;
-            // 
-            // chkExportMarketing
-            // 
-            resources.ApplyResources(this.chkExportMarketing, "chkExportMarketing");
-            this.chkExportMarketing.Name = "chkExportMarketing";
-            this.chkExportMarketing.UseVisualStyleBackColor = true;
-            // 
-            // chkExportISVConfig
-            // 
-            resources.ApplyResources(this.chkExportISVConfig, "chkExportISVConfig");
-            this.chkExportISVConfig.Name = "chkExportISVConfig";
-            this.chkExportISVConfig.UseVisualStyleBackColor = true;
-            // 
-            // chkExportGeneralSettings
-            // 
-            resources.ApplyResources(this.chkExportGeneralSettings, "chkExportGeneralSettings");
-            this.chkExportGeneralSettings.Name = "chkExportGeneralSettings";
-            this.chkExportGeneralSettings.UseVisualStyleBackColor = true;
-            // 
-            // chkExportExternalApplications
-            // 
-            resources.ApplyResources(this.chkExportExternalApplications, "chkExportExternalApplications");
-            this.chkExportExternalApplications.Name = "chkExportExternalApplications";
-            this.chkExportExternalApplications.UseVisualStyleBackColor = true;
-            // 
-            // chkExportEmailTracking
-            // 
-            resources.ApplyResources(this.chkExportEmailTracking, "chkExportEmailTracking");
-            this.chkExportEmailTracking.Name = "chkExportEmailTracking";
-            this.chkExportEmailTracking.UseVisualStyleBackColor = true;
-            // 
-            // chkExportCustomization
-            // 
-            resources.ApplyResources(this.chkExportCustomization, "chkExportCustomization");
-            this.chkExportCustomization.Name = "chkExportCustomization";
-            this.chkExportCustomization.UseVisualStyleBackColor = true;
-            // 
-            // chkExportCalendar
-            // 
-            resources.ApplyResources(this.chkExportCalendar, "chkExportCalendar");
-            this.chkExportCalendar.Name = "chkExportCalendar";
-            this.chkExportCalendar.UseVisualStyleBackColor = true;
-            // 
-            // chkExportAutoNumbering
-            // 
-            resources.ApplyResources(this.chkExportAutoNumbering, "chkExportAutoNumbering");
-            this.chkExportAutoNumbering.Name = "chkExportAutoNumbering";
-            this.chkExportAutoNumbering.UseVisualStyleBackColor = true;
-            // 
-            // lblOnlineSolution
-            // 
-            resources.ApplyResources(this.lblOnlineSolution, "lblOnlineSolution");
-            this.lblOnlineSolution.Name = "lblOnlineSolution";
-            // 
-            // cmbCrmSolutions
-            // 
-            this.cmbCrmSolutions.DisplayMember = "FriendlyName";
-            this.cmbCrmSolutions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCrmSolutions.FormattingEnabled = true;
-            this.errorProvider.SetIconAlignment(this.cmbCrmSolutions, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cmbCrmSolutions.IconAlignment"))));
-            resources.ApplyResources(this.cmbCrmSolutions, "cmbCrmSolutions");
-            this.cmbCrmSolutions.Name = "cmbCrmSolutions";
-            this.cmbCrmSolutions.ValueMember = "SolutionId";
-            // 
-            // btnRefreshSolutions
-            // 
-            this.btnRefreshSolutions.BackgroundImage = global::AlbanianXrm.SolutionPackager.Properties.Resources.Solutions;
-            resources.ApplyResources(this.btnRefreshSolutions, "btnRefreshSolutions");
-            this.btnRefreshSolutions.Name = "btnRefreshSolutions";
-            this.btnRefreshSolutions.UseVisualStyleBackColor = true;
-            this.btnRefreshSolutions.Click += new System.EventHandler(this.BtnRefreshSolutions_Click);
             // 
             // btnExtract
             // 
@@ -697,6 +565,138 @@
             this.btnExtractArguments.UseVisualStyleBackColor = true;
             this.btnExtractArguments.Click += new System.EventHandler(this.BtnExtractArguments_Click);
             // 
+            // grpExportSolution
+            // 
+            this.tlpExtract.SetColumnSpan(this.grpExportSolution, 3);
+            this.grpExportSolution.Controls.Add(this.lblExportAs);
+            this.grpExportSolution.Controls.Add(this.radManaged);
+            this.grpExportSolution.Controls.Add(this.radUnmanaged);
+            this.grpExportSolution.Controls.Add(this.chkExportRelationshipRoles);
+            this.grpExportSolution.Controls.Add(this.chkExportSales);
+            this.grpExportSolution.Controls.Add(this.chkExportOutlookSynchronization);
+            this.grpExportSolution.Controls.Add(this.chkExportMarketing);
+            this.grpExportSolution.Controls.Add(this.chkExportISVConfig);
+            this.grpExportSolution.Controls.Add(this.chkExportGeneralSettings);
+            this.grpExportSolution.Controls.Add(this.chkExportExternalApplications);
+            this.grpExportSolution.Controls.Add(this.chkExportEmailTracking);
+            this.grpExportSolution.Controls.Add(this.chkExportCustomization);
+            this.grpExportSolution.Controls.Add(this.chkExportCalendar);
+            this.grpExportSolution.Controls.Add(this.chkExportAutoNumbering);
+            this.grpExportSolution.Controls.Add(this.lblOnlineSolution);
+            this.grpExportSolution.Controls.Add(this.cmbCrmSolutions);
+            this.grpExportSolution.Controls.Add(this.btnRefreshSolutions);
+            resources.ApplyResources(this.grpExportSolution, "grpExportSolution");
+            this.grpExportSolution.Name = "grpExportSolution";
+            this.grpExportSolution.TabStop = false;
+            // 
+            // lblExportAs
+            // 
+            resources.ApplyResources(this.lblExportAs, "lblExportAs");
+            this.lblExportAs.Name = "lblExportAs";
+            // 
+            // radManaged
+            // 
+            resources.ApplyResources(this.radManaged, "radManaged");
+            this.radManaged.Name = "radManaged";
+            this.radManaged.UseVisualStyleBackColor = true;
+            // 
+            // radUnmanaged
+            // 
+            resources.ApplyResources(this.radUnmanaged, "radUnmanaged");
+            this.radUnmanaged.Checked = true;
+            this.radUnmanaged.Name = "radUnmanaged";
+            this.radUnmanaged.TabStop = true;
+            this.radUnmanaged.UseVisualStyleBackColor = true;
+            // 
+            // chkExportRelationshipRoles
+            // 
+            resources.ApplyResources(this.chkExportRelationshipRoles, "chkExportRelationshipRoles");
+            this.chkExportRelationshipRoles.Name = "chkExportRelationshipRoles";
+            this.chkExportRelationshipRoles.UseVisualStyleBackColor = true;
+            // 
+            // chkExportSales
+            // 
+            resources.ApplyResources(this.chkExportSales, "chkExportSales");
+            this.chkExportSales.Name = "chkExportSales";
+            this.chkExportSales.UseVisualStyleBackColor = true;
+            // 
+            // chkExportOutlookSynchronization
+            // 
+            resources.ApplyResources(this.chkExportOutlookSynchronization, "chkExportOutlookSynchronization");
+            this.chkExportOutlookSynchronization.Name = "chkExportOutlookSynchronization";
+            this.chkExportOutlookSynchronization.UseVisualStyleBackColor = true;
+            // 
+            // chkExportMarketing
+            // 
+            resources.ApplyResources(this.chkExportMarketing, "chkExportMarketing");
+            this.chkExportMarketing.Name = "chkExportMarketing";
+            this.chkExportMarketing.UseVisualStyleBackColor = true;
+            // 
+            // chkExportISVConfig
+            // 
+            resources.ApplyResources(this.chkExportISVConfig, "chkExportISVConfig");
+            this.chkExportISVConfig.Name = "chkExportISVConfig";
+            this.chkExportISVConfig.UseVisualStyleBackColor = true;
+            // 
+            // chkExportGeneralSettings
+            // 
+            resources.ApplyResources(this.chkExportGeneralSettings, "chkExportGeneralSettings");
+            this.chkExportGeneralSettings.Name = "chkExportGeneralSettings";
+            this.chkExportGeneralSettings.UseVisualStyleBackColor = true;
+            // 
+            // chkExportExternalApplications
+            // 
+            resources.ApplyResources(this.chkExportExternalApplications, "chkExportExternalApplications");
+            this.chkExportExternalApplications.Name = "chkExportExternalApplications";
+            this.chkExportExternalApplications.UseVisualStyleBackColor = true;
+            // 
+            // chkExportEmailTracking
+            // 
+            resources.ApplyResources(this.chkExportEmailTracking, "chkExportEmailTracking");
+            this.chkExportEmailTracking.Name = "chkExportEmailTracking";
+            this.chkExportEmailTracking.UseVisualStyleBackColor = true;
+            // 
+            // chkExportCustomization
+            // 
+            resources.ApplyResources(this.chkExportCustomization, "chkExportCustomization");
+            this.chkExportCustomization.Name = "chkExportCustomization";
+            this.chkExportCustomization.UseVisualStyleBackColor = true;
+            // 
+            // chkExportCalendar
+            // 
+            resources.ApplyResources(this.chkExportCalendar, "chkExportCalendar");
+            this.chkExportCalendar.Name = "chkExportCalendar";
+            this.chkExportCalendar.UseVisualStyleBackColor = true;
+            // 
+            // chkExportAutoNumbering
+            // 
+            resources.ApplyResources(this.chkExportAutoNumbering, "chkExportAutoNumbering");
+            this.chkExportAutoNumbering.Name = "chkExportAutoNumbering";
+            this.chkExportAutoNumbering.UseVisualStyleBackColor = true;
+            // 
+            // lblOnlineSolution
+            // 
+            resources.ApplyResources(this.lblOnlineSolution, "lblOnlineSolution");
+            this.lblOnlineSolution.Name = "lblOnlineSolution";
+            // 
+            // cmbCrmSolutions
+            // 
+            this.cmbCrmSolutions.DisplayMember = "FriendlyName";
+            this.cmbCrmSolutions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCrmSolutions.FormattingEnabled = true;
+            this.errorProvider.SetIconAlignment(this.cmbCrmSolutions, ((System.Windows.Forms.ErrorIconAlignment)(resources.GetObject("cmbCrmSolutions.IconAlignment"))));
+            resources.ApplyResources(this.cmbCrmSolutions, "cmbCrmSolutions");
+            this.cmbCrmSolutions.Name = "cmbCrmSolutions";
+            this.cmbCrmSolutions.ValueMember = "SolutionId";
+            // 
+            // btnRefreshSolutions
+            // 
+            this.btnRefreshSolutions.BackgroundImage = global::AlbanianXrm.SolutionPackager.Properties.Resources.Solutions;
+            resources.ApplyResources(this.btnRefreshSolutions, "btnRefreshSolutions");
+            this.btnRefreshSolutions.Name = "btnRefreshSolutions";
+            this.btnRefreshSolutions.UseVisualStyleBackColor = true;
+            this.btnRefreshSolutions.Click += new System.EventHandler(this.BtnRefreshSolutions_Click);
+            // 
             // tabPack
             // 
             this.tabPack.Controls.Add(this.tlpPack);
@@ -707,77 +707,13 @@
             // tlpPack
             // 
             resources.ApplyResources(this.tlpPack, "tlpPack");
-            this.tlpPack.Controls.Add(this.grpImportSolution, 0, 3);
             this.tlpPack.Controls.Add(this.chkImportSolution, 1, 0);
             this.tlpPack.Controls.Add(this.btnPack, 1, 2);
             this.tlpPack.Controls.Add(this.flpPackLabels, 0, 1);
             this.tlpPack.Controls.Add(this.flpPackControls, 1, 1);
             this.tlpPack.Controls.Add(this.flpPackButtons, 2, 1);
+            this.tlpPack.Controls.Add(this.grpImportSolution, 0, 3);
             this.tlpPack.Name = "tlpPack";
-            // 
-            // grpImportSolution
-            // 
-            this.tlpPack.SetColumnSpan(this.grpImportSolution, 3);
-            this.grpImportSolution.Controls.Add(this.cntImportPreference);
-            this.grpImportSolution.Controls.Add(this.chkImportHoldingSolution);
-            this.grpImportSolution.Controls.Add(this.chkImportDependencies);
-            this.grpImportSolution.Controls.Add(this.chkImportPublishWorkflows);
-            this.grpImportSolution.Controls.Add(this.chkImportOverwrite);
-            this.grpImportSolution.Controls.Add(this.chkImportManaged);
-            resources.ApplyResources(this.grpImportSolution, "grpImportSolution");
-            this.grpImportSolution.Name = "grpImportSolution";
-            this.grpImportSolution.TabStop = false;
-            // 
-            // cntImportPreference
-            // 
-            this.cntImportPreference.Controls.Add(this.radPreferManaged);
-            this.cntImportPreference.Controls.Add(this.radPreferUnmanaged);
-            resources.ApplyResources(this.cntImportPreference, "cntImportPreference");
-            this.cntImportPreference.Name = "cntImportPreference";
-            // 
-            // radPreferManaged
-            // 
-            resources.ApplyResources(this.radPreferManaged, "radPreferManaged");
-            this.radPreferManaged.Name = "radPreferManaged";
-            this.radPreferManaged.UseVisualStyleBackColor = true;
-            // 
-            // radPreferUnmanaged
-            // 
-            resources.ApplyResources(this.radPreferUnmanaged, "radPreferUnmanaged");
-            this.radPreferUnmanaged.Checked = true;
-            this.radPreferUnmanaged.Name = "radPreferUnmanaged";
-            this.radPreferUnmanaged.TabStop = true;
-            this.radPreferUnmanaged.UseVisualStyleBackColor = true;
-            // 
-            // chkImportHoldingSolution
-            // 
-            resources.ApplyResources(this.chkImportHoldingSolution, "chkImportHoldingSolution");
-            this.chkImportHoldingSolution.Name = "chkImportHoldingSolution";
-            this.chkImportHoldingSolution.UseVisualStyleBackColor = true;
-            // 
-            // chkImportDependencies
-            // 
-            resources.ApplyResources(this.chkImportDependencies, "chkImportDependencies");
-            this.chkImportDependencies.Name = "chkImportDependencies";
-            this.chkImportDependencies.UseVisualStyleBackColor = true;
-            // 
-            // chkImportPublishWorkflows
-            // 
-            resources.ApplyResources(this.chkImportPublishWorkflows, "chkImportPublishWorkflows");
-            this.chkImportPublishWorkflows.Name = "chkImportPublishWorkflows";
-            this.chkImportPublishWorkflows.UseVisualStyleBackColor = true;
-            // 
-            // chkImportOverwrite
-            // 
-            resources.ApplyResources(this.chkImportOverwrite, "chkImportOverwrite");
-            this.chkImportOverwrite.Name = "chkImportOverwrite";
-            this.chkImportOverwrite.UseVisualStyleBackColor = true;
-            // 
-            // chkImportManaged
-            // 
-            resources.ApplyResources(this.chkImportManaged, "chkImportManaged");
-            this.chkImportManaged.Name = "chkImportManaged";
-            this.chkImportManaged.UseVisualStyleBackColor = true;
             // 
             // chkImportSolution
             // 
@@ -999,6 +935,70 @@
             this.btnArgumentsPack.UseVisualStyleBackColor = true;
             this.btnArgumentsPack.Click += new System.EventHandler(this.BtnArgumentsPack_Click);
             // 
+            // grpImportSolution
+            // 
+            this.tlpPack.SetColumnSpan(this.grpImportSolution, 3);
+            this.grpImportSolution.Controls.Add(this.cntImportPreference);
+            this.grpImportSolution.Controls.Add(this.chkImportHoldingSolution);
+            this.grpImportSolution.Controls.Add(this.chkImportDependencies);
+            this.grpImportSolution.Controls.Add(this.chkImportPublishWorkflows);
+            this.grpImportSolution.Controls.Add(this.chkImportOverwrite);
+            this.grpImportSolution.Controls.Add(this.chkImportManaged);
+            resources.ApplyResources(this.grpImportSolution, "grpImportSolution");
+            this.grpImportSolution.Name = "grpImportSolution";
+            this.grpImportSolution.TabStop = false;
+            // 
+            // cntImportPreference
+            // 
+            this.cntImportPreference.Controls.Add(this.radPreferManaged);
+            this.cntImportPreference.Controls.Add(this.radPreferUnmanaged);
+            resources.ApplyResources(this.cntImportPreference, "cntImportPreference");
+            this.cntImportPreference.Name = "cntImportPreference";
+            // 
+            // radPreferManaged
+            // 
+            resources.ApplyResources(this.radPreferManaged, "radPreferManaged");
+            this.radPreferManaged.Name = "radPreferManaged";
+            this.radPreferManaged.UseVisualStyleBackColor = true;
+            // 
+            // radPreferUnmanaged
+            // 
+            resources.ApplyResources(this.radPreferUnmanaged, "radPreferUnmanaged");
+            this.radPreferUnmanaged.Checked = true;
+            this.radPreferUnmanaged.Name = "radPreferUnmanaged";
+            this.radPreferUnmanaged.TabStop = true;
+            this.radPreferUnmanaged.UseVisualStyleBackColor = true;
+            // 
+            // chkImportHoldingSolution
+            // 
+            resources.ApplyResources(this.chkImportHoldingSolution, "chkImportHoldingSolution");
+            this.chkImportHoldingSolution.Name = "chkImportHoldingSolution";
+            this.chkImportHoldingSolution.UseVisualStyleBackColor = true;
+            // 
+            // chkImportDependencies
+            // 
+            resources.ApplyResources(this.chkImportDependencies, "chkImportDependencies");
+            this.chkImportDependencies.Name = "chkImportDependencies";
+            this.chkImportDependencies.UseVisualStyleBackColor = true;
+            // 
+            // chkImportPublishWorkflows
+            // 
+            resources.ApplyResources(this.chkImportPublishWorkflows, "chkImportPublishWorkflows");
+            this.chkImportPublishWorkflows.Name = "chkImportPublishWorkflows";
+            this.chkImportPublishWorkflows.UseVisualStyleBackColor = true;
+            // 
+            // chkImportOverwrite
+            // 
+            resources.ApplyResources(this.chkImportOverwrite, "chkImportOverwrite");
+            this.chkImportOverwrite.Name = "chkImportOverwrite";
+            this.chkImportOverwrite.UseVisualStyleBackColor = true;
+            // 
+            // chkImportManaged
+            // 
+            resources.ApplyResources(this.chkImportManaged, "chkImportManaged");
+            this.chkImportManaged.Name = "chkImportManaged";
+            this.chkImportManaged.UseVisualStyleBackColor = true;
+            // 
             // tabSettings
             // 
             this.tabSettings.Controls.Add(this.tlpSettings);
@@ -1131,8 +1131,6 @@
             this.tabExtract.ResumeLayout(false);
             this.tlpExtract.ResumeLayout(false);
             this.tlpExtract.PerformLayout();
-            this.grpExportSolution.ResumeLayout(false);
-            this.grpExportSolution.PerformLayout();
             this.flpExtractLabels.ResumeLayout(false);
             this.flpExtractLabels.PerformLayout();
             this.flpExtractControls.ResumeLayout(false);
@@ -1140,18 +1138,20 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.flpExtractButtons.ResumeLayout(false);
+            this.grpExportSolution.ResumeLayout(false);
+            this.grpExportSolution.PerformLayout();
             this.tabPack.ResumeLayout(false);
             this.tlpPack.ResumeLayout(false);
             this.tlpPack.PerformLayout();
-            this.grpImportSolution.ResumeLayout(false);
-            this.grpImportSolution.PerformLayout();
-            this.cntImportPreference.ResumeLayout(false);
-            this.cntImportPreference.PerformLayout();
             this.flpPackLabels.ResumeLayout(false);
             this.flpPackLabels.PerformLayout();
             this.flpPackControls.ResumeLayout(false);
             this.flpPackControls.PerformLayout();
             this.flpPackButtons.ResumeLayout(false);
+            this.grpImportSolution.ResumeLayout(false);
+            this.grpImportSolution.PerformLayout();
+            this.cntImportPreference.ResumeLayout(false);
+            this.cntImportPreference.PerformLayout();
             this.tabSettings.ResumeLayout(false);
             this.tlpSettings.ResumeLayout(false);
             this.flpSettingsButtons.ResumeLayout(false);

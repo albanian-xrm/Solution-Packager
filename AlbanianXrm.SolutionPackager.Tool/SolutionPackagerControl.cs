@@ -54,12 +54,10 @@ namespace AlbanianXrm.SolutionPackager
             crmSolutionManager = new CrmSolutionDownloader(this, asyncWorkQueue, solutionPackagerCaller, cmbCrmSolutions);
 
             localOrCrm.Bind(_ => _.Enabled, pluginViewModel, _ => _.HasConnection);
-            grpExportSolution.DataBindings.Add(nameof(grpExportSolution.Visible), pluginViewModel, nameof(pluginViewModel.LocalOrCrm));//Bind(_ => _.Visible, pluginViewModel, _ => _.LocalOrCrm);
             btnRefreshSolutions.Bind(_ => _.Enabled, pluginViewModel, _ => _.LocalOrCrm);
             chkImportSolution.Bind(_ => _.Enabled, pluginViewModel, _ => _.HasConnection);
-            grpImportSolution.DataBindings.Add(nameof(grpImportSolution.Visible), pluginViewModel, nameof(pluginViewModel.ImportSolutionAfterPack)); // Bind(_ => _.Visible, pluginViewModel, _ => _.ImportSolutionAfterPack);
             tabsExtractOrPack.Bind(_ => _.Enabled, pluginViewModel, _ => _.AllowRequests);
-            txtCoreTools.Bind(_ => _.Text, pluginViewModel, _ => _.SolutionPackagerVersion);         
+            txtCoreTools.Bind(_ => _.Text, pluginViewModel, _ => _.SolutionPackagerVersion);
             pluginViewModel.PropertyChanged += PluginViewModel_PropertyChanged;
 
             cmbLanguage.Items.AddRange(new object[] { CultureInfo.GetCultureInfo("en"), CultureInfo.GetCultureInfo("it") });
@@ -80,6 +78,14 @@ namespace AlbanianXrm.SolutionPackager
                 {
                     resources.ApplyResources(c, c.Name, Resources.Culture);
                 }
+            }
+            else if (e.PropertyName == nameof(pluginViewModel.ImportSolutionAfterPack))
+            {
+                grpImportSolution.Visible = pluginViewModel.ImportSolutionAfterPack;
+            }
+            else if (e.PropertyName == nameof(pluginViewModel.LocalOrCrm))
+            {
+                grpExportSolution.Visible = pluginViewModel.LocalOrCrm;
             }
         }
 
@@ -415,7 +421,7 @@ namespace AlbanianXrm.SolutionPackager
                     ImportOverwrite = chkImportOverwrite.Checked,
                     ImportPublishWorkflows = chkImportPublishWorkflows.Checked,
                     HoldingSolution = chkImportHoldingSolution.Checked,
-                    PreferManaged = cmbPackageTypePack.SelectedIndex== 3 && radPreferManaged.Checked
+                    PreferManaged = cmbPackageTypePack.SelectedIndex == 3 && radPreferManaged.Checked
                 };
             }
 
@@ -496,6 +502,6 @@ namespace AlbanianXrm.SolutionPackager
             }
         }
 
-     
+
     }
 }

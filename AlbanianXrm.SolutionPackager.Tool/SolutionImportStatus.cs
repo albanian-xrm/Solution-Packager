@@ -10,25 +10,29 @@ using System.Windows.Forms;
 
 namespace AlbanianXrm.SolutionPackager
 {
-    public partial class SolutionImportStatus : Form
+    internal partial class SolutionImportStatus : Form
     {
         private readonly Guid asyncJobId;
         private readonly Guid importJobId;
+        private readonly SolutionPackagerControl solutionPackagerControl;
         private string errorDetails;
 
         public IOrganizationService OrganizationService { get; set; }
 
-        public SolutionImportStatus(Guid asyncJobId, Guid importJobId, PluginViewModel pluginViewModel)
+        internal SolutionImportStatus(Guid asyncJobId, Guid importJobId, SolutionPackagerControl solutionPackagerControl)
         {
             InitializeComponent();
             this.asyncJobId = asyncJobId;
             this.importJobId = importJobId;
+            this.solutionPackagerControl = solutionPackagerControl;
             this.timer.Tick += new EventHandler(Timer_Tick);
             this.backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(WorkAsync);
+            this.backgroundWorkerCancel.DoWork += new System.ComponentModel.DoWorkEventHandler(WorkAsyncCancel);
             this.backgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(WorkAsyncEnded);
-            this.Bind(t => t.OrganizationService, pluginViewModel, s => s.OrganizationService, formattingEnabled: true);
+            this.backgroundWorkerCancel.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(WorkAsyncCancelEnded);
+            this.Bind(t => t.OrganizationService, solutionPackagerControl.pluginViewModel, s => s.OrganizationService, formattingEnabled: true);
             this.timer.Start();
-        }
+        }             
 
         private void Timer_Tick(object sender, EventArgs e)
         {
@@ -78,6 +82,14 @@ namespace AlbanianXrm.SolutionPackager
 
         private void WorkAsyncEnded(object sender, System.ComponentModel.RunWorkerCompletedEventArgs args)
         {
+            if (args.Error != null)
+            {
+                solutionPackagerControl.WriteErrorLog("The following error occurred while checking the solution import status:\r\n{0}", args.Error);
+                MessageBox.Show(args.Error.Message, Resources.MBOX_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                timer.Start();
+                return;
+            }
+
             if (!(args.Result is ImportSolutionStatus result))
             {
                 timer.Start();
@@ -113,6 +125,9 @@ namespace AlbanianXrm.SolutionPackager
             if (asyncOperation.ErrorCode.HasValue)
             {
                 errorDetails = asyncOperation.Message;
+                btnCancelImport.Visible = false;
+                tlpContainer.SetRow(btnCancelImport, 8);
+                tlpContainer.SetRow(btnCopyMessage, 7);
                 btnCopyMessage.Visible = true;
                 lblJobStatus.ForeColor = Color.Red;
             }
@@ -120,9 +135,10 @@ namespace AlbanianXrm.SolutionPackager
             if (importJob != null)
             {
                 progressBar.Value = importJob.Progress.HasValue ? (int)importJob.Progress : 0;
+                toolTip.SetToolTip(progressBar, string.Format(Resources.PROGRESS_X_PERCENT, progressBar.Value));
                 lblSolutionName.Text = importJob.SolutionName;
             }
-          
+
 
             if (asyncOperation.StatusCode != AsyncOperation.OptionSets.StatusCode.Canceled &&
                asyncOperation.StatusCode != AsyncOperation.OptionSets.StatusCode.Failed &&
@@ -132,17 +148,55 @@ namespace AlbanianXrm.SolutionPackager
             }
         }
 
+        private void WorkAsyncCancel(object sender, System.ComponentModel.DoWorkEventArgs args)
+        {
+            var service = OrganizationService;
+            if (service == null)
+            {
+                return;
+            }
+
+            var asyncOperation = new AsyncOperation()
+            {
+                Id = asyncJobId,
+                StateCode = AsyncOperation.OptionSets.StateCode.Completed,
+                StatusCode = AsyncOperation.OptionSets.StatusCode.Canceling
+            };
+
+            service.Update(asyncOperation);
+        }
+
+        private void WorkAsyncCancelEnded(object sender, System.ComponentModel.RunWorkerCompletedEventArgs args)
+        {
+            if (args.Error != null)
+            {
+                solutionPackagerControl.WriteErrorLog("The following error occurred while canceling the solution import:\r\n{0}", args.Error);
+                MessageBox.Show(args.Error.Message, Resources.MBOX_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);        
+            }
+        }
+
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
             timer.Stop();
             timer.Dispose();
             backgroundWorker.Dispose();
+            backgroundWorkerCancel.Dispose();
         }
 
         private void BtnCopyMessage_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(errorDetails);
+        }
+
+        private void BtnCancelImport_Click(object sender, EventArgs e)
+        {
+            if (!btnCancelImport.Enabled)
+            {
+                return;
+            }
+            btnCancelImport.Enabled = false;
+            backgroundWorkerCancel.RunWorkerAsync();
         }
     }
 }

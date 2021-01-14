@@ -211,6 +211,9 @@
   <data name="PROGRAM_OUTPUT" xml:space="preserve">
     <value>Program output</value>
   </data>
+  <data name="PROGRESS_X_PERCENT" xml:space="preserve">
+    <value>Progress {0}%</value>
+  </data>
   <data name="QUESTION" xml:space="preserve">
     <value>Question</value>
   </data>
