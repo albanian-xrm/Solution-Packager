@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "AlbanianXrm.SolutionPackager.Automation": {
+      "commandName": "Executable",
+      "executablePath": "%SystemRoot%\\system32\\WindowsPowerShell\\v1.0\\powershell.exe",
+      "commandLineArgs": "-NoExit -command \"Import-Module .\\AlbanianXrm.SolutionPackager.Automation.dll\""
+    }
+  }
+}
