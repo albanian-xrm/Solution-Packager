@@ -1,27 +1,26 @@
 ﻿using AlbanianXrm.SolutionPackager.Models;
 using AlbanianXrm.SolutionPackager.Properties;
+using AlbanianXrm.XrmToolBox.Shared;
 using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 using System;
-using System.ComponentModel;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.ServiceModel;
 using System.Windows.Forms;
-using XrmToolBox.Extensibility;
 
 namespace AlbanianXrm.SolutionPackager
 {
     internal class CrmSolutionDownloader
     {
         private readonly SolutionPackagerControl solutionPackagerControl;
-        private readonly AsyncWorkQueue asyncWorkQueue;
+        private readonly BackgroundWorkHandler asyncWorkQueue;
         private readonly SolutionPackagerCaller solutionPackagerCaller;
         private readonly ComboBox cmbCrmSolutions;
 
-        public CrmSolutionDownloader(SolutionPackagerControl solutionPackagerControl, AsyncWorkQueue asyncWorkQueue, SolutionPackagerCaller solutionPackagerCaller, ComboBox cmbCrmSolutions)
+        public CrmSolutionDownloader(SolutionPackagerControl solutionPackagerControl, BackgroundWorkHandler asyncWorkQueue, SolutionPackagerCaller solutionPackagerCaller, ComboBox cmbCrmSolutions)
         {
             this.solutionPackagerControl = solutionPackagerControl ?? throw new ArgumentNullException(nameof(solutionPackagerControl));
             this.asyncWorkQueue = asyncWorkQueue ?? throw new ArgumentNullException(nameof(asyncWorkQueue));
@@ -31,18 +30,16 @@ namespace AlbanianXrm.SolutionPackager
 
         public void DownloadSolution(Parameters @params)
         {
-            asyncWorkQueue.Enqueue(new WorkAsyncInfo
-            {
-                Message = string.Format(CultureInfo.InvariantCulture, Resources.DOWNLOADING_SOLUTION, @params.Solution.FriendlyName),
-                AsyncArgument = @params,
-                Work = DownloadSolution,
-                PostWorkCallBack = DownloadSolutionCompleted
-            });
+            asyncWorkQueue.EnqueueWork(
+                string.Format(CultureInfo.InvariantCulture, Resources.DOWNLOADING_SOLUTION, @params.Solution.FriendlyName),
+                DownloadSolutionInner,
+                @params,
+                DownloadSolutionCompleted
+            );
         }
 
-        private void DownloadSolution(BackgroundWorker worker, DoWorkEventArgs args)
+        private SolutionPackagerCaller.Parameters DownloadSolutionInner(Parameters @params)
         {
-            var @params = args.Argument as Parameters ?? throw new ArgumentNullException(nameof(args.Argument));
             foreach (var managed in @params.Managed)
             {
                 ExportSolutionRequest request = new ExportSolutionRequest()
@@ -73,42 +70,37 @@ namespace AlbanianXrm.SolutionPackager
                 @params.SolutionPackagerParameters.ZipFile = new FileInfo(filePath).FullName;
             }
 
-            args.Result = @params.SolutionPackagerParameters;
+            return @params.SolutionPackagerParameters;
         }
 
-        private void DownloadSolutionCompleted(RunWorkerCompletedEventArgs args)
+        private void DownloadSolutionCompleted(BackgroundWorkResult<Parameters, SolutionPackagerCaller.Parameters> args)
         {
-            if (args.Error is FaultException<OrganizationServiceFault> crmError)
+            if (args.Exception is FaultException<OrganizationServiceFault> crmError)
             {
                 solutionPackagerControl.WriteErrorLog("The following error occurred while downloading the solution:\r\n{0}", crmError);
                 MessageBox.Show(crmError.Message, Resources.MBOX_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (args.Error!=null)
+            else if (args.Exception != null)
             {
-                solutionPackagerControl.WriteErrorLog("The following error occurred while downloading the solution:\r\n{0}", args.Error);
-                MessageBox.Show(args.Error.Message, Resources.MBOX_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                solutionPackagerControl.WriteErrorLog("The following error occurred while downloading the solution:\r\n{0}", args.Exception);
+                MessageBox.Show(args.Exception.Message, Resources.MBOX_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (args.Result is string errorMessage)
+            else
             {
-                MessageBox.Show(errorMessage, Resources.MBOX_INFORMATION, MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else if (args.Result is SolutionPackagerCaller.Parameters @params)
-            {
-                solutionPackagerCaller.ManageSolution(@params);
+                solutionPackagerCaller.ManageSolution(args.Value);
             }
         }
 
         public void RefreshSolutionList()
         {
-            asyncWorkQueue.Enqueue(new WorkAsyncInfo
-            {
-                Message = Resources.REFRESHING_SOLUTION_LIST,
-                Work = RefreshSolutionList,
-                PostWorkCallBack = RefreshSolutionListCompleted
-            });
+            asyncWorkQueue.EnqueueWork(
+                Resources.REFRESHING_SOLUTION_LIST,
+                RefreshSolutionListInner,
+                RefreshSolutionListCompleted
+            );
         }
 
-        private void RefreshSolutionList(BackgroundWorker worker, DoWorkEventArgs args)
+        private object[] RefreshSolutionListInner()
         {
             var query = new QueryExpression(Solution.EntityLogicalName)
             {
@@ -116,25 +108,21 @@ namespace AlbanianXrm.SolutionPackager
             };
             query.Criteria.AddCondition(Solution.Fields.IsManaged, ConditionOperator.Equal, false);
             query.Criteria.AddCondition(Solution.Fields.IsVisible, ConditionOperator.Equal, true);
-            args.Result = solutionPackagerControl.Service.RetrieveMultiple(query).Entities.Select(solution => solution.ToEntity<Solution>()).ToArray<object>();
+            return solutionPackagerControl.Service.RetrieveMultiple(query).Entities.Select(solution => solution.ToEntity<Solution>()).ToArray<object>();
         }
 
-        private void RefreshSolutionListCompleted(RunWorkerCompletedEventArgs args)
+        private void RefreshSolutionListCompleted(BackgroundWorkResult<object[]> args)
         {
-            if (args.Error != null)
+            if (args.Exception != null)
             {
-                solutionPackagerControl.WriteErrorLog("The following error occurred while refreshing the solution list:\r\n{0}", args.Error);
-                MessageBox.Show(args.Error.Message, Resources.MBOX_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                solutionPackagerControl.WriteErrorLog("The following error occurred while refreshing the solution list:\r\n{0}", args.Exception);
+                MessageBox.Show(args.Exception.Message, Resources.MBOX_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (args.Result is string errorMessage)
-            {
-                MessageBox.Show(errorMessage, Resources.MBOX_INFORMATION, MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else if (args.Result is object[] solutions)
+            else
             {
                 cmbCrmSolutions.BeginUpdate();
                 cmbCrmSolutions.Items.Clear();
-                cmbCrmSolutions.Items.AddRange(solutions);
+                cmbCrmSolutions.Items.AddRange(args.Value);
                 cmbCrmSolutions.EndUpdate();
             }
         }

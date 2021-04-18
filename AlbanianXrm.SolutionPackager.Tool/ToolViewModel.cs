@@ -1,4 +1,5 @@
 ﻿using AlbanianXrm.SolutionPackager.Properties;
+using AlbanianXrm.XrmToolBox.Shared;
 using Microsoft.Xrm.Sdk;
 using System.ComponentModel;
 using System.Globalization;
@@ -6,10 +7,8 @@ using System.Runtime.CompilerServices;
 
 namespace AlbanianXrm.SolutionPackager
 {
-    public class PluginViewModel : INotifyPropertyChanged
+    public class ToolViewModel : ToolViewModelBase
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
         private IOrganizationService _OrganizationService;
         public IOrganizationService OrganizationService
         {
@@ -24,19 +23,6 @@ namespace AlbanianXrm.SolutionPackager
                     return;
                 }
                 _OrganizationService = value;
-                NotifyPropertyChanged();
-            }
-        }
-
-        private bool _AllowRequests = true;
-        public bool AllowRequests
-        {
-            get { return _AllowRequests; }
-            set
-            {
-                if (_AllowRequests == value) return;
-                _AllowRequests = value;
-
                 NotifyPropertyChanged();
             }
         }
@@ -135,10 +121,5 @@ namespace AlbanianXrm.SolutionPackager
         }
 
         public Settings Settings { get; set; } = new Settings();
-
-        protected void NotifyPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
     }
 }

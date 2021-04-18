@@ -19,7 +19,7 @@ namespace AlbanianXrm.SolutionPackager
 
         public IOrganizationService OrganizationService { get; set; }
 
-        internal SolutionImportStatus(Guid asyncJobId, Guid importJobId, SolutionPackagerControl solutionPackagerControl)
+        internal SolutionImportStatus(Guid asyncJobId, Guid importJobId, SolutionPackagerControl solutionPackagerControl, ToolViewModel toolViewModel)
         {
             InitializeComponent();
             this.asyncJobId = asyncJobId;
@@ -30,7 +30,7 @@ namespace AlbanianXrm.SolutionPackager
             this.backgroundWorkerCancel.DoWork += new System.ComponentModel.DoWorkEventHandler(WorkAsyncCancel);
             this.backgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(WorkAsyncEnded);
             this.backgroundWorkerCancel.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(WorkAsyncCancelEnded);
-            this.Bind(t => t.OrganizationService, solutionPackagerControl.pluginViewModel, s => s.OrganizationService, formattingEnabled: true);
+            this.Bind(t => t.OrganizationService, toolViewModel, s => s.OrganizationService, formattingEnabled: true);
             this.timer.Start();
         }             
 

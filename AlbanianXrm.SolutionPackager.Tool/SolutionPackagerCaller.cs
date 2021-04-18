@@ -1,6 +1,7 @@
-﻿using AlbanianXrm.SolutionPackager.Properties;
+﻿using AlbanianXrm.SolutionPackager.Models;
+using AlbanianXrm.SolutionPackager.Properties;
+using AlbanianXrm.XrmToolBox.Shared;
 using System;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
@@ -13,44 +14,40 @@ namespace AlbanianXrm.SolutionPackager
 {
     internal class SolutionPackagerCaller
     {
-        private readonly AsyncWorkQueue asyncWorkQueue;
+        private readonly BackgroundWorkHandler backgroundWorkHandler;
         private readonly RichTextBox txtOutput;
         private readonly SolutionPackagerControl solutionPackagerControl;
         private readonly CrmSolutionImporter crmSolutionImporter;
 
         private const string deleteFilesQuestion = "Delete files? [Yes/No/List]:";
 
-        public SolutionPackagerCaller(SolutionPackagerControl solutionPackagerControl, AsyncWorkQueue asyncWorkQueue, RichTextBox txtOutput, CrmSolutionImporter crmSolutionImporter)
+        public SolutionPackagerCaller(SolutionPackagerControl solutionPackagerControl, BackgroundWorkHandler backgroundWorkHandler, RichTextBox txtOutput, CrmSolutionImporter crmSolutionImporter)
         {
             this.solutionPackagerControl = solutionPackagerControl ?? throw new ArgumentNullException(nameof(solutionPackagerControl));
-            this.asyncWorkQueue = asyncWorkQueue ?? throw new ArgumentNullException(nameof(asyncWorkQueue));
+            this.backgroundWorkHandler = backgroundWorkHandler ?? throw new ArgumentNullException(nameof(backgroundWorkHandler));
             this.txtOutput = txtOutput ?? throw new ArgumentNullException(nameof(txtOutput));
             this.crmSolutionImporter = crmSolutionImporter ?? throw new ArgumentNullException(nameof(crmSolutionImporter));
         }
 
         public void ManageSolution(Parameters @params)
         {
-            asyncWorkQueue.Enqueue(new WorkAsyncInfo
-            {
-                Message = string.Format(CultureInfo.InvariantCulture, @params.Action == "Pack" ? Resources.PACKING_SOLUTION : Resources.EXTRACTING_SOLUTION, Path.GetFileName(@params.ZipFile)),
-                AsyncArgument = @params,
-                Work = ExtractSolution,
-                ProgressChanged = ExtractSolutionProgress,
-                PostWorkCallBack = ExtractSolutionCompleted
-            });
+            backgroundWorkHandler.EnqueueWork<Parameters, string, ProgressData<object>>(
+                string.Format(CultureInfo.InvariantCulture, @params.Action == "Pack" ? Resources.PACKING_SOLUTION : Resources.EXTRACTING_SOLUTION, Path.GetFileName(@params.ZipFile)),
+                ExtractSolution,
+                @params,
+                ExtractSolutionProgress,
+                ExtractSolutionCompleted
+            );
         }
 
-        private void ExtractSolution(BackgroundWorker worker, DoWorkEventArgs args)
+        private string ExtractSolution(Parameters @params, Reporter<ProgressData<object>> worker)
         {
-            var @params = args.Argument as Parameters ?? throw new ArgumentOutOfRangeException(nameof(args));
-
             string dir = CoreToolsDownloader.GetToolDirectory();
             string solutionPackagerFile = Path.Combine(dir, CoreToolsDownloader.solutionPackagerName);
 
             if (!File.Exists(solutionPackagerFile))
             {
-                args.Result = Resources.SOLUTIONPACKAGER_MISSING;
-                return;
+                return Resources.SOLUTIONPACKAGER_MISSING;
             }
 
             Process process = new Process()
@@ -125,12 +122,12 @@ namespace AlbanianXrm.SolutionPackager
             }
 
             //Report call parameters
-            worker.ReportProgress(0, @params);
+            worker.ReportProgress(new ProgressData<object>() { ProgressPercentage = 0, UserState = @params });
             process.Start();
 
             if (!process.StandardOutput.EndOfStream)
             {
-                worker.ReportProgress(10);
+                worker.ReportProgress(new ProgressData<object>() { ProgressPercentage = 10 });
                 char[] buffer = new char[deleteFilesQuestion.Length];
                 char[] ringBuffer = new char[deleteFilesQuestion.Length];
                 int ringBufferPosition = 0;
@@ -148,7 +145,7 @@ namespace AlbanianXrm.SolutionPackager
                         ringBuffer[ringBufferPosition] = buffer[i];
                         ringBufferPosition = (ringBufferPosition + 1) % ringBuffer.Length;
                     }
-                    worker.ReportProgress(20, new string(buffer, 0, chars));
+                    worker.ReportProgress(new ProgressData<object>() { ProgressPercentage = 20, UserState = new string(buffer, 0, chars) });
                     bool isDeleteFilesQuestion = true;
                     for (int i = deleteFilesQuestion.Length - 1; i >= 0; i--)
                     {
@@ -161,38 +158,37 @@ namespace AlbanianXrm.SolutionPackager
                     if (isDeleteFilesQuestion)
                     {
                         @params.StandardInput = process.StandardInput;
-                        worker.ReportProgress(21, @params);
+                        worker.ReportProgress(new ProgressData<object>() { ProgressPercentage = 21, UserState = @params });
                     }
                 }
-                worker.ReportProgress(30);
+                worker.ReportProgress(new ProgressData<object>() { ProgressPercentage = 30 });
             }
 
             if (!process.StandardError.EndOfStream)
             {
-                worker.ReportProgress(40);
+                worker.ReportProgress(new ProgressData<object>() { ProgressPercentage = 40 });
                 while (!process.StandardError.EndOfStream)
                 {
-                    worker.ReportProgress(50, process.StandardError.ReadLine());
+                    worker.ReportProgress(new ProgressData<object>() { ProgressPercentage = 50, UserState = process.StandardError.ReadLine() });
                 }
-                worker.ReportProgress(60);
+                worker.ReportProgress(new ProgressData<object>() { ProgressPercentage = 60 });
             }
 
             process.WaitForExit();
-       
-            if(process.ExitCode != 0)
+
+            if (process.ExitCode != 0)
             {
-                args.Result = Resources.SOLUTIONPACKAGER_ERROR;
-                return;
+                return Resources.SOLUTIONPACKAGER_ERROR;
             }
 
-            worker.ReportProgress(70, "Ended");
+            worker.ReportProgress(new ProgressData<object>() { ProgressPercentage = 70, UserState = "Ended" });
 
             if (@params.FormatXml)
             {
                 var tempFile = Path.GetTempFileName();
                 foreach (var xmlFile in Directory.GetFiles(@params.OutputFolder, "*.xml", SearchOption.AllDirectories))
                 {
-                    worker.ReportProgress(80, new FileInfo(xmlFile));
+                    worker.ReportProgress(new ProgressData<object>() { ProgressPercentage = 80, UserState = new FileInfo(xmlFile) });
                     XmlDocument document = new XmlDocument();
                     document.Load(xmlFile);
                     XmlWriterSettings writerSettings = new XmlWriterSettings()
@@ -209,7 +205,7 @@ namespace AlbanianXrm.SolutionPackager
                     }
 
                     File.Copy(tempFile, xmlFile, overwrite: true);
-                    worker.ReportProgress(90, new FileInfo(xmlFile));
+                    worker.ReportProgress(new ProgressData<object>() { ProgressPercentage = 90, UserState = new FileInfo(xmlFile) });
                 }
             }
 
@@ -218,6 +214,7 @@ namespace AlbanianXrm.SolutionPackager
                 @params.ImportSolutionParams.CustomizationFile = @params.ZipFile;
                 crmSolutionImporter.ImportSolution(@params.ImportSolutionParams);
             }
+            return null;
         }
 
         private void AppendArgument(string argument, string value = null)
@@ -231,7 +228,7 @@ namespace AlbanianXrm.SolutionPackager
                 txtOutput.AppendText(value);
         }
 
-        private void ExtractSolutionProgress(ProgressChangedEventArgs args)
+        private void ExtractSolutionProgress(ProgressData<object> args)
         {
             switch (args.ProgressPercentage)
             {
@@ -340,16 +337,16 @@ namespace AlbanianXrm.SolutionPackager
             }
         }
 
-        private void ExtractSolutionCompleted(RunWorkerCompletedEventArgs args)
+        private void ExtractSolutionCompleted(BackgroundWorkResult<Parameters, string> args)
         {
-            if (args.Error != null)
+            if (args.Exception != null)
             {
-                solutionPackagerControl.WriteErrorLog("An error occurred while calling SolutionPackager.exe. Details:\r\n{0}", args.Error);
-                MessageBox.Show(args.Error.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                solutionPackagerControl.WriteErrorLog("An error occurred while calling SolutionPackager.exe. Details:\r\n{0}", args.Exception);
+                MessageBox.Show(args.Exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (args.Result != null)
+            else if (args.Value != null)
             {
-                MessageBox.Show(args.Result.ToString(), "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(args.Value.ToString(), "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

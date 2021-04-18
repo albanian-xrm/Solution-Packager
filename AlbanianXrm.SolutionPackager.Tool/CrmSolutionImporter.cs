@@ -1,26 +1,25 @@
 ﻿using AlbanianXrm.SolutionPackager.Properties;
+using AlbanianXrm.XrmToolBox.Shared;
 using Microsoft.Xrm.Sdk.Messages;
 using System;
-using System.ComponentModel;
 using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
-using XrmToolBox.Extensibility;
 
 namespace AlbanianXrm.SolutionPackager
 {
     internal class CrmSolutionImporter
     {
         private readonly SolutionPackagerControl solutionPackagerControl;
-        private readonly AsyncWorkQueue asyncWorkQueue;
-        private readonly PluginViewModel pluginViewModel;
+        private readonly BackgroundWorkHandler asyncWorkQueue;
+        private readonly ToolViewModel toolViewModel;
         private SolutionImportStatus solutionImportStatus;
 
-        public CrmSolutionImporter(SolutionPackagerControl solutionPackagerControl, AsyncWorkQueue asyncWorkQueue, PluginViewModel pluginViewModel)
+        public CrmSolutionImporter(SolutionPackagerControl solutionPackagerControl, BackgroundWorkHandler asyncWorkQueue, ToolViewModel pluginViewModel)
         {
             this.solutionPackagerControl = solutionPackagerControl;
             this.asyncWorkQueue = asyncWorkQueue;
-            this.pluginViewModel = pluginViewModel;
+            this.toolViewModel = pluginViewModel;
         }
 
         public void ImportSolution(Parameters @params)
@@ -31,19 +30,16 @@ namespace AlbanianXrm.SolutionPackager
                 fileInfo = new FileInfo(fileInfo.FullName.Substring(0, fileInfo.FullName.Length - fileInfo.Extension.Length) + "_managed" + fileInfo.Extension);
                 @params.CustomizationFile = fileInfo.FullName;
             }
-            asyncWorkQueue.Enqueue(new WorkAsyncInfo
-            {
-                Message = string.Format(CultureInfo.InvariantCulture, Resources.IMPORT_SOLUTION, fileInfo.Name),
-                IsCancelable = true,
-                AsyncArgument = @params,
-                Work = ImportSolution,
-                PostWorkCallBack = ImportSolutionStarted
-            });
+            asyncWorkQueue.EnqueueWork(
+                string.Format(CultureInfo.InvariantCulture, Resources.IMPORT_SOLUTION, fileInfo.Name),
+                ImportSolutionInner,           
+                @params,
+                ImportSolutionStarted
+            );
         }
 
-        private void ImportSolution(BackgroundWorker worker, DoWorkEventArgs args)
+        private Models.ImportSolutionRequest ImportSolutionInner(Parameters @params)
         {
-            var @params = args.Argument as Parameters;
             Guid importJobId = Guid.NewGuid();
             var importSolutionRequest = new ExecuteAsyncRequest()
             {
@@ -57,25 +53,23 @@ namespace AlbanianXrm.SolutionPackager
                     CustomizationFile = File.ReadAllBytes(@params.CustomizationFile)
                 }
             };
-            args.Result = new Models.ImportSolutionRequest()
+           return new Models.ImportSolutionRequest()
             {
                 ImportJobId = importJobId,
                 ExecuteAsyncResponse = solutionPackagerControl.Service.Execute(importSolutionRequest) as ExecuteAsyncResponse
             };
         }
 
-        private void ImportSolutionStarted(RunWorkerCompletedEventArgs args)
+        private void ImportSolutionStarted(BackgroundWorkResult<Parameters, Models.ImportSolutionRequest> args)
         {
-            if (args.Error != null)
+            if (args.Exception != null)
             {
-                solutionPackagerControl.WriteErrorLog("The following error occurred while importing the solution:\r\n{0}", args.Error);
-                MessageBox.Show(args.Error.Message, Resources.MBOX_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                solutionPackagerControl.WriteErrorLog("The following error occurred while importing the solution:\r\n{0}", args.Exception);
+                MessageBox.Show(args.Exception.Message, Resources.MBOX_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            var importSolution = args.Result as Models.ImportSolutionRequest;
-
-            solutionImportStatus = new SolutionImportStatus(importSolution.ExecuteAsyncResponse.AsyncJobId, importSolution.ImportJobId, solutionPackagerControl);
+            solutionImportStatus = new SolutionImportStatus(args.Value.ExecuteAsyncResponse.AsyncJobId, args.Value.ImportJobId, solutionPackagerControl, toolViewModel);
             solutionImportStatus.Show(solutionPackagerControl);
         }
 

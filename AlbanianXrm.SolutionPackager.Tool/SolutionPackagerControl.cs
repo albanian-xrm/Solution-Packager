@@ -1,5 +1,7 @@
 ﻿using AlbanianXrm.SolutionPackager.Extensions;
+using AlbanianXrm.SolutionPackager.Interfaces;
 using AlbanianXrm.SolutionPackager.Properties;
+using AlbanianXrm.XrmToolBox.Shared;
 using McTools.Xrm.Connection;
 using Microsoft.Xrm.Sdk;
 using System;
@@ -29,8 +31,9 @@ namespace AlbanianXrm.SolutionPackager
             new SolutionPackagerAbout().ShowDialog(this);
         }
 
-        private readonly AsyncWorkQueue asyncWorkQueue;
-        internal readonly PluginViewModel pluginViewModel;
+        private readonly ToolViewModel toolViewModel;
+        private readonly BackgroundWorkHandler backgroundWorkHandler;
+
         private readonly CoreToolsDownloader coreToolsDownloader;
         private readonly CrmSolutionDownloader crmSolutionManager;
         private readonly CrmSolutionImporter crmSolutionImporter;
@@ -45,20 +48,20 @@ namespace AlbanianXrm.SolutionPackager
         {
             this.pluginType = pluginType;
             InitializeComponent();
+            IMyToolFactory myToolFactory =  MyToolFactory.GetMyToolFactory(this);
+            toolViewModel = myToolFactory.NewToolViewModel();
+            backgroundWorkHandler = myToolFactory.BackgroundWorkHandler();
+            coreToolsDownloader = myToolFactory.NewCoreToolsDownloader();
+            crmSolutionImporter = myToolFactory.NewCrmSolutionImporter();
+            solutionPackagerCaller = myToolFactory.NewSolutionPackagerCaller(txtOutput, crmSolutionImporter);
+            crmSolutionManager = myToolFactory.NewCrmSolutionDownloader(solutionPackagerCaller, cmbCrmSolutions);
 
-            pluginViewModel = new PluginViewModel();
-            asyncWorkQueue = new AsyncWorkQueue(this, pluginViewModel);
-            coreToolsDownloader = new CoreToolsDownloader(asyncWorkQueue, this);
-            crmSolutionImporter = new CrmSolutionImporter(this, asyncWorkQueue, pluginViewModel);
-            solutionPackagerCaller = new SolutionPackagerCaller(this, asyncWorkQueue, txtOutput, crmSolutionImporter);
-            crmSolutionManager = new CrmSolutionDownloader(this, asyncWorkQueue, solutionPackagerCaller, cmbCrmSolutions);
-
-            localOrCrm.Bind(_ => _.Enabled, pluginViewModel, _ => _.HasConnection);
-            btnRefreshSolutions.Bind(_ => _.Enabled, pluginViewModel, _ => _.LocalOrCrm);
-            chkImportSolution.Bind(_ => _.Enabled, pluginViewModel, _ => _.HasConnection);
-            tabsExtractOrPack.Bind(_ => _.Enabled, pluginViewModel, _ => _.AllowRequests);
-            txtCoreTools.Bind(_ => _.Text, pluginViewModel, _ => _.SolutionPackagerVersion);
-            pluginViewModel.PropertyChanged += PluginViewModel_PropertyChanged;
+            localOrCrm.Bind(_ => _.Enabled, toolViewModel, _ => _.HasConnection);
+            btnRefreshSolutions.Bind(_ => _.Enabled, toolViewModel, _ => _.LocalOrCrm);
+            chkImportSolution.Bind(_ => _.Enabled, toolViewModel, _ => _.HasConnection);
+            tabsExtractOrPack.Bind(_ => _.Enabled, toolViewModel, _ => _.AllowRequests);
+            txtCoreTools.Bind(_ => _.Text, toolViewModel, _ => _.SolutionPackagerVersion);
+            toolViewModel.PropertyChanged += PluginViewModel_PropertyChanged;
 
             cmbLanguage.Items.AddRange(new object[] { CultureInfo.GetCultureInfo("en"), CultureInfo.GetCultureInfo("it") });
             cmbLanguage.SelectedIndex = 0;
@@ -71,7 +74,7 @@ namespace AlbanianXrm.SolutionPackager
 
         private void PluginViewModel_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == nameof(pluginViewModel.CultureInfo))
+            if (e.PropertyName == nameof(toolViewModel.CultureInfo))
             {
                 ComponentResourceManager resources = new ComponentResourceManager(typeof(SolutionPackagerControl));
                 foreach (Control c in this.GetAllControls())
@@ -79,13 +82,13 @@ namespace AlbanianXrm.SolutionPackager
                     resources.ApplyResources(c, c.Name, Resources.Culture);
                 }
             }
-            else if (e.PropertyName == nameof(pluginViewModel.ImportSolutionAfterPack))
+            else if (e.PropertyName == nameof(toolViewModel.ImportSolutionAfterPack))
             {
-                grpImportSolution.Visible = pluginViewModel.ImportSolutionAfterPack;
+                grpImportSolution.Visible = toolViewModel.ImportSolutionAfterPack;
             }
-            else if (e.PropertyName == nameof(pluginViewModel.LocalOrCrm))
+            else if (e.PropertyName == nameof(toolViewModel.LocalOrCrm))
             {
-                grpExportSolution.Visible = pluginViewModel.LocalOrCrm;
+                grpExportSolution.Visible = toolViewModel.LocalOrCrm;
             }
         }
 
@@ -100,7 +103,7 @@ namespace AlbanianXrm.SolutionPackager
                 LogWarning(Resources.SETTINGS_NOT_FOUND);
                 return;
             }
-            pluginViewModel.Settings = settings;
+            toolViewModel.Settings = settings;
             txtNuGetFeed.Text = settings.NugetFeed;
             var selection = cmbLanguage.Items.IndexOf(CultureInfo.GetCultureInfo(settings.Language));
             if (selection >= 0)
@@ -136,7 +139,7 @@ namespace AlbanianXrm.SolutionPackager
         private void LocalOrCrm_CheckedChanged(object sender, EventArgs e)
         {
             errorProvider.Clear();
-            pluginViewModel.LocalOrCrm = localOrCrm.Checked;
+            toolViewModel.LocalOrCrm = localOrCrm.Checked;
         }
 
         private void BtnRefreshSolutions_Click(object sender, EventArgs e)
@@ -304,7 +307,7 @@ namespace AlbanianXrm.SolutionPackager
         private void ChkImportSolution_CheckedChanged(object sender, EventArgs e)
         {
             errorProvider.Clear();
-            pluginViewModel.ImportSolutionAfterPack = chkImportSolution.Checked;
+            toolViewModel.ImportSolutionAfterPack = chkImportSolution.Checked;
         }
 
         private void BtnInputFolder_Click(object sender, EventArgs e)
@@ -436,8 +439,8 @@ namespace AlbanianXrm.SolutionPackager
         public override void UpdateConnection(IOrganizationService newService, ConnectionDetail detail, string actionName, object parameter)
         {
             base.UpdateConnection(newService, detail, actionName, parameter);
-            pluginViewModel.OrganizationService = newService;
-            pluginViewModel.HasConnection = detail != null;
+            toolViewModel.OrganizationService = newService;
+            toolViewModel.HasConnection = detail != null;
         }
 
         internal void WriteInfoLog(string message, params object[] args)
@@ -472,14 +475,14 @@ namespace AlbanianXrm.SolutionPackager
 
         private void BtnSaveSettings_Click(object sender, EventArgs e)
         {
-            pluginViewModel.Settings.NugetFeed = txtNuGetFeed.Text;
+            toolViewModel.Settings.NugetFeed = txtNuGetFeed.Text;
             LogInfo(Resources.SETTINGS_SAVING);
-            SettingsManager.Instance.Save(pluginType, pluginViewModel.Settings);
+            SettingsManager.Instance.Save(pluginType, toolViewModel.Settings);
         }
 
         private void CmbLanguage_SelectedIndexChanged(object sender, EventArgs e)
         {
-            pluginViewModel.CultureInfo = cmbLanguage.Items[cmbLanguage.SelectedIndex] as CultureInfo;
+            toolViewModel.CultureInfo = cmbLanguage.Items[cmbLanguage.SelectedIndex] as CultureInfo;
         }
         #endregion
 
@@ -487,7 +490,7 @@ namespace AlbanianXrm.SolutionPackager
         {
             if (e.Action == TabControlAction.Selected && e.TabPage == tabSettings)
             {
-                pluginViewModel.SolutionPackagerVersion = CoreToolsDownloader.GetSolutionPackagerVersion()?.ToString();
+                toolViewModel.SolutionPackagerVersion = CoreToolsDownloader.GetSolutionPackagerVersion()?.ToString();
             }
         }
 
