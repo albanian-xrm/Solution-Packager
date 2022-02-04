@@ -1,6 +1,6 @@
-﻿using AlbanianXrm.SolutionPackager.Models;
+﻿using AlbanianXrm.BackgroundWorker;
 using AlbanianXrm.SolutionPackager.Properties;
-using AlbanianXrm.XrmToolBox.Shared;
+using AlbanianXrm.XrmToolBox.Shared.Extensions;
 using System;
 using System.Diagnostics;
 using System.Drawing;
@@ -8,20 +8,19 @@ using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
 using System.Xml;
-using XrmToolBox.Extensibility;
 
 namespace AlbanianXrm.SolutionPackager
 {
     internal class SolutionPackagerCaller
     {
-        private readonly BackgroundWorkHandler backgroundWorkHandler;
+        private readonly AlBackgroundWorkHandler backgroundWorkHandler;
         private readonly RichTextBox txtOutput;
         private readonly SolutionPackagerControl solutionPackagerControl;
         private readonly CrmSolutionImporter crmSolutionImporter;
 
         private const string deleteFilesQuestion = "Delete files? [Yes/No/List]:";
 
-        public SolutionPackagerCaller(SolutionPackagerControl solutionPackagerControl, BackgroundWorkHandler backgroundWorkHandler, RichTextBox txtOutput, CrmSolutionImporter crmSolutionImporter)
+        public SolutionPackagerCaller(SolutionPackagerControl solutionPackagerControl, AlBackgroundWorkHandler backgroundWorkHandler, RichTextBox txtOutput, CrmSolutionImporter crmSolutionImporter)
         {
             this.solutionPackagerControl = solutionPackagerControl ?? throw new ArgumentNullException(nameof(solutionPackagerControl));
             this.backgroundWorkHandler = backgroundWorkHandler ?? throw new ArgumentNullException(nameof(backgroundWorkHandler));
@@ -31,16 +30,13 @@ namespace AlbanianXrm.SolutionPackager
 
         public void ManageSolution(Parameters @params)
         {
-            backgroundWorkHandler.EnqueueWork<Parameters, string, ProgressData<object>>(
-                string.Format(CultureInfo.InvariantCulture, @params.Action == "Pack" ? Resources.PACKING_SOLUTION : Resources.EXTRACTING_SOLUTION, Path.GetFileName(@params.ZipFile)),
-                ExtractSolution,
-                @params,
-                ExtractSolutionProgress,
-                ExtractSolutionCompleted
-            );
+            backgroundWorkHandler.EnqueueBackgroundWork(
+                AlBackgroundWorkerFactory.NewWorker<Parameters, string, object>(ExtractSolution, @params, ExtractSolutionProgress, ExtractSolutionCompleted)
+                                         .WithViewModel(solutionPackagerControl.toolViewModel)
+                                         .WithMessage(solutionPackagerControl, string.Format(CultureInfo.InvariantCulture, @params.Action == "Pack" ? Resources.PACKING_SOLUTION : Resources.EXTRACTING_SOLUTION, Path.GetFileName(@params.ZipFile))));
         }
 
-        private string ExtractSolution(Parameters @params, Reporter<ProgressData<object>> worker)
+        private string ExtractSolution(Parameters @params, Reporter<object> worker)
         {
             string dir = CoreToolsDownloader.GetToolDirectory();
             string solutionPackagerFile = Path.Combine(dir, CoreToolsDownloader.solutionPackagerName);
@@ -122,12 +118,12 @@ namespace AlbanianXrm.SolutionPackager
             }
 
             //Report call parameters
-            worker.ReportProgress(new ProgressData<object>() { ProgressPercentage = 0, UserState = @params });
+            worker.ReportProgress(0, @params);
             process.Start();
 
             if (!process.StandardOutput.EndOfStream)
             {
-                worker.ReportProgress(new ProgressData<object>() { ProgressPercentage = 10 });
+                worker.ReportProgress(10, null);
                 char[] buffer = new char[deleteFilesQuestion.Length];
                 char[] ringBuffer = new char[deleteFilesQuestion.Length];
                 int ringBufferPosition = 0;
@@ -145,7 +141,7 @@ namespace AlbanianXrm.SolutionPackager
                         ringBuffer[ringBufferPosition] = buffer[i];
                         ringBufferPosition = (ringBufferPosition + 1) % ringBuffer.Length;
                     }
-                    worker.ReportProgress(new ProgressData<object>() { ProgressPercentage = 20, UserState = new string(buffer, 0, chars) });
+                    worker.ReportProgress(20, new string(buffer, 0, chars));
                     bool isDeleteFilesQuestion = true;
                     for (int i = deleteFilesQuestion.Length - 1; i >= 0; i--)
                     {
@@ -158,20 +154,20 @@ namespace AlbanianXrm.SolutionPackager
                     if (isDeleteFilesQuestion)
                     {
                         @params.StandardInput = process.StandardInput;
-                        worker.ReportProgress(new ProgressData<object>() { ProgressPercentage = 21, UserState = @params });
+                        worker.ReportProgress(21, @params);
                     }
                 }
-                worker.ReportProgress(new ProgressData<object>() { ProgressPercentage = 30 });
+                worker.ReportProgress(30, null);
             }
 
             if (!process.StandardError.EndOfStream)
             {
-                worker.ReportProgress(new ProgressData<object>() { ProgressPercentage = 40 });
+                worker.ReportProgress(40, null);
                 while (!process.StandardError.EndOfStream)
                 {
-                    worker.ReportProgress(new ProgressData<object>() { ProgressPercentage = 50, UserState = process.StandardError.ReadLine() });
+                    worker.ReportProgress(50, process.StandardError.ReadLine());
                 }
-                worker.ReportProgress(new ProgressData<object>() { ProgressPercentage = 60 });
+                worker.ReportProgress(60, null);
             }
 
             process.WaitForExit();
@@ -181,14 +177,14 @@ namespace AlbanianXrm.SolutionPackager
                 return Resources.SOLUTIONPACKAGER_ERROR;
             }
 
-            worker.ReportProgress(new ProgressData<object>() { ProgressPercentage = 70, UserState = "Ended" });
+            worker.ReportProgress(70, "Ended");
 
             if (@params.FormatXml)
             {
                 var tempFile = Path.GetTempFileName();
                 foreach (var xmlFile in Directory.GetFiles(@params.OutputFolder, "*.xml", SearchOption.AllDirectories))
                 {
-                    worker.ReportProgress(new ProgressData<object>() { ProgressPercentage = 80, UserState = new FileInfo(xmlFile) });
+                    worker.ReportProgress(80, new FileInfo(xmlFile));
                     XmlDocument document = new XmlDocument();
                     document.Load(xmlFile);
                     XmlWriterSettings writerSettings = new XmlWriterSettings()
@@ -205,7 +201,7 @@ namespace AlbanianXrm.SolutionPackager
                     }
 
                     File.Copy(tempFile, xmlFile, overwrite: true);
-                    worker.ReportProgress(new ProgressData<object>() { ProgressPercentage = 90, UserState = new FileInfo(xmlFile) });
+                    worker.ReportProgress(90, new FileInfo(xmlFile));
                 }
             }
 
@@ -228,13 +224,13 @@ namespace AlbanianXrm.SolutionPackager
                 txtOutput.AppendText(value);
         }
 
-        private void ExtractSolutionProgress(ProgressData<object> args)
+        private void ExtractSolutionProgress(int ProgressPercentage, object UserState)
         {
-            switch (args.ProgressPercentage)
+            switch (ProgressPercentage)
             {
                 case 0:
                     {
-                        var @params = args.UserState as Parameters ?? throw new ArgumentNullException(nameof(args.UserState));
+                        var @params = UserState as Parameters ?? throw new ArgumentNullException(nameof(UserState));
 
                         txtOutput.Text = "";
                         txtOutput.SelectionStart = 0;
@@ -310,12 +306,12 @@ namespace AlbanianXrm.SolutionPackager
                     break;
                 case 20:
                 case 50:
-                    txtOutput.AppendText(args.UserState as string);
+                    txtOutput.AppendText(UserState as string);
                     break;
                 case 40:
                 case 60:
                     txtOutput.SelectionStart = txtOutput.TextLength;
-                    txtOutput.SelectionColor = args.ProgressPercentage == 40 ? Color.Red : txtOutput.ForeColor;
+                    txtOutput.SelectionColor = ProgressPercentage == 40 ? Color.Red : txtOutput.ForeColor;
                     txtOutput.AppendText(Environment.NewLine);
                     break;
                 case 70:
@@ -323,7 +319,7 @@ namespace AlbanianXrm.SolutionPackager
                     break;
                 case 21:
                     {
-                        var @params = args.UserState as Parameters;
+                        var @params = UserState as Parameters;
                         DialogResult dialogResponse;
                         using (var dialog = new SolutionPackagerDialog())
                         {
@@ -337,16 +333,16 @@ namespace AlbanianXrm.SolutionPackager
             }
         }
 
-        private void ExtractSolutionCompleted(BackgroundWorkResult<Parameters, string> args)
+        private void ExtractSolutionCompleted(Parameters @params, string value, Exception exception)
         {
-            if (args.Exception != null)
+            if (exception != null)
             {
-                solutionPackagerControl.WriteErrorLog("An error occurred while calling SolutionPackager.exe. Details:\r\n{0}", args.Exception);
-                MessageBox.Show(args.Exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                solutionPackagerControl.WriteErrorLog("An error occurred while calling SolutionPackager.exe. Details:\r\n{0}", exception);
+                MessageBox.Show(exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (args.Value != null)
+            else if (value != null)
             {
-                MessageBox.Show(args.Value.ToString(), "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(value.ToString(), "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

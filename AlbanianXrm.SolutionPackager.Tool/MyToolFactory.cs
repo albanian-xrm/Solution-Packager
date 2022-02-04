@@ -1,4 +1,5 @@
-﻿using AlbanianXrm.SolutionPackager.Interfaces;
+﻿using AlbanianXrm.BackgroundWorker;
+using AlbanianXrm.SolutionPackager.Interfaces;
 using AlbanianXrm.XrmToolBox.Shared;
 using System.Windows.Forms;
 
@@ -8,13 +9,13 @@ namespace AlbanianXrm.SolutionPackager
     {
         private readonly SolutionPackagerControl solutionPackagerControl;
         private readonly ToolViewModel toolViewModel;
-        private readonly BackgroundWorkHandler backgroundWorkHandler;
+        private readonly AlBackgroundWorkHandler backgroundWorkHandler;
 
         private MyToolFactory(SolutionPackagerControl solutionPackagerControl)
         {
             this.solutionPackagerControl = solutionPackagerControl;
             this.toolViewModel = new ToolViewModel();
-            this.backgroundWorkHandler = new BackgroundWorkHandler(solutionPackagerControl, toolViewModel);
+            this.backgroundWorkHandler = new AlBackgroundWorkHandler();
         }
 
         public static IMyToolFactory GetMyToolFactory(SolutionPackagerControl solutionPackagerControl)
@@ -22,7 +23,7 @@ namespace AlbanianXrm.SolutionPackager
             return new MyToolFactory(solutionPackagerControl);
         }
 
-        public BackgroundWorkHandler BackgroundWorkHandler()
+        public AlBackgroundWorkHandler BackgroundWorkHandler()
         {
             return backgroundWorkHandler;
         }

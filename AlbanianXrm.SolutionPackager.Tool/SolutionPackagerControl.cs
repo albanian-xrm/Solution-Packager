@@ -1,7 +1,7 @@
-﻿using AlbanianXrm.SolutionPackager.Extensions;
+﻿using AlbanianXrm.BackgroundWorker;
+using AlbanianXrm.SolutionPackager.Extensions;
 using AlbanianXrm.SolutionPackager.Interfaces;
 using AlbanianXrm.SolutionPackager.Properties;
-using AlbanianXrm.XrmToolBox.Shared;
 using McTools.Xrm.Connection;
 using Microsoft.Xrm.Sdk;
 using System;
@@ -31,8 +31,8 @@ namespace AlbanianXrm.SolutionPackager
             new SolutionPackagerAbout().ShowDialog(this);
         }
 
-        private readonly ToolViewModel toolViewModel;
-        private readonly BackgroundWorkHandler backgroundWorkHandler;
+        internal readonly ToolViewModel toolViewModel;
+        // private readonly AlBackgroundWorkHandler backgroundWorkHandler;
 
         private readonly CoreToolsDownloader coreToolsDownloader;
         private readonly CrmSolutionDownloader crmSolutionManager;
@@ -48,9 +48,10 @@ namespace AlbanianXrm.SolutionPackager
         {
             this.pluginType = pluginType;
             InitializeComponent();
-            IMyToolFactory myToolFactory =  MyToolFactory.GetMyToolFactory(this);
+            IMyToolFactory myToolFactory = MyToolFactory.GetMyToolFactory(this);
             toolViewModel = myToolFactory.NewToolViewModel();
-            backgroundWorkHandler = myToolFactory.BackgroundWorkHandler();
+            /* backgroundWorkHandler = */
+            myToolFactory.BackgroundWorkHandler();
             coreToolsDownloader = myToolFactory.NewCoreToolsDownloader();
             crmSolutionImporter = myToolFactory.NewCrmSolutionImporter();
             solutionPackagerCaller = myToolFactory.NewSolutionPackagerCaller(txtOutput, crmSolutionImporter);

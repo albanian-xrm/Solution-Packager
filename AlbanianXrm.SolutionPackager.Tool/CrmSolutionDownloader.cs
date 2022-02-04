@@ -1,6 +1,7 @@
-﻿using AlbanianXrm.SolutionPackager.Models;
+﻿using AlbanianXrm.BackgroundWorker;
+using AlbanianXrm.SolutionPackager.Models;
 using AlbanianXrm.SolutionPackager.Properties;
-using AlbanianXrm.XrmToolBox.Shared;
+using AlbanianXrm.XrmToolBox.Shared.Extensions;
 using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
@@ -16,11 +17,11 @@ namespace AlbanianXrm.SolutionPackager
     internal class CrmSolutionDownloader
     {
         private readonly SolutionPackagerControl solutionPackagerControl;
-        private readonly BackgroundWorkHandler asyncWorkQueue;
+        private readonly AlBackgroundWorkHandler asyncWorkQueue;
         private readonly SolutionPackagerCaller solutionPackagerCaller;
         private readonly ComboBox cmbCrmSolutions;
 
-        public CrmSolutionDownloader(SolutionPackagerControl solutionPackagerControl, BackgroundWorkHandler asyncWorkQueue, SolutionPackagerCaller solutionPackagerCaller, ComboBox cmbCrmSolutions)
+        public CrmSolutionDownloader(SolutionPackagerControl solutionPackagerControl, AlBackgroundWorkHandler asyncWorkQueue, SolutionPackagerCaller solutionPackagerCaller, ComboBox cmbCrmSolutions)
         {
             this.solutionPackagerControl = solutionPackagerControl ?? throw new ArgumentNullException(nameof(solutionPackagerControl));
             this.asyncWorkQueue = asyncWorkQueue ?? throw new ArgumentNullException(nameof(asyncWorkQueue));
@@ -30,12 +31,10 @@ namespace AlbanianXrm.SolutionPackager
 
         public void DownloadSolution(Parameters @params)
         {
-            asyncWorkQueue.EnqueueWork(
-                string.Format(CultureInfo.InvariantCulture, Resources.DOWNLOADING_SOLUTION, @params.Solution.FriendlyName),
-                DownloadSolutionInner,
-                @params,
-                DownloadSolutionCompleted
-            );
+            asyncWorkQueue.EnqueueBackgroundWork(
+                   AlBackgroundWorkerFactory.NewWorker(DownloadSolutionInner, @params, DownloadSolutionCompleted)
+                                            .WithViewModel(solutionPackagerControl.toolViewModel)
+                                            .WithMessage(solutionPackagerControl, string.Format(CultureInfo.InvariantCulture, Resources.DOWNLOADING_SOLUTION, @params.Solution.FriendlyName)));
         }
 
         private SolutionPackagerCaller.Parameters DownloadSolutionInner(Parameters @params)
@@ -73,31 +72,30 @@ namespace AlbanianXrm.SolutionPackager
             return @params.SolutionPackagerParameters;
         }
 
-        private void DownloadSolutionCompleted(BackgroundWorkResult<Parameters, SolutionPackagerCaller.Parameters> args)
+        private void DownloadSolutionCompleted(Parameters args, SolutionPackagerCaller.Parameters value, Exception exception)
         {
-            if (args.Exception is FaultException<OrganizationServiceFault> crmError)
+            if (exception is FaultException<OrganizationServiceFault> crmError)
             {
                 solutionPackagerControl.WriteErrorLog("The following error occurred while downloading the solution:\r\n{0}", crmError);
                 MessageBox.Show(crmError.Message, Resources.MBOX_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (args.Exception != null)
+            else if (exception != null)
             {
-                solutionPackagerControl.WriteErrorLog("The following error occurred while downloading the solution:\r\n{0}", args.Exception);
-                MessageBox.Show(args.Exception.Message, Resources.MBOX_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                solutionPackagerControl.WriteErrorLog("The following error occurred while downloading the solution:\r\n{0}", exception);
+                MessageBox.Show(exception.Message, Resources.MBOX_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                solutionPackagerCaller.ManageSolution(args.Value);
+                solutionPackagerCaller.ManageSolution(value);
             }
         }
 
         public void RefreshSolutionList()
         {
-            asyncWorkQueue.EnqueueWork(
-                Resources.REFRESHING_SOLUTION_LIST,
-                RefreshSolutionListInner,
-                RefreshSolutionListCompleted
-            );
+            asyncWorkQueue.EnqueueBackgroundWork(
+                AlBackgroundWorkerFactory.NewWorker(RefreshSolutionListInner, RefreshSolutionListCompleted)
+                                         .WithViewModel(solutionPackagerControl.toolViewModel)
+                                         .WithMessage(solutionPackagerControl, Resources.REFRESHING_SOLUTION_LIST));
         }
 
         private object[] RefreshSolutionListInner()
@@ -111,18 +109,18 @@ namespace AlbanianXrm.SolutionPackager
             return solutionPackagerControl.Service.RetrieveMultiple(query).Entities.Select(solution => solution.ToEntity<Solution>()).ToArray<object>();
         }
 
-        private void RefreshSolutionListCompleted(BackgroundWorkResult<object[]> args)
+        private void RefreshSolutionListCompleted(object[] value, Exception exception)
         {
-            if (args.Exception != null)
+            if (exception != null)
             {
-                solutionPackagerControl.WriteErrorLog("The following error occurred while refreshing the solution list:\r\n{0}", args.Exception);
-                MessageBox.Show(args.Exception.Message, Resources.MBOX_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                solutionPackagerControl.WriteErrorLog("The following error occurred while refreshing the solution list:\r\n{0}", exception);
+                MessageBox.Show(exception.Message, Resources.MBOX_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 cmbCrmSolutions.BeginUpdate();
                 cmbCrmSolutions.Items.Clear();
-                cmbCrmSolutions.Items.AddRange(args.Value);
+                cmbCrmSolutions.Items.AddRange(value);
                 cmbCrmSolutions.EndUpdate();
             }
         }

@@ -14,14 +14,13 @@
     <description>Uses SolutionPackager.exe from the SDK which can be downloaded from any NuGet source (even local directory for isolated environments).</description>
     <releaseNotes>This is a GUI for SolutionPackager.exe (it shows the command line used to help with the parameters)
 v$version$: 
-- Updated CoreToolsDownloader to use NuGet v3.  
-- Using AlbanianXrm.XrmToolBox.Shared for BackgroundWork and ToolViewModel.  
+- Added scrollbar for small screens
 
 * For older releases go here: https://github.com/albanian-xrm/Solution-Packager/releases </releaseNotes>
     <copyright>Copyright 2021</copyright>
     <tags>XrmToolBox Plugins Xrm AlbanianXrm SolutionPackager</tags>
     <dependencies>
-      <dependency id="XrmToolBox" version="1.2019.2.30" />
+      <dependency id="XrmToolBox" version="1.2021.12.53" />
     </dependencies>
   </metadata>
   <files>

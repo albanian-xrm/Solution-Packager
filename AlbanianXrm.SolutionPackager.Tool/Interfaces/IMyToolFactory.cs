@@ -1,4 +1,4 @@
-﻿using AlbanianXrm.XrmToolBox.Shared;
+﻿using AlbanianXrm.BackgroundWorker;
 using System.Windows.Forms;
 
 namespace AlbanianXrm.SolutionPackager.Interfaces
@@ -6,7 +6,7 @@ namespace AlbanianXrm.SolutionPackager.Interfaces
     interface IMyToolFactory
     {
         ToolViewModel NewToolViewModel();
-        BackgroundWorkHandler BackgroundWorkHandler();
+        AlBackgroundWorkHandler BackgroundWorkHandler();
         CoreToolsDownloader NewCoreToolsDownloader();
         CrmSolutionImporter NewCrmSolutionImporter();
         SolutionPackagerCaller NewSolutionPackagerCaller(RichTextBox txtOutput, CrmSolutionImporter crmSolutionImporter);

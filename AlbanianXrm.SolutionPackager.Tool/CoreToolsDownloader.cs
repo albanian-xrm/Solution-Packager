@@ -1,5 +1,6 @@
-﻿using AlbanianXrm.SolutionPackager.Properties;
-using AlbanianXrm.XrmToolBox.Shared;
+﻿using AlbanianXrm.BackgroundWorker;
+using AlbanianXrm.SolutionPackager.Properties;
+using AlbanianXrm.XrmToolBox.Shared.Extensions;
 using NuGet.Common;
 using NuGet.Packaging;
 using NuGet.Protocol;
@@ -8,7 +9,6 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,11 +19,11 @@ namespace AlbanianXrm.SolutionPackager
     {
         public const string coreToolsId = "Microsoft.CrmSdk.CoreTools";
         public const string solutionPackagerName = "SolutionPackager.exe";
-        private readonly BackgroundWorkHandler backgroundWorkHandler;
+        private readonly AlBackgroundWorkHandler backgroundWorkHandler;
         private readonly SolutionPackagerControl solutionPackagerControl;
         private readonly ToolViewModel toolViewModel;
 
-        public CoreToolsDownloader(BackgroundWorkHandler backgroundWorkHandler, SolutionPackagerControl solutionPackagerControl, ToolViewModel toolViewModel)
+        public CoreToolsDownloader(AlBackgroundWorkHandler backgroundWorkHandler, SolutionPackagerControl solutionPackagerControl, ToolViewModel toolViewModel)
         {
             this.backgroundWorkHandler = backgroundWorkHandler ?? throw new ArgumentNullException(nameof(backgroundWorkHandler));
             this.solutionPackagerControl = solutionPackagerControl ?? throw new ArgumentNullException(nameof(solutionPackagerControl));
@@ -32,12 +32,10 @@ namespace AlbanianXrm.SolutionPackager
 
         public void DownloadCoreTools(string nuGetFeed)
         {
-            backgroundWorkHandler.EnqueueAsyncWork(
-                Resources.DOWNLOADING_CORE_TOOLS,
-                DownloadCoreToolsAsync,
-                nuGetFeed,
-                DownloadCoreToolsCompleted
-            );
+            backgroundWorkHandler.EnqueueBackgroundWork(
+                AlBackgroundWorkerFactory.NewAsyncWorker(DownloadCoreToolsAsync, nuGetFeed, DownloadCoreToolsCompleted)
+                                         .WithViewModel(toolViewModel)
+                                         .WithMessage(solutionPackagerControl, Resources.DOWNLOADING_CORE_TOOLS));
         }
 
         public static Version GetSolutionPackagerVersion()
@@ -79,7 +77,7 @@ namespace AlbanianXrm.SolutionPackager
 
             var metadata = (await packageSearch.SearchAsync(coreToolsId, new SearchFilter(false, SearchFilterType.IsLatestVersion), 0, 1, logger, cancellationToken)).FirstOrDefault();
             var version = (await metadata.GetVersionsAsync()).Max(v => v.Version);
-            System.Diagnostics.Debug.WriteLine($"Version {version}");
+        
             using (MemoryStream packageStream = new MemoryStream())
             {
                 if (!await findPackageById.CopyNupkgToStreamAsync(
@@ -112,18 +110,18 @@ namespace AlbanianXrm.SolutionPackager
             return GetSolutionPackagerVersion(dir);
         }
 
-        private void DownloadCoreToolsCompleted(BackgroundWorkResult<string, object> args)
+        private void DownloadCoreToolsCompleted(string source, object value, Exception exception)
         {
-            if (args.Exception != null)
+            if (exception != null)
             {
-                solutionPackagerControl.WriteErrorLog("The following error occured while downloading core tools: \r\n{0}", args.Exception);
-                MessageBox.Show(args.Exception.Message, Resources.MBOX_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                solutionPackagerControl.WriteErrorLog("The following error occured while downloading core tools: \r\n{0}", exception);
+                MessageBox.Show(exception.Message, Resources.MBOX_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (args.Value is string errorMessage)
+            else if (value is string errorMessage)
             {
                 MessageBox.Show(errorMessage, Resources.MBOX_INFORMATION, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if (args.Value is Version version)
+            else if (value is Version version)
             {
                 toolViewModel.SolutionPackagerVersion = version.ToString();
             }

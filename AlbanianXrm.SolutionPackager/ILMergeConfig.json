@@ -2,13 +2,7 @@
   "General": {
     "OutputFile": "$(TargetDir)XrmToolBox\\Plugins\\AlbanianXrm.SolutionPackager\\$(TargetFileName)",
     "InputAssemblies": [
-      "AlbanianXrm.XrmToolBox.Shared.dll",
-      "NuGet.Common.dll",
-      "NuGet.Configuration.dll",
-      "NuGet.Frameworks.dll",
-      "NuGet.Packaging.dll",
-      "NuGet.Protocol.dll",
-      "NuGet.Versioning.dll"
+      "AlbanianXrm.XrmToolBox.Shared.dll"
     ]
   },
   "Advanced": {

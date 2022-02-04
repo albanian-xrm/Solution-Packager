@@ -129,6 +129,12 @@
   <data name="splitContainer.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="tlpExtract.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tlpExtract.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
+  </data>
   <data name="tlpExtract.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
@@ -2131,7 +2137,7 @@ You can use the short form of the command: /loc.</value>
     <value>SolutionPackagerControl</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>XrmToolBox.Extensibility.PluginControlBase, XrmToolBox.Extensibility, Version=1.2020.12.43, Culture=neutral, PublicKeyToken=null</value>
+    <value>XrmToolBox.Extensibility.PluginControlBase, XrmToolBox.Extensibility, Version=1.2021.12.53, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="cmbCrmSolutions.IconAlignment" type="System.Windows.Forms.ErrorIconAlignment, System.Windows.Forms">
     <value>MiddleLeft</value>
@@ -2217,11 +2223,14 @@ You can use the short form of the command: /loc.</value>
   <data name="tlpExtract.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
+  <data name="tlpExtract.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 20, 0</value>
+  </data>
   <data name="tlpExtract.RowCount" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="tlpExtract.Size" type="System.Drawing.Size, System.Drawing">
-    <value>426, 766</value>
+    <value>446, 766</value>
   </data>
   <data name="tlpExtract.TabIndex" type="System.Int32, mscorlib">
     <value>31</value>
@@ -2248,7 +2257,7 @@ You can use the short form of the command: /loc.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabExtract.Size" type="System.Drawing.Size, System.Drawing">
-    <value>432, 772</value>
+    <value>452, 772</value>
   </data>
   <data name="tabExtract.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2267,6 +2276,9 @@ You can use the short form of the command: /loc.</value>
   </data>
   <data name="&gt;&gt;tabExtract.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="tlpPack.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="tlpPack.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
@@ -3531,11 +3543,14 @@ You can use the short form of the command: /loc.</value>
   <data name="tlpPack.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
+  <data name="tlpPack.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 20, 0</value>
+  </data>
   <data name="tlpPack.RowCount" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="tlpPack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>426, 766</value>
+    <value>446, 766</value>
   </data>
   <data name="tlpPack.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -3562,7 +3577,7 @@ You can use the short form of the command: /loc.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabPack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>432, 772</value>
+    <value>452, 772</value>
   </data>
   <data name="tabPack.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -3688,7 +3703,7 @@ You can use the short form of the command: /loc.</value>
     <value>0, 0, 0, 0</value>
   </data>
   <data name="flpSettingsButtons.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 102</value>
+    <value>60, 102</value>
   </data>
   <data name="flpSettingsButtons.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -3997,7 +4012,7 @@ You can use the short form of the command: /loc.</value>
     <value>3</value>
   </data>
   <data name="tlpSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>426, 766</value>
+    <value>446, 766</value>
   </data>
   <data name="tlpSettings.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -4024,7 +4039,7 @@ You can use the short form of the command: /loc.</value>
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tabSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>432, 772</value>
+    <value>452, 772</value>
   </data>
   <data name="tabSettings.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -4057,7 +4072,7 @@ You can use the short form of the command: /loc.</value>
     <value>5, 5, 5, 6</value>
   </data>
   <data name="tabsExtractOrPack.Size" type="System.Drawing.Size, System.Drawing">
-    <value>440, 800</value>
+    <value>460, 800</value>
   </data>
   <data name="tabsExtractOrPack.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -4093,7 +4108,7 @@ You can use the short form of the command: /loc.</value>
     <value>0, 0</value>
   </data>
   <data name="txtOutput.Size" type="System.Drawing.Size, System.Drawing">
-    <value>356, 800</value>
+    <value>336, 800</value>
   </data>
   <data name="txtOutput.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -4129,7 +4144,7 @@ You can use the short form of the command: /loc.</value>
     <value>800, 800</value>
   </data>
   <data name="splitContainer.SplitterDistance" type="System.Int32, mscorlib">
-    <value>440</value>
+    <value>460</value>
   </data>
   <data name="splitContainer.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>

@@ -1,5 +1,7 @@
-﻿using AlbanianXrm.SolutionPackager.Properties;
+﻿using AlbanianXrm.BackgroundWorker;
+using AlbanianXrm.SolutionPackager.Properties;
 using AlbanianXrm.XrmToolBox.Shared;
+using AlbanianXrm.XrmToolBox.Shared.Extensions;
 using Microsoft.Xrm.Sdk.Messages;
 using System;
 using System.Globalization;
@@ -11,11 +13,11 @@ namespace AlbanianXrm.SolutionPackager
     internal class CrmSolutionImporter
     {
         private readonly SolutionPackagerControl solutionPackagerControl;
-        private readonly BackgroundWorkHandler asyncWorkQueue;
+        private readonly AlBackgroundWorkHandler asyncWorkQueue;
         private readonly ToolViewModel toolViewModel;
         private SolutionImportStatus solutionImportStatus;
 
-        public CrmSolutionImporter(SolutionPackagerControl solutionPackagerControl, BackgroundWorkHandler asyncWorkQueue, ToolViewModel pluginViewModel)
+        public CrmSolutionImporter(SolutionPackagerControl solutionPackagerControl, AlBackgroundWorkHandler asyncWorkQueue, ToolViewModel pluginViewModel)
         {
             this.solutionPackagerControl = solutionPackagerControl;
             this.asyncWorkQueue = asyncWorkQueue;
@@ -30,12 +32,10 @@ namespace AlbanianXrm.SolutionPackager
                 fileInfo = new FileInfo(fileInfo.FullName.Substring(0, fileInfo.FullName.Length - fileInfo.Extension.Length) + "_managed" + fileInfo.Extension);
                 @params.CustomizationFile = fileInfo.FullName;
             }
-            asyncWorkQueue.EnqueueWork(
-                string.Format(CultureInfo.InvariantCulture, Resources.IMPORT_SOLUTION, fileInfo.Name),
-                ImportSolutionInner,           
-                @params,
-                ImportSolutionStarted
-            );
+            asyncWorkQueue.EnqueueBackgroundWork(
+              AlBackgroundWorkerFactory.NewWorker(ImportSolutionInner, @params, ImportSolutionStarted)
+                                       .WithViewModel(toolViewModel)
+                                       .WithMessage(solutionPackagerControl, string.Format(CultureInfo.InvariantCulture, Resources.IMPORT_SOLUTION, fileInfo.Name)));
         }
 
         private Models.ImportSolutionRequest ImportSolutionInner(Parameters @params)
@@ -53,23 +53,23 @@ namespace AlbanianXrm.SolutionPackager
                     CustomizationFile = File.ReadAllBytes(@params.CustomizationFile)
                 }
             };
-           return new Models.ImportSolutionRequest()
+            return new Models.ImportSolutionRequest()
             {
                 ImportJobId = importJobId,
                 ExecuteAsyncResponse = solutionPackagerControl.Service.Execute(importSolutionRequest) as ExecuteAsyncResponse
             };
         }
 
-        private void ImportSolutionStarted(BackgroundWorkResult<Parameters, Models.ImportSolutionRequest> args)
+        private void ImportSolutionStarted(Parameters @params, Models.ImportSolutionRequest value, Exception exception)
         {
-            if (args.Exception != null)
+            if (exception != null)
             {
-                solutionPackagerControl.WriteErrorLog("The following error occurred while importing the solution:\r\n{0}", args.Exception);
-                MessageBox.Show(args.Exception.Message, Resources.MBOX_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                solutionPackagerControl.WriteErrorLog("The following error occurred while importing the solution:\r\n{0}", exception);
+                MessageBox.Show(exception.Message, Resources.MBOX_ERROR, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            solutionImportStatus = new SolutionImportStatus(args.Value.ExecuteAsyncResponse.AsyncJobId, args.Value.ImportJobId, solutionPackagerControl, toolViewModel);
+            solutionImportStatus = new SolutionImportStatus(value.ExecuteAsyncResponse.AsyncJobId, value.ImportJobId, solutionPackagerControl, toolViewModel);
             solutionImportStatus.Show(solutionPackagerControl);
         }
 
