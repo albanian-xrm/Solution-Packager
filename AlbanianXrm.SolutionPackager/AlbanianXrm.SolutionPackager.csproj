@@ -44,7 +44,7 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="XrmToolBoxPackage" Version="1.2021.12.53" />
+    <PackageReference Include="XrmToolBoxPackage" Version="1.2022.4.55" />
     <PackageReference Include="Microsoft.IdentityModel" Version="7.0.0" Condition="'$(Configuration)'=='Debug'" />
     <PackageReference Include="ILMerge" Version="3.0.41" />
     <PackageReference Include="ILMerge.MSBuild.Task" Version="1.0.7" />
