@@ -14,13 +14,13 @@
     <description>Uses SolutionPackager.exe from the SDK which can be downloaded from any NuGet source (even local directory for isolated environments).</description>
     <releaseNotes>This is a GUI for SolutionPackager.exe (it shows the command line used to help with the parameters)
 v$version$: 
-- Added scrollbar for small screens
+- Updated dependencies
 
 * For older releases go here: https://github.com/albanian-xrm/Solution-Packager/releases </releaseNotes>
-    <copyright>Copyright 2021</copyright>
+    <copyright>Copyright 2022</copyright>
     <tags>XrmToolBox Plugins Xrm AlbanianXrm SolutionPackager</tags>
     <dependencies>
-      <dependency id="XrmToolBox" version="1.2021.12.53" />
+      <dependency id="XrmToolBox" version="1.2022.4.55" />
     </dependencies>
   </metadata>
   <files>

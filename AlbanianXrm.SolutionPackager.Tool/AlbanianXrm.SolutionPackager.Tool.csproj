@@ -45,8 +45,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="AlbanianXrm.XrmToolBox.Shared" Version="1.2021.6.1" />
-    <PackageReference Include="NuGet.Protocol" Version="5.9.1" />
-    <PackageReference Include="XrmToolBoxPackage" Version="1.2021.12.53" />
+    <PackageReference Include="XrmToolBoxPackage" Version="1.2022.4.55" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Properties\DataPlatformErrorCodes.Designer.cs">
