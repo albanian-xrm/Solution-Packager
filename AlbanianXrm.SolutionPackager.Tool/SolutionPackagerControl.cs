@@ -471,7 +471,7 @@ namespace AlbanianXrm.SolutionPackager
 
         private void BtnNuGetFeed_Click(object sender, EventArgs e)
         {
-            txtNuGetFeed.Text = "https://packages.nuget.org/api/v2";
+            txtNuGetFeed.Text = "https://api.nuget.org/v3/index.json";
         }
 
         private void BtnSaveSettings_Click(object sender, EventArgs e)

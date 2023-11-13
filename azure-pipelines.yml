@@ -8,7 +8,7 @@ steps:
   displayName: 'Hello from Albanian Xrm'
 
 - powershell: |
-    echo "##vso[task.setvariable variable=configuration;isOutput=true]$(IF($env:BRANCH -eq "refs/heads/master"){"Azure Pipelines"}else{"release"})"
+    echo "##vso[task.setvariable variable=configuration;isOutput=true]$(IF($env:BRANCH -eq "refs/heads/main"){"Azure Pipelines"}else{"release"})"
     echo "##vso[task.setvariable variable=BuildNumber;isOutput=true]$(($env:BuildNumber).Substring(($env:BuildNumber).LastIndexOf('+')+1))"
   name: MyVars
   env: 
@@ -17,7 +17,7 @@ steps:
   displayName: 'Set Configuration Variable'
 
 - task: SonarCloudPrepare@1
-  condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')  
+  condition: eq(variables['Build.SourceBranch'], 'refs/heads/main')  
   inputs:
     SonarCloud: 'AlbanianXrm SonarCloud'
     organization: 'albanian-xrm'
@@ -45,10 +45,10 @@ steps:
   displayName: 'Building Solution'
 
 - task: SonarCloudAnalyze@1
-  condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')  
+  condition: eq(variables['Build.SourceBranch'], 'refs/heads/main')  
 
 - task: SonarCloudPublish@1
-  condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')  
+  condition: eq(variables['Build.SourceBranch'], 'refs/heads/main')  
   inputs:
     pollingTimeoutSec: '300'
 
@@ -59,24 +59,24 @@ steps:
     packagesToPack: '**/*.nuspec'
     packDestination: '$(Build.ArtifactStagingDirectory)/NuGet'
     buildProperties: version=$(MyVars.BuildNumber)
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))  
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))  
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publishing NuGet package to pipeline'
   inputs:
     pathtoPublish: '$(Build.ArtifactStagingDirectory)/NuGet'
     artifactName: 'NuGet Package'
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))  
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))  
 
 - powershell: Compress-Archive -Path AlbanianXrm.SolutionPackager\bin\Release\net462\XrmToolBox\Plugins\* -DestinationPath Plugins.zip
   displayName: 'Create zip for GitHub'
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))  
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))  
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publishing NuGet package to pipeline'
   inputs:
     pathtoPublish: 'Plugins.zip'
     artifactName: 'Plugin Package'
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))  
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))  
     
     

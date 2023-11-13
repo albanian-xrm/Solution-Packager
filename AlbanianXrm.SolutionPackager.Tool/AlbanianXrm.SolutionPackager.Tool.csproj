@@ -48,6 +48,9 @@
     <PackageReference Include="XrmToolBoxPackage" Version="1.2022.4.55" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Update="Properties\DataPlatformErrorCodes.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
